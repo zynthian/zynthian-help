@@ -1,0 +1,12 @@
+
+@import "./fonts/fonts.css";
+
+body {
+	font-family: 'Arial';
+	color: #202020;
+	max-width: 70em;
+	margin: auto;
+	padding: 2em;
+}
+
+@import "./style_webconf.css";
