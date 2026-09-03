@@ -3,7 +3,7 @@
 
 body {
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
 
 div.help_header {
@@ -12,7 +12,7 @@ div.help_header {
 }
 
 div.help_header div.container {
-	max-width: 70em;
+	max-width: 1100px;
 	margin: auto;
 }
 
@@ -36,8 +36,9 @@ div.help_header span {
 
 div.help_container {
 	font-family: 'Arial';
+	font-size: 14pt;
 	color: #202020;
-	max-width: 70em;
+	max-width: 1100px;
 	margin: auto;
 	padding: 2em;
 }
