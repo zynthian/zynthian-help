@@ -48,8 +48,9 @@ logging.getLogger().setLevel(level=log_level)
 # ------------------------------------------------------------------------------
 
 zynthian_help_port = 8087
-zynthian_help_dir = str(Path(__file__).parent.parent.resolve())
 zynthian_layout = "Z2"
+
+zynthian_help_dir = str(Path(__file__).parent.parent.resolve())
 MAX_STREAMED_SIZE = 1000000
 
 logging.info(f"Running in '{zynthian_help_dir}'")
