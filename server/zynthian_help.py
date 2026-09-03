@@ -36,8 +36,9 @@ from bs4 import BeautifulSoup
 # Configure Logging
 # ------------------------------------------------------------------------------
 
-log_level = logging.WARNING
-# log_level = logging.ERROR
+log_level = logging.INFO
+#log_level = logging.DEBUG
+#log_level = logging.ERROR
 
 # Set root logging level
 logging.basicConfig(format='%(levelname)s:%(module)s: %(message)s',
@@ -47,9 +48,12 @@ logging.getLogger().setLevel(level=log_level)
 # ------------------------------------------------------------------------------
 
 zynthian_help_port = 8087
-zynthian_help_dir = os.environ.get('ZYNTHIAN_HELP_DIR', "/zynthian/zynthian-help")
+zynthian_help_dir = str(Path(__file__).parent.parent.resolve())
 zynthian_layout = "Z2"
 MAX_STREAMED_SIZE = 1000000
+
+logging.info(f"Running in '{zynthian_help_dir}'")
+logging.info(f"Listening at port {zynthian_help_port}")
 
 # ------------------------------------------------------------------------------
 # Help Topic Handler
