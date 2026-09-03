@@ -1,0 +1,6 @@
+pip
+urllib
+pathlib
+tornado
+asyncio
+BeautifulSoup

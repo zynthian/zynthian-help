@@ -57,8 +57,6 @@ MAX_STREAMED_SIZE = 1000000
 
 class HelpHandler(tornado.web.RequestHandler):
 
-
-
     def get(self, subdir=None, html_file=None, errors=None):
         if subdir is None and html_file is None:
             subdir = ""
@@ -77,7 +75,7 @@ class HelpHandler(tornado.web.RequestHandler):
         }
 
         if not config['index']:
-            index_link = "<a class=\"help_ui_index\" href=\"/\">Index</a><br/>"
+            index_link = "<br/>"
         else:
             index_link = ""
 
@@ -86,11 +84,22 @@ class HelpHandler(tornado.web.RequestHandler):
 <html>
  <head>
   <meta charset="utf-8">
+  <title>Zynthian Help</title>
+  <meta name="description" content="Zynthian Help Pages">
+  <link rel="shortcut icon" href="/icons/favicon.ico">
+  <!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. -->
+  <link rel="apple-touch-icon-precomposed" href="/icons/favicon_180.png">
+  <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
+  <link rel="icon" href="/icons/favicon_196.png">
   <link rel="stylesheet" href="/help_files/style_server.css">
  </head>
  <body>
- {index_link}
+ <div class="help_header">
+  <div class="container"><a href=\"/\"><img src=\"/img/zynthian_logo_black_trans_320.png\"/><span>- HELP</span></a></div>
+ </div>
+ <div class="help_container">
  {config["content"]}
+ </div>
  </body>
 </html>
 """     )
@@ -117,7 +126,7 @@ class HelpHandler(tornado.web.RequestHandler):
         files = list(Path(f"{zynthian_help_dir}/core").glob("*.html")) + \
                 list(Path(f"{zynthian_help_dir}/{zynthian_layout}").glob("*.html"))
         files.sort(key=lambda f: f.name)
-        widgets = list(Path(f"{zynthian_help_dir}/help/widgets").glob("*.html"))
+        widgets = list(Path(f"{zynthian_help_dir}/widgets").glob("*.html"))
 
         # Build index HTML
         html_output = f"""
@@ -206,12 +215,12 @@ def make_app():
     }
 
     return tornado.web.Application([
-        (r"/help_files/(.*)$", tornado.web.StaticFileHandler, {'path': '.'}),
-        (r"/(favicon\.ico)$", tornado.web.StaticFileHandler, {'path': 'img'}),
-        (r"/fonts/(.*)$", tornado.web.StaticFileHandler, {'path': 'fonts'}),
-        (r"/img/(.*)$", tornado.web.StaticFileHandler, {'path': 'img'}),
-        (r"/css/(.*)$", tornado.web.StaticFileHandler, {'path': 'css'}),
-        (r"/js/(.*)$", tornado.web.StaticFileHandler, {'path': 'js'}),
+        (r"/help_files/(.*)$", tornado.web.StaticFileHandler, {'path': zynthian_help_dir}),
+        (r"/icons/(.*)$", tornado.web.StaticFileHandler, {'path': zynthian_help_dir + '/icons'}),
+        (r"/fonts/(.*)$", tornado.web.StaticFileHandler, {'path': zynthian_help_dir + '/fonts'}),
+        (r"/img/(.*)$", tornado.web.StaticFileHandler, {'path': zynthian_help_dir + '/img'}),
+        (r"/css/(.*)$", tornado.web.StaticFileHandler, {'path': zynthian_help_dir + '/css'}),
+        (r"/js/(.*)$", tornado.web.StaticFileHandler, {'path': zynthian_help_dir + '/js'}),
         (r"/$", HelpHandler),
         (r"/(.*)/(.*)$", HelpHandler)
     ], **settings)
@@ -221,15 +230,10 @@ async def amain():
     app.listen(zynthian_help_port, max_body_size=MAX_STREAMED_SIZE)
     await asyncio.Event().wait()
 
-async def ashutdown():
-    await term_manager.shutdown()
-
 if __name__ == "__main__":
     try:
         asyncio.run(amain())
     except KeyboardInterrupt:
         print("Shutting down on SIGINT")
-    finally:
-        asyncio.run(ashutdown())
 
 # ------------------------------------------------------------------------------

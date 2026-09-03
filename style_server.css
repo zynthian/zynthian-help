@@ -2,6 +2,39 @@
 @import "./fonts/fonts.css";
 
 body {
+	margin: 0;
+	padding: 0
+}
+
+div.help_header {
+	height: 50px;
+	background-color: #000000;
+}
+
+div.help_header div.container {
+	max-width: 70em;
+	margin: auto;
+}
+
+div.help_header a,
+div.help_header a:hover,
+div.help_header a:visited {
+	font-family: 'Audiowide';
+	font-size: 32px;
+	text-decoration: none;
+	color: #f0f0f0;
+}
+
+div.help_header img {
+	height: 50px;
+	vertical-align: middle;
+}
+
+div.help_header span {
+	vertical-align: middle;
+}
+
+div.help_container {
 	font-family: 'Arial';
 	color: #202020;
 	max-width: 70em;
