@@ -88,3 +88,9 @@ div.help_container p {
 	margin-top: 0.3em;
 	margin-bottom: 0.7em;
 }
+
+.help_ui ul {
+	margin-left: 0em;
+	padding-left: 0em;
+}
+

@@ -24,8 +24,13 @@ div.help_ui {
 .help_ui title {
 	color: #202020;
 }
+.help_ui ul {
+	margin-bottom: 1em;
+}
 .help_ui li {
 	margin-left: 1em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
 }
 .help_ui a,
 .help_ui li a {
