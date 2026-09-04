@@ -179,11 +179,16 @@ class HelpHandler(tornado.web.RequestHandler):
         html += "<div class=\"help_ui\">\n"
         if fname:
             fpath = f"screenshots/{subdir}/{fname}"
+            fpath_lay = f"screenshots/{self.layout}/{fname}"
             fpath_com = f"screenshots/common/{fname}"
             if os.path.isfile(zynthian_help_dir + "/" + fpath + ".mp4"):
                 html += f"<video class='screenshot' controls autoplay muted loop><source src=\"/help_files/{fpath}.mp4\" type='video/mp4'></video>\n"
             elif os.path.isfile(zynthian_help_dir + "/" + fpath + ".png"):
                 html += f"<img class='screenshot' src=\"/help_files/{fpath}.png\"/>\n"
+            elif os.path.isfile(zynthian_help_dir + "/" + fpath_lay + ".mp4"):
+                html += f"<video class='screenshot' controls autoplay muted loop><source src=\"/help_files/{fpath_lay}.mp4\" type='video/mp4'></video>\n"
+            elif os.path.isfile(zynthian_help_dir + "/" + fpath_lay + ".png"):
+                html += f"<img class='screenshot' src=\"/help_files/{fpath_lay}.png\"/>\n"
             elif os.path.isfile(zynthian_help_dir + "/" + fpath_com + ".mp4"):
                 html += f"<video class='screenshot' controls autoplay muted loop><source src=\"/help_files/{fpath_com}.mp4\" type='video/mp4'></video>\n"
             elif os.path.isfile(zynthian_help_dir + "/" + fpath_com + ".png"):
