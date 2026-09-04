@@ -1,5 +1,5 @@
 
-@import "./fonts/fonts.css";
+@import "../fonts/fonts.css";
 
 body {
 	margin: 0;
@@ -39,6 +39,13 @@ div.help_header span {
 	vertical-align: middle;
 }
 
+div.help_header select {
+	font-size: 16pt;
+	margin: 8px 12px;
+	padding: 2px 12px;
+	float: right;
+}
+
 div.help_container {
 	font-family: 'Lato Regular';
 	font-size: 14pt;
@@ -61,16 +68,23 @@ div.help_container a:hover {
 }
 
 div.help_container h1 {
-	font-size: 140%;
+	padding-top: 0em;
+	font-size: 26pt;
 }
 div.help_container h2 {
-	font-size: 130%;
+	padding-top: 0.5em;
+	font-size: 20pt;
 }
 div.help_container h3 {
-	font-size: 120%;
+	padding-top: 0.5em;
+	font-size: 16pt;
 }
 div.help_container h4 {
-	font-size: 110%;
+	padding-top: 0.5em;
+	font-size: 12pt;
 }
 
-
+div.help_container p {
+	margin-top: 0.3em;
+	margin-bottom: 0.7em;
+}

@@ -9,14 +9,42 @@
   <link rel="apple-touch-icon-precomposed" href="/icons/favicon_180.png">
   <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
   <link rel="icon" href="/icons/favicon_196.png">
-  <link rel="stylesheet" href="/help_files/style_server.css">
+  <link rel="stylesheet" href="/help_files/server/style_server.css">
  </head>
  <body>
  <div class="help_header">
-  <div class="container"><a href="/"><img src="/img/zynthian_logo_black_trans_320.png"/><span>- HELP</span></a></div>
+  <div class="container">
+   <a href="/"><img src="/img/zynthian_logo_black_trans_320.png"/><span>- HELP</span></a>
+   <select id="layout" onchange="change_layout(this.value)">
+    <option value="Z2" {% if config['layout'] == "Z2" %}selected{% end %}>V5</option>
+    <option value="V4" {% if config['layout'] == "V4" %}selected{% end %}>V4</option>
+   </select>
+  </div>
  </div>
  <div class="help_container">
  {% raw config["content"] %}
  </div>
  </body>
+
+<script>
+// Function to set a cookie safely
+function setServerReadableCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+
+    // Crucial: Do NOT use 'HttpOnly' here, otherwise JS cannot write it.
+    // 'SameSite=Lax' is recommended for modern browser security.
+    document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}${expires}; path=/; SameSite=Lax`;
+}
+
+function change_layout(layout_value) {
+    setServerReadableCookie("layout", layout_value, 180);
+    window.location.reload();
+}
+
+</script>
 </html>

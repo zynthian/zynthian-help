@@ -48,7 +48,6 @@ logging.getLogger().setLevel(level=log_level)
 # ------------------------------------------------------------------------------
 
 zynthian_help_port = 8087
-zynthian_layout = "Z2"
 
 zynthian_help_dir = str(Path(__file__).parent.parent.resolve())
 MAX_STREAMED_SIZE = 1000000
@@ -62,15 +61,24 @@ logging.info(f"Listening at port {zynthian_help_port}")
 
 class HelpHandler(tornado.web.RequestHandler):
 
+    layout = "Z2"
+
     def get(self, subdir=None, html_file=None, errors=None):
+
+        self.layout = self.get_cookie("layout", default="Z2")
+        logging.info(f"Layout: {self.layout}")
+
         if subdir is None and html_file is None:
             subdir = ""
             html_file = ""
             html = self.get_index()
         else:
+            if subdir in ("Z2", "V4"):
+                subdir = self.layout
             html = self.get_content(subdir, html_file)
 
         config = {
+            "layout": self.layout,
             "subdir": subdir,
             "html_file": html_file,
             "content": html,
@@ -97,7 +105,7 @@ class HelpHandler(tornado.web.RequestHandler):
             return items
 
         files = list(Path(f"{zynthian_help_dir}/core").glob("*.html")) + \
-                list(Path(f"{zynthian_help_dir}/{zynthian_layout}").glob("*.html"))
+                list(Path(f"{zynthian_help_dir}/{self.layout}").glob("*.html"))
         files.sort(key=lambda f: f.name)
         widgets = list(Path(f"{zynthian_help_dir}/widgets").glob("*.html"))
 
@@ -170,11 +178,16 @@ class HelpHandler(tornado.web.RequestHandler):
         html += "<link rel=\"stylesheet\" href=\"/help_files/style_webconf.css\">"
         html += "<div class=\"help_ui\">\n"
         if fname:
-            fpath = f"{subdir}/screenshots/{fname}"
+            fpath = f"screenshots/{subdir}/{fname}"
+            fpath_com = f"screenshots/common/{fname}"
             if os.path.isfile(zynthian_help_dir + "/" + fpath + ".mp4"):
                 html += f"<video class='screenshot' controls autoplay muted loop><source src=\"/help_files/{fpath}.mp4\" type='video/mp4'></video>\n"
             elif os.path.isfile(zynthian_help_dir + "/" + fpath + ".png"):
                 html += f"<img class='screenshot' src=\"/help_files/{fpath}.png\"/>\n"
+            elif os.path.isfile(zynthian_help_dir + "/" + fpath_com + ".mp4"):
+                html += f"<video class='screenshot' controls autoplay muted loop><source src=\"/help_files/{fpath_com}.mp4\" type='video/mp4'></video>\n"
+            elif os.path.isfile(zynthian_help_dir + "/" + fpath_com + ".png"):
+                html += f"<img class='screenshot' src=\"/help_files/{fpath_com}.png\"/>\n"
         html += soup.body.decode_contents()
         html += "\n</div>"
         return html
