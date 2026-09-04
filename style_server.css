@@ -7,17 +7,22 @@ body {
 }
 
 div.help_header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 	height: 50px;
 	background-color: #000000;
 }
 
 div.help_header div.container {
-	max-width: 1100px;
+	max-width: 1120px;
 	margin: auto;
 }
 
 div.help_header a,
+div.help_header a:link,
 div.help_header a:hover,
+div.help_header a:active,
 div.help_header a:visited {
 	font-family: 'Audiowide';
 	font-size: 32px;
@@ -35,7 +40,7 @@ div.help_header span {
 }
 
 div.help_container {
-	font-family: 'Arial';
+	font-family: 'Lato Regular';
 	font-size: 14pt;
 	color: #202020;
 	max-width: 1100px;
@@ -43,4 +48,29 @@ div.help_container {
 	padding: 2em;
 }
 
-@import "./style_webconf.css";
+div.help_container a,
+div.help_container a:link,
+div.help_container a:active,
+div.help_container a:visited {
+	text-decoration: none;
+	color: #0030A0;
+}
+
+div.help_container a:hover {
+	color: #0060E0;
+}
+
+div.help_container h1 {
+	font-size: 140%;
+}
+div.help_container h2 {
+	font-size: 130%;
+}
+div.help_container h3 {
+	font-size: 120%;
+}
+div.help_container h4 {
+	font-size: 110%;
+}
+
+

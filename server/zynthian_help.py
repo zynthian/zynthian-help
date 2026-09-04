@@ -66,48 +66,16 @@ class HelpHandler(tornado.web.RequestHandler):
         if subdir is None and html_file is None:
             subdir = ""
             html_file = ""
-            html = self.get_body(self.get_index())
-            index = True
+            html = self.get_index()
         else:
             html = self.get_content(subdir, html_file)
-            index = False
 
         config = {
             "subdir": subdir,
             "html_file": html_file,
             "content": html,
-            "index": index
         }
-
-        if not config['index']:
-            index_link = "<br/>"
-        else:
-            index_link = ""
-
-        self.set_header("Content-Type", "text/html")
-        self.write(f"""<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>Zynthian Help</title>
-  <meta name="description" content="Zynthian Help Pages">
-  <link rel="shortcut icon" href="/icons/favicon.ico">
-  <!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. -->
-  <link rel="apple-touch-icon-precomposed" href="/icons/favicon_180.png">
-  <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
-  <link rel="icon" href="/icons/favicon_196.png">
-  <link rel="stylesheet" href="/help_files/style_server.css">
- </head>
- <body>
- <div class="help_header">
-  <div class="container"><a href=\"/\"><img src=\"/img/zynthian_logo_black_trans_320.png\"/><span>- HELP</span></a></div>
- </div>
- <div class="help_container">
- {config["content"]}
- </div>
- </body>
-</html>
-"""     )
+        self.render(zynthian_help_dir + "/server/template.html", config=config)
 
     def post(self, subdir, html_file):
         self.get(subdir, html_file)
@@ -135,24 +103,27 @@ class HelpHandler(tornado.web.RequestHandler):
 
         # Build index HTML
         html_output = f"""
- <body class="help_ui">
+  <link rel="stylesheet" href="/help_files/style_webconf.css">
+  <div class="help_ui">
   <h1>Help Index</h1>
   <ul class="index">
 """
-
         for title, filename in get_data(files):
-            html_output += f'    <li><a href="{filename}">{title}</a></li>\n'
+            fpath = Path(filename)
+            href = fpath.parent.name + "/" + fpath.name
+            html_output += f'    <li><a href="{href}">{title}</a></li>\n'
         html_output += """
   </ul>
-  <h2>Control GUI Widgets</h2>
+  <h2>Control Widgets</h2>
   <ul class="index">
 """
         for title, filename in get_data(widgets):
-            html_output += f'    <li><a href="{filename}">{title}</a></li>\n'
+            fpath = Path(filename)
+            href = fpath.parent.name + "/" + fpath.name
+            html_output += f'    <li><a href="{href}">{title}</a></li>\n'
         html_output += """
   </ul>
- </body>
-</html>
+  </div>
 """
         return html_output
 
@@ -196,7 +167,7 @@ class HelpHandler(tornado.web.RequestHandler):
         html = ""
         for css_fpath in css_fpaths:
             html += f"<link rel=\"stylesheet\" href=\"{css_fpath}\">\n"
-        html += f"<link rel=\"stylesheet\" href=\"/help_files/style_webconf.css\">\n"
+        html += "<link rel=\"stylesheet\" href=\"/help_files/style_webconf.css\">"
         html += "<div class=\"help_ui\">\n"
         if fname:
             fpath = f"{subdir}/screenshots/{fname}"

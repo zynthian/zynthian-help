@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Zynthian Help</title>
+  <meta name="description" content="Zynthian Help Pages">
+  <link rel="shortcut icon" href="/icons/favicon.ico">
+  <!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. -->
+  <link rel="apple-touch-icon-precomposed" href="/icons/favicon_180.png">
+  <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
+  <link rel="icon" href="/icons/favicon_196.png">
+  <link rel="stylesheet" href="/help_files/style_server.css">
+ </head>
+ <body>
+ <div class="help_header">
+  <div class="container"><a href="/"><img src="/img/zynthian_logo_black_trans_320.png"/><span>- HELP</span></a></div>
+ </div>
+ <div class="help_container">
+ {% raw config["content"] %}
+ </div>
+ </body>
+</html>
