@@ -110,6 +110,12 @@ header.global_header a {
 	text-align: center;
 }
 
+.help_ui table td.alt,
+.help_ui table th.alt {
+	background-color: #F09000;
+	text-align: center;
+}
+
 div.knob_action {
 	color: #ffffff;
 }
