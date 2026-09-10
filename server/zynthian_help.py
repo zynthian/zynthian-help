@@ -107,7 +107,6 @@ class HelpHandler(tornado.web.RequestHandler):
         files = list(Path(f"{zynthian_help_dir}/common").glob("*.html")) + \
                 list(Path(f"{zynthian_help_dir}/{self.layout}").glob("*.html"))
         files.sort(key=lambda f: f.name)
-        widgets = list(Path(f"{zynthian_help_dir}/widgets").glob("*.html"))
 
         # Build index HTML
         html_output = f"""
