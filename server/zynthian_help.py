@@ -68,18 +68,18 @@ class HelpHandler(tornado.web.RequestHandler):
         self.layout = self.get_cookie("layout", default="Z2")
         logging.info(f"Layout: {self.layout}")
 
-        if subdir is None and html_file is None:
-            subdir = ""
-            html_file = ""
-            html = self.get_index()
+        if html_file is None:
+            if subdir is None:
+                html_file = ""
+                html = self.get_index()
+            else:
+                html_file = subdir
+                html = self.get_content(html_file)
         else:
-            if subdir in ("Z2", "V4"):
-                subdir = self.layout
-            html = self.get_content(subdir, html_file)
+            html = self.get_content(html_file)
 
         config = {
             "layout": self.layout,
-            "subdir": subdir,
             "html_file": html_file,
             "content": html,
         }
@@ -104,7 +104,7 @@ class HelpHandler(tornado.web.RequestHandler):
                     items.append((title, file._str))
             return items
 
-        files = list(Path(f"{zynthian_help_dir}/core").glob("*.html")) + \
+        files = list(Path(f"{zynthian_help_dir}/common").glob("*.html")) + \
                 list(Path(f"{zynthian_help_dir}/{self.layout}").glob("*.html"))
         files.sort(key=lambda f: f.name)
         widgets = list(Path(f"{zynthian_help_dir}/widgets").glob("*.html"))
@@ -113,21 +113,13 @@ class HelpHandler(tornado.web.RequestHandler):
         html_output = f"""
   <link rel="stylesheet" href="/help_files/style_webconf.css">
   <div class="help_ui">
-  <h1>Help Index</h1>
+  <h1>Index</h1>
   <ul class="index">
 """
         for title, filename in get_data(files):
             fpath = Path(filename)
-            href = fpath.parent.name + "/" + fpath.name
-            html_output += f'    <li><a href="{href}">{title}</a></li>\n'
-        html_output += """
-  </ul>
-  <h2>Control Widgets</h2>
-  <ul class="index">
-"""
-        for title, filename in get_data(widgets):
-            fpath = Path(filename)
-            href = fpath.parent.name + "/" + fpath.name
+            #href = fpath.parent.name + "/" + fpath.name
+            href = fpath.name
             html_output += f'    <li><a href="{href}">{title}</a></li>\n'
         html_output += """
   </ul>
@@ -135,18 +127,26 @@ class HelpHandler(tornado.web.RequestHandler):
 """
         return html_output
 
-    def get_content(self, subdir, html_file):
+    def get_content(self, html_file):
+        fpath_lay = f"{zynthian_help_dir}/{self.layout}/{html_file}"
+        fpath_com = f"{zynthian_help_dir}/common/{html_file}"
+        if os.path.isfile(fpath_lay):
+            fpath = fpath_lay
+            subdir = self.layout
+        elif os.path.isfile(fpath_com):
+            fpath = fpath_com
+            subdir = "common"
+        else:
+            return f"<h3>Content '{html_file}' not found!</h3>"
+
         try:
-            fpath = f"{zynthian_help_dir}/{subdir}/{html_file}"
             with open(fpath, "r") as f:
                 html = f.read()
-                try:
-                    html = self.get_body(html, subdir, fname= os.path.splitext(html_file)[0])
-                except Exception as e:
-                    logging.error(e)
+                html = self.get_body(html, subdir, fname= os.path.splitext(html_file)[0])
+        except Exception as e:
+            html = f"<h3>Can't parse HTML content from '{fpath}'</h3>"
+            logging.error(e)
 
-        except:
-            html = f"<h3>Content '{subdir}/{html_file}' not found!</h3>"
         return html
 
     def get_body(self, html, subdir=None, fname=None):
@@ -178,14 +178,9 @@ class HelpHandler(tornado.web.RequestHandler):
         html += "<link rel=\"stylesheet\" href=\"/help_files/style_webconf.css\">"
         html += "<div class=\"help_ui\">\n"
         if fname:
-            fpath = f"screenshots/{subdir}/{fname}"
             fpath_lay = f"screenshots/{self.layout}/{fname}"
             fpath_com = f"screenshots/common/{fname}"
-            if os.path.isfile(zynthian_help_dir + "/" + fpath + ".mp4"):
-                html += f"<video class='screenshot' controls autoplay muted loop><source src=\"/help_files/{fpath}.mp4\" type='video/mp4'></video>\n"
-            elif os.path.isfile(zynthian_help_dir + "/" + fpath + ".png"):
-                html += f"<img class='screenshot' src=\"/help_files/{fpath}.png\"/>\n"
-            elif os.path.isfile(zynthian_help_dir + "/" + fpath_lay + ".mp4"):
+            if os.path.isfile(zynthian_help_dir + "/" + fpath_lay + ".mp4"):
                 html += f"<video class='screenshot' controls autoplay muted loop><source src=\"/help_files/{fpath_lay}.mp4\" type='video/mp4'></video>\n"
             elif os.path.isfile(zynthian_help_dir + "/" + fpath_lay + ".png"):
                 html += f"<img class='screenshot' src=\"/help_files/{fpath_lay}.png\"/>\n"
@@ -216,6 +211,7 @@ def make_app():
         (r"/css/(.*)$", tornado.web.StaticFileHandler, {'path': zynthian_help_dir + '/css'}),
         (r"/js/(.*)$", tornado.web.StaticFileHandler, {'path': zynthian_help_dir + '/js'}),
         (r"/$", HelpHandler),
+        (r"/(.*)$", HelpHandler),
         (r"/(.*)/(.*)$", HelpHandler)
     ], **settings)
 
