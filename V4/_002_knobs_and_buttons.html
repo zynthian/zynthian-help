@@ -1,0 +1,53 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>Knobs &amp; Buttons</h1>
+  <p>The zynthian V4 user interface is managed primarily with:</p>
+  <ul>
+   <li>4 knobs with switch</li>
+   <li>4 buttons (S1-S4)</li>
+   <li>resistive touch display</li>
+  </ul>
+
+  <p>Alternately, the zynthian UI can be managed:</p>
+  <ul>
+   <li>using the VNC interface</li>
+   <li>with a supported MIDI controller</li>
+   <li>with MIDI notes in the MIDI master channel</li>
+   <li>with a computer keyboard (key bindings)</li>
+   <li>using OSC CUIA</li>
+  <ul>
+
+  <p>This guide covers only the primary UI using knobs, buttons and touch interactions. For the rest, please, visit the <a href="https://wiki.zynthian.org">zynthian wiki</a>.</p>
+
+  <h2>Knob Actions</h2>
+  <p>
+   There are five knob actions:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Short Press:</b> Pressing a knob for less of 0.3 seconds triggers the <b>short press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Bold Press:</b> Pressing a knob for more than 0.3 and less than 2 seconds triggers the <b>bold press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Long Press:</b> Pressing and holding a knob for more than 2 seconds triggers the <b>long press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rotate:</b> Rotating a knob may adjusts a parameter value, change the selected item on a list or move the cursor horizontal or vertically. Knob acceleration allows for finer adjustment at slow rotation and coarser adjustment at faster rotation.</li>
+    <li><b>Press + Rotate:</b> Rotating a knob whilst it is pressed may increase the resolution, allowing for fine adjustment.</li>
+   </ul>
+  </p>
+
+  <h2>Button Actions</h2>
+  <p>
+   There are three button actions:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Short Press:</b> Pressing a button for less of 0.3 seconds triggers the <b>short press action</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Bold Press:</b> Pressing a button for more than 0.3 and less than 2 seconds triggers the <b>bold press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Long Press:</b> Pressing and holding a button for more than 2 seconds triggers the <b>long press action</b>(*).</li>
+   </ul>
+  </p>
+
+  <p>(*) The timing for the press actions can be configured from the webconf tool, in the advanced UI options tab.</p>
+  <p>Note that not all knobs/buttons have mapped functions for each action type. Knob/button actions can change their function depending of the context. This is well documented across the help pages for the different views. Note the action icons shown above as they would be used along this guide.</p>
+  <p>Finally, you can modify the default action map from the webconf tool, accessing the advanced options in the wiring layout section. We don't recommend you do it, but up to you!</p>
+
+
+ </body>
+</html>
