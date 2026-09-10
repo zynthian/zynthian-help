@@ -119,3 +119,11 @@ header.global_header a {
 div.knob_action {
 	color: #ffffff;
 }
+
+img.action_icon {
+	background-color: #606060;
+	height: 1.2em;
+	padding: 0.1em;
+	margin-right: 0.3em;
+	vertical-align: middle;
+}
