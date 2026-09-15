@@ -1,0 +1,266 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>The User Interface</h1>
+  <p>The zynthian V5 user interface is managed primarily with:</p>
+  <ul>
+   <li>4 knobs with switch</li>
+   <li>20 buttons with RGB LEDs</li>
+   <li>capacitive multi-touch display</li>
+  </ul>
+
+  <p>Alternately, the zynthian UI can be managed:</p>
+  <ul>
+   <li>using the VNC interface</li>
+   <li>with a supported MIDI controller</li>
+   <li>with MIDI notes in the MIDI master channel</li>
+   <li>with a computer keyboard (key bindings)</li>
+   <li>using OSC CUIA</li>
+  </ul>
+
+  <p>This guide covers only the primary UI using knobs, buttons and touch interactions. For the rest, please, visit the <a href="https://wiki.zynthian.org">zynthian wiki</a>.</p>
+
+  <h2>Knob Actions</h2>
+  <p>
+   There are five knob actions:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Short Press:</b> Pressing a knob for less of 0.3 seconds triggers the <b>short press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Bold Press:</b> Pressing a knob for more than 0.3 and less than 2 seconds triggers the <b>bold press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Long Press:</b> Pressing and holding a knob for more than 2 seconds triggers the <b>long press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rotate:</b> Rotating a knob may adjusts a parameter value, change the selected item on a list or move the cursor horizontal or vertically. Knob acceleration allows for finer adjustment at slow rotation and coarser adjustment at faster rotation.</li>
+    <li><b>Press + Rotate:</b> Rotating a knob whilst it is pressed may increase the resolution, allowing for fine adjustment.</li>
+   </ul>
+  </p>
+
+  <h2>Button Actions</h2>
+  <p>
+   There are three button actions:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Short Press:</b> Pressing a button for less of 0.3 seconds triggers the <b>short press action</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Bold Press:</b> Pressing a button for more than 0.3 and less than 2 seconds triggers the <b>bold press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Long Press:</b> Pressing and holding a button for more than 2 seconds triggers the <b>long press action</b>(*).</li>
+   </ul>
+  </p>
+
+  <p>(*) The timing for the press actions can be configured from the webconf tool, in the advanced UI options tab.</p>
+  <p>Note that not all knobs/buttons have mapped functions for each action type. Knob/button actions can change their function depending of the context. This is well documented across the help pages for the different views. Remember the action icons shown above as they would be used along this guide.</p>
+  <p>Finally, you can modify the default action map from the webconf tool, accessing the advanced options in the wiring layout section. We don't recommend you do it, but up to you!</p>
+
+  <img src="img/V5_render_knobs_numbered.jpg" class="float_right"/>
+
+  <h2>Using the knobs</h2>
+
+  <p>The V5 knobs behave quite differently from the V1-V4 knobs. Because of the 20 silicone buttons, there is no need to use the knobs' switches to navigate the UI which now is best achieved with the push buttons, so knobs' switches have been mapped to more contextual functions, like MIDI learning. The knobs are numbered from top to bottom, so the top one is <b>knob #1</b> and the bottom one is <b>knob #4</b>. We will refer knobs in this way throughout this guide.</p>
+
+  <h3>General rule</h3>
+  <p>Although knobs' behavior is contextual, there is a pattern that can serve as a <i>general rule</i> and applies to many views:</p>
+
+  <h4>Knob #4</h4>
+  <ul>
+   <li>On <b>selector views</b> (lists):
+    <ul>
+     <li><b>Rotate</b> to browse the list.</li>
+     <li><b>Short press</b> to select items, like the SEL button.</li>
+     <li><b>Bold press</b> to open contextual options, like the OPT button.</li>
+    </ul></li>
+   <li>On <b>grid views</b>, it's the X-axis knob. <b>Rotate</b> to move the cursor horizontally.
+   <li>On <b>splitted views</b> with 2 scrollable lists, it manages the list at right.</li>
+  </ul>
+
+  <h4>Knob #3</h4>
+  <ul>
+   <li>On <b>grid views</b>, it's the Y-axis knob. <b>Rotate</b> to move the cursor vertically.</li>
+   <li>On <b>splitted views</b> with 2 scrollable lists, it manages the list at left.
+    <ul>
+     <li><b>Rotate</b> to browse the list at left.</li>
+     <li><b>Short press</b> to select in the list at left.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+  <div class="note-block">
+   The main volume is always available with one click. Short press <b>MIX button</b>, then rotate <b>Knob 3</b> to change the main volume.
+  </div>
+
+  <h2>Using the push buttons</h2>
+  <img src="img/V5_buttons_outlined.png" class="float_right">
+
+  <p>The V5 push buttons grid is divided in 5 groups. The picture shows the 5 groups outlined with different colors:</p>
+
+  <ul>
+   <li><b>View buttons</b> => Green</li>
+   <li><b>ALT button</b> => Purple</li>
+   <li><b>Transport buttons</b> => Red</li>
+   <li><b>Navigation buttons</b> => Yellow</li>
+   <li><b>Function buttons</b> => Blue</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>View buttons</h3>
+  <img src="img/V5_buttons_outlined-3-detail2.png" class="float_right"/>
+
+  <p>View buttons are outlined in green in the picture and they allow direct access to the main views. Most of these buttons have 2 views assigned with a horizontal line separating the two printed labels. The primary view is printed at top and the secondary view is printed at bottom. The "metronome" button is the exception.</p>
+
+  <p><b>Short-push</b> on the button to access:
+  <ul>
+   <li>the primary view, when the button's primary view is not shown</li>
+   <li>the secondary view, when button's primary view is shown</li>
+  </ul>
+
+  <p>LED color depends of the current view:</p>
+  <ul>
+   <li>when the primary view is shown, the button lights green.</li>
+   <li>when the secondary view is shown, the button lights orange.</li>
+   <li>when none of the button's views are shown, the button lights blue.</li>
+  </ul>
+
+  <div class="note-block">
+   Remember, short-push to access the primeray view, push again to access the secondary view. <b>Bold-push</b> to access the secondary view, no matter the what current view is.
+  </div>
+
+  <p>The view buttons are, from left to right and top to bottom:
+
+  <ul>
+   <li><b>OPT/ADMIN</b>
+    <ul>
+     <li><b>Primary:</b> Contextual Options / Main Menu</li>
+     <li><b>Secondary:</b> Admin Menu</li>
+    </ul></li>
+   <li><b>MIX/LEVEL</b>
+    <ul>
+     <li><b>Primary:</b> Mixer view</li>
+     <li><b>Secondary:</b> Audio Levels</li>
+    </ul></li>
+   <li>
+    <ul><b>CTRL/PRESET</b>
+     <li><b>Primary:</b> Chain Control view</li>
+     <li><b>Secondary:</b> Bank/Preset selection</li>
+    </ul></li>
+   <li>
+    <ul><b>ZS3/SNAPSHOT</b>
+     <li><b>Primary:</b> ZS3s list</li>
+     <li><b>Secondary:</b> Snapshots list</li>
+    </ul></li>
+   <li>
+    <ul><b>METRONOME</b>
+     <li><b>First push:</b> Tempo view
+     <li><b>Next taps:</b> Tap tempo. Adjust tempo BPM.
+    </ul></li>
+   <li>
+    <ul><b>PAD/STEP</b>
+     <li><b>Primary:</b> Launcher view</li>
+     <li><b>Secondary:</b> Pattern editor</li>
+    </ul></li>
+   </ul>
+
+  <div class="clear"></div>
+
+  <h3>ALT button</h3>
+  <img src="img/V5_buttons_outlined-4.png" class="float_right"/>
+
+  <p>The ALT button have 2 functions:</p>
+
+  <ul>
+   <li><b>short-push</b> to toggle the <b>ALT mode</b> (alternate function mode).</li>
+   <li><b>bold-push</b> to open the on-screen <b>contextual help</b>.</li>
+  </ul>
+
+  <h4>ALT mode</h4>
+  <p>When you the ALT mode, the ALT button and the buttons having an alternate function will change their default color from blue to purple or orange. Purple denotes default alt function. Orange denotes custom alt function.</p>
+  <p>ALT mode is contextual, depending of the current view. By default, only transport and function buttons (F1-F4) have alternate functions, defined like this:</p>
+  <ul>
+   <li><b>Transport buttons</b> toggle between Audio Player/Recorder <span style="color:#0000F0">(normal)</span> and MIDI Player/Recorder <span style="color:#D000D0">(alt)</span>.</li>
+   <li><b>F1-F4 buttons</b> toggle between programs 1-4 <span style="color:#0000F0">(normal)</span> and programs 5-8 <span style="color:#D000D0">(alt)</span>. You could use it, for instance, to learn and recall up to 8 subsnapshots (ZS3s).</li>
+  </ul>
+  <p>Some views have a <b>custom ALT mode</b> with specific functionality that partial or totally overrides the defaults. <b>ALT mode state is kept for each view</b>. The details about the custom ALT modes are documented for each view separately.</p>
+
+  <h4>Contextual Help</h4>
+  <p><b>Bold-push ALT button</b> to open the contextual help for the current view. From the help screen you can:</p>
+  <ul>
+   <li><b>Rotate knob 4</b> or push UP/DOWN buttons to scroll the contents.</li>
+   <li><b>Short-push knob 4</b> to browse the links.</li>
+   <li><b>Short-push BACK</b> to back to the previous page or exit the help screen.</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Transport buttons</h3>
+  <img src="img/V5_buttons_outlined-3-detail.png" class="float_right"/>
+
+  <p>By default, transport buttons control the <b>global audio recorder/player</b> and the default color is blue. When <b>ALT mode</b> is enabled, transport buttons control the <b>MIDI recorder/player</b> and the color is purple.</p>
+
+  <ul>
+   <li><b>short-push REC</b> to start/stop a recording. When a recording is in progress, the record button lights red and you should also see the rec icon in the display status area, at top-right.</li>
+   <li><b>short-push PLAY</b> to play/pause the currently selected track. The last recorded track is selected by default. When a track is being played, the play button lights green. After pausing, pushing again will resume playing at the point it was paused.</li>
+   <li><b>bold-push PLAY</b> to open the track list. After selecting a track, the audio player control view will be shown.</li>
+   <li><b>short-push STOP</b> to stop playing a track and rewind. Pushing play again will start playing from the beginning.</li>
+   <li><b>bold-push STOP</b> to stop all sounds, including any audio/MIDI track and sequences. <b>PANIC!</b></li>
+  </ul>
+
+  <p>In some views, transport buttons have specific (contextual) behaviour. When this happens, they will light orange to denote their normal behavior is altered. See the specific view section to have the details.</p>
+
+  <div class="clear"></div>
+  <h3>Navigation buttons</h3>
+  <img src="img/V5_buttons_outlined-detail3.png" class="float_right"/>
+
+  <p>Navigation buttons are used for basic navigation and operation:</p>
+  <ul>
+   <li><b>UP/DOWN</b>
+    <ul>
+     <li>Browse lists and menus</li>
+     <li>Move cursor (selected item) vertically in grid views: pattern editor, launcher, etc.</li>
+    </ul></li>
+   <li><b>LEFT/RIGHT</b>
+    <ul>
+     <li>Select active chain in the mixer and chain-control views.</li>
+     <li>Move cursor (selected item) horizontally in grid views: pattern editor, launcher, etc.</li>
+    </ul></li>
+   <li><b>SEL/YES</b>
+    <ul>
+     <li>Select items in lists and menus.</li>
+     <li>Enter <b>select mode</b> in chain-control view for browsing controller pages.</li>
+     <li>Add/remove notes in pattern editor.</li>
+     <li>Play/stop phrases, sequences or audio clips in the launcher.</li>
+     <li>Answer "Yes" in confirmation dialogs.</li>
+     <li><b>Bold-push</b> may open the options menu for the selected item.</li>
+    </ul></li>
+   <li><b>BACK/NO</b>
+    <ul>
+     <li>Close current view, returning to previous view.</li>
+     <li>Answer "No" in confirmation dialogs.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Function buttons (F1-F4)</h3>
+
+  <p>These buttons are considered to be customizable buttons, e.g. if you want direct access to other views, etc. you may reconfigure these buttons using the webconf tool.</p>
+  <p>As explained above, while describing the ALT-mode, these buttons are assigned by default to MIDI Program Change messages:</p>
+  <ul>
+   <li><b>Normal mode</b>: Program Change 1-4</li>
+   <li><b>ALT mode</b>: Program Change 5-8</li>
+  </ul>
+  <p>This default configuration is fine for learning/recalling subsnapshots (ZS3) and you may find this really useful if you use your zynthian as a keyboard expander.</li>
+  <p>Some views have custom ALT modes that redefine F1-F4 button functionality. For instance, the <a href="launcher.html">launcher view</a> or
+  the <a href="pattern_editor.html">pattern editor</a>.</p>
+
+  <div class="note-block">
+   Although all buttons and switches are fully configurable from the webconf tool, this guide refers to the official V5 profile configuration, that matches printed button legends. Of course, you are very welcome to experiment with button assignment and try different configurations.</p>
+  </div>
+
+  <h3>Global functions</h3>
+  <p>Some buttons have a global tertiary function assigned to the <b>long-push</b> action:
+
+  <ul>
+   <li><b>BACK/NO</b>: long-push to access the <b>power off</b> menu.</li>
+   <li><b>CTRL/PRESET</b>: long-push to access <b>preset favorites</b>.</li>
+   <li><b>STOP</b>: long-push to <b>totally stop all sounds</b>. <b>SUPER PANIC!</b></li>
+   <li><b>F4</b>: long-push to <b>toggle the TTS interface</b> (Text-To-Speech).</li>
+  </ul>
+
+ </body>
+</html>

@@ -57,6 +57,13 @@ header.global_header a {
 	margin-bottom: 0em;
 }
 
+.help_ui h4 {
+	color: #ffffff;
+	font-size: 110%;
+	margin-top: 0.6em;
+	margin-bottom: 0em;
+}
+
 .help_ui ul {
 	margin-left: 0.3em;
 	padding-left: 0px;
@@ -75,6 +82,7 @@ header.global_header a {
 	padding: 1em 1em;
 	background-color: #9020C0;
 	border-left: 0.3em solid #aaaaaa;
+	/*clear: both;*/
 }
 
 .help_ui div.clear {
@@ -116,14 +124,19 @@ header.global_header a {
 	text-align: center;
 }
 
-div.knob_action {
+.help_ui div.knob_action {
 	color: #ffffff;
 }
 
-img.action_icon {
+.help_ui img.action_icon {
 	background-color: #606060;
 	height: 1.2em;
 	padding: 0.1em;
 	margin-right: 0.3em;
 	vertical-align: text-bottom;
+}
+
+.help_ui img.float_right {
+	float: right;
+	margin-left: 1em;
 }

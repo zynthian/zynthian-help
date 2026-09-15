@@ -1,0 +1,196 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>The User Interface</h1>
+  <p>The zynthian V4 user interface is managed primarily with:</p>
+  <ul>
+   <li>4 knobs with switch</li>
+   <li>4 buttons (S1-S4)</li>
+   <li>resistive touch display</li>
+  </ul>
+
+  <p>Alternately, the zynthian UI can be managed:</p>
+  <ul>
+   <li>using the VNC interface</li>
+   <li>with a supported MIDI controller</li>
+   <li>with MIDI notes in the MIDI master channel</li>
+   <li>with a computer keyboard (key bindings)</li>
+   <li>using OSC CUIA</li>
+  </ul>
+
+  <p>This guide covers only the primary UI using knobs, buttons and touch interactions. For the rest, please, visit the <a href="https://wiki.zynthian.org">zynthian wiki</a>.</p>
+
+  <h2>Knob Actions</h2>
+  <p>
+   There are five knob actions:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Short Press:</b> Pressing a knob for less of 0.3 seconds triggers the <b>short press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Bold Press:</b> Pressing a knob for more than 0.3 and less than 2 seconds triggers the <b>bold press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Long Press:</b> Pressing and holding a knob for more than 2 seconds triggers the <b>long press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rotate:</b> Rotating a knob may adjusts a parameter value, change the selected item on a list or move the cursor horizontal or vertically. Knob acceleration allows for finer adjustment at slow rotation and coarser adjustment at faster rotation.</li>
+    <li><b>Press + Rotate:</b> Rotating a knob whilst it is pressed may increase the resolution, allowing for fine adjustment.</li>
+   </ul>
+  </p>
+
+  <h2>Button Actions</h2>
+  <p>
+   There are three button actions:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Short Press:</b> Pressing a button for less of 0.3 seconds triggers the <b>short press action</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Bold Press:</b> Pressing a button for more than 0.3 and less than 2 seconds triggers the <b>bold press action</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Long Press:</b> Pressing and holding a button for more than 2 seconds triggers the <b>long press action</b>(*).</li>
+   </ul>
+  </p>
+
+  <p>(*) The timing for the press actions can be configured from the webconf tool, in the advanced UI options tab.</p>
+  <p>Note that not all knobs/buttons have mapped functions for each action type. Knob/button actions can change their function depending of the context. This is well documented across the help pages for the different views. Remember the action icons shown above as they would be used along this guide.</p>
+
+  <img src="img/ui_action_global_v4.png" class="full"/>
+
+  <h2>Using the knobs</h2>
+
+  <p>The V4 knobs are the primary mechanism to navigate the UI. Its functionality is contextual, specially rotate, short and bold-push actions. Long push actions are always global. Knobs are numbered from top to bottom and left to right, so the knob names, as printed in the V4 aluminum case, get assigned like this:</p>
+
+  <ul>
+   <li><b>layer</b> => knob #1
+   <li><b>back</b> => knob #2
+   <li><b>learn/shot</b> => knob #3
+   <li><b>select</b> => knob #4
+  </ul>
+
+  <p>Along this guide, knob names and numbers are used indistinctly.</p>
+
+  <h3>General rule</h3>
+  <p>Although knobs' behavior is contextual, there is a pattern that can serve as a <i>general rule</i> and applies to many views:</p>
+
+  <h4>SELECT Knob</h4>
+  <ul>
+   <li>On <b>selector views</b> (lists):
+    <ul>
+     <li><b>Rotate</b> to browse the list.</li>
+     <li><b>Short press</b> to select items.</li>
+     <li><b>Bold press</b> to open contextual options.</li>
+    </ul></li>
+   <li>On <b>grid views</b>, it's the X-axis knob. <b>Rotate</b> to move the cursor horizontally.
+   <li>On <b>splitted views</b> with 2 scrollable lists, it manages the list at right.</li>
+  </ul>
+
+  <h4>BACK Knob</h4>
+  <ul>
+   <li><b>Short press</b> to back to the previous view.</li>
+   <li>On <b>grid views</b>, it's the Y-axis knob. <b>Rotate</b> to move the cursor vertically.</li>
+  </ul>
+
+  <h4>LEARN/SHOT Knob</h4>
+  <ul>
+   <li>On <b>splitted views</b> with 2 scrollable lists, it manages the list at left.
+    <ul>
+     <li><b>Rotate</b> to browse the list at left.</li>
+     <li><b>Short press</b> to select in the list at left.</li>
+    </ul></li>
+  </ul>
+
+  <b>This general rule will be extended in the next section.</b>
+
+  <div class="clear"></div>
+  <div class="note-block">
+   The main Volume is always available with one click. Bold-push <b>BACK Knob</b> to open the mixer view, then rotate <b>Learn/Shot Knob</b> to change the main volume.
+  </div>
+
+  <h2>Using the push buttons</h2>
+
+  <p>The zynthian's classic workflow (V1-V4) is based on the 4 knobs' switches. While short-push actions are generally contextual, bold and long-push actions are generally global.</p>
+  <p>Along the sections below, when omitted, these are the default push actions:</p>
+
+  <ul>
+   <li><b>LAYER</b>
+    <ul>
+     <li><b>short-push</b> context dependent.</li>
+     <li><b>bold-push</b> to open the <b>chain manager</b>.</li>
+     <li><b>long-push</b> to open the <b>help</b>.</li>
+    </ul></li>
+   <li><b>BACK</b>
+    <ul>
+     <li><b>short-push</b> to back to the <b>previous view</b>. Toggle between mixer and launcher view.</li>
+     <li><b>bold-push</b>> to open the <b>main menu</b>.</li>
+     <li><b>long-push</b> to open the <b>power off</b> menu.</li>
+    </ul></li>
+   <li><b>LEARN/SHOT</b>
+    <ul>
+     <li><b>short-push</b> context dependent.</li>
+     <li><b>bold-push</b> to open the <b>ZS3 list</b>.</li>
+     <li><b>long-push</b> to open the <b>snapshot list</b>.</li>
+    </ul></li>
+   <li><b>SELECT</b>
+    <ul>
+     <li><b>short-push</b> to <b>select or check/uncheck</b> the selected element.</li>
+     <li><b>bold-push</b> to show options for the the selected element. Context dependent.</li>
+     <li><b>long-push</b> to <b>PANIC!</b>. Stop all notes &amp; sounds.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Contextual Help</h3>
+  <p><b>Long-push LAYER button</b> to open the contextual help for the current view. From the help screen you can:</p>
+  <ul>
+   <li><b>Rotate knob 4</b> or <b>push S3/S4 buttons</b> to scroll the contents.</li>
+   <li><b>Short-push knob 4</b> to browse the links.</li>
+   <li><b>Short-push BACK</b> to back to the previous page or exit the help screen.</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>The V4's extra buttons</h3>
+
+  <p>The V4's extra silicone push buttons (S1-S4) can be configured depending on the user preference. This can be done from the webconf tool, accessing the advanced options in the wiring layout section. Some predefined <b>customization profiles</b> are available from there:</b>
+
+  <h4>V4 Studio</h4>
+  <p>The 4 silicone push buttons are assigned like this:</p>
+  <ul>
+   <li><b>S1</b>
+    <ul>
+     <li><b>short-push</b> => Audio Recorder/Player</li>
+     <li><b>bold-push</b>> => MIDI Recorder/Player</li>
+     <li><b>long-push</b>> => All Sounds Off (PANIC!)</li>
+    </ul></li>
+   <li><b>S2</b>
+    <ul>
+     <li><b>short-push</b> => Launcher</li>
+     <li><b>bold-push</b> => Pattern Editor</li>
+     <li><b>long-push</b> => All Sounds Off (PANIC!)</li>
+    </ul></li>
+   <li><b>S3</b>
+    <ul>
+     <li><b>short/bold push</b> => Arrow Up</li>
+     <li><b>long-push</b> => All Sounds Off (PANIC!)</li>
+    </ul></li>
+   <li><b>S4</b>
+    <ul>
+     <li><b>short/bold push</b> => Arrow Down</li>
+     <li><b>long-push</b> => Toggle TTS interface (Text-To-Speech).</li>
+    </ul></li>
+  </ul>
+
+  <h4>V4 Stage</h4>
+  <p>The 4 silicone push buttons are assigned to MIDI program change 1-4. It's specially thought to use with ZS3.</p>
+  <ul>
+   <li><b>S1</b> => MIDI Program 1
+   <li><b>S2</b> => MIDI Program 2
+   <li><b>S3</b> => MIDI Program 3
+   <li><b>S4</b> => MIDI Program 4
+  </ul>
+
+  <h4>V4 CC Switches</h4>
+  <p>The 4 silicone push buttons are assigned to MIDI CC 47-50. It's specially thought to MIDI learn toggle parameters (i.e. to use with SooperLooper).</p>
+  <ul>
+   <li><b>S1</b> => Toggle CC 47 (value 0/127)
+   <li><b>S2</b> => Toggle CC 48 (value 0/127)
+   <li><b>S3</b> => Toggle CC 49 (value 0/127)
+   <li><b>S4</b> => Toggle CC 50 (value 0/127)
+  </ul>
+
+ </body>
+</html>
