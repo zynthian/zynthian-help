@@ -29,30 +29,27 @@
 
  <div class="left_container">
   <h1>Pattern CC Editor</h1>
-  <p>The launcher is the zynthian's sequencer main view. You can always access the launcher by pushing the PAD button.
-   You can also push BACK repeatedly until reaching it.</p>
-  <p>From the mixer, you can access the launcher by pushing BACK. Similarly, from the launcher, you can access the mixer by pushing BACK.
-  Launcher and Mixer are, indeed, a single view with 2 modes.</p>
-  <p>The launcher is a grid where columns match mixer's strips. Rows are called "phrases", being quite
-  similar to Ableton Live's "scenes". Chain columns contain sequencer patterns or audio clips. The main column
-  contains phrase launchers.</p>
+  <p>The pattern CC editor allows you to automate parameter changes by adding MIDI CC events to your sequencer patterns.
+  For each pattern, you can automate up to 127 paramters using the 127 available CC numbers.</p>
+  <p>Before you can automate any parameter, you need to assign the parameters you want to automate to the CC numbers you want to use. There are 2 ways of doing this</p>
+  <ul>
+   <li>Use <a href="chain_control.html">MIDI learning</a> to assign engine parameters to CC numbers. You would need a MIDI controller with knobs or faders.</li>
+   <li>From the <a href="chain_control.html">engine parameter’s options menu</a>, select <b>ZynStep CC</b> to assign a CC number by hand.</li>
+  </ul>
  </div>
  <div class="full_container">
-  <p>Initially the grid will be empty, showing the main strip alone. When adding a chain, a new column is added to the grid.
-  When deleting a chain, the associated grid column will be removed. Note the associated patterns are not deleted. They
-  are associated with the MIDI channel and if you create a new chain with the same MIDI channel, the removed patterns will be
-  available again.</p>
-  <p><b>Short-push</b> on any cell to play/stop the associated sequence, audio clip or launch a phrase.</p>
-  <p><b>Push STEP</b> or <b>Bold-push</b> to edit the selected sequence or audio clip. If the cell contains a sequence,
-  the pattern editor will be opened, if the cell contains an audio clip, the audio clip control view.</p>
-  <p><b>Push STEP</b> or <b>Bold-push</b> on a phrase launcher (main column) to open the phrase options and configure the phrase parameters and manage phrases.</p>
-  <p>The phrase parameters are:</p>
+  <p>From the CC editor, proceed like this to create your CC patterns by hand:</p>
   <ul>
-  <li><b>Duration:</b> Number of bars. By default, it takes the value from the longer sequence in the row</li>
-  <li><b>Tempo:</b> When the phrase is launched, the tempo is changed to the specified value in BPM.</li>
-  <li><b>Beats per Bar:</b> The time signature used in patterns.</li>
-  <li><b>Automate:</b> "Loop from", "loops to play" and "jump to" options allow to create simple song structures.</li>
+   <li><b>Rotate knob 1</b> to select the CC number you want to edit. If the CC is already assigned, you will see the parameter name.</li>
+   <li><b>Rotate knob 4</b> to move the cursor along the pattern's time axis.</li>
+   <li><b>Short-push knob 4</b> to add/remove a point to the curve.</li>
+   <li><b>Rotate knob 3</b> to move the point (CC value) up &amp; down.</li>
+   <li><b>Short-push knob 1</b> to back to the <a href="pattern_editor.html">note editor</a>.</li>
   </ul>
+  <p>You can use the finger to plot the curve and move points up &amp; down. You can also live record (REC + PLAY) and move the assigned knob from your MIDI controller.</p>
+  <p>While playing, CC values are interpolated for every clock tick (1920 ticks per quarter note). CC interpolation is enabled by default except for pedals (i.e. CC64).</p>
+  <p>From the pattern options menu, you can toggle CC interpolation for each CC number, clean the CC pattern while keeping notes and much more.</p>
+  <p>Of course, all these can be done while the pattern is playing, so you will hear the result inmediatelly, while adjusting your CC values in real time.</p>
  </div>
 
  <div class="clear"></div>

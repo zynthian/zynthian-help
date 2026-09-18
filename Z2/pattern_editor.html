@@ -30,24 +30,24 @@
  <div class="left_container">
   <h1>Pattern Note Editor</h1>
   <p>The pattern note editor allows to add/remove notes in a pattern, modifying note parameters, copy/paste blocks, etc. The contextual menu (OPT) allows modifying the pattern parameters.</p>
-  <p>The PLAY/STOP buttons can be used to play/stop the pattern. The REC button allows enabling live-recording to capture MIDI events in real-time.
-  <p>The ALT mode allows accessing special functionality like undo/redo, block operations, copy/paste patterns.</p>
+  <p>The <b>PLAY/STOP buttons</b> can be used to play/stop the pattern. The <b>REC button</b> enables MIDI capture, that can be step-by-step or live-recording (real-time).
+  <p>The <b>ALT mode</b> allows accessing special functionality like undo/redo, block operations, copy/paste patterns.</p>
  </div>
  <div class="full_container">
   <h2>Basic Operation</h2>
-  <p><b>Rotate knobs 3 &amp; 4</b> to move the cursor vertical or horizontally. With ALT mode disabled, arrow buttons can be used for this too.</p>
-  <p><b>Short-push knob 4</b> to add/remove notes. <b>Bold-push knob 4</b> to edit note parameters. Alternately, SEL button can be used for this too.</p>
+  <p><b>Rotate knobs 3 &amp; 4</b> to move the cursor vertical or horizontally. With <b>ALT mode disabled</b>, arrow buttons can be used for this too.</p>
+  <p><b>Short-push knob 4</b> to add/remove notes. <b>Bold-push knob 4</b> to edit note parameters. <b>SEL button</b> can be used for this too.</p>
   <p><b>Rotate knob 2</b> to adjust the zoom in and out. <b>Short-push knob 2</b> to reset zoom to the default value.</p>
   <p><b>Short-push knob 3</b> to enter block selection. The block operation workflow is explained in detail in the section below.</p>
-  <p><b>Short-push OPT button</b> to open the pattern options menu that allows modifying all pattern parameters. You can also <b>bold-push knob 2</b> to modify the pattern length.</p>
-  <p>Finally, <b>short-push knob 1</b> to toggle between the note &amp; CC editors.
+  <p><b>Short-push OPT button</b> to open the pattern options menu that allows modifying all pattern parameters. <b>Bold-push knob 2</b> is a short-cut to modify the pattern length.</p>
+  <p><b>Short-push knob 1</b> to toggle between the note &amp; <a href="pated_cc.html">CC editor</a>.
 
   <h2>Recording Patterns</h2>
   <p><b>Push REC button</b> to enable MIDI recording. While record is armed, the REC button will light with red color.</p>
   <h3>Step by Step Capture</h3>
-  <p>If the pattern is not playing (stopped), note events will be captured in the cursor position, moving the cursor to the next step. You can use the sustain pedal to advance step by step.
+  <p>If the pattern is not playing, note events will be captured at the cursor's position, moving the cursor to the next step. You can use the sustain pedal to skip steps.
   <h3>Live Capture</h3>
-  <p>If the pattern is playing, note and CC events are captured in real time. They are recorded at the exact time they are captured, without quantization. If desired, quantization can be applied  to replaying (see pattern options menu). While live capturing, history is saved on each pattern loop if new notes were captured.</p>
+  <p>If the pattern is playing, note and CC events are captured in real time. They are recorded at the exact time they are captured, without quantization. If desired, quantization can be applied  to replaying (see pattern options menu). While live capturing, history is saved on each pattern loop, only if new notes were captured.</p>
 
   <h2>Undo/Redo</h2>
   <p>In ALT mode, you can use the arrow keys to undo/redo:</p>
@@ -57,20 +57,124 @@
    <li><b>DOWN:</b> Undo ALL.</li>
    <li><b>UP:</b>Redo ALL.</li>
   </ul>
-  <p>While record is armed (REC button lighting in red), bold-push BACK button to enter history navigation mode. Then you can rotate knob 4 to move along the history. Push BACK to exit.</p>
-  <p>Note that although the number of history steps is unlimited, history is not saved in the state and will be lost when loading the snapshot again. Snapshots will save the last state only.</p>
+  <p>There is an alternate workflow for undo/redo, that can be used for convenience or when ALT mode is not easily available (V4):</p>
+  <ul>
+   <li>while record is armed (REC button lighting in red)...</li>
+   <li><b>bold-push BACK button</b> to enter history navigation mode.</li>
+   <li><b>rotate knob 4</b> to move along the history.</li>
+   <lI><b>push BACK</b> to exit.</li>
+  </ul>
+  <p>Note that although the number of history steps is unlimited, history is not saved in the state and will be lost when loading the snapshot again.
+  Snapshots will save the last state only.</p>
 
   <h2>Note Parameters</h2>
-  <p></p>
+  <p>Each note in the pattern can be edited by positioning the cursor on it and bold-selecting it:</p>
+  <ul>
+   <li><b>Bold-push knob 4</b> or <b>bold SELECT</b> to enter the parameter editor for the selected note.</li>
+   <li><b>Rotate knob 4</b> or use <b>LEFT/RIGHT buttons</b> to select the parameter.</li>
+   <li><b>Rotate knob 3</b> or use <b>UP/DOWN buttons</b> to change the value of the selected parameter.</li>
+   <li>When available, <b>rotate knob 2</b> to fine adjust the value of the selected parameter.</li>
+  </ul>
+  <p>This is the list of parameters you can edit:</p>
+  <ul>
+   <li><b>Duration:</b> In steps. Use knob 2 to fine adjust.</li>
+   <li><b>Velocity:</b> MIDI note velocity, from 0 to 127.</li>
+   <li><b>Offset:</b> Relative offset respect to the note's start step.</li>
+   <li><b>Stutter Speed:</b> In number of retriggers <b>per beat</b>.</li>
+   <li><b>Stutter Velo:</b> How note velocity evolves along the stutter. It can be: FLAT, FADE-IN, FADE-OUT</li>
+   <li><b>Stutter Ramp:</b> How retrigger speed evolves along the note duration. It can be: NONE, SPEED-DOWN, SPEED-UP</li>
+   <li><b>Play Frequency:</b> Skip/Play every N loops.</li>
+   <li><b>Play Chance:</b> Probability of play.</li>
+   <li><b>Stutter Frequency:</b> Stutter every N loops.</li>
+   <li><b>Stutter Chance:</b> Probability of stutter.</li>
+  </ul>
+
+  <p>Regarding the stutter speed ramp effect, it's worth commenting how it works in detail:</p>
+  <ul>
+   <li><b>Speed ramp-up:</b> Increases stutter speed from the specified speed along the duration of the note.</li>
+   <li><b>Speed ramp-down:</b> Reduces stutter speed from a calculated value to reach the specified speed at the end of the note duration.</li>
+  </ul>
+
+  <div class="note-block">
+  When modifying note parameters, the value change is inmediate, in real time. You can modify note parameters while
+  the pattern is playing and you will hear the result as soon as the playing cursor reaches the note you are modifying.
+  </div>
+
+  <h3>Visual Feedback</h3>
+  <p>Most note parameters have some visual feedback:</p>
+  <ul>
+   <li>Note's duration is represented by the rectangle's length.</li>
+   <li>Note's velocity is represented by rectangle's background color. Rhe lower the velocity, the darker. The higher the velocity, the lighter.</li>
+   <li>Note stutter is presented as a sequence of vertical bars.</li>
+   <li><b>Stutter speed</b> is proportional to the "bar density".</li>
+   <li><b>Stutter velocity effect</b> is represented by the bar's growing direction.</li>
+   <li><b>Stutter Speed Ramp</b> has no visual feedback. Sorry!</li>
+   <li>White labels represent play frequency or chance.</li>
+   <li>Purple labels represent stutter frequency or chance.</li>
+  </ul>
+  <p>If you apply several chance or freq properties simultaneously, you would only see represented one of them as label. Label priority is:</p>
+  <ol>
+   <li>Play Freq</li>
+   <li>Play Chance</li>
+   <li>Stutter Freq</li>
+   <li>Stutter Chance</li>
+  </ol>
 
   <h2>Block Operations</h2>
-  <p></p>
+  <p>Block operations can be performed with knobs or in <b>ALT mode</b>, with buttons. Choose the workflow that best suits you:</p>
+  <ol>
+   <li><b>Short push knob 3</b> or <b>short F3</b> to enter block select mode</li>
+   <li><b>Rotate knob 3 &amp; 4</b> or use <b>arrow buttons</b> to adjust the selection
+    <ol>
+     <li><b>Short-push knob 4</b> or <b>short SEL</b> to copy selection.</li>
+     <li><b>Short-push knob 3</b> or <b>short F3</b> to cut selection.</li>
+     <li><b>Bold-push knob 4</b> or <b>bold SEL</b> to select notes and change to <b>MULTI edit mode</b>.</li>
+    </ol></li>
+   <li><b>Rotate knob 3 &amp; 4</b> or use <b>arrow buttons</b> to move the block across the pattern grid.</li>
+   <li><b>Short-push knob 4</b> or <b>short SEL</b> to paste the block.</li>
+   <li>Repeat steps 4 &amp; 5 as many times as you want.</li>
+   <li><b>Push BACK</b> to end.</li>
+  </ol>
+  <p>Note this workflow is common for the different block operations, being step 2 what makes the difference.
+  Copy/Cut &amp; Paste operations use green color for the selection while the MULTI edit block is colored in blue.</p>
+
+  <div class="note-block">
+  If you are using the ALT mode workflow with F3 button, please note that in ALT mode, arrow keys are normally used for navigating history (undo/redo).
+  When entering <b>block select</b> mode by pushing F3, arrow keys will change its behaviour, allowing to adjust the selection and move it to paste.
+  </div>
+
+  <h3>MULTI edit mode</h3>
+  <p>You can follow <b>2.c</b> workflow to edit a set of notes at once. Only <i>velocity</i> and <i>duration</i> parameters can be multi-edited at the moment.
+  When in MULTI edit mode, you can:</p>
+  <ul>
+   <li><b>Rotate knob 4</b> to choose the parameter to multi-edit. Only <i>velocity</i> and <i>duration</i> are currently available.</li>
+   <li><b>Rotate knob 3</b> to modify the value of the selected parameter. Values are changed incrementally (relative) to their original values, unless you reach the range limits.</li>
+   <li><b>Short push BACK</b> to exit MULTI edit mode.</li>
+  </ul>
+
+  <p>When you exit MULTI edit mode, the block will remain “selected”. You know this because of the “blueish” color of the selected notes.
+  Although the block is still selected, you can add notes, edit single notes, etc. normally. So having the block selected doesn’t affect normal operation.
+  But you can re-enter MULTI edit mode again by bold pushing knob 4. You can un-select the block by pushing back.</p>
+
+  <div class="note-block">
+  <b>Bold push knob 3</b> to multi-edit all notes in the pattern.
+  </div>
 
   <h2>Pattern Options</h2>
-  <p></p>
+  <p>TODO</p>
 
   <h2>Pattern Copy/Paste</h2>
-  <p></p>
+  <p>You can copy/paste full patterns by entering <b>ALT mode</b>. There are two copy/paste buffers (F1 &amp; F2).
+  Free buffers light orange. Busy buffers blink like this:</p>
+  <ul>
+   <li><b>Blink in Green:</b> The content can be pasted with <b>short-push</b>.</li>
+   <li><b>Blink in Red:</b> The content can't be pasted. It's an audio clip.</li>
+   <li><b>Blink in Orange:</b> Can't paste over itself. The selected pattern is the copied one.</li>
+  </ul>
+  <p><b>Bold-push F1 or F2</b> to copy the pattern into the clipboard. If the buffer is busy, the content will be overwritten.</p>
+  <p><b>Short-push F1 or F2</b> when blinking in green to paste the content on the current pattern. If the current pattern is not empty, you will be asked for confirmation.</p>
+  <p>This workflow complements the launcher's copy/paste workflow. You can paste patterns you copied from the launcher and you can copy
+  the current pattern to later be pasted from the launcher.</p>
 
  </div>
 
