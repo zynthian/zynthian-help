@@ -4,38 +4,36 @@
  </head>
 
  <body class="help_ui">
- <div class="knobs_action_container">
+ <div class="knobs_action_container_left">
   <div class="knob_action knob_action_1">
-   <div class="action rotate">CC number</div>
-   <div class="action short_press">note editor</div>
-   <div class="action bold_press">note editor</div>
+   <div class="action rotate">---</div>
+   <div class="action short_press">pattern menu</div>
+   <div class="action bold_press">chain manager</div>
   </div>
   <div class="knob_action knob_action_2">
-   <div class="action rotate">zoom in/out</div>
-   <div class="action short_press">zoom reset</div>
-   <div class="action bold_press">pattern length</div>
-  </div>
-  <div class="knob_action knob_action_3">
-   <div class="action rotate">vertical cursor/move</div>
-   <div class="action short_press">---</div>
-   <div class="action bold_press">---</div>
-  </div>
-  <div class="knob_action knob_action_4">
-   <div class="action rotate">horizontal cursor</div>
-   <div class="action short_press">add/remove value</div>
-   <div class="action bold_press">---</div>
+   <div class="action rotate">vertical move</div>
+   <div class="action short_press">back</div>
+   <div class="action bold_press">undo/redo mode</div>
   </div>
  </div>
-
- <div class="left_container">
-  <h1>Pattern CC Editor</h1>
-  <p>The pattern CC editor allows you to automate parameter changes by adding MIDI CC events to your sequencer patterns. The contextual menu (<b>OPT</b>) allows modifying the pattern parameters and edit options.</p>
-  <p>The <b>PLAY/STOP buttons</b> can be used to play/stop the pattern. The <b>REC button</b> enables MIDI CC live-recording while playing (real-time).</p>
-  <p>The <b>ALT mode</b> allows accessing special functionality like undo/redo and copy/paste patterns.</p>
-  <p>Live recording, undo/redo and copy/paste patterns are also supported by the CC editor and they work very much as they do in the <a href="pattern_editor.html">note editor</a>.</p>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">zoom in/out</div>
+   <div class="action short_press">toggle play</div>
+   <div class="action bold_press">toggle record</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">horizontal move</div>
+   <div class="action short_press">add/remove CC value</div>
+   <div class="action bold_press">---</div>
+  </div>
  </div>
 
  <div class="full_container">
+  <h1>Pattern CC Editor</h1>
+  <p>The pattern CC editor allows you to automate parameter changes by adding MIDI CC events to your sequencer patterns. The contextual menu (<b>shot-push knob 1</b>) allows modifying the pattern parameters and edit options.</p>
+  <p>Live recording, undo/redo and copy/paste patterns are also supported by the CC editor and they work very much as they do in the <a href="pattern_editor.html">note editor</a>.</p>
+
   <h2>Basic Operation</h2>
   <p>For each pattern, you can automate up to 127 paramters using the 127 available CC numbers.</p>
   <p>Before you can automate any parameter, you need to assign the parameters you want to automate to the CC numbers you want to use. There are 2 ways of doing this</p>
@@ -49,7 +47,7 @@
    <li><b>Rotate knob 4</b> to move the cursor along the pattern's time axis.</li>
    <li><b>Short-push knob 4</b> to add/remove a point to the curve.</li>
    <li><b>Rotate knob 3</b> to move the point (CC value) up &amp; down.</li>
-   <li><b>Short-push knob 1</b> to back to the <a href="pattern_editor.html">note editor</a>.</li>
+   <li><b>Short-push S4</b> to back to the <a href="pattern_editor.html">note editor</a>.</li>
   </ul>
   <p>You can use the finger to plot the curve and move points up &amp; down. You can also live record (REC + PLAY) and move the assigned knob from your MIDI controller.</p>
   <p>While playing, CC values are interpolated for every clock tick (1920 ticks per quarter note). CC interpolation is enabled by default except for pedals (i.e. CC64).</p>
@@ -57,32 +55,24 @@
   <p>Of course, all editing and parameter adjusting can be done while the pattern is playing, so you will hear the result inmediatelly, while modifying CC values in real time.</p>
 
   <h2>Recording Patterns</h2>
-  <p><b>Push REC button</b> to enable MIDI recording. While record is armed, the REC button will light with red color.</p>
+  <p><b>Bold-push knob 3</b> to enable MIDI recording. While record is armed, the yellow circle symbol will light in the status bar.</p>
   <h3>Step by Step Capture</h3>
   <p>It's not supported for CC events.</p>
   <h3>Live Capture</h3>
-  <p>If the pattern is playing, note and CC events will be captured in real time. They are recorded at the exact time they are captured, without quantization. If desired, quantization can be applied  to replaying (see pattern options menu). While live capturing, history is saved on each pattern loop, only if new notes were captured.</p>
+  <p>If the pattern is playing (short-push knob 3), note and CC events will be captured in real time. They are recorded at the exact time they are captured, without quantization. If desired, quantization can be applied  to replaying (see pattern options menu). While live capturing, history is saved on each pattern loop, only if new notes were captured.</p>
 
   <h2>Undo/Redo</h2>
-  <p>In ALT mode, you can use the arrow keys to undo/redo:</p>
+  <p>You can undo/redo most edit operations using the next procedure:</p>
   <ul>
-   <li><b>LEFT:</b> Undo last edit operation.</li>
-   <li><b>RIGHT:</b> Redo last undone operation.</li>
-   <li><b>DOWN:</b> Undo ALL.</li>
-   <li><b>UP:</b>Redo ALL.</li>
-  </ul>
-  <p>There is an alternate workflow for undo/redo, that can be used for convenience or when ALT mode is not easily available:</p>
-  <ul>
-   <li>while record is armed (REC button lighting in red)...</li>
-   <li><b>bold-push BACK button</b> to enter history navigation mode.</li>
+   <li><b>bold-push knob 2 (BACK)</b> to enter history navigation mode.</li>
    <li><b>rotate knob 4</b> to move along the history.</li>
-   <lI><b>push BACK</b> to exit.</li>
+   <li><b>short push knob 2 (BACK)</b> to end.</li>
   </ul>
   <p>Note that although the number of history steps is unlimited, history is not saved in the state and will be lost when loading the snapshot again.
   Snapshots will save the last state only.</p>
 
   <h2>Pattern Options</h2>
-  <p>Short-push ALT to open the <b>pattern options</b> menu that let you modify the pattern properties as well as a bunch of edit options. These are the pattern parameters:</p>
+  <p>Short-push knob 1 to open the <b>pattern options</b> menu that let you modify the pattern properties as well as a bunch of edit options. These are the pattern parameters:</p>
   <ul>
    <li><b>Rename:</b> Change the sequence's name displayed in the launcher's pads.</li>
    <li><b>Play mode:</b> DISABLED, LOOP, ONE-SHOT, PLAY 2 TIMES, ... PLAY 24 TIMES</li>

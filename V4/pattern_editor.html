@@ -4,21 +4,23 @@
  </head>
 
  <body class="help_ui">
- <div class="knobs_action_container">
+ <div class="knobs_action_container_left">
   <div class="knob_action knob_action_1">
    <div class="action rotate">---</div>
-   <div class="action short_press">CC editor</div>
-   <div class="action bold_press">CC editor</div>
+   <div class="action short_press">pattern menu</div>
+   <div class="action bold_press">chain manager</div>
   </div>
   <div class="knob_action knob_action_2">
-   <div class="action rotate">zoom in/out</div>
-   <div class="action short_press">zoom reset</div>
-   <div class="action bold_press">pattern length</div>
-  </div>
-  <div class="knob_action knob_action_3">
    <div class="action rotate">vertical move</div>
-   <div class="action short_press">block select</div>
-   <div class="action bold_press">block select</div>
+   <div class="action short_press">back</div>
+   <div class="action bold_press">undo/redo mode</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">zoom in/out</div>
+   <div class="action short_press">toggle play</div>
+   <div class="action bold_press">toggle record</div>
   </div>
   <div class="knob_action knob_action_4">
    <div class="action rotate">horizontal move</div>
@@ -27,45 +29,37 @@
   </div>
  </div>
 
- <div class="left_container">
-  <h1>Pattern Note Editor</h1>
-  <p>The pattern note editor allows to add/remove notes in a pattern, modifying note parameters, copy/paste blocks, etc. The contextual menu (<b>OPT</b>) allows modifying the pattern parameters and edit options.</p>
-  <p>The <b>PLAY/STOP buttons</b> can be used to play/stop the pattern. The <b>REC button</b> enables MIDI capture, that can be step-by-step or live-recording (real-time).</p>
-  <p>The <b>ALT mode</b> allows accessing special functionality like undo/redo, block operations, copy/paste patterns.</p>
- </div>
-
  <div class="full_container">
+  <h1>Pattern Note Editor</h1>
+  <p>The pattern note editor allows to add/remove notes in a pattern, modifying note parameters, copy/paste blocks, etc. The contextual menu (<b>shot-push knob 1</b>) allows modifying the pattern parameters and edit options.</p>
+
+  <div class="note-block">
+  Please, note that <b>V4's extra buttons</b> have been reassignned to allow easy access to some specific features, like copy/paste from clipboard, block operations, etc..</p>
+  </div>
+
   <h2>Basic Operation</h2>
   <ul>
-   <li><b>Rotate knobs 3 &amp; 4</b> to move the cursor vertical or horizontally. With <b>ALT mode disabled</b>, arrow buttons can be used for this too.</li>
-   <li><b>Short-push knob 4</b> to add/remove notes. <b>Bold-push knob 4</b> to edit note parameters. <b>SEL button</b> can be used for this too.</li>
-   <li><b>Rotate knob 2</b> to adjust the zoom in and out. <b>Short-push knob 2</b> to reset zoom to the default value.</li>
-   <li><b>Short-push knob 3</b> to enter block selection. The block operation workflow is explained in detail in the section below.</li>
-   <li><b>Short-push OPT button</b> to open the pattern options menu that allows modifying all pattern parameters. <b>Bold-push knob 2</b> is a short-cut to modify the pattern length.</li>
-   <li><b>Short-push knob 1</b> to toggle between the note &amp; <a href="pated_cc.html">CC editor</a>.</li>
+   <li><b>Rotate knobs 3 &amp; 4</b> to move the cursor vertical or horizontally.</li>
+   <li><b>Short-push knob 4</b> to add/remove notes. <b>Bold-push knob 4</b> to edit note parameters.</li>
+   <li><b>Rotate knob 2</b> to adjust the zoom in and out.</li>
+   <li><b>Short-push S3</b> to enter block selection. The block operation workflow is explained in detail in the section below.</li>
+   <li><b>Short-push knob 1</b> to open the pattern options menu that allows modifying all pattern parameters.</li>
+   <li><b>Short-push S4</b> to toggle between the note &amp; <a href="pated_cc.html">CC editor</li>.
   </ul>
 
   <h2>Recording Patterns</h2>
-  <p><b>Push REC button</b> to enable MIDI recording. While record is armed, the REC button will light with red color.</p>
+  <p><b>Bold-push knob 3</b> to enable MIDI recording. While record is armed, the yellow circle symbol will light in the status bar.</p>
   <h3>Step by Step Capture</h3>
-  <p>If the pattern is not playing, note events will be captured at the cursor's position, moving the cursor to the next step. You can use the sustain pedal to skip steps.</p>
+  <p>If the pattern is not playing, note events will be captured at the cursor's position, moving the cursor to the next step. You can use the sustain pedal to skip steps.
   <h3>Live Capture</h3>
   <p>If the pattern is playing, note and CC events will be captured in real time. They are recorded at the exact time they are captured, without quantization. If desired, quantization can be applied  to replaying (see pattern options menu). While live capturing, history is saved on each pattern loop, only if new notes were captured.</p>
 
   <h2>Undo/Redo</h2>
-  <p>In ALT mode, you can use the arrow keys to undo/redo:</p>
+  <p>You can undo/redo most edit operations using the next procedure:</p>
   <ul>
-   <li><b>LEFT:</b> Undo last edit operation.</li>
-   <li><b>RIGHT:</b> Redo last undone operation.</li>
-   <li><b>DOWN:</b> Undo ALL.</li>
-   <li><b>UP:</b>Redo ALL.</li>
-  </ul>
-  <p>There is an alternate workflow for undo/redo, that can be used for convenience or when ALT mode is not easily available:</p>
-  <ul>
-   <li>while record is armed (REC button lighting in red)...</li>
-   <li><b>bold-push BACK button</b> to enter history navigation mode.</li>
+   <li><b>bold-push knob 2 (BACK)</b> to enter history navigation mode.</li>
    <li><b>rotate knob 4</b> to move along the history.</li>
-   <lI><b>push BACK</b> to exit.</li>
+   <li><b>short push knob 2 (BACK)</b> to end.</li>
   </ul>
   <p>Note that although the number of history steps is unlimited, history is not saved in the state and will be lost when loading the snapshot again.
   Snapshots will save the last state only.</p>
@@ -125,27 +119,21 @@
 
   <h2>Block Operations</h2>
   <p>Block operations allow to select a set of notes and perform an operation on all of them, like copy/paste or modify a note parameter.</p>
-  <p>Block operations can be performed with knobs or in <b>ALT mode</b>, with buttons. Choose the workflow that best suits you:</p>
   <ol>
-   <li><b>Short push knob 3</b> or <b>short F3</b> to enter block select mode</li>
-   <li><b>Rotate knob 3 &amp; 4</b> or use <b>arrow buttons</b> to adjust the selection
+   <li><b>Short push S3</b> to enter block select mode</li>
+   <li><b>Rotate knob 3 &amp; 4</b> to adjust the selection
     <ol>
-     <li><b>Short-push knob 4</b> or <b>short SEL</b> to copy the selection.</li>
-     <li><b>Short-push knob 3</b> or <b>short F3</b> to cut the selection.</li>
-     <li><b>Bold-push knob 4</b> or <b>bold SEL</b> to select notes and enter <b>MULTI edit mode</b>.</li>
+     <li><b>Short-push knob 4</b> to copy the selection.</li>
+     <li><b>Short-push S3</b> to cut the selection.</li>
+     <li><b>Bold-push knob 4</b> to select notes and enter <b>MULTI edit mode</b>.</li>
     </ol></li>
-   <li><b>Rotate knob 3 &amp; 4</b> or use <b>arrow buttons</b> to move the block across the pattern grid.</li>
-   <li><b>Short-push knob 4</b> or <b>short SEL</b> to paste the block.</li>
+   <li><b>Rotate knob 3 &amp; 4</b> to move the block across the pattern grid.</li>
+   <li><b>Short-push knob 4</b> to paste the block.</li>
    <li>Repeat steps 4 &amp; 5 as many times as you want.</li>
-   <li><b>Push BACK</b> to end.</li>
+   <li><b>Push knob 2 (BACK)</b> to end.</li>
   </ol>
   <p>Note this workflow is common for the different block operations, being step 2 what makes the difference.
   Copy/Cut &amp; Paste operations use green color for the selection while the MULTI edit block is colored in blue.</p>
-
-  <div class="note-block">
-  If you are using the ALT mode workflow with F3 button, please note that in ALT mode, arrow keys are normally used for navigating history (undo/redo).
-  When entering <b>block select</b> mode by pushing F3, arrow keys will change its behaviour, allowing to adjust the selection and move it to paste.
-  </div>
 
   <h3>MULTI edit mode</h3>
   <p>You can follow <b>2.c</b> workflow to edit a set of notes at once. Only <i>velocity</i> and <i>duration</i> parameters can be multi-edited at the moment.
@@ -153,19 +141,19 @@
   <ul>
    <li><b>Rotate knob 4</b> to choose the parameter to multi-edit. Only <i>velocity</i> and <i>duration</i> are currently available.</li>
    <li><b>Rotate knob 3</b> to modify the value of the selected parameter. Values are changed incrementally (relative) to their original values, unless you reach the range limits.</li>
-   <li><b>Short push BACK</b> to exit MULTI edit mode.</li>
+   <li><b>Short push knob 1 (BACK)</b> to exit MULTI edit mode.</li>
   </ul>
 
   <p>When you exit MULTI edit mode, the block will remain “selected”. You know this because of the “blueish” color of the selected notes.
   Although the block is still selected, you can add notes, edit single notes, etc. normally. So having the block selected doesn’t affect normal operation.
-  But you can re-enter MULTI edit mode again by bold pushing knob 4. You can un-select the block by pushing back.</p>
+  But you can re-enter MULTI edit mode again by bold pushing knob 4. You can un-select the block by pushing knob 2 (BACK).</p>
 
   <div class="note-block">
   <b>Bold push knob 3</b> to multi-edit all notes in the pattern.
   </div>
 
   <h2>Pattern Options</h2>
-  <p>Short-push ALT to open the <b>pattern options</b> menu that let you modify the pattern properties as well as a bunch of edit options. These are the pattern parameters:</p>
+  <p>Short-push knob 1 to open the <b>pattern options</b> menu that let you modify the pattern properties as well as a bunch of edit options. These are the pattern parameters:</p>
   <ul>
    <li><b>Rename:</b> Change the sequence's name displayed in the launcher's pads.</li>
    <li><b>Play mode:</b> DISABLED, LOOP, ONE-SHOT, PLAY 2 TIMES, ... PLAY 24 TIMES</li>
@@ -197,15 +185,9 @@
   </ul>
 
   <h2>Pattern Copy/Paste</h2>
-  <p>You can copy/paste full patterns by entering <b>ALT mode</b>. There are two copy/paste buffers (F1 &amp; F2).
-  Free buffers light orange. Busy buffers blink like this:</p>
-  <ul>
-   <li><b>Blink in Green:</b> The content can be pasted with <b>short-push</b>.</li>
-   <li><b>Blink in Red:</b> The content can't be pasted. It's an audio clip.</li>
-   <li><b>Blink in Orange:</b> Can't paste over itself. The selected pattern is the copied one.</li>
-  </ul>
-  <p><b>Bold-push F1 or F2</b> to copy the pattern into the clipboard. If the buffer is busy, the content will be overwritten.</p>
-  <p><b>Short-push F1 or F2</b> when blinking in green to paste the content on the current pattern. If the current pattern is not empty, you will be asked for confirmation.</p>
+  <p>You can copy/paste full patterns by using the menu options or the V4's S1/S2 extra buttons. There are two copy/paste buffers (S1 &amp; S2).</p>
+  <p><b>Bold-push S1 or S2</b> to copy the pattern into the clipboard. If the buffer is busy, the content will be overwritten.</p>
+  <p><b>Short-push S1 or S2</b> to paste the content on the current pattern. If the current pattern is not empty, you will be asked for confirmation.</p>
   <p>This workflow complements the launcher's copy/paste workflow. You can paste patterns you copied from the launcher and you can copy
   the current pattern to later be pasted from the launcher.</p>
 

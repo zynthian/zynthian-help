@@ -31,16 +31,18 @@
 
  <div class="full_container">
   <h1>Launcher View</h1>
-  <p>The launcher is the zynthian's sequencer main view. You can always access the launcher by pushing the PAD button.
-   You can also push BACK repeatedly until reaching it.</p>
-  <p>From the mixer, you can access the launcher by pushing BACK. From the launcher you can access the mixer by pushing BACK.
-  Launcher and Mixer are, indeed, a single view with 2 modes.</p>
+  <p>The launcher is the sequencer's main view. You can always access the launcher by <b>short-pushing knob 1 (BACK)</b> repeatedly until reaching it.</p>
+  <p>From the <a href="mixer.html">mixer</a>, you can access the launcher by pushing BACK. From the launcher you can access the mixer by pushing BACK.
+  Launcher and <a href="mixer.html">mixer</a> are, indeed, a single view with 2 modes.</p>
+
+  <div class="note-block">
+  Please, note that <b>V4's extra buttons</b> have been reassignned to allow easy access to some specific features, like copy/paste from clipboard, move columns, etc.
+  </div>
+
   <p>The launcher is a grid where columns match chains (mixer's strips). Rows are called "phrases", being quite
   similar to Ableton Live's "scenes". Cells can contain sequencer patterns or audio clips, except the main column that
   contains phrase launchers.</p>
- </div>
 
- <div class="full_container">
   <p>Initially the grid will be empty, showing the main strip alone. When adding a chain, a new column is added to the grid.
   When deleting a chain, the associated grid column will be removed. Note the associated patterns are not deleted. They
   are associated with the MIDI channel and if you create a new chain with the same MIDI channel, the removed patterns will be
@@ -54,7 +56,7 @@
   </ul>
 
   <h2>Cell actions</h2>
-  <table>
+  <table class="nowrap">
    <tr><th class="empty"><br/><br/>CELL<br/>ACTIONS</th>
     <th>Short Knob 4<br/>Short SELECT<br/>Short Touch</th>
     <th>Short PAD<br/>Bold Knob 4<br/>Bold SELECT<br/>Bold Touch</th>
@@ -66,7 +68,7 @@
   </table>
 
   <h2>Adding chains</h2>
-  <p>To create a new chain, simply <b>short-push S3</b>. You can also use the main menu (short OPT).</p>
+  <p>To create a new chain, simply <b>short-push S3</b>. You can also use the main menu (bold-push BACK).</p>
 
   <h2>Chain selection</h2>
   <p>The active chain is indicated by the legend at the bottom of the strip being highlighted red. You may change active chain by <b>rotating Knob 4</b>. A thin strip at the bottom of the legend indicates the chain is active for MIDI input.</p>
@@ -86,7 +88,7 @@
   <ul>
    <li><b>Bold-push S1 or S2</b> to copy the content of the selected cell into the buffer. There is no visual feedback.</li>
    <li><b>Rotate Knob 2 &amp; 4</b> to move the cursor to the desired position. Please, note you can't paste a sequencer pattern into an audio clip cell, for instance.</li>
-   <li><b>Short-push S1/S2</b> to paste. You can paste the buffer as many times as you want. If the destination cell is not empty, confirmation will be requested before overwriting.</li>
+   <li><b>Short-push S1/S2</b> to paste. You can paste the buffer as many times as you want. If the destination cell is not empty, you will be asked for confirmation.</li>
   </ul>
 
   <h2>Phrase options</h2>

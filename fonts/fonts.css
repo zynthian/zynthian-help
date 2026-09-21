@@ -37,7 +37,7 @@ FONT-FACE DECLARATIONS
 @font-face {
   font-family: 'Lato Bold';
   font-style:  normal;
-  font-weight: 700;
+  font-weight: 800;
   font-display: fallback;
   src: url("./lato/Lato-Bold.ttf") format("ttf"),
        url("./lato/Lato-Bold.woff2") format("woff2"),

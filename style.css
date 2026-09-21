@@ -100,11 +100,21 @@ header.global_header a {
 	border: 1px solid #000000;
 	border-collapse: collapse;
 	vertical-align: bottom;
-	white-space: nowrap;
+
 }
 
 .help_ui table {
 	margin: auto;
+}
+
+.help_ui table.nowrap th,
+.help_ui table.nowrap td {
+	white-space: nowrap;
+}
+
+.help_ui table td.small {
+	font-size: 80%;
+	white-space: wrap;
 }
 
 .help_ui table th {
@@ -146,4 +156,31 @@ header.global_header a {
 .help_ui img.float_right {
 	float: right;
 	margin-left: 1em;
+}
+
+.help_ui .color-red {
+	color: #FF0000;
+}
+.help_ui .color-green {
+	color: #00FF00;
+}
+.help_ui .color-orange {
+	color: #F08000;
+}
+.help_ui .color-yellow {
+	color: #F0F000;
+}
+.help_ui .color-blue {
+	color: #2050E0;
+}
+.help_ui .color-purple {
+	color: #9020C0;
+}
+.help_ui .center {
+	text-align: center;
+}
+.help_ui .symbol {
+	text-align: center;
+	font-weight: bold;
+	font-size: 150%;
 }

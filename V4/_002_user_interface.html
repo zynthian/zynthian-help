@@ -192,5 +192,107 @@
    <li><b>S4</b> => Toggle CC 50 (value 0/127)
   </ul>
 
+  <h2>The top-bar</h2>
+  <p>At the top of the display there is usually a bar that contains information. This may not be visible for some views, such as confirmation or information pop-ups.
+  The top bar is composed of 2 blocks:</p>
+
+  <h3>The title-bar</h3>
+  <p>The title bar acts as a kind of breadcrumb. It normally shows the view's title or info about the current snapshot, zs3 or chain (MIDI channel, engine, bank &amp; preset).</p>
+  <img src="img/title_bar_mixer.png" class="full"/>
+
+  <h3>The status area</h3>
+  <p>On the top-right corner, aside the title bar, is an area where some useful information is displayed in real time:</p>
+  <ul>
+   <li><b>Digital Audio Peak Meter (DPM)</b>: Animated horizontal bars indicating digital audio level and peaks.</li>
+   <li><b>Status icons</b>: Indication of various zynthian states.</li>
+  </ul>
+  <img src="img/ui_status_bar.png" class="full"/>
+
+  <h4>The Digital Audio Peak Meter (DPM)</h4>
+  <p>The DPM covers the range -50dBFS to 0dBFS, i.e. maximum permissible level at full scale (far right) down to 50dB below (far left):</p>
+  <ul>
+   <li>The green segment covers the range -50dBFS to -10dBFS.</li>
+   <li>The yellow segment covers the range -10dBFS to -3dBFS.</li>
+   <li>The red segment covers the range -3dBFS to 0dBFS.</li>
+  </ul>
+  <p>There are independent meters for left and right channels which monitor the system output, i.e. the mix of audio that feeds the Zynthian output. Level decays with a logarithmic rule, taking one second to decay to -200dBFS so will decay to -50dBFS (the displayed range) in about quarter of a second. Peaks are displayed instantly, i.e. the attack of the meter is immediate (*). The peak hold bar remains for two seconds or until a higher peak is reached.</p>
+
+  <p>This meter is the same as the main mixbus DPM that is always visible in the mixer view and is therefore hidden when the audio mixer view is shown.</p>
+
+  <div class="note-block">
+  (*) The DPM is updated 5 times per second so there can be 200 ms delay in peak being displayed.
+  </div>
+
+  <h4>The status icons</h4>
+  <br/>
+  <table>
+   <tr>
+    <th colspan="3">Health &amp; Load</th>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&hearts;</span></td>
+    <td>CPU Load</td>
+    <td class="small">Heart, indicating CPU load. It displays as green when under 50%, yellow when load is over 50% and red over 75%.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#8634;</span></td>
+    <td class="nowrap">Software Update Available</td>
+    <td class="small">When a software update is available, the green recycle symbol is shown. You can update from the admin menu, webconf or terminal.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9888;</span></td>
+    <td>XRun</td>
+    <td class="small">It's shown when there are XRuns. This may be accompanied by clicks and pops on audio output. This means the CPU can't process or transfer audio fast enough and you should consider disabling some CPU-hungry option (like VNC, headphones, etc.) or reducing the complexity of your chains.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
+    <td>Under-voltage</td>
+    <td class="small">Zynthian is working in a degraded state, with the CPU frequency capped to 600-800 MHz, trying to stabilize the system and avoid a system crash. You shouldn't see that icon and if you do so, you should consider looking for a better power source.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#127777;</span></td><!---->
+    <td>Over-temperature</td>
+    <td class="small">Zynthian is working in a degraded state, with the CPU frequency capped to 600-800 MHz, trying to stabilize the system and avoid a system crash. You shouldn't see that icon and if you do so, you should improve heat dissipation (using a heat sink, etc.)</td>
+   </tr>
+   <tr>
+    <th colspan="3">MIDI activity & Playing/Recording</th>
+   </tr>
+   <tr>
+    <td><span class="color-blue symbol"><b>m</b></span></td>
+    <td>MIDI-IN</td>
+    <td class="small">MIDI messages received. Underscore indicates system messages such as MIDI clock.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9679;</span></td>
+    <td class="nowrap">Recording Audio track</td>
+    <td class="small">An audio track is being recorded.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#9654;</span></td>
+    <td class="nowrap">Playing Audio track</td>
+    <td class="small">An audio track is being played.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9679;</span></td>
+    <td class="nowrap">Recording MIDI track</td>
+    <td class="small">A MIDI track is being recorded.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9654;</span></td>
+    <td class="nowrap">Playing MIDI track</td>
+    <td class="small">A MIDI track is being played.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9679;</span></td>
+    <td class="nowrap">Recording Pattern</td>
+    <td class="small">Record is armed in pattern editor.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9654;</span></td>
+    <td>Playing Pattern<br/>Playing Audio Clip</td>
+    <td class="small">A step sequencer pattern or audio clip is being played from the launcher.</td>
+   </tr>
+  </table>
+
  </body>
 </html>
