@@ -1,0 +1,75 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">---</div>
+   <div class="action short_press">next chain</div>
+   <div class="action bold_press">chain manager</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">---</div>
+   <div class="action short_press">back</div>
+   <div class="action bold_press">main menu</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">browse categories</div>
+   <div class="action short_press">extended info</div>
+   <div class="action bold_press">ZS3s</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">browse engines</div>
+   <div class="action short_press">select engine</div>
+   <div class="action bold_press">advanced mode</div>
+  </div>
+ </div>
+
+  <div class="full_container">
+   <h1>Engine Selector View</h1>
+   <p>The engine selector allows browsing and selecting engines for the chosen type, that can be:</p>
+   <ul>
+    <li>MIDI Synth</li>
+    <li>Audio Effect</li>
+    <li>MIDI Tool</li>
+    <li>Audio Generator</li>
+    <li>Special</li>
+   </ul>
+   <p>You reach this view when adding a new chain or adding/replacing processors in an existing chain.</p>
+   <p>The view is splitted in 3 columns:</p>
+   <ul>
+    <li><b>[Left] Category list </b> for the chosen type.</li>
+    <li><b>[Center] Engine list </b> for the selected category. Only enabled engines are shown by default.</li>
+    <li><b>[Right] Info</b> for the highlighted engine, composed of:
+     <ul>
+      <li><b>Quality:</b> ranked with 0 to 5 starts.</li>
+      <li><b>Complexity:</b> ranked with 0 to 5 wheels.</li>
+      <li><b>Description:</b> a short text describing the engine's features.</li>
+     </ul>
+    </li>
+   </ul>
+   <p>You can perform these actions:</p>
+   <ul>
+    <li><b>Rotate knob 3 (LEARN/SHOT)</b> to move across the category list.</li>
+    <li><b>Rotate knob 4 (SELECT) </b> to move across the engine list.</li>
+    <li><b>Push knob 4</b> to select the highlighted engine and close the engine selector.</li>
+    <li><b>Bold-push knob 4</b> to enter <b>advanced mode</b>, that shows ALL engines, allowing to enable/disable.</li>
+    <li><b>Push knob 3</b> to open the extended info screen to read long descriptions.</li>
+    <li><b>Push knob 2 (BACK)</b> to return to the previous view.</li>
+   </ul>
+   <p>You can also use touch in the category and engine list. Touching in the info column will open the extended info screen.</p>
+
+   <h2>Advanced Mode</h2>
+   <p>You enter advanced mode by <b>bold-pushing knob 4</b>. In advanced mode, the full list of engines is shown,
+   including disabled engines that are normally hidden. You can check/uncheck the engines to enable/disable. Push BACK to
+   return to normal mode.</p>
+
+  </div>
+
+  <div class="clear"></div>
+ </body>
+</html>
