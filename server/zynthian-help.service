@@ -1,0 +1,14 @@
+[Unit]
+Description=Zynthian Help Service
+After=networking.service
+Wants=networking.service
+
+[Service]
+Environment=HOME=/root
+WorkingDirectory=/var/www/zynthian-help
+ExecStart=/var/www/zynthian-help/server/zynthian_help.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
