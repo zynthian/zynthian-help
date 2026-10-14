@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+
+  <body class="help_ui">
+
+    <div>
+      <h1>SooperLooper</h1>
+
+      <h2>Modo de pedal único</h2>
+      <p>
+
+        Puede controlar SooperLooper con un único pedal MIDI. Para ello, vincule el pedal que envía un mensaje MIDI CC al control «single pedal», que se encuentra en la página «Global loop» (la sexta) de los controles. Zynthian espera un valor CC distinto de cero cuando se pisa el pedal y un valor cero cuando se suelta. Están disponibles las siguientes acciones:
+      </p>
+      <ul>
+        <li>Pulsar cuando está inactivo; por ejemplo, la primera pulsación inicia la grabación del loop.</li>
+        <li>Pulsar mientras se graba detiene la grabación e inicia la reproducción del loop.</li>
+        <li>Pulsar mientras se reproduce inicia la sobregrabación del loop.</li>
+        <li>Hacer doble pulsación durante la reproducción pausa el loop.</li>
+        <li>Hacer triple pulsación borra el loop.</li>
+        <li>Hacer doble pulsación y mantener pulsado borra el loop.</li>
+        <li>Mantener pulsado inicia la grabación o la sobregrabación hasta que se suelta el pedal.</li>
+      </ul>
+
+      <h2 id="midi-cc">MIDI CC al loop seleccionado</h2>
+      <p>Cualquier encoder actúa sobre el loop seleccionado en ese momento. Además, cualquier vinculación MIDI que cree también actuará sobre el loop seleccionado. Esto se refleja en el control «MIDI CC to selected loop», que está activado de forma predeterminada en la última página de controles.</p>
+
+      <p>Sin embargo, si desactiva este control, al crear una vinculación MIDI, el CC se vinculará al loop seleccionado en ese momento. Los controles afectados por esta opción muestran el número del loop actual entre paréntesis.</p>
+
+      <p>La vinculación permanecerá asociada a ese loop aunque seleccione otro. De este modo, puede asignar varios pedales a loops específicos.</p>
+
+      <p>NOTA: el control debe estar desactivado para que funcione la vinculación MIDI asociada a un loop y activado para que funcionen las vinculaciones del modo «selected loop».</p>
+
+      <h2>Modo ALT</h2>
+      <p>
+        SooperLooper tiene su propio modo Alt. Este redefine la <span id="alt-fns">función de pulsación corta de los botones de transporte, las flechas y los botones F1-F4:</span></p>
+      <p>NOTA: para que funcionen, la opción «MIDI-CC to selected loop» descrita anteriormente debe estar activada.</p>
+      <ul aria-describedby="alt-fns">
+        <li><b>REC</b>
+          <ul><li>
+              <b>
+                en un loop vacío:</b> activa o desactiva la grabación en el loop seleccionado</li>
+            <li><b>en un loop con contenido:</b> activa o desactiva la sobregrabación en el loop seleccionado</li>
+          </ul>
+        <li><b>PLAY</b> activa o desactiva el mute del loop seleccionado</li>
+        <li><b>STOP</b> activa o desactiva la multiplicación del loop seleccionado</li>
+        <li><b>F1</b> activa o desactiva el modo de reemplazo en el loop seleccionado</li>
+        <li><b>F2</b> activa o desactiva el modo de sustitución en el loop seleccionado</li>
+        <li><b>F3</b> activa o desactiva el modo de inserción en el loop seleccionado</li>
+        <li><b>F4</b> añade un loop vacío</li>
+        <li><b>LEFT</b> deshace la última operación en el loop seleccionado</li>
+        <li><b>RIGHT</b> rehace la última operación en el loop seleccionado</li>
+        <li><b>UP/DOWN</b> cambia el loop seleccionado</li>
+        </li>
+      </ul>
+
+      <h2>Otros controles</h2>
+      <p>Los demás controles corresponden a los comandos de SooperLooper, tal como se describe
+       <a href="https://sonosaurus.com/sooperlooper/doc_commands.html"> aquí</a>.</p>
+    </div>
+
+  </body>
+</html>

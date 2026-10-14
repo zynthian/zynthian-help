@@ -1,0 +1,31 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+ <h1>Gestor de chains</h1>
+    <p>Esta vista representa las chains y sus elementos en una cuadrícula desplazable. (Con una pantalla táctil, puede mover la vista arrastrando el fondo). Las chains se muestran de izquierda a derecha en columnas de bloques interconectados que representan entradas, procesadores, salidas, etc., con el flujo de señal de arriba abajo. La chain principal siempre está en el extremo derecho.</p>
+  <h2>Chains</h2>
+    <p>Cada chain consta de uno o varios procesadores. Se representan mediante bloques dispuestos en una columna vertical. La señal de audio o MIDI, o ambas, fluye de arriba abajo. Los procesadores pueden estar en paralelo; en ese caso, se mostrarán columnas adicionales con procesadores en paralelo en la misma fila.</p>
+    <p>La chain puede incluir los siguientes elementos, que se pueden pulsar o seleccionar para mostrar su menú contextual:</p>
+   <ul>
+    <li><a href="select.html">Opciones de chain</a>: Este elemento siempre aparece en la parte superior de cada chain y muestra su nombre.</li>
+    <li><a href="select.html">Entrada MIDI</a></li>
+    <li><a href="select.html">Entrada de audio</a></li>
+    <li><a href="chain_control-select_mode.html">Procesadores MIDI</a></li>
+    <li><a href="chain_control-select_mode.html">Procesador de sintetizador</a></li>
+    <li><a href="chain_control-select_mode.html">Procesadores de audio</a></li>
+    <li><a href="select.html">Salida MIDI</a></li>
+    <li><a href="select.html">Salida de audio</a></li>
+   </ul>
+   <div class="note-block">Nota: Las chains de audio incluyen un procesador de mezclador de audio que funciona de forma similar a los demás procesadores de audio, pero no se puede colocar en paralelo. Del mismo modo, los procesadores de sintetizador no se pueden colocar en paralelo.</div>
+   <p>Desplácese por la cuadrícula con los mandos 3 y 4 o las teclas de flecha. Para acceder al menú contextual de un elemento, pulse brevemente el mando 4 o SELECT.</p>
+   <p>Para mover un procesador, pulse prolongadamente el mando 4 para activar el modo de movimiento de procesadores. Un contorno amarillo indicará que se va a mover un procesador. Use el mando 3 para moverlo hacia arriba o abajo de la chain. Al pasar por otros procesadores, se mostrará en paralelo y, a continuación, en serie. Use el mando 4 para mover el procesador a otra chain. Pulse BACK para salir del modo de movimiento de procesadores. Con una pantalla táctil, pulse prolongadamente el procesador para activar el modo de movimiento y, a continuación, arrástrelo. Pulse brevemente para salir del modo de movimiento.</p>
+   <p>Para añadir una chain, pulse brevemente el mando 3. Esta opción también está disponible en las vistas del mezclador y del launcher. Como alternativa, puede abrir el menú principal con una pulsación breve de OPT (V5) o una pulsación prolongada de BACK (V4).</p>
+   <h2>Orden de visualización</h2>
+   <p>El orden en el que se muestran las chains en el mezclador es el mismo que en la vista del gestor de chains. Para mover una chain, seleccione con una pulsación prolongada el bloque <b>opciones de chain</b> (en la parte superior de la chain). Se activará el modo de movimiento, indicado por un borde amarillo. Ahora puede usar el mando 4 para mover la chain a izquierda y derecha. Pulse BACK para salir del modo de movimiento de chains.</p>
+   <h2>Chains fijadas</h2>
+   <b>Es posible fijar chains en el lado derecho de la vista del mezclador, justo antes de la chain principal. Esto solo afecta a la visualización. El fondo bajo la chain principal es más oscuro. Si mueve una chain a esta zona, quedará fijada. Puede que desee fijar las chains de mixbus que utilice como retornos de efectos.</b>
+ </body>
+</html>

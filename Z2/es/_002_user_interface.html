@@ -1,0 +1,368 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>La interfaz de usuario</h1>
+  <p>La interfaz de usuario del zynthian V5 se controla principalmente mediante:</p>
+  <ul>
+   <li>4 mandos con interruptor</li>
+   <li>20 botones con LED RGB</li>
+   <li>pantalla multitáctil capacitiva</li>
+  </ul>
+
+  <p>También es posible controlar la interfaz de usuario de zynthian:</p>
+  <ul>
+   <li>mediante la interfaz VNC</li>
+   <li>con un controlador MIDI compatible</li>
+   <li>con notas MIDI en el canal MIDI master</li>
+   <li>con el teclado de un ordenador (asignaciones de teclas)</li>
+   <li>mediante OSC CUIA</li>
+  </ul>
+
+  <p>Esta guía solo cubre la interfaz de usuario principal, que se maneja con mandos, botones e interacciones táctiles. Para conocer el resto de opciones, visite la <a href="https://wiki.zynthian.org">wiki de zynthian</a>.</p>
+
+  <h2>Acciones de los mandos</h2>
+  <p>
+   Hay cinco acciones de mando:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pulsación corta:</b> Al pulsar un mando durante menos de 0,3 segundos, se activa la <b>acción de pulsación corta</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pulsación media:</b> Al pulsar un mando durante más de 0,3 y menos de 2 segundos, se activa la <b>acción de pulsación media</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pulsación larga:</b> Al mantener pulsado un mando durante más de 2 segundos, se activa la <b>acción de pulsación larga</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Giro:</b> Al girar un mando, se puede ajustar el valor de un parámetro, cambiar el elemento seleccionado de una lista o mover el cursor horizontal o verticalmente. La aceleración del mando permite realizar ajustes más precisos al girarlo lentamente y más amplios al girarlo rápidamente.</li>
+    <li><b>Pulsar + girar:</b> Al girar un mando mientras se mantiene pulsado, se puede aumentar la resolución para realizar ajustes precisos.</li>
+   </ul>
+  </p>
+
+  <h2>Acciones de los botones</h2>
+  <p>
+   Hay tres acciones de botón:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pulsación corta:</b> Al pulsar un botón durante menos de 0,3 segundos, se activa la <b>acción de pulsación corta</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pulsación media:</b> Al pulsar un botón durante más de 0,3 y menos de 2 segundos, se activa la <b>acción de pulsación media</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pulsación larga:</b> Al mantener pulsado un botón durante más de 2 segundos, se activa la <b>acción de pulsación larga</b>(*).</li>
+   </ul>
+  </p>
+
+  <p>(*) El tiempo que debe mantenerse la pulsación se puede configurar en la pestaña de opciones avanzadas de la interfaz de usuario, en la herramienta webconf.</p>
+  <p>Ten en cuenta que no todos los mandos y botones tienen asignadas funciones para cada tipo de acción. La función de las acciones de los mandos y botones puede cambiar según el contexto. En las páginas de ayuda de las distintas vistas se documenta detalladamente este comportamiento. Recuerda los iconos de acción que se muestran arriba, ya que se utilizarán a lo largo de esta guía.</p>
+  <p>Por último, puedes modificar el mapa de acciones predeterminado desde la herramienta webconf, en las opciones avanzadas de la sección de distribución del cableado. No te lo recomendamos, pero la decisión es tuya.</p>
+
+  <img src="img/V5_render_knobs_numbered.png" class="float_right"/>
+
+  <h2>Uso de los mandos</h2>
+
+  <p>El funcionamiento de los mandos del V5 es bastante distinto al de los mandos de las versiones V1-V4. Debido a los 20 botones de silicona, ya no es necesario utilizar los interruptores de los mandos para navegar por la interfaz de usuario; ahora es mejor hacerlo con los botones, por lo que los interruptores de los mandos se han asignado a funciones más contextuales, como MIDI learning. Los mandos están numerados de arriba abajo: el de arriba es el <b>mando n.º 1</b> y el de abajo es el <b>mando n.º 4</b>. En esta guía nos referiremos a ellos de esta forma.</p>
+
+  <h3>Regla general</h3>
+  <p>Aunque el comportamiento de los mandos depende del contexto, hay un patrón que puede servir como <i>regla general</i> y que se aplica a muchas vistas:</p>
+
+  <h4>Mando n.º 4</h4>
+  <ul>
+   <li>En las <b>vistas de selección</b> (listas):
+    <ul>
+     <li><b>Gira</b> para recorrer la lista.</li>
+     <li><b>Pulsa brevemente</b> para seleccionar elementos, como con el botón SEL.</li>
+     <li><b>Pulsa de forma media</b> para abrir las opciones contextuales, como con el botón OPT.</li>
+    </ul></li>
+   <li>En las <b>vistas de cuadrícula</b>, controla el eje X. <b>Gira</b> para mover el cursor horizontalmente.
+   <li>En las <b>vistas divididas</b> con 2 listas desplazables, controla la lista de la derecha.</li>
+  </ul>
+
+  <h4>Mando n.º 3</h4>
+  <ul>
+   <li>En las <b>vistas de cuadrícula</b>, controla el eje Y. <b>Gira</b> para mover el cursor verticalmente.</li>
+   <li>En las <b>vistas divididas</b> con 2 listas desplazables, controla la lista de la izquierda.
+    <ul>
+     <li><b>Gira</b> para recorrer la lista de la izquierda.</li>
+     <li><b>Pulsa brevemente</b> para seleccionar elementos de la lista de la izquierda.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+  <div class="note-block">
+   El volumen principal siempre está disponible con un solo clic. Pulsa brevemente el <b>botón MIX</b> y, a continuación, gira el <b>mando 3</b> para cambiar el volumen principal.
+  </div>
+
+  <h2>Uso de los botones</h2>
+  <img src="img/V5_buttons_outlined.png" class="float_right">
+
+  <p>La cuadrícula de botones del V5 está dividida en 5 grupos. En la imagen, los 5 grupos aparecen delimitados con distintos colores:</p>
+
+  <ul>
+   <li><b>Botones de vista</b> => Verde</li>
+   <li><b>Botón ALT</b> => Morado</li>
+   <li><b>Botones de transporte</b> => Rojo</li>
+   <li><b>Botones de navegación</b> => Amarillo</li>
+   <li><b>Botones de función</b> => Azul</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Botones de vista</h3>
+  <img src="img/V5_buttons_outlined-3-detail2.png" class="float_right"/>
+
+  <p>En la imagen, los botones de vista aparecen delimitados en verde y permiten acceder directamente a las vistas principales. La mayoría de estos botones tienen asignadas 2 vistas, separadas por una línea horizontal que divide las dos etiquetas impresas. La vista principal aparece arriba y la secundaria, abajo. El botón «metronome» es la excepción.</p>
+
+  <p><b>Pulsa brevemente</b> el botón para acceder a:
+  <ul>
+   <li>la vista principal, si no está abierta</li>
+   <li>la vista secundaria, si está abierta la vista principal del botón</li>
+  </ul>
+
+  <p>El color del LED depende de la vista actual:</p>
+  <ul>
+   <li>si está abierta la vista principal, el botón se ilumina en verde.</li>
+   <li>si está abierta la vista secundaria, el botón se ilumina en naranja.</li>
+   <li>si no está abierta ninguna de las vistas del botón, este se ilumina en azul.</li>
+  </ul>
+
+  <div class="note-block">
+   Recuerda: pulsa brevemente para acceder a la vista principal y vuelve a pulsar para acceder a la vista secundaria. <b>Pulsa de forma media</b> para acceder a la vista secundaria, independientemente de la vista actual.
+  </div>
+
+  <p>Los botones de vista son, de izquierda a derecha y de arriba abajo:
+
+  <ul>
+   <li><b>OPT/ADMIN</b>
+    <ul>
+     <li><b>Principal:</b> Opciones contextuales / Menú principal</li>
+     <li><b>Secundaria:</b> Menú de administración</li>
+    </ul></li>
+   <li><b>MIX/LEVEL</b>
+    <ul>
+     <li><b>Principal:</b> Vista del mezclador</li>
+     <li><b>Secundaria:</b> Niveles de audio</li>
+    </ul></li>
+   <li>
+    <ul><b>CTRL/PRESET</b>
+     <li><b>Principal:</b> Vista de control de chain</li>
+     <li><b>Secundaria:</b> Selección de banco/preset</li>
+    </ul></li>
+   <li>
+    <ul><b>ZS3/SNAPSHOT</b>
+     <li><b>Principal:</b> Lista de ZS3</li>
+     <li><b>Secundaria:</b> Lista de snapshots</li>
+    </ul></li>
+   <li>
+    <ul><b>METRONOME</b>
+     <li><b>Primera pulsación:</b> Vista de tempo
+     <li><b>Pulsaciones siguientes:</b> Tap tempo. Ajusta el tempo en BPM.
+    </ul></li>
+   <li>
+    <ul><b>PAD/STEP</b>
+     <li><b>Principal:</b> Vista del launcher</li>
+     <li><b>Secundaria:</b> Editor de patrones</li>
+    </ul></li>
+   </ul>
+
+  <div class="clear"></div>
+
+  <h3>Botón ALT</h3>
+  <img src="img/V5_buttons_outlined-4.png" class="float_right"/>
+
+  <p>El botón ALT tiene 2 funciones:</p>
+
+  <ul>
+   <li><b>pulsación corta</b> para activar o desactivar el <b>modo ALT</b> (modo de funciones alternativas).</li>
+   <li><b>pulsación media</b> para abrir la <b>ayuda contextual</b> en pantalla.</li>
+  </ul>
+
+  <h4>Modo ALT</h4>
+  <p>Al activar el modo ALT, el botón ALT y los botones con una función alternativa cambiarán su color predeterminado de azul a morado o naranja. El morado indica la función alternativa predeterminada. El naranja indica una función alternativa personalizada.</p>
+  <p>El modo ALT depende del contexto y de la vista actual. De forma predeterminada, solo los botones de transporte y de función (F1-F4) tienen funciones alternativas, asignadas de la siguiente manera:</p>
+  <ul>
+   <li>Los <b>botones de transporte</b> alternan entre el reproductor/grabador de audio <span style="color:#0000F0">(normal)</span> y el reproductor/grabador MIDI <span style="color:#D000D0">(alternativo)</span>.</li>
+   <li>Los <b>botones F1-F4</b> alternan entre los programas 1-4 <span style="color:#0000F0">(normal)</span> y los programas 5-8 <span style="color:#D000D0">(alternativo)</span>. Por ejemplo, puedes utilizarlos para guardar y recuperar hasta 8 subsnapshots (ZS3).</li>
+  </ul>
+  <p>Algunas vistas tienen un <b>modo ALT personalizado</b> con funciones específicas que sustituyen parcial o totalmente las funciones predeterminadas. <b>El estado del modo ALT se conserva para cada vista</b>. Los detalles sobre los modos ALT personalizados se documentan por separado en cada vista.</p>
+
+  <h4>Ayuda contextual</h4>
+  <p><b>Pulsa de forma media el botón ALT</b> para abrir la ayuda contextual de la vista actual. Desde la pantalla de ayuda puedes:</p>
+  <ul>
+   <li><b>Girar el mando 4</b> o pulsar los botones ARRIBA/ABAJO para desplazarte por el contenido.</li>
+   <li><b>Pulsar brevemente el mando 4</b> para recorrer los enlaces.</li>
+   <li><b>Pulsar brevemente BACK</b> para volver a la página anterior o salir de la pantalla de ayuda.</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Botones de transporte</h3>
+  <img src="img/V5_buttons_outlined-3-detail.png" class="float_right"/>
+
+  <p>De forma predeterminada, los botones de transporte controlan el <b>reproductor/grabador de audio global</b> y su color predeterminado es azul. Cuando el <b>modo ALT</b> está activado, los botones de transporte controlan el <b>reproductor/grabador MIDI</b> y su color es morado.</p>
+
+  <ul>
+   <li><b>Pulsa brevemente REC</b> para iniciar o detener una grabación. Mientras se graba, el botón de grabación se ilumina en rojo y también debería aparecer el icono de grabación en la zona de estado de la pantalla, en la parte superior derecha.</li>
+   <li><b>Pulsa brevemente PLAY</b> para reproducir o pausar la pista seleccionada. De forma predeterminada, se selecciona la última pista grabada. Mientras se reproduce una pista, el botón de reproducción se ilumina en verde. Tras pausar, vuelve a pulsar para reanudar la reproducción desde el punto en el que se pausó.</li>
+   <li><b>Pulsa de forma media PLAY</b> para abrir la lista de pistas. Tras seleccionar una pista, se mostrará la vista de control del reproductor de audio.</li>
+   <li><b>Pulsa brevemente STOP</b> para detener la reproducción de una pista y rebobinarla. Si vuelves a pulsar PLAY, la reproducción empezará desde el principio.</li>
+   <li><b>Pulsa de forma media STOP</b> para detener todos los sonidos, incluidas las pistas de audio/MIDI y las secuencias. <b>¡PANIC!</b></li>
+  </ul>
+
+  <p>En algunas vistas, los botones de transporte tienen un comportamiento específico (contextual). En esos casos, se iluminan en naranja para indicar que su comportamiento habitual ha cambiado. Consulta la sección de la vista correspondiente para obtener más información.</p>
+
+  <div class="clear"></div>
+  <h3>Botones de navegación</h3>
+  <img src="img/V5_buttons_outlined-detail3.png" class="float_right"/>
+
+  <p>Los botones de navegación se utilizan para las operaciones básicas de navegación:</p>
+  <ul>
+   <li><b>UP/DOWN</b>
+    <ul>
+     <li>Recorrer listas y menús</li>
+     <li>Mover verticalmente el cursor (elemento seleccionado) en las vistas de cuadrícula: editor de patrones, launcher, etc.</li>
+    </ul></li>
+   <li><b>LEFT/RIGHT</b>
+    <ul>
+     <li>Seleccionar la chain activa en las vistas del mezclador y de control de chain.</li>
+     <li>Mover horizontalmente el cursor (elemento seleccionado) en las vistas de cuadrícula: editor de patrones, launcher, etc.</li>
+    </ul></li>
+   <li><b>SEL/YES</b>
+    <ul>
+     <li>Seleccionar elementos de listas y menús.</li>
+     <li>Entrar en el <b>modo de selección</b> en la vista de control de chain para recorrer las páginas de controladores.</li>
+     <li>Añadir o eliminar notas en el editor de patrones.</li>
+     <li>Reproducir o detener frases, secuencias o clips de audio en el launcher.</li>
+     <li>Responder «Sí» en los diálogos de confirmación.</li>
+     <li>Una <b>pulsación media</b> puede abrir el menú de opciones del elemento seleccionado.</li>
+    </ul></li>
+   <li><b>BACK/NO</b>
+    <ul>
+     <li>Cerrar la vista actual y volver a la vista anterior.</li>
+     <li>Responder «No» en los diálogos de confirmación.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Botones de función (F1-F4)</h3>
+
+  <p>Estos botones se pueden personalizar. Por ejemplo, puedes reasignarlos con la herramienta webconf para acceder directamente a otras vistas.</p>
+  <p>Como se ha explicado antes, al describir el modo ALT, estos botones tienen asignados de forma predeterminada mensajes MIDI Program Change:</p>
+  <ul>
+   <li><b>Modo normal</b>: Program Change 1-4</li>
+   <li><b>Modo ALT</b>: Program Change 5-8</li>
+  </ul>
+  <p>Esta configuración predeterminada es adecuada para guardar y recuperar subsnapshots (ZS3), y puede resultar muy útil si utilizas tu zynthian como expansor de teclado.</li>
+  <p>Algunas vistas tienen modos ALT personalizados que redefinen la función de los botones F1-F4. Por ejemplo, la <a href="launcher.html">vista del launcher</a> o el
+  <a href="pattern_editor.html">editor de patrones</a>.</p>
+
+  <div class="note-block">
+   Aunque todos los botones e interruptores se pueden configurar desde la herramienta webconf, esta guía hace referencia a la configuración del perfil oficial del V5, que coincide con las etiquetas impresas en los botones. Por supuesto, puedes experimentar con la asignación de botones y probar distintas configuraciones.</p>
+  </div>
+
+  <h3>Funciones globales</h3>
+  <p>Algunos botones tienen asignada una tercera función global, que se activa con la acción de <b>pulsación larga</b>:
+
+  <ul>
+   <li><b>BACK/NO</b>: mantén pulsado para acceder al menú de <b>apagado</b>.</li>
+   <li><b>CTRL/PRESET</b>: mantén pulsado para acceder a los <b>presets favoritos</b>.</li>
+   <li><b>STOP</b>: mantén pulsado para <b>detener por completo todos los sonidos</b>. <b>¡SUPER PANIC!</b></li>
+   <li><b>F4</b>: mantén pulsado para <b>activar o desactivar la interfaz TTS</b> (Text-To-Speech).</li>
+  </ul>
+
+  <h2>La barra superior</h2>
+  <p>En la parte superior de la pantalla suele haber una barra con información. Puede que no aparezca en algunas vistas, como las ventanas emergentes de confirmación o información.
+  La barra superior se compone de 2 bloques:</p>
+
+  <h3>La barra de título</h3>
+  <p>La barra de título funciona como una ruta de navegación. Normalmente muestra el título de la vista o información sobre el snapshot, ZS3 o chain actual (canal MIDI, engine, banco y preset).</p>
+  <img src="img/title_bar_mixer.png" class="full"/>
+
+  <h3>La zona de estado</h3>
+  <p>En la esquina superior derecha, junto a la barra de título, hay una zona que muestra información útil en tiempo real:</p>
+  <ul>
+   <li><b>Medidor de picos de audio digital (DPM)</b>: barras horizontales animadas que indican el nivel y los picos de audio digital.</li>
+   <li><b>Iconos de estado</b>: indican distintos estados de zynthian.</li>
+  </ul>
+  <img src="img/ui_status_bar.png" class="full"/>
+
+  <h4>El medidor de picos de audio digital (DPM)</h4>
+  <p>El DPM cubre el intervalo de -50 dBFS a 0 dBFS; es decir, desde el nivel máximo permitido a escala completa (extremo derecho) hasta 50 dB por debajo (extremo izquierdo):</p>
+  <ul>
+   <li>El segmento verde abarca de -50 dBFS a -10 dBFS.</li>
+   <li>El segmento amarillo abarca de -10 dBFS a -3 dBFS.</li>
+   <li>El segmento rojo abarca de -3 dBFS a 0 dBFS.</li>
+  </ul>
+  <p>Hay medidores independientes para los canales izquierdo y derecho, que monitorizan la salida del sistema; es decir, la mezcla de audio que llega a la salida de Zynthian. El nivel decae siguiendo una regla logarítmica: tarda un segundo en decaer hasta -200 dBFS, por lo que tarda aproximadamente un cuarto de segundo en llegar a -50 dBFS (el intervalo mostrado). Los picos se muestran de inmediato; es decir, el tiempo de ataque del medidor es instantáneo (*). La barra de retención de picos permanece durante dos segundos o hasta que se alcanza un pico superior.</p>
+
+  <p>Este medidor es igual al DPM del mixbus principal, que siempre está visible en la vista del mezclador, por lo que se oculta cuando se muestra la vista del mezclador de audio.</p>
+
+  <div class="note-block">
+  (*) El DPM se actualiza 5 veces por segundo, por lo que puede haber un retardo de 200 ms antes de que se muestre un pico.
+  </div>
+
+  <h4>Los iconos de estado</h4>
+  <br/>
+  <table>
+   <tr>
+    <th colspan="3">Estado y carga</th>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&hearts;</span></td>
+    <td>Carga de CPU</td>
+    <td class="small">Corazón que indica la carga de la CPU. Se muestra en verde por debajo del 50 %, en amarillo cuando la carga supera el 50 % y en rojo cuando supera el 75 %.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#8634;</span></td>
+    <td class="nowrap">Actualización de software disponible</td>
+    <td class="small">Cuando hay una actualización de software disponible, se muestra el símbolo de reciclaje verde. Puedes actualizar desde el menú de administración, webconf o el terminal.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9888;</span></td>
+    <td>XRun</td>
+    <td class="small">Se muestra cuando se producen XRuns. Esto puede ir acompañado de clics y chasquidos en la salida de audio. Significa que la CPU no puede procesar o transferir audio con suficiente rapidez. Considera desactivar alguna opción que consuma muchos recursos de CPU (como VNC o los auriculares) o reducir la complejidad de tus chains.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
+    <td>Subtensión</td>
+    <td class="small">Zynthian está funcionando en un estado degradado, con la frecuencia de la CPU limitada a 600-800 MHz para intentar estabilizar el sistema y evitar que se bloquee. No deberías ver este icono; si aparece, considera utilizar una fuente de alimentación mejor.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#127777;</span></td><!---->
+    <td>Sobretemperatura</td>
+    <td class="small">Zynthian está funcionando en un estado degradado, con la frecuencia de la CPU limitada a 600-800 MHz para intentar estabilizar el sistema y evitar que se bloquee. No deberías ver este icono; si aparece, mejora la disipación del calor (por ejemplo, mediante un disipador).</td>
+   </tr>
+   <tr>
+    <th colspan="3">Actividad MIDI y reproducción/grabación</th>
+   </tr>
+   <tr>
+    <td><span class="color-blue symbol"><b>m</b></span></td>
+    <td>MIDI-IN</td>
+    <td class="small">Se han recibido mensajes MIDI. El subrayado indica mensajes del sistema, como MIDI clock.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9679;</span></td>
+    <td class="nowrap">Grabando una pista de audio</td>
+    <td class="small">Se está grabando una pista de audio.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#9654;</span></td>
+    <td class="nowrap">Reproduciendo una pista de audio</td>
+    <td class="small">Se está reproduciendo una pista de audio.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9679;</span></td>
+    <td class="nowrap">Grabando una pista MIDI</td>
+    <td class="small">Se está grabando una pista MIDI.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9654;</span></td>
+    <td class="nowrap">Reproduciendo una pista MIDI</td>
+    <td class="small">Se está reproduciendo una pista MIDI.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9679;</span></td>
+    <td class="nowrap">Grabando un patrón</td>
+    <td class="small">La grabación está activada en el editor de patrones.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9654;</span></td>
+    <td>Reproduciendo un patrón<br/>Reproduciendo un clip de audio</td>
+    <td class="small">Se está reproduciendo desde el launcher un patrón del secuenciador por pasos o un clip de audio.</td>
+   </tr>
+  </table>
+
+ </body>
+</html>

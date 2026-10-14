@@ -1,0 +1,102 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">---</div>
+   <div class="action short_press">Pattern-Menü</div>
+   <div class="action bold_press">chain manager</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">vertikale Bewegung</div>
+   <div class="action short_press">zurück</div>
+   <div class="action bold_press">Undo/Redo-Modus</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">vergrößern/verkleinern</div>
+   <div class="action short_press">Wiedergabe umschalten</div>
+   <div class="action bold_press">Aufnahme umschalten</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">horizontale Bewegung</div>
+   <div class="action short_press">CC-Wert hinzufügen/entfernen</div>
+   <div class="action bold_press">---</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Pattern-CC-Editor</h1>
+  <p>Mit dem Pattern-CC-Editor können Sie Parameteränderungen automatisieren, indem Sie MIDI-CC-Events zu Ihren Sequencer-Patterns hinzufügen. Über das Kontextmenü (<b>Drehregler 1 kurz drücken</b>) können Sie die Pattern-Parameter und Bearbeitungsoptionen ändern.</p>
+  <p>Der CC-Editor unterstützt auch Live-Aufnahmen, Undo/Redo und das Kopieren/Einfügen von Patterns. Diese Funktionen arbeiten ähnlich wie im <a href="pattern_editor.html">Noten-Editor</a>.</p>
+
+  <h2>Grundlegende Bedienung</h2>
+  <p>Für jedes Pattern können Sie bis zu 127 Parameter über die 127 verfügbaren CC-Nummern automatisieren.</p>
+  <p>Bevor Sie einen Parameter automatisieren können, müssen Sie die zu automatisierenden Parameter den gewünschten CC-Nummern zuweisen. Dafür gibt es zwei Möglichkeiten:</p>
+  <ul>
+   <li>Verwenden Sie <a href="chain_control.html">MIDI-learning</a>, um Engine-Parameter CC-Nummern zuzuweisen. Dazu benötigen Sie einen MIDI-Controller mit Drehreglern oder Fadern.</li>
+   <li>Wählen Sie im <a href="chain_control.html">Optionsmenü des Engine-Parameters</a> die Option <b>ZynStep CC</b>, um eine CC-Nummer manuell zuzuweisen.</li>
+  </ul>
+  <p>Nachdem Sie den zu automatisierenden Parameter zugewiesen haben, gehen Sie im CC-Editor wie folgt vor, um Ihr CC-Pattern manuell zu erstellen:</p>
+  <ul>
+   <li><b>Drehen Sie Drehregler 1</b>, um die CC-Nummer auszuwählen, die Sie bearbeiten möchten. Wenn der CC bereits zugewiesen ist, wird der Parametername angezeigt.</li>
+   <li><b>Drehen Sie Drehregler 4</b>, um den Cursor entlang der Zeitachse des Patterns zu bewegen.</li>
+   <li><b>Drücken Sie Drehregler 4 kurz</b>, um einen Punkt zur Kurve hinzuzufügen oder daraus zu entfernen.</li>
+   <li><b>Drehen Sie Drehregler 3</b>, um den Punkt (CC-Wert) nach oben oder unten zu bewegen.</li>
+   <li><b>Drücken Sie S4 kurz</b>, um zum <a href="pattern_editor.html">Noten-Editor</a> zurückzukehren.</li>
+  </ul>
+  <p>Sie können die Kurve mit dem Finger zeichnen und Punkte nach oben oder unten bewegen. Sie können auch live aufnehmen (REC + PLAY) und den zugewiesenen Drehregler Ihres MIDI-Controllers bewegen.</p>
+  <p>Während der Wiedergabe werden CC-Werte bei jedem Clock-Tick interpoliert (1920 Ticks pro Viertelnote). Die CC-Interpolation ist standardmäßig aktiviert, außer bei Pedalen (z. B. CC64).</p>
+  <p>Im Pattern-Optionsmenü können Sie die CC-Interpolation für jede CC-Nummer einzeln umschalten, das CC-Pattern löschen, ohne die Noten zu löschen, und vieles mehr.</p>
+  <p>Natürlich können alle Bearbeitungen und Parameteranpassungen während der Wiedergabe des Patterns vorgenommen werden, sodass Sie das Ergebnis sofort hören, während Sie CC-Werte in Echtzeit ändern.</p>
+
+  <h2>Patterns aufnehmen</h2>
+  <p><b>Drücken Sie Drehregler 3 kräftig</b>, um die MIDI-Aufnahme zu aktivieren. Wenn die Aufnahme aktiviert ist, leuchtet das gelbe Kreissymbol in der Statusleiste.</p>
+  <h3>Schrittweise Aufnahme</h3>
+  <p>Für CC-Events wird diese Funktion nicht unterstützt.</p>
+  <h3>Live-Aufnahme</h3>
+  <p>Wenn das Pattern wiedergegeben wird (Drehregler 3 kurz drücken), werden Noten- und CC-Events in Echtzeit aufgenommen. Sie werden genau zu dem Zeitpunkt aufgenommen, an dem sie erfasst werden, ohne Quantisierung. Bei Bedarf kann die Quantisierung bei der Wiedergabe angewendet werden (siehe Pattern-Optionsmenü). Während der Live-Aufnahme wird der Verlauf bei jedem Pattern-Durchlauf gespeichert, jedoch nur, wenn neue Noten aufgenommen wurden.</p>
+
+  <h2>Undo/Redo</h2>
+  <p>Die meisten Bearbeitungsvorgänge können Sie mit dem folgenden Verfahren rückgängig machen oder wiederholen:</p>
+  <ul>
+   <li><b>Drehregler 2 kräftig drücken (BACK)</b>, um den Verlaufsnavigationsmodus aufzurufen.</li>
+   <li><b>Drehregler 4 drehen</b>, um sich im Verlauf zu bewegen.</li>
+   <li><b>Drehregler 2 kurz drücken (BACK)</b>, um den Modus zu beenden.</li>
+  </ul>
+  <p>Beachten Sie, dass die Anzahl der Verlaufschritte zwar unbegrenzt ist, der Verlauf jedoch nicht im Zustand gespeichert wird und beim erneuten Laden des snapshot verloren geht.
+  Snapshots speichern nur den letzten Zustand.</p>
+
+  <h2>Pattern-Optionen</h2>
+  <p>Drücken Sie Drehregler 1 kurz, um das Menü <b>Pattern-Optionen</b> zu öffnen. Dort können Sie die Eigenschaften des Patterns sowie verschiedene Bearbeitungsoptionen ändern. Dies sind die Pattern-Parameter:</p>
+  <ul>
+   <li><b>Umbenennen:</b> Ändert den Namen der Sequenz, der auf den Pads des Launchers angezeigt wird.</li>
+   <li><b>Wiedergabemodus:</b> DEAKTIVIERT, LOOP, ONE-SHOT, 2-MAL WIEDERGEBEN, ... 24-MAL WIEDERGEBEN</li>
+   <li><b>Program Change:</b> Die Program-Change-Nummer, die mit dem Pattern ausgelöst wird. Sie kann zum Ändern von ZS3s usw. verwendet werden.</li>
+   <li><b>Länge:</b> Die Länge des Patterns in Takten und Schlägen.</li>
+   <li><b>Steps/Schlag:</b> Die Anzahl der Steps pro Schlag. Der Step ist die kleinste Zeiteinheit im Pattern-Raster. Die Position und Dauer eines Events können jedoch in Bruchteilen eines Steps angepasst werden.</li>
+   <li><b>Quantisierung:</b> Die Quantisierung kann DEAKTIVIERT oder auf 1, 1/2, 1/3, 1/4 oder 1/6 Step eingestellt werden.</li>
+   <li><b>Swing-Stärke:</b> Die Stärke des Swing in %.</li>
+   <li><b>Swing-Divisor:</b> Die Anzahl der Unterteilungen für den Swing. Verwenden Sie den Wert 1 mit 30 %, um einen perfekten ternären Swing zu erzielen.</li>
+   <li><b>Timing-Humanisierung:</b> Zufällige Verschiebung des Noten-Timings gemäß einer Gauß-Verteilung, um menschliche Ungenauigkeit zu simulieren.</li>
+   <li><b>CC##-Werte interpolieren:</b> Schaltet die Interpolation der CC-Werte für die ausgewählte CC-Nummer um.</li>
+  </ul>
+  <h3>Bearbeitungsoptionen</h3>
+  <ul>
+   <li><b>In die Zwischenablage kopieren:</b> Kopiert das Pattern in die Zwischenablage.</li>
+   <li><b>Aus der Zwischenablage einfügen:</b> Fügt den Inhalt der Zwischenablage in das aktuelle Pattern ein.</li>
+   <li><b>Pattern laden:</b> Lädt ein Pattern aus einer Datei.</li>
+   <li><b>Pattern speichern:</b> Speichert das Pattern in einer Datei.</li>
+   <li><b>Aus SMF importieren:</b> Lädt ein Pattern aus einer Standard-MIDI-Datei (.mid).</li>
+   <li><b>Als SMF exportieren:</b> Speichert das Pattern als Standard-MIDI-Datei (.mid).</li>
+   <li><b>Gesamtes Pattern löschen:</b> Löscht alle Noten- und CC-Events aus dem Pattern.</li>
+   <li><b>Pattern-CC## löschen:</b> Löscht alle Events der ausgewählten CC-Nummer aus dem Pattern.</li>
+  </ul>
+
+ <div class="clear"></div>
+ </body>
+</html>

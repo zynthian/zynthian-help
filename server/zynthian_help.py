@@ -62,11 +62,18 @@ logging.info(f"Listening at port {zynthian_help_port}")
 class HelpHandler(tornado.web.RequestHandler):
 
     layout = "Z2"
+    lang = "en"
+    lang_dir = ""
 
     def get(self, subdir=None, html_file=None, errors=None):
 
         self.layout = self.get_cookie("layout", default="Z2")
         logging.info(f"Layout: {self.layout}")
+
+        self.lang = self.get_cookie("language", default="en")
+        logging.info(f"Language: {self.lang}")
+        if self.lang != "en":
+            self.lang_dir = "/" + self.lang
 
         if html_file is None:
             if subdir is None:
@@ -80,6 +87,7 @@ class HelpHandler(tornado.web.RequestHandler):
 
         config = {
             "layout": self.layout,
+            "lang": self.lang,
             "html_file": html_file,
             "content": html,
         }
@@ -104,8 +112,8 @@ class HelpHandler(tornado.web.RequestHandler):
                     items.append((title, file._str))
             return items
 
-        files = list(Path(f"{zynthian_help_dir}/common").glob("*.html")) + \
-                list(Path(f"{zynthian_help_dir}/{self.layout}").glob("*.html"))
+        files = list(Path(f"{zynthian_help_dir}/common{self.lang_dir}").glob("*.html")) + \
+                list(Path(f"{zynthian_help_dir}/{self.layout}{self.lang_dir}").glob("*.html"))
         files.sort(key=lambda f: f.name)
 
         # Build index HTML
@@ -127,8 +135,8 @@ class HelpHandler(tornado.web.RequestHandler):
         return html_output
 
     def get_content(self, html_file):
-        fpath_lay = f"{zynthian_help_dir}/{self.layout}/{html_file}"
-        fpath_com = f"{zynthian_help_dir}/common/{html_file}"
+        fpath_lay = f"{zynthian_help_dir}/{self.layout}{self.lang_dir}/{html_file}"
+        fpath_com = f"{zynthian_help_dir}/common{self.lang_dir}/{html_file}"
         if os.path.isfile(fpath_lay):
             fpath = fpath_lay
             subdir = self.layout

@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+ <h1>Vista de Tempo</h1>
+    <p>A vista de tempo permite controlar a base de tempo do zynthian utilizada para sequenciação, arpeggiators, etc.</p>
+    <p>O controlo BPM define o tempo interno entre 10 e 420 BPM. Prima e rode para ajustar em passos de 0,1 BPM. Este controlo está disponível quando é utilizado o relógio interno.</p>
+    <p> Se for utilizado um relógio externo, o controlo BPM passa a funcionar como divisor de relógio. Por predefinição, espera uma entrada de 24 PPQN, utilizada pelo MIDI clock, mas pode ser ajustado para suportar outras frequências de relógio externo entre 1 e 48 PPQN. O relógio interno funciona a 1920 PPQN e utiliza um phase-locked loop para derivar este relógio de alta resolução a partir do relógio de entrada mais lento. Para utilizar um relógio externo, selecione «MIDI Clock Source» para uma entrada MIDI na vista <a href="chain_midi_input.html">Entrada MIDI</a>.</p>
+    <p>O controlo Metronome Mode configura o metrónomo do zynthian. Tem os seguintes valores:
+      <ul>
+         <li>OFF: O metrónomo está desativado.</li>
+         <li>AUTO: O metrónomo toca enquanto houver uma sequência em reprodução e para no fim do compasso após a última sequência parar.</li>
+         <li>ON: O metrónomo toca continuamente.</li>
+         <li>INTRO: O metrónomo toca até uma sequência começar. Pode utilizar este modo como contagem de entrada quando não pretende ou não precisa que o metrónomo toque durante a atuação.</li>
+         <li>NO ACCENT: O metrónomo toca continuamente, mas sem acentuar o primeiro tempo de cada compasso. Funciona mais como um metrónomo tradicional, utilizado apenas para marcar o tempo e não a base de tempo.</li>
+         <li>SILENT: O metrónomo funciona, mas não produz som. Pode ser útil para fazer com que o transporte funcione quando não há sequências em reprodução. Alguns plugins podem beneficiar desta opção.</li>
+      </ul>
+      Existe um controlo para ajustar o volume do metrónomo.</p>
+    <p>É apresentado o tempo em tamanho grande e pode tocar nele para definir o tempo. Da mesma forma, pode tocar no botão de tempo para definir o tempo.</p>
+    <div class="note-block">Nota: O metrónomo é encaminhado para a chain principal através do respetivo envio de mistura auxiliar, que permite controlar individualmente o nível, o balanço, etc. O leitor de áudio global partilha esta mistura auxiliar.</div>
+ </body>
+</html>

@@ -1,0 +1,197 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">---</div>
+   <div class="action short_press">menu de patterns</div>
+   <div class="action bold_press">gestor de chains</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">movimento vertical</div>
+   <div class="action short_press">retroceder</div>
+   <div class="action bold_press">modo de anular/refazer</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">aproximar/afastar</div>
+   <div class="action short_press">ativar/desativar reprodução</div>
+   <div class="action bold_press">ativar/desativar gravação</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">movimento horizontal</div>
+   <div class="action short_press">adicionar/remover nota</div>
+   <div class="action bold_press">editar nota</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Editor de notas de pattern</h1>
+  <p>O editor de notas de pattern permite adicionar/remover notas num pattern, modificar parâmetros das notas, copiar/colar blocos, etc. O menu contextual (<b>pressão curta no knob 1</b>) permite modificar os parâmetros do pattern e as opções de edição.</p>
+
+  <div class="note-block">
+  Tenha em atenção que os <b>botões extra do V4</b> foram reatribuídos para permitir o acesso fácil a algumas funcionalidades específicas, como copiar/colar a partir da área de transferência, operações com blocos, etc.</p>
+  </div>
+
+  <h2>Funcionamento básico</h2>
+  <ul>
+   <li><b>Rode os knobs 3 e 4</b> para mover o cursor na vertical ou na horizontal.</li>
+   <li><b>Prima brevemente o knob 4</b> para adicionar/remover notas. <b>Prima demoradamente o knob 4</b> para editar os parâmetros das notas.</li>
+   <li><b>Rode o knob 2</b> para ajustar a ampliação.</li>
+   <li><b>Prima brevemente S3</b> para iniciar a seleção de blocos. O fluxo de trabalho das operações com blocos é explicado em detalhe na secção abaixo.</li>
+   <li><b>Prima brevemente o knob 1</b> para abrir o menu de opções do pattern, que permite modificar todos os parâmetros do pattern.</li>
+   <li><b>Prima brevemente S4</b> para alternar entre o editor de notas e o <a href="pated_cc.html">editor de CC</li>.
+  </ul>
+
+  <h2>Gravar patterns</h2>
+  <p><b>Prima demoradamente o knob 3</b> para ativar a gravação MIDI. Quando a gravação estiver armada, o símbolo de círculo amarelo acende-se na barra de estado.</p>
+  <h3>Captura passo a passo</h3>
+  <p>Se o pattern não estiver a ser reproduzido, os eventos de notas serão capturados na posição do cursor, que avança para o passo seguinte. Pode utilizar o pedal de sustain para saltar passos.
+  <h3>Captura em tempo real</h3>
+  <p>Se o pattern estiver a ser reproduzido, os eventos de notas e CC serão capturados em tempo real. São gravados no momento exato em que são capturados, sem quantização. Se pretender, pode aplicar quantização durante a reprodução (consulte o menu de opções do pattern). Durante a captura em tempo real, o histórico é guardado em cada repetição do pattern, mas apenas se tiverem sido capturadas notas novas.</p>
+
+  <h2>Anular/refazer</h2>
+  <p>Pode anular/refazer a maioria das operações de edição através do procedimento seguinte:</p>
+  <ul>
+   <li><b>Prima demoradamente o knob 2 (BACK)</b> para entrar no modo de navegação pelo histórico.</li>
+   <li><b>Rode o knob 4</b> para percorrer o histórico.</li>
+   <li><b>Prima brevemente o knob 2 (BACK)</b> para sair.</li>
+  </ul>
+  <p>Tenha em atenção que, embora o número de passos do histórico seja ilimitado, o histórico não é guardado no estado e perde-se quando voltar a carregar o snapshot.
+  Os snapshots guardam apenas o último estado.</p>
+
+  <h2>Parâmetros das notas</h2>
+  <p>Pode editar cada nota do pattern colocando o cursor sobre a nota e selecionando-a com uma pressão prolongada:</p>
+  <ul>
+   <li><b>Prima demoradamente o knob 4</b> ou <b>prima demoradamente SELECT</b> para abrir o editor de parâmetros da nota selecionada.</li>
+   <li><b>Rode o knob 4</b> ou utilize os <b>botões LEFT/RIGHT</b> para selecionar o parâmetro.</li>
+   <li><b>Rode o knob 3</b> ou utilize os <b>botões UP/DOWN</b> para alterar o valor do parâmetro selecionado.</li>
+   <li>Se disponível, <b>rode o knob 2</b> para ajustar finamente o valor do parâmetro selecionado.</li>
+  </ul>
+  <p>Esta é a lista de parâmetros que pode editar:</p>
+  <ul>
+   <li><b>Duração:</b> Em passos. Utilize o knob 2 para ajustar finamente.</li>
+   <li><b>Velocity:</b> Velocity da nota MIDI, de 0 a 127.</li>
+   <li><b>Offset:</b> Deslocamento relativo ao passo inicial da nota.</li>
+   <li><b>Stutter Speed:</b> Em número de retriggers <b>por batida</b>.</li>
+   <li><b>Stutter Velo:</b> Modo como a velocity da nota evolui ao longo do stutter. Pode ser: FLAT, FADE-IN, FADE-OUT</li>
+   <li><b>Stutter Ramp:</b> Modo como a velocidade de retrigger evolui ao longo da duração da nota. Pode ser: NONE, SPEED-DOWN, SPEED-UP</li>
+   <li><b>Play Frequency:</b> Saltar/reproduzir a cada N repetições.</li>
+   <li><b>Play Chance:</b> Probabilidade de reprodução.</li>
+   <li><b>Stutter Frequency:</b> Stutter a cada N repetições.</li>
+   <li><b>Stutter Chance:</b> Probabilidade de stutter.</li>
+  </ul>
+
+  <p>Quanto ao efeito de rampa de velocidade do stutter, importa explicar em detalhe como funciona:</p>
+  <ul>
+   <li><b>Rampa de velocidade ascendente:</b> Aumenta a velocidade do stutter a partir da velocidade especificada ao longo da duração da nota.</li>
+   <li><b>Rampa de velocidade descendente:</b> Reduz a velocidade do stutter a partir de um valor calculado, de modo a atingir a velocidade especificada no final da duração da nota.</li>
+  </ul>
+
+  <div class="note-block">
+  Ao modificar os parâmetros das notas, a alteração do valor é imediata e em tempo real. Pode modificar os parâmetros das notas durante a reprodução do pattern e ouvirá o resultado assim que o cursor de reprodução chegar à nota que está a modificar.
+  </div>
+
+  <h3>Indicação visual</h3>
+  <p>A maioria dos parâmetros das notas tem indicação visual:</p>
+  <ul>
+   <li>A duração da nota é representada pelo comprimento do retângulo.</li>
+   <li>A velocity da nota é representada pela cor de fundo do retângulo. Quanto menor for a velocity, mais escura será a cor. Quanto maior for a velocity, mais clara será.</li>
+   <li>O stutter da nota é apresentado como uma sequência de barras verticais.</li>
+   <li>A <b>Stutter speed</b> é proporcional à «densidade das barras».</li>
+   <li>O <b>efeito de velocity do stutter</b> é representado pela direção de crescimento das barras.</li>
+   <li>A <b>Stutter Speed Ramp</b> não tem indicação visual. Lamentamos!</li>
+   <li>As etiquetas brancas representam a frequência ou a probabilidade de reprodução.</li>
+   <li>As etiquetas roxas representam a frequência ou a probabilidade de stutter.</li>
+  </ul>
+  <p>Se aplicar simultaneamente várias propriedades de probabilidade ou frequência, só verá uma delas representada como etiqueta. A prioridade das etiquetas é:</p>
+  <ol>
+   <li>Play Freq</li>
+   <li>Play Chance</li>
+   <li>Stutter Freq</li>
+   <li>Stutter Chance</li>
+  </ol>
+
+  <h2>Operações com blocos</h2>
+  <p>As operações com blocos permitem selecionar um conjunto de notas e executar uma operação em todas elas, como copiar/colar ou modificar um parâmetro das notas.</p>
+  <ol>
+   <li><b>Prima brevemente S3</b> para entrar no modo de seleção de blocos</li>
+   <li><b>Rode os knobs 3 e 4</b> para ajustar a seleção
+    <ol>
+     <li><b>Prima brevemente o knob 4</b> para copiar a seleção.</li>
+     <li><b>Prima brevemente S3</b> para cortar a seleção.</li>
+     <li><b>Prima demoradamente o knob 4</b> para selecionar as notas e entrar no <b>modo de edição MULTI</b>.</li>
+    </ol></li>
+   <li><b>Rode os knobs 3 e 4</b> para mover o bloco pela grelha do pattern.</li>
+   <li><b>Prima brevemente o knob 4</b> para colar o bloco.</li>
+   <li>Repita os passos 4 e 5 as vezes que quiser.</li>
+   <li><b>Prima o knob 2 (BACK)</b> para terminar.</li>
+  </ol>
+  <p>Tenha em atenção que este fluxo de trabalho é comum às diferentes operações com blocos; o que muda é o passo 2.
+  As operações de copiar/cortar e colar utilizam a cor verde para a seleção, enquanto o bloco de edição MULTI é apresentado a azul.</p>
+
+  <h3>Modo de edição MULTI</h3>
+  <p>Pode seguir o fluxo de trabalho <b>2.c</b> para editar um conjunto de notas de uma só vez. Atualmente, só é possível editar em simultâneo os parâmetros <i>velocity</i> e <i>duração</i>.
+  No modo de edição MULTI, pode:</p>
+  <ul>
+   <li><b>Rodar o knob 4</b> para escolher o parâmetro a editar em simultâneo. Atualmente, só estão disponíveis <i>velocity</i> e <i>duração</i>.</li>
+   <li><b>Rodar o knob 3</b> para modificar o valor do parâmetro selecionado. Os valores são alterados incrementalmente (de forma relativa) em relação aos valores originais, exceto quando atingem os limites do intervalo.</li>
+   <li><b>Premir brevemente o knob 1 (BACK)</b> para sair do modo de edição MULTI.</li>
+  </ul>
+
+  <p>Ao sair do modo de edição MULTI, o bloco permanece «selecionado». Pode confirmar isso pela cor azulada das notas selecionadas.
+  Embora o bloco continue selecionado, pode adicionar notas, editar notas individuais, etc., normalmente. Por conseguinte, a seleção do bloco não afeta o funcionamento normal.
+  No entanto, pode voltar a entrar no modo de edição MULTI premindo demoradamente o knob 4. Pode anular a seleção do bloco premindo o knob 2 (BACK).</p>
+
+  <div class="note-block">
+  <b>Prima demoradamente o knob 3</b> para editar em simultâneo todas as notas do pattern.
+  </div>
+
+  <h2>Opções do pattern</h2>
+  <p>Prima brevemente o knob 1 para abrir o menu de <b>opções do pattern</b>, que permite modificar as propriedades do pattern, bem como várias opções de edição. Estes são os parâmetros do pattern:</p>
+  <ul>
+   <li><b>Rename:</b> Altera o nome da sequência apresentado nos pads do launcher.</li>
+   <li><b>Play mode:</b> DISABLED, LOOP, ONE-SHOT, PLAY 2 TIMES, ... PLAY 24 TIMES</li>
+   <li><b>Program Change:</b> O número de program-change acionado com o pattern. Pode ser utilizado para alterar ZS3, etc.</li>
+   <li><b>Length:</b> A duração do pattern em compassos e tempos.</li>
+   <li><b>Steps/Beat:</b> O número de passos por tempo. O passo é a menor unidade de tempo na grelha do pattern, mas a posição e a duração dos eventos podem ser ajustadas em frações de passo.</li>
+   <li><b>Quantization:</b> A quantização pode estar DISABLED ou definida como 1, 1/2, 1/3, 1/4 ou 1/6 de passo.</li>
+   <li><b>Swing Amount:</b> A quantidade de swing, em %.</li>
+   <li><b>Swing Divisor:</b> O número de divisões utilizadas para o swing. Utilize 1 com 30% para obter um swing ternário perfeito.</li>
+   <li><b>Time Humanization:</b> Aleatoriza o tempo das notas segundo uma distribuição gaussiana para simular imprecisões humanas.</li>
+   <li><b>Velocity Humanization:</b> Aleatoriza a velocity das notas segundo uma distribuição gaussiana para simular imprecisões humanas.</li>
+   <li><b>Note Play Chance:</b> A probabilidade, em %, de as notas do pattern serem reproduzidas. Permite omitir notas aleatoriamente.</li>
+   <li><b>Scale:</b> A escala utilizada pelo editor de patterns.</li>
+   <li><b>Tonic:</b> </li>
+  </ul>
+  <h3>Opções de edição</h3>
+  <ul>
+   <li><b>Rest note:</b> </li>
+   <li><b>Chord mode</b> Permite adicionar acordes completos em vez de notas individuais.</li>
+   <li><b>Transpose pattern:</b> Transpõe o pattern um determinado número de semitons.</li>
+   <li><b>Copy this to clipboard:</b> Copia o pattern para a área de transferência.</li>
+   <li><b>Paste from clipboard:</b> Cola o conteúdo da área de transferência no pattern atual.</li>
+   <li><b>Load pattern:</b> Carrega um pattern a partir de um ficheiro.</li>
+   <li><b>Save pattern:</b> Guarda o pattern num ficheiro.</li>
+   <li><b>Import from SMF:</b> Carrega um pattern a partir de um ficheiro Standard MIDI File (.mid)</li>
+   <li><b>Export to SMF:</b> Guarda o pattern num ficheiro Standard MIDI File (.mid)</li>
+   <li><b>Clear pattern ALL:</b> Elimina todos os eventos de notas e CC do pattern.</li>
+   <li><b>Clear pattern notes:</b> Elimina todas as notas do pattern.</li>
+  </ul>
+
+  <h2>Copiar/colar patterns</h2>
+  <p>Pode copiar/colar patterns completos através das opções de menu ou dos botões extra S1/S2 do V4. Existem dois buffers de copiar/colar (S1 e S2).</p>
+  <p><b>Prima demoradamente S1 ou S2</b> para copiar o pattern para a área de transferência. Se o buffer estiver ocupado, o conteúdo será substituído.</p>
+  <p><b>Prima brevemente S1 ou S2</b> para colar o conteúdo no pattern atual. Se o pattern atual não estiver vazio, ser-lhe-á pedida uma confirmação.</p>
+  <p>Este fluxo de trabalho complementa o fluxo de trabalho de copiar/colar do launcher. Pode colar patterns que tenha copiado do launcher e copiar
+  o pattern atual para o colar posteriormente a partir do launcher.</p>
+
+ </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

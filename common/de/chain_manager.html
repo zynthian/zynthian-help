@@ -1,0 +1,31 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+ <h1>Chain Manager</h1>
+    <p>Diese Ansicht stellt chains und ihre Elemente als scrollbares Raster dar. (Bei einem Touchscreen können Sie die Ansicht verschieben, indem Sie den Hintergrund ziehen.) Chains werden von links nach rechts als Spalten miteinander verbundener Blöcke angezeigt, die Eingänge, Prozessoren, Ausgänge usw. darstellen. Der Signalfluss verläuft von oben nach unten. Die Main Chain befindet sich immer ganz rechts.</p>
+  <h2>Chains</h2>
+    <p>Jede chain besteht aus einem oder mehreren Prozessoren. Diese werden als Blöcke in einer vertikalen Spalte dargestellt. Der Audio- und/oder MIDI-Signalfluss verläuft von oben nach unten. Prozessoren können parallel geschaltet sein. In diesem Fall werden zusätzliche Spalten mit parallel geschalteten Prozessoren in derselben Zeile angezeigt.</p>
+    <p>Die chain kann folgende Elemente enthalten, die Sie drücken oder auswählen können, um das jeweilige Kontextmenü aufzurufen:</p>
+   <ul>
+    <li><a href="select.html">Chain Options</a>: Diese befinden sich immer oben in jeder chain und zeigen den Namen der chain an.</li>
+    <li><a href="select.html">MIDI Input</a></li>
+    <li><a href="select.html">Audio Input</a></li>
+    <li><a href="chain_control-select_mode.html">MIDI Processors</a></li>
+    <li><a href="chain_control-select_mode.html">Synth Processor</a></li>
+    <li><a href="chain_control-select_mode.html">Audio Processors</a></li>
+    <li><a href="select.html">MIDI Output</a></li>
+    <li><a href="select.html">Audio Output</a></li>
+   </ul>
+   <div class="note-block">Hinweis: Audio chains enthalten einen Audio-Mixer-Prozessor, der ähnlich wie andere Audio-Prozessoren funktioniert, jedoch nicht parallel geschaltet werden kann. Ebenso können Synth-Prozessoren nicht parallel geschaltet werden.</div>
+   <p>Navigieren Sie mit Knob 3 und 4 oder den Pfeiltasten durch das Raster. Rufen Sie das Kontextmenü eines Elements auf, indem Sie Knob 4 oder SELECT kurz drücken.</p>
+   <p>Um einen Prozessor zu verschieben, drücken Sie Knob 4 fest, um den Prozessor-Verschiebemodus aufzurufen. Eine gelbe Umrandung zeigt an, dass ein Prozessor verschoben wird. Verschieben Sie den Prozessor mit Knob 3 in der chain nach oben oder unten. Wenn Sie ihn an anderen Prozessoren vorbeibewegen, wird er zunächst parallel und anschließend seriell angezeigt. Mit Knob 4 verschieben Sie den Prozessor in eine andere chain. Drücken Sie BACK, um den Prozessor-Verschiebemodus zu beenden. Bei einem Touchscreen können Sie den Prozessor fest drücken, um den Verschiebemodus aufzurufen, und ihn anschließend ziehen. Drücken Sie ihn kurz, um den Verschiebemodus zu beenden.</p>
+   <p>Um eine neue chain hinzuzufügen, drücken Sie Knob 3 kurz. Diese Funktion ist auch in den Mixer- und Launcher-Ansichten verfügbar. Alternativ können Sie das Hauptmenü mit einem kurzen Druck auf OPT (V5) oder einem festen Druck auf BACK (V4) öffnen.</p>
+   <h2>Anzeigereihenfolge</h2>
+   <p>Die Reihenfolge, in der chains im Mixer angezeigt werden, entspricht der Reihenfolge in der Chain-Manager-Ansicht. Um eine chain zu verschieben, wählen Sie den Block <b>Chain Options</b> (oben in der chain) mit einem festen Druck aus. Dadurch wird der Verschiebemodus aktiviert, der durch einen gelben Rahmen angezeigt wird. Verschieben Sie die chain nun mit Knob 4 nach links oder rechts und drücken Sie anschließend BACK, um den Chain-Verschiebemodus zu beenden.</p>
+   <h2>Angeheftete Chains</h2>
+   <b>Chains können rechts in der Mixer-Ansicht direkt vor der Main Chain angeheftet werden. Dies ist rein visuell. Unterhalb der Main Chain befindet sich ein dunklerer Hintergrund. Wenn Sie eine chain in diesen Bereich verschieben, wird sie angeheftet. Möglicherweise möchten Sie Mixbus-chains anheften, die Sie als Effekt-Returns verwenden.</b>
+ </body>
+</html>

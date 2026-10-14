@@ -1,0 +1,76 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+  <div class="knobs_action_container">
+   <div class="knob_action knob_action_1">
+    <div class="action rotate">---</div>
+    <div class="action short_press">---</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_2">
+    <div class="action rotate">---</div>
+    <div class="action short_press">---</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_3">
+    <div class="action rotate">percorrer categorias</div>
+    <div class="action short_press">informações adicionais</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_4">
+    <div class="action rotate">percorrer engines</div>
+    <div class="action short_press">selecionar engine</div>
+    <div class="action bold_press">modo avançado</div>
+   </div>
+  </div>
+
+  <div class="left_container">
+   <h1>Vista do seletor de engines</h1>
+   <p>O seletor de engines permite percorrer e selecionar engines para o tipo escolhido, que pode ser um dos seguintes:</p>
+   <ul>
+    <li>Sintetizador MIDI</li>
+    <li>Efeito de áudio</li>
+    <li>Ferramenta MIDI</li>
+    <li>Gerador de áudio</li>
+    <li>Especial</li>
+   </ul>
+   <p>Esta vista é apresentada quando adiciona uma nova chain ou adiciona/substitui processadores numa chain existente.</p>
+  </div>
+
+  <div class="full_container">
+   <p>A vista está dividida em 3 colunas:</p>
+   <ul>
+    <li><b>[Esquerda] Lista de categorias </b> para o tipo escolhido.</li>
+    <li><b>[Centro] Lista de engines </b> para a categoria selecionada. Por predefinição, só são apresentadas as engines ativadas. Consulte o <i>modo avançado</i> abaixo.</li>
+    <li><b>[Direita] Informações</b> sobre a engine realçada, compostas por:
+     <ul>
+      <li><b>Qualidade:</b> classificada de 0 a 5 estrelas.</li>
+      <li><b>Complexidade:</b> classificada de 0 a 5 rodas.</li>
+      <li><b>Descrição:</b> um breve texto que descreve as funcionalidades da engine.</li>
+     </ul>
+    </li>
+   </ul>
+   <p>Pode executar as seguintes ações:</p>
+   <ul>
+    <li><b>Rodar o botão 3</b> ou premir os <b>botões ESQUERDA/DIREITA</b> para percorrer a lista de categorias.</li>
+    <li><b>Rodar o botão 4</b> ou premir os <b>botões CIMA/BAIXO</b> para percorrer a lista de engines.</li>
+    <li><b>Premir o botão 4</b> para selecionar a engine realçada e fechar o seletor de engines.</li>
+    <li><b>Premir prolongadamente o botão 4</b> para entrar no <b>modo avançado</b>, que apresenta TODAS as engines e permite ativá-las/desativá-las.</li>
+    <li><b>Premir o botão 3</b> para abrir o ecrã de informações adicionais e ler descrições mais longas.</li>
+    <li><b>Premir BACK</b> para regressar à vista anterior.</li>
+   </ul>
+   <p>Também pode utilizar o ecrã tátil na lista de categorias e na lista de engines. Ao tocar na coluna de informações, abre o ecrã de informações adicionais.</p>
+
+   <h2>Modo avançado</h2>
+   <p>Para entrar no modo avançado, <b>prima prolongadamente o botão 4 ou o botão SEL</b>. No modo avançado, é apresentada a lista completa de engines,
+   incluindo as engines desativadas que normalmente estão ocultas. Pode assinalar/desmarcar as engines para as ativar/desativar. Prima BACK para
+   regressar ao modo normal.</p>
+
+  </div>
+
+  <div class="clear"></div>
+ </body>
+</html>

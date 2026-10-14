@@ -1,0 +1,81 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">volumen de la chain</div>
+   <div class="action short_press">solo de la chain</div>
+   <div class="action bold_press">gestor de chains</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">balance de la chain</div>
+   <div class="action short_press">launcher</div>
+   <div class="action bold_press">menú principal</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">volumen principal</div>
+   <div class="action short_press">silenciar la chain</div>
+   <div class="action bold_press">añadir chain</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">seleccionar chain</div>
+   <div class="action short_press">control de la chain</div>
+   <div class="action bold_press">opciones de la chain</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Vista del mezclador</h1>
+  <p>El mezclador es la vista raíz de zynthian. Siempre puede acceder al mezclador pulsando el botón MIX. También puede
+   pulsar BACK hasta llegar a él. Desde el launcher, puede acceder al mezclador pulsando BACK. Del mismo modo, desde el mezclador puede
+   acceder al launcher pulsando BACK. En realidad, el mezclador y el launcher son una sola vista con 2 modos.</p>
+  <p>Está compuesto por franjas verticales asociadas a las chains. Al principio estará vacío y solo mostrará la franja principal.
+   Por cada chain que cree, se añadirá una nueva franja al mezclador. Puede haber más franjas de las que caben en pantalla.
+   Se desplazarán a izquierda o derecha si selecciona una franja que esté fuera de la pantalla.</p>
+  <p>Cada franja es un widget interactivo que se puede manejar de varias formas y muestra información de estado sobre la
+   chain asociada. De arriba abajo:</p>
+ </div>
+
+ <div class="right_float_container">
+  <img src="img/mixer_strip_legend_bg_black.png" class="full">
+ </div>
+
+ <div class="left_container">
+   <ul>
+   <li><b>Activar grabación:</b> Indicador de grabación activada. Pulse para alternar. La salida de audio de las chains con la grabación activada se incluye como pista independiente en las grabaciones multipista. Desde el menú de administración, se puede configurar como cualquier otro conmutador del mezclador: solo, pfl, mono, fase
+   o M+S. Si se configura como solo, se usa el modo de solo no exclusivo. Cuando una chain está en solo, se silencian todas las demás chains que no están en solo,
+   lo que permite escuchar una o varias chains. El solo <i>principal</i> desactiva todos los solos de las chains.</li>
+   <li><b>Silencio:</b> Indicador de silencio. Pulse para alternar. Cuando una chain está silenciada, no emitirá sonido.</li>
+   <li><b>Balance/Pan:</b> Balance izquierda/derecha de la mezcla (o pan de una señal mono) de la chain asociada. Gire el knob 2
+    o arrastre el fader a izquierda y derecha para modificarlo.</li>
+   <li><b>Fader:</b> Volumen de mezcla de la chain asociada. Gire el knob 1 o arrastre hacia arriba y abajo para modificar el nivel del fader.
+    En la pantalla táctil puede arrastrar varios faders a la vez. Tóquelo para establecer la chain activa.</li>
+   <li><b>DPM:</b> Medidor de picos digitales de la chain asociada, con un rango de -50 dBFS a 0 dBFS. </li>
+   <li><b>Descripción:</b> Texto en vertical que describe la chain. De forma predeterminada, en una chain de sintetizador muestra
+    el procesador de sintetizador y el nombre del preset. Si asigna un nombre a la chain, también se incluirá en la descripción.</li>
+   <li><b>Leyenda:</b> Muestra un icono del tipo de chain y un número correspondiente al canal MIDI asignado. Tóquela para acceder
+    a la vista de control de la chain.</li>
+  </ul>
+ </div>
+
+ <div class="full_container">
+  <h2>Añadir chains</h2>
+  <p>Para crear una nueva chain desde la vista del mezclador, puede cambiar a la vista del launcher (pulsación breve de BACK) y pulsar brevemente F3. También puede abrir
+  el menú principal (pulsación breve de OPT) y elegir la opción <b>Añadir chain</b>.</p>
+
+  <h2>Selección de chains</h2>
+  <p>La chain activa se indica mediante la leyenda de la parte inferior de la franja, que aparece resaltada en rojo. Puede cambiar la chain activa <b>girando el knob 4</b>. Una franja fina en la parte inferior de la leyenda indica que la chain está activa para la entrada MIDI.</p>
+
+  <h2>Desplazar chains</h2>
+  <p>Puede reorganizar las columnas (chains) y mover horizontalmente cualquier chain a la posición que desee. También puede acoplar las chains que quiera en el lado derecho, junto a la chain principal.</p>
+  <p>Desde la vista del mezclador, F3 no está disponible para mover chains. Para moverlas, <b>cambie a la vista del launcher (pulsación breve de BACK).</b></p>
+ </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

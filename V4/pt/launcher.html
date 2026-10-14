@@ -1,0 +1,114 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">volume da chain</div>
+   <div class="action short_press">solo da chain</div>
+   <div class="action bold_press">gestor de chains</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">balance da chain</div>
+   <div class="action short_press">misturador</div>
+   <div class="action bold_press">menu principal</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">selecionar phrase</div>
+   <div class="action short_press">silenciar chain</div>
+   <div class="action bold_press">tempo</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">selecionar chain</div>
+   <div class="action short_press">reproduzir/parar</div>
+   <div class="action bold_press">editar pattern/clip</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Vista Launcher</h1>
+  <p>O launcher é a vista principal do sequenciador. Pode aceder ao launcher a qualquer momento premindo brevemente o <b>knob 1 (BACK)</b> repetidamente até chegar a esta vista.</p>
+  <p>A partir do <a href="mixer.html">misturador</a>, pode aceder ao launcher premindo BACK. A partir do launcher, pode aceder ao misturador premindo BACK.
+  O launcher e o <a href="mixer.html">misturador</a> são, na verdade, uma única vista com 2 modos.</p>
+
+  <div class="note-block">
+  Tenha em atenção que os <b>botões adicionais do V4</b> foram reatribuídos para facilitar o acesso a algumas funcionalidades específicas, como copiar/colar da área de transferência, mover colunas, etc.
+  </div>
+
+  <p>O launcher é uma grelha cujas colunas correspondem às chains (canais do misturador). As linhas são denominadas "phrases" e são bastante
+  semelhantes às "scenes" do Ableton Live. As células podem conter patterns do sequenciador ou clips de áudio, exceto a coluna principal, que
+  contém os launchers de phrase.</p>
+
+  <p>Inicialmente, a grelha estará vazia, mostrando apenas o canal principal. Ao adicionar uma chain, é adicionada uma nova coluna à grelha.
+  Ao eliminar uma chain, a coluna da grelha associada é removida. Tenha em atenção que os patterns associados não são eliminados. Estão
+  associados ao canal MIDI e, se criar uma nova chain com o mesmo canal MIDI, os patterns removidos voltarão a estar disponíveis.</p>
+
+  <h2>Seleção de células</h2>
+  <p>O cursor é uma caixa amarela que realça a célula selecionada. Pode deslocar o cursor rodando os knobs 3 e 4:
+  <ul>
+   <li><b>Knob 2</b> => Deslocamento vertical => Selecionar phrase</li>
+   <li><b>Knob 4</b> => Deslocamento horizontal => Selecionar chain</li>
+  </ul>
+
+  <h2>Ações das células</h2>
+  <table class="nowrap">
+   <tr><th class="empty"><br/><br/>AÇÕES<br/>DAS CÉLULAS</th>
+    <th>Premir brevemente Knob 4<br/>Premir brevemente SELECT<br/>Toque breve</th>
+    <th>Premir brevemente PAD<br/>Premir prolongadamente Knob 4<br/>Premir prolongadamente SELECT<br/>Toque prolongado</th>
+   </tr>
+   <tr><td class="empty"></td><th>&gt; REPRODUZIR/PARAR</th><th>&gt; EDITAR</th></tr>
+   <tr><th>Pattern de passos</th><td>Reproduzir/Parar</td><td>Editor de pattern</td></tr>
+   <tr><th>Clip de áudio</th><td>Reproduzir/Parar</td><td>Controlo do clip</td></tr>
+   <tr><th>Launcher de<br/>phrase</th><td>Reproduzir/Parar</td><td>Opções da phrase</td></tr>
+  </table>
+
+  <h2>Adicionar chains</h2>
+  <p>Para criar uma nova chain, basta <b>premir brevemente S3</b>. Também pode utilizar o menu principal (premir prolongadamente BACK).</p>
+
+  <h2>Selecionar uma chain</h2>
+  <p>A chain ativa é indicada pela legenda na parte inferior do canal, que fica realçada a vermelho. Pode alterar a chain ativa <b>rodando o Knob 4</b>. Uma barra fina na parte inferior da legenda indica que a chain está ativa para entrada MIDI.</p>
+
+  <h2>Mover chains</h2>
+  <p>Pode reorganizar as colunas (chains), movendo qualquer chain horizontalmente para a posição pretendida. Também pode encaixar as chains
+  pretendidas no lado direito, junto à chain principal:</p>
+  <ul>
+   <li><b>Prima prolongadamente S3</b> para começar a mover a chain selecionada. A legenda da chain apresentará um símbolo de seta dupla.</li>
+   <li><b>Rode o Knob 4</b> para mover a chain para a posição pretendida. Para encaixar uma chain no lado direito, basta continuar a movê-la para a direita.</li>
+   <li><b>Prima brevemente SELECT ou BACK</b> para concluir.</li>
+  </ul>
+  <p>Tenha em atenção que também pode mover as chains desta forma na vista do misturador.</p>
+
+  <h2>Copiar/colar patterns e clips de áudio</h2>
+  <p>Para copiar/colar patterns ou clips de áudio, utilize as teclas de buffer S1/S2 da seguinte forma:</p>
+  <ul>
+   <li><b>Prima prolongadamente S1 ou S2</b> para copiar o conteúdo da célula selecionada para o buffer. Não é apresentada qualquer indicação visual.</li>
+   <li><b>Rode os Knobs 2 e 4</b> para mover o cursor para a posição pretendida. Tenha em atenção que, por exemplo, não é possível colar um pattern do sequenciador numa célula de clip de áudio.</li>
+   <li><b>Prima brevemente S1/S2</b> para colar. Pode colar o conteúdo do buffer as vezes que quiser. Se a célula de destino não estiver vazia, ser-lhe-á pedida confirmação.</li>
+  </ul>
+
+  <h2>Opções da phrase</h2>
+  <p>O menu de opções da phrase permite configurar parâmetros e gerir phrases.</p>
+  <p>Os parâmetros da phrase são:</p>
+  <ul>
+  <li><b>Duração:</b> Número de compassos. Por predefinição, corresponde ao valor da sequência mais longa da linha.</li>
+  <li><b>Tempo:</b> Quando a phrase é lançada, o tempo é alterado para o valor especificado em BPM.</li>
+  <li><b>Batidas por compasso:</b> A fórmula de compasso utilizada nos patterns.</li>
+  <li><b>Automatizar:</b> As opções "Loop from", "loops to play" e "jump to" permitem criar estruturas simples de música.</li>
+  </ul>
+  <p>As opções de gestão de phrases são:</p>
+  <ul>
+  <li><b>Inserir phrase:</b> Inserir uma nova phrase (linha) no launcher.</li>
+  <li><b>Clonar phrase:</b> Clonar a phrase (linha) selecionada.</li>
+  <li><b>Mover phrase:</b> Mover a phrase (linha) selecionada para uma nova posição.</li>
+  <li><b>Eliminar phrase:</b> Eliminar a phrase (linha) selecionada.</li>
+  </ul>
+  <p>Ao gerir phrases, poderá ser necessário ajustar os parâmetros de automatização das phrases afetadas.</p>
+  </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+
+  <body class="help_ui">
+
+    <div>
+      <h1>SooperLooper</h1>
+
+      <h2>Ein-Pedal-Modus</h2>
+      <p>
+
+        Sie können SooperLooper mit einem einzelnen MIDI-Pedal steuern. Binden Sie dazu das Pedal, das eine MIDI-CC-Nachricht sendet, an den Controller „single pedal“ auf der Seite „Global loop“ (6.) der Bedienelemente. Zynthian erwartet einen Wert ungleich null für CC, wenn das Pedal gedrückt wird, und den Wert null, wenn es losgelassen wird. Folgende Aktionen sind verfügbar:
+      </p>
+      <ul>
+        <li>Drücken im Ruhezustand, z. B. startet der erste Druck die Aufnahme der Loop.</li>
+        <li>Drücken während der Aufnahme beendet die Aufnahme und startet die Wiedergabe der Loop.</li>
+        <li>Drücken während der Wiedergabe startet das Overdubbing der Loop.</li>
+        <li>Doppeltes Drücken während der Wiedergabe pausiert die Loop.</li>
+        <li>Dreifaches Drücken löscht die Loop.</li>
+        <li>Doppeltes Drücken und Halten löscht die Loop.</li>
+        <li>Einmaliges Drücken und Halten nimmt auf oder overdubbt, bis das Pedal losgelassen wird.</li>
+      </ul>
+
+      <h2 id="midi-cc">MIDI CC für ausgewählte Loop</h2>
+      <p>Jeder Encoder steuert die aktuell ausgewählte Loop. Jede von Ihnen erstellte MIDI-Zuweisung steuert ebenfalls die aktuell ausgewählte Loop. Dies wird durch die standardmäßig auf „on“ gesetzte Option „MIDI CC to selected loop“ auf der letzten Controller-Seite angezeigt.</p>
+
+      <p>Wenn Sie diese Option jedoch auf „off“ setzen, wird eine MIDI-Zuweisung beim Erstellen dem zu diesem Zeitpunkt ausgewählten Loop zugewiesen. Die betroffenen Bedienelemente zeigen die Nummer der aktuellen Loop in Klammern an.</p>
+
+      <p>Diese Zuweisung bleibt mit dieser Loop verknüpft, auch wenn Sie eine andere Loop auswählen. So können Sie mehrere Pedale bestimmten Loops zuweisen.</p>
+
+      <p>HINWEIS: Die Option muss auf „off“ stehen, damit die an eine Loop gebundene MIDI-Zuweisung ausgeführt wird. Für Zuweisungen im Modus „selected loop“ muss sie auf „on“ stehen.</p>
+
+      <h2>ALT-Modus</h2>
+      <p>
+        SooperLooper verfügt über einen eigenen lokalen ALT-Modus. Dieser definiert die <span id="alt-fns">Funktion kurzer Tastendrücke bei Transport-, Pfeil- und F1-F4-Tasten neu:</span></p>
+      <p>HINWEIS: Damit diese Funktionen verfügbar sind, muss „MIDI-CC to selected loop“ wie oben beschrieben auf „on“ gesetzt sein.</p>
+      <ul aria-describedby="alt-fns">
+        <li><b>REC</b>
+          <ul><li>
+              <b>
+                bei leerer Loop:</b> schaltet die Aufnahme in der ausgewählten Loop ein oder aus</li>
+            <li><b>bei belegter Loop:</b> schaltet das Overdubbing in der ausgewählten Loop ein oder aus</li>
+          </ul>
+        <li><b>PLAY</b> schaltet die Stummschaltung der ausgewählten Loop ein oder aus</li>
+        <li><b>STOP</b> schaltet das Multiplizieren der ausgewählten Loop ein oder aus</li>
+        <li><b>F1</b> schaltet das Ersetzen in der ausgewählten Loop ein oder aus</li>
+        <li><b>F2</b> schaltet das Substituieren in der ausgewählten Loop ein oder aus</li>
+        <li><b>F3</b> schaltet das Einfügen in der ausgewählten Loop ein oder aus</li>
+        <li><b>F4</b> fügt eine neue leere Loop hinzu</li>
+        <li><b>LEFT</b> macht den letzten Vorgang in der ausgewählten Loop rückgängig</li>
+        <li><b>RIGHT</b> stellt den letzten Vorgang in der ausgewählten Loop wieder her</li>
+        <li><b>UP/DOWN</b> wechselt die ausgewählte Loop</li>
+        </li>
+      </ul>
+
+      <h2>Weitere Bedienelemente</h2>
+      <p>Die übrigen Bedienelemente sind den Befehlen in SooperLooper zugeordnet, wie <a href="https://sonosaurus.com/sooperlooper/doc_commands.html">hier</a> beschrieben.</p>
+    </div>
+
+  </body>
+</html>

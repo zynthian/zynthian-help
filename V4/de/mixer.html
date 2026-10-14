@@ -1,0 +1,80 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">chain-Lautstärke</div>
+   <div class="action short_press">chain solo</div>
+   <div class="action bold_press">chain-Verwaltung</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">chain-Balance</div>
+   <div class="action short_press">Launcher</div>
+   <div class="action bold_press">Hauptmenü</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">Hauptlautstärke</div>
+   <div class="action short_press">chain stumm</div>
+   <div class="action bold_press">chain hinzufügen</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">chain auswählen</div>
+   <div class="action short_press">chain-Steuerung</div>
+   <div class="action bold_press">chain-Optionen</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Mixerview</h1>
+  <p>Der Mixer ist die Hauptansicht von zynthian. Sie können jederzeit auf den Mixer zugreifen, indem Sie die MIX-Taste drücken. Sie können auch
+   BACK drücken, bis Sie den Mixer erreichen. Vom Launcher aus können Sie durch Drücken von BACK auf den Mixer zugreifen. Ebenso können Sie vom Mixer aus
+   durch Drücken von BACK auf den Launcher zugreifen. Mixer und Launcher sind tatsächlich eine einzelne Ansicht mit zwei Modi.</p>
+  <p>Die Ansicht besteht aus vertikalen Streifen, die den chains zugeordnet sind. Anfangs ist sie leer und zeigt nur den Hauptstreifen an.
+   Für jeden erstellten chain wird dem Mixer ein neuer Streifen hinzugefügt. Es können mehr Mixerstreifen vorhanden sein, als angezeigt werden können.
+   Wenn Sie einen Streifen auswählen, der sich außerhalb des Bildschirms befindet, wird horizontal nach links bzw. rechts gescrollt.</p>
+  <p>Jeder Streifen ist ein interaktives Bedienelement, das auf verschiedene Weise bedient werden kann und Statusinformationen zum
+   zugehörigen chain anzeigt. Von oben nach unten:</p>
+ </div>
+
+ <div class="right_float_container">
+  <img src="img/mixer_strip_legend_bg_black.png" class="full">
+ </div>
+
+ <div class="left_container">
+   <ul>
+   <li><b>Rec Arm:</b> Aufnahmescharfschaltung. Zum Umschalten drücken. Die Audioausgabe scharfgeschalteter chains wird bei Mehrspuraufnahmen als separate Spur aufgezeichnet. Im Admin-Menü kann diese Funktion wie jeder andere Mixer-Umschalter konfiguriert werden: Solo, PFL, Mono, Phase oder M+S. Bei der Konfiguration als Solo handelt es sich um einen nicht exklusiven Solo-Modus. Wenn ein chain solo geschaltet ist, werden alle nicht solo geschalteten chains stummgeschaltet, sodass Sie einen oder mehrere chains abhören können. Das <i>Haupt</i>-Solo deaktiviert alle chain-Solo-Funktionen.</li>
+   <li><b>Mute:</b> Stummschaltung. Zum Umschalten drücken. Wenn ein chain stummgeschaltet ist, bleibt er stumm.</li>
+   <li><b>Balance/Pan:</b> Balance rechts/links (oder Panorama eines Monosignals) für den zugehörigen chain. Drehen Sie Knob 2
+    oder ziehen Sie den Fader nach links bzw. rechts, um die Einstellung zu ändern.</li>
+   <li><b>Fader:</b> Lautstärke des zugehörigen chain. Drehen Sie Knob 1 oder ziehen Sie den Fader nach oben bzw. unten, um den Faderpegel zu ändern.
+    Auf dem Touchscreen können Sie mehrere Fader gleichzeitig bewegen. Tippen Sie auf den Fader, um den aktiven chain festzulegen.</li>
+   <li><b>DPM:</b> Digital Peak Meter des zugehörigen chain mit einem Bereich von -50 dBFS bis 0 dBFS. </li>
+   <li><b>Beschreibung:</b> Vertikal ausgerichteter Text zur Beschreibung des chain. Bei einem Synthesizer-chain werden standardmäßig
+    der Name des Synthesizerprozessors und des Presets angezeigt. Wenn Sie dem chain einen Namen geben, wird dieser ebenfalls in die Beschreibung aufgenommen.</li>
+   <li><b>Legende:</b> Zeigt ein Symbol für den Typ des chain und eine Zahl für den zugewiesenen MIDI-Kanal an. Tippen Sie darauf, um
+    die Steuerungsansicht des chain aufzurufen.</li>
+  </ul>
+ </div>
+
+ <div class="full_container">
+  <h2>chains hinzufügen</h2>
+  <p>Um in der Mixeransicht einen neuen chain zu erstellen, wechseln Sie zur Launcheransicht (kurz BACK drücken) und drücken Sie kurz F3. Alternativ können Sie das
+  Hauptmenü öffnen (kurz OPT drücken) und die Option <b>Add Chain</b> auswählen.</p>
+
+  <h2>chain auswählen</h2>
+  <p>Der aktive chain ist daran zu erkennen, dass die Legende unten am Streifen rot hervorgehoben ist. Sie können den aktiven chain ändern, indem Sie <b>Knob 4 drehen</b>. Ein schmaler Streifen unten an der Legende zeigt an, dass der chain für MIDI-Eingaben aktiv ist.</p>
+
+  <h2>chains verschieben</h2>
+  <p>Sie können Ihre Spalten (chains) neu anordnen, indem Sie einen chain horizontal an die gewünschte Position verschieben. Sie können die gewünschten chains auch
+  auf der rechten Seite andocken, direkt neben dem Haupt-chain.</p>
+  <p>In der Mixeransicht ist F3 zum Verschieben von chains nicht verfügbar. Wechseln Sie bitte zur <b>Launcheransicht (kurz BACK drücken), um chains zu verschieben.</b></p>
+ </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

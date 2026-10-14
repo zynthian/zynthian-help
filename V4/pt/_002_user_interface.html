@@ -1,0 +1,298 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>A interface do utilizador</h1>
+  <p>A interface do utilizador do zynthian V4 é controlada principalmente através de:</p>
+  <ul>
+   <li>4 knobs com interruptor</li>
+   <li>4 botões (S1-S4)</li>
+   <li>ecrã tátil resistivo</li>
+  </ul>
+
+  <p>Em alternativa, a interface do zynthian pode ser controlada:</p>
+  <ul>
+   <li>através da interface VNC</li>
+   <li>com um controlador MIDI compatível</li>
+   <li>com notas MIDI no canal MIDI master</li>
+   <li>com um teclado de computador (atalhos de teclado)</li>
+   <li>através de OSC CUIA</li>
+  </ul>
+
+  <p>Este guia aborda apenas a interface principal, utilizando knobs, botões e interações táteis. Para as restantes opções, consulte a <a href="https://wiki.zynthian.org">wiki do zynthian</a>.</p>
+
+  <h2>Ações dos knobs</h2>
+  <p>
+   Existem cinco ações dos knobs:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pressão breve:</b> Premir um knob durante menos de 0,3 segundos aciona a <b>ação de pressão breve</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pressão prolongada:</b> Premir um knob durante mais de 0,3 e menos de 2 segundos aciona a <b>ação de pressão prolongada</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pressão longa:</b> Premir e manter premido um knob durante mais de 2 segundos aciona a <b>ação de pressão longa</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rodar:</b> Rodar um knob pode ajustar o valor de um parâmetro, alterar o item selecionado numa lista ou mover o cursor na horizontal ou na vertical. A aceleração dos knobs permite ajustes mais precisos quando rodam lentamente e ajustes mais amplos quando rodam mais depressa.</li>
+    <li><b>Premir + rodar:</b> Rodar um knob enquanto está premido pode aumentar a resolução, permitindo um ajuste fino.</li>
+   </ul>
+  </p>
+
+  <h2>Ações dos botões</h2>
+  <p>
+   Existem três ações dos botões:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pressão breve:</b> Premir um botão durante menos de 0,3 segundos aciona a <b>ação de pressão breve</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pressão prolongada:</b> Premir um botão durante mais de 0,3 e menos de 2 segundos aciona a <b>ação de pressão prolongada</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pressão longa:</b> Premir e manter premido um botão durante mais de 2 segundos aciona a <b>ação de pressão longa</b>(*).</li>
+   </ul>
+  </p>
+
+  <p>(*) A duração das ações de pressão pode ser configurada na ferramenta webconf, no separador de opções avançadas da interface do utilizador.</p>
+  <p>Note que nem todos os knobs/botões têm funções atribuídas a cada tipo de ação. As ações dos knobs/botões podem alterar a sua função consoante o contexto. Esta informação está documentada nas páginas de ajuda das diferentes vistas. Memorize os ícones de ação apresentados acima, pois serão utilizados ao longo deste guia.</p>
+
+  <img src="img/ui_action_global_v4.png" class="full"/>
+
+  <h2>Utilizar os knobs</h2>
+
+  <p>Os knobs do V4 são o principal meio de navegação na interface do utilizador. A sua funcionalidade depende do contexto, especialmente nas ações de rodar, pressão breve e pressão prolongada. As ações de pressão longa são sempre globais. Os knobs são numerados de cima para baixo e da esquerda para a direita. Assim, os nomes dos knobs, tal como estão impressos na caixa de alumínio do V4, correspondem a:</p>
+
+  <ul>
+   <li><b>layer</b> => knob #1
+   <li><b>back</b> => knob #2
+   <li><b>learn/shot</b> => knob #3
+   <li><b>select</b> => knob #4
+  </ul>
+
+  <p>Ao longo deste guia, os nomes e os números dos knobs são utilizados indistintamente.</p>
+
+  <h3>Regra geral</h3>
+  <p>Embora o comportamento dos knobs dependa do contexto, existe um padrão que pode servir de <i>regra geral</i> e que se aplica a muitas vistas:</p>
+
+  <h4>Knob SELECT</h4>
+  <ul>
+   <li>Nas <b>vistas de seleção</b> (listas):
+    <ul>
+     <li><b>Rodar</b> para percorrer a lista.</li>
+     <li><b>Pressão breve</b> para selecionar itens.</li>
+     <li><b>Pressão prolongada</b> para abrir opções contextuais.</li>
+    </ul></li>
+   <li>Nas <b>vistas em grelha</b>, é o knob do eixo X. <b>Rodar</b> para mover o cursor na horizontal.
+   <li>Nas <b>vistas divididas</b> com 2 listas percorríveis, controla a lista à direita.</li>
+  </ul>
+
+  <h4>Knob BACK</h4>
+  <ul>
+   <li><b>Pressão breve</b> para regressar à vista anterior.</li>
+   <li>Nas <b>vistas em grelha</b>, é o knob do eixo Y. <b>Rodar</b> para mover o cursor na vertical.</li>
+  </ul>
+
+  <h4>Knob LEARN/SHOT</h4>
+  <ul>
+   <li>Nas <b>vistas divididas</b> com 2 listas percorríveis, controla a lista à esquerda.
+    <ul>
+     <li><b>Rodar</b> para percorrer a lista à esquerda.</li>
+     <li><b>Pressão breve</b> para selecionar um item na lista à esquerda.</li>
+    </ul></li>
+  </ul>
+
+  <b>Esta regra geral será ampliada na secção seguinte.</b>
+
+  <div class="clear"></div>
+  <div class="note-block">
+   O volume principal está sempre acessível com um clique. Prima prolongadamente o <b>knob BACK</b> para abrir a vista do mixer e, em seguida, rode o <b>knob Learn/Shot</b> para alterar o volume principal.
+  </div>
+
+  <h2>Utilizar os botões</h2>
+
+  <p>O fluxo de trabalho clássico do zynthian (V1-V4) baseia-se nos interruptores dos 4 knobs. Embora as ações de pressão breve sejam geralmente contextuais, as ações de pressão prolongada e longa são geralmente globais.</p>
+  <p>Nas secções seguintes, quando não forem especificadas, estas são as ações predefinidas dos botões:</p>
+
+  <ul>
+   <li><b>LAYER</b>
+    <ul>
+     <li><b>pressão breve</b> dependente do contexto.</li>
+     <li><b>pressão prolongada</b> para abrir o <b>chain manager</b>.</li>
+     <li><b>pressão longa</b> para abrir a <b>ajuda</b>.</li>
+    </ul></li>
+   <li><b>BACK</b>
+    <ul>
+     <li><b>pressão breve</b> para regressar à <b>vista anterior</b>. Alternar entre as vistas do mixer e do launcher.</li>
+     <li><b>pressão prolongada</b>> para abrir o <b>menu principal</b>.</li>
+     <li><b>pressão longa</b> para abrir o menu de <b>desligar</b>.</li>
+    </ul></li>
+   <li><b>LEARN/SHOT</b>
+    <ul>
+     <li><b>pressão breve</b> dependente do contexto.</li>
+     <li><b>pressão prolongada</b> para abrir a <b>lista ZS3</b>.</li>
+     <li><b>pressão longa</b> para abrir a <b>lista de snapshots</b>.</li>
+    </ul></li>
+   <li><b>SELECT</b>
+    <ul>
+     <li><b>pressão breve</b> para <b>selecionar ou marcar/desmarcar</b> o elemento selecionado.</li>
+     <li><b>pressão prolongada</b> para mostrar as opções do elemento selecionado. Dependente do contexto.</li>
+     <li><b>pressão longa</b> para acionar <b>PANIC!</b>. Parar todas as notas e sons.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Ajuda contextual</h3>
+  <p><b>Prima prolongadamente o botão LAYER</b> para abrir a ajuda contextual da vista atual. No ecrã de ajuda, pode:</p>
+  <ul>
+   <li><b>Rodar o knob 4</b> ou <b>premir os botões S3/S4</b> para percorrer o conteúdo.</li>
+   <li><b>Premir brevemente o knob 4</b> para percorrer as ligações.</li>
+   <li><b>Premir brevemente BACK</b> para regressar à página anterior ou sair do ecrã de ajuda.</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Botões adicionais do V4</h3>
+
+  <p>Os botões adicionais de silicone do V4 (S1-S4) podem ser configurados de acordo com as preferências do utilizador. Esta configuração pode ser efetuada na ferramenta webconf, acedendo às opções avançadas da secção de disposição dos controlos. Estão disponíveis alguns <b>perfis de personalização</b> predefinidos:</b>
+
+  <h4>V4 Studio</h4>
+  <p>Os 4 botões de silicone estão atribuídos da seguinte forma:</p>
+  <ul>
+   <li><b>S1</b>
+    <ul>
+     <li><b>pressão breve</b> => Gravador/Reprodutor de áudio</li>
+     <li><b>pressão prolongada</b>> => Gravador/Reprodutor MIDI</li>
+     <li><b>pressão longa</b>> => Desativar todos os sons (PANIC!)</li>
+    </ul></li>
+   <li><b>S2</b>
+    <ul>
+     <li><b>pressão breve</b> => Launcher</li>
+     <li><b>pressão prolongada</b> => Pattern Editor</li>
+     <li><b>pressão longa</b> => Desativar todos os sons (PANIC!)</li>
+    </ul></li>
+   <li><b>S3</b>
+    <ul>
+     <li><b>pressão breve/prolongada</b> => Seta para cima</li>
+     <li><b>pressão longa</b> => Desativar todos os sons (PANIC!)</li>
+    </ul></li>
+   <li><b>S4</b>
+    <ul>
+     <li><b>pressão breve/prolongada</b> => Seta para baixo</li>
+     <li><b>pressão longa</b> => Alternar a interface TTS (Text-To-Speech).</li>
+    </ul></li>
+  </ul>
+
+  <h4>V4 Stage</h4>
+  <p>Os 4 botões de silicone estão atribuídos às mensagens MIDI program-change 1-4. Esta configuração foi especialmente concebida para utilização com ZS3.</p>
+  <ul>
+   <li><b>S1</b> => Programa MIDI 1
+   <li><b>S2</b> => Programa MIDI 2
+   <li><b>S3</b> => Programa MIDI 3
+   <li><b>S4</b> => Programa MIDI 4
+  </ul>
+
+  <h4>V4 CC Switches</h4>
+  <p>Os 4 botões de silicone estão atribuídos aos MIDI CC 47-50. Esta configuração foi especialmente concebida para utilizar MIDI-learn com parâmetros de alternância (por exemplo, com o SooperLooper).</p>
+  <ul>
+   <li><b>S1</b> => Alternar CC 47 (valor 0/127)
+   <li><b>S2</b> => Alternar CC 48 (valor 0/127)
+   <li><b>S3</b> => Alternar CC 49 (valor 0/127)
+   <li><b>S4</b> => Alternar CC 50 (valor 0/127)
+  </ul>
+
+  <h2>A barra superior</h2>
+  <p>Na parte superior do ecrã existe normalmente uma barra com informações. Esta poderá não estar visível em algumas vistas, como as janelas de confirmação ou de informação.
+  A barra superior é composta por 2 blocos:</p>
+
+  <h3>A barra de título</h3>
+  <p>A barra de título funciona como uma espécie de trilho de navegação. Normalmente, apresenta o título da vista ou informações sobre o snapshot, zs3 ou chain atual (canal MIDI, engine, banco e preset).</p>
+  <img src="img/title_bar_mixer.png" class="full"/>
+
+  <h3>A área de estado</h3>
+  <p>No canto superior direito, ao lado da barra de título, encontra-se uma área onde são apresentadas informações úteis em tempo real:</p>
+  <ul>
+   <li><b>Medidor de pico de áudio digital (DPM)</b>: Barras horizontais animadas que indicam o nível e os picos do áudio digital.</li>
+   <li><b>Ícones de estado</b>: Indicam vários estados do zynthian.</li>
+  </ul>
+  <img src="img/ui_status_bar.png" class="full"/>
+
+  <h4>O medidor de pico de áudio digital (DPM)</h4>
+  <p>O DPM abrange o intervalo de -50dBFS a 0dBFS, isto é, do nível máximo permitido à escala completa (extremo direito) até 50dB abaixo (extremo esquerdo):</p>
+  <ul>
+   <li>O segmento verde abrange o intervalo de -50dBFS a -10dBFS.</li>
+   <li>O segmento amarelo abrange o intervalo de -10dBFS a -3dBFS.</li>
+   <li>O segmento vermelho abrange o intervalo de -3dBFS a 0dBFS.</li>
+  </ul>
+  <p>Existem medidores independentes para os canais esquerdo e direito, que monitorizam a saída do sistema, ou seja, a mistura de áudio enviada para a saída do Zynthian. O nível diminui segundo uma regra logarítmica, demorando um segundo a descer até -200dBFS; por isso, desce até -50dBFS (o intervalo apresentado) em cerca de um quarto de segundo. Os picos são apresentados instantaneamente, ou seja, o tempo de resposta do medidor é imediato (*). A barra de retenção de pico permanece durante dois segundos ou até ser atingido um pico superior.</p>
+
+  <p>Este medidor é igual ao DPM do mixbus principal, sempre visível na vista do mixer, pelo que fica oculto quando a vista do mixer de áudio é apresentada.</p>
+
+  <div class="note-block">
+  (*) O DPM é atualizado 5 vezes por segundo, pelo que poderá existir um atraso de 200 ms até à apresentação do pico.
+  </div>
+
+  <h4>Os ícones de estado</h4>
+  <br/>
+  <table>
+   <tr>
+    <th colspan="3">Estado e carga</th>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&hearts;</span></td>
+    <td>Carga da CPU</td>
+    <td class="small">Coração que indica a carga da CPU. Aparece a verde quando a carga é inferior a 50%, a amarelo quando é superior a 50% e a vermelho quando ultrapassa 75%.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#8634;</span></td>
+    <td class="nowrap">Atualização de software disponível</td>
+    <td class="small">Quando está disponível uma atualização de software, é apresentado o símbolo de reciclagem verde. Pode atualizar através do menu de administração, do webconf ou do terminal.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9888;</span></td>
+    <td>XRun</td>
+    <td class="small">É apresentado quando ocorrem XRuns. Estes podem ser acompanhados por estalidos e ruídos na saída de áudio. Significa que a CPU não consegue processar ou transferir áudio com rapidez suficiente. Considere desativar algumas opções que exigem muita CPU (como VNC, auscultadores, etc.) ou reduzir a complexidade das chains.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
+    <td>Subtensão</td>
+    <td class="small">O Zynthian está a funcionar num estado degradado, com a frequência da CPU limitada a 600-800 MHz, numa tentativa de estabilizar o sistema e evitar uma falha. Este ícone não deverá ser apresentado; se aparecer, considere procurar uma fonte de alimentação melhor.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#127777;</span></td><!---->
+    <td>Sobreaquecimento</td>
+    <td class="small">O Zynthian está a funcionar num estado degradado, com a frequência da CPU limitada a 600-800 MHz, numa tentativa de estabilizar o sistema e evitar uma falha. Este ícone não deverá ser apresentado; se aparecer, melhore a dissipação de calor (por exemplo, utilizando um dissipador).</td>
+   </tr>
+   <tr>
+    <th colspan="3">Atividade MIDI e reprodução/gravação</th>
+   </tr>
+   <tr>
+    <td><span class="color-blue symbol"><b>m</b></span></td>
+    <td>MIDI-IN</td>
+    <td class="small">Mensagens MIDI recebidas. O sublinhado indica mensagens do sistema, como o MIDI clock.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9679;</span></td>
+    <td class="nowrap">Gravação de faixa de áudio</td>
+    <td class="small">Está a ser gravada uma faixa de áudio.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#9654;</span></td>
+    <td class="nowrap">Reprodução de faixa de áudio</td>
+    <td class="small">Está a ser reproduzida uma faixa de áudio.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9679;</span></td>
+    <td class="nowrap">Gravação de faixa MIDI</td>
+    <td class="small">Está a ser gravada uma faixa MIDI.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9654;</span></td>
+    <td class="nowrap">Reprodução de faixa MIDI</td>
+    <td class="small">Está a ser reproduzida uma faixa MIDI.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9679;</span></td>
+    <td class="nowrap">Gravação de Pattern</td>
+    <td class="small">A gravação está armada no editor de patterns.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9654;</span></td>
+    <td>Reprodução de Pattern<br/>Reprodução de clip de áudio</td>
+    <td class="small">Está a ser reproduzido um pattern do step sequencer ou um clip de áudio a partir do launcher.</td>
+   </tr>
+  </table>
+
+ </body>
+</html>

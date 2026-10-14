@@ -1,0 +1,102 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">---</div>
+   <div class="action short_press">menú de patrones</div>
+   <div class="action bold_press">gestor de chain</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">movimiento vertical</div>
+   <div class="action short_press">atrás</div>
+   <div class="action bold_press">modo deshacer/rehacer</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">acercar/alejar zoom</div>
+   <div class="action short_press">activar/desactivar reproducción</div>
+   <div class="action bold_press">activar/desactivar grabación</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">movimiento horizontal</div>
+   <div class="action short_press">añadir/eliminar valor CC</div>
+   <div class="action bold_press">---</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Editor de CC de patrones</h1>
+  <p>El editor de CC de patrones permite automatizar cambios de parámetros añadiendo eventos MIDI CC a los patrones del secuenciador. El menú contextual (<b>pulsación corta del knob 1</b>) permite modificar los parámetros del patrón y las opciones de edición.</p>
+  <p>El editor de CC también admite la grabación en directo, deshacer/rehacer y copiar/pegar patrones, y funcionan de forma muy similar a como lo hacen en el <a href="pattern_editor.html">editor de notas</a>.</p>
+
+  <h2>Funcionamiento básico</h2>
+  <p>En cada patrón, puede automatizar hasta 127 parámetros mediante los 127 números CC disponibles.</p>
+  <p>Antes de poder automatizar un parámetro, debe asignar los parámetros que quiera automatizar a los números CC que quiera utilizar. Hay 2 formas de hacerlo:</p>
+  <ul>
+   <li>Use <a href="chain_control.html">MIDI-learning</a> para asignar parámetros del engine a números CC. Necesitará un controlador MIDI con knobs o faders.</li>
+   <li>En el <a href="chain_control.html">menú de opciones del parámetro del engine</a>, seleccione <b>ZynStep CC</b> para asignar un número CC manualmente.</li>
+  </ul>
+  <p>Una vez asignado el parámetro que quiera automatizar, siga estos pasos en el editor de CC para crear el patrón CC manualmente:</p>
+  <ul>
+   <li><b>Gire el knob 1</b> para seleccionar el número CC que quiera editar. Si el CC ya está asignado, verá el nombre del parámetro.</li>
+   <li><b>Gire el knob 4</b> para mover el cursor por el eje temporal del patrón.</li>
+   <li><b>Pulse brevemente el knob 4</b> para añadir o eliminar un punto de la curva.</li>
+   <li><b>Gire el knob 3</b> para mover el punto (valor CC) hacia arriba o hacia abajo.</li>
+   <li><b>Pulse brevemente S4</b> para volver al <a href="pattern_editor.html">editor de notas</a>.</li>
+  </ul>
+  <p>Puede usar el dedo para dibujar la curva y mover los puntos hacia arriba o hacia abajo. También puede grabar en directo (REC + PLAY) y mover el knob asignado de su controlador MIDI.</p>
+  <p>Durante la reproducción, los valores CC se interpolan en cada pulso de reloj (1920 pulsos por negra). La interpolación CC está activada de forma predeterminada, excepto para los pedales (es decir, CC64).</p>
+  <p>En el menú de opciones del patrón, puede activar o desactivar la interpolación CC para cada número CC por separado, limpiar el patrón CC sin eliminar las notas y mucho más.</p>
+  <p>Por supuesto, puede editar y ajustar los parámetros mientras se reproduce el patrón, por lo que oirá el resultado inmediatamente mientras modifica los valores CC en tiempo real.</p>
+
+  <h2>Grabación de patrones</h2>
+  <p><b>Mantenga pulsado el knob 3</b> para activar la grabación MIDI. Cuando la grabación esté armada, se iluminará el símbolo del círculo amarillo en la barra de estado.</p>
+  <h3>Captura paso a paso</h3>
+  <p>No se admite para eventos CC.</p>
+  <h3>Captura en directo</h3>
+  <p>Si el patrón se está reproduciendo (pulse brevemente el knob 3), los eventos de notas y CC se capturarán en tiempo real. Se graban en el instante exacto en que se capturan, sin cuantización. Si lo desea, puede aplicar cuantización a la reproducción (consulte el menú de opciones del patrón). Durante la captura en directo, se guarda un historial en cada bucle del patrón, solo si se han capturado notas nuevas.</p>
+
+  <h2>Deshacer/rehacer</h2>
+  <p>Puede deshacer/rehacer la mayoría de las operaciones de edición mediante el siguiente procedimiento:</p>
+  <ul>
+   <li><b>Mantenga pulsado el knob 2 (BACK)</b> para acceder al modo de navegación por el historial.</li>
+   <li><b>Gire el knob 4</b> para desplazarse por el historial.</li>
+   <li><b>Pulse brevemente el knob 2 (BACK)</b> para salir.</li>
+  </ul>
+  <p>Tenga en cuenta que, aunque el número de pasos del historial es ilimitado, el historial no se guarda en el estado y se perderá al volver a cargar el snapshot.
+  Los snapshots solo guardan el último estado.</p>
+
+  <h2>Opciones de patrón</h2>
+  <p>Pulse brevemente el knob 1 para abrir el menú de <b>opciones de patrón</b>, que permite modificar las propiedades del patrón y diversas opciones de edición. Estos son los parámetros del patrón:</p>
+  <ul>
+   <li><b>Rename:</b> Cambia el nombre de la secuencia que se muestra en los pads del launcher.</li>
+   <li><b>Play mode:</b> DISABLED, LOOP, ONE-SHOT, PLAY 2 TIMES, ... PLAY 24 TIMES</li>
+   <li><b>Program Change:</b> El número de program change que se activa con el patrón. Puede utilizarse para cambiar ZS3, etc.</li>
+   <li><b>Length:</b> La duración del patrón en compases y pulsos.</li>
+   <li><b>Steps/Beat:</b> El número de pasos por pulso. El paso es la unidad de tiempo más pequeña de la cuadrícula del patrón, pero la posición y la duración de los eventos se pueden ajustar en fracciones de paso.</li>
+   <li><b>Quantization:</b> La cuantización puede estar desactivada o configurarse en 1, 1/2, 1/3, 1/4 o 1/6 de paso.</li>
+   <li><b>Swing Amount:</b> La cantidad de swing en %.</li>
+   <li><b>Swing Divisor:</b> El número de divisiones utilizadas para el swing. Use 1 con un 30 % para obtener un swing ternario perfecto.</li>
+   <li><b>Time Humanization:</b> Aleatoriza el tiempo de las notas siguiendo una distribución gaussiana para simular imprecisiones humanas.</li>
+   <li><b>Interpolate CC## values:</b> Activa o desactiva la interpolación de valores CC para el número CC seleccionado.</li>
+  </ul>
+  <h3>Opciones de edición</h3>
+  <ul>
+   <li><b>Copy this to clipboard:</b> Copia el patrón al portapapeles.</li>
+   <li><b>Paste from clipboard:</b> Pega el contenido del portapapeles en el patrón actual.</li>
+   <li><b>Load pattern:</b> Carga un patrón desde un archivo.</li>
+   <li><b>Save pattern:</b> Guarda el patrón en un archivo.</li>
+   <li><b>Import from SMF:</b> Carga un patrón desde un archivo MIDI estándar (.mid).</li>
+   <li><b>Export to SMF:</b> Guarda el patrón en un archivo MIDI estándar (.mid).</li>
+   <li><b>Clear pattern ALL:</b> Elimina todas las notas y los eventos CC del patrón.</li>
+   <li><b>Clear pattern CC##:</b> Elimina del patrón todos los eventos CC correspondientes al número CC seleccionado.</li>
+  </ul>
+
+ <div class="clear"></div>
+ </body>
+</html>

@@ -1,0 +1,98 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">valor do parâmetro 1</div>
+   <div class="action short_press">cadeia seguinte</div>
+   <div class="action bold_press">gestor de cadeias</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">valor do parâmetro 2</div>
+   <div class="action short_press">voltar</div>
+   <div class="action bold_press">menu principal</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">valor do parâmetro 3</div>
+   <div class="action short_press">MIDI learn</div>
+   <div class="action bold_press">ZS3s</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">valor do parâmetro 4</div>
+   <div class="action short_press">alternar modo</div>
+   <div class="action bold_press">presets</div>
+  </div>
+ </div>
+
+  <div class="full_container">
+   <h1>Vista de controlo da chain</h1>
+   <div id="zynproc-info"></div>
+   <p>A vista de controlo da chain permite aceder aos parâmetros dos processadores na chain ativa. Pode:</p>
+   <ul>
+    <li>Modificar o valor dos parâmetros do processador <b>rodando os knobs</b>.</li>
+    <li>Entrar no modo MIDI learn <b>premindo brevemente o knob 3</b>.</li>
+   </ul>
+   <p>Os parâmetros dos processadores estão agrupados em páginas, com até 4 parâmetros por página. Selecione as páginas
+   utilizando os botões S3 / S4. A lista contém as páginas de controlo de todos os processadores da chain.</p>
+   <p>Para percorrer as páginas mais rapidamente, entre no <a href="chain_config.html">modo de seleção</a> com uma <b>pressão breve no knob 4</b>.</p>
+   <p>Tenha em atenção que o <b>modo de seleção</b> também é conhecido como vista de <b>configuração da chain</b>.</p>
+
+   <h2>MIDI Learn</h2>
+   <p>Pode associar qualquer parâmetro a knobs, faders e pads CC dos seus controladores MIDI externos.
+   Existem 2 modos MIDI learn diferentes:</p>
+   <ul>
+    <li><b>Chain Learn:</b> A associação aplica-se apenas à chain selecionada. Pode
+    associar o mesmo knob a um ou vários parâmetros na mesma chain ou em chains diferentes. Apenas a
+    chain selecionada reagirá à mensagem MIDI CC.</li>
+    <li><b>Global Learn:</b> A associação é global. Pode associar o mesmo knob
+    a um ou vários parâmetros na mesma chain ou em chains diferentes. Todos reagirão, independentemente da chain selecionada.</li>
+   </ul>
+   O procedimento de MIDI learn é o seguinte:
+   <ul>
+    <li><b>Prima brevemente o knob 3</b>. É apresentado um indicador <span style="color: green">##?##</span> em todos os parâmetros, indicando o modo Chain Learn. Se necessário, prima novamente para entrar no modo MIDI Learn global. O indicador mudará para amarelo: <span style="color: yellow">??#??</span></li>
+    <li><b>Rode o knob</b> associado ao parâmetro que pretende configurar. O indicador "??#??" será apresentado apenas nesse parâmetro, indicando que está à espera de uma associação MIDI learn.</li>
+    <li><b>Mova um knob/fader</b> ou <b>toque num pad CC</b> no seu controlador MIDI externo. A associação está concluída e o indicador apresenta agora o canal MIDI e o número CC a branco.</li>
+   </ul>
+   <p>Enquanto estiver no modo MIDI learn, pode aceder às <b>opções de controlo dos parâmetros</b> <b>premindo demoradamente os knobs</b>.</p>
+   <p>Pode cancelar o MIDI learn em qualquer momento <b>premindo «voltar»</b>.</p>
+
+   <h2>Opções de controlo dos parâmetros</h2>
+   <p>Enquanto estiver no modo MIDI learn, <b>prima demoradamente qualquer knob</b> para aceder às opções do controlador para o parâmetro associado. Estas são as opções comuns:</p>
+   <ul>
+    <li><b>Chain Controller:</b> Quando selecionada, esta opção adiciona o parâmetro às páginas do controlador da chain,
+     no início da lista de páginas. Esta funcionalidade funciona como uma espécie de «parâmetros favoritos» da chain.</li>
+    <li><b>X-Y Touchpad:</b> Quando tiverem sido selecionados parâmetros numéricos para os eixos X e Y, entre no modo X-Y Touchpad.
+    <li><b>Chain Learn:</b> Inicia o MIDI learn da chain para o parâmetro.</li>
+    <li><b>Global Learn:</b> Inicia o MIDI learn global para o parâmetro.</li>
+    <li><b>Zynstep CC:</b> Escolha o número CC utilizado pelo sequenciador para automatizar o parâmetro.</li>
+    <li><b>Unlearn:</b> Remove a associação do parâmetro.</li>
+    <li><b>Unlearn all controls:</b> Remove as associações de todos os parâmetros do processador.</li>
+   </ul>
+
+   <p>Estas são as opções específicas para controladores numéricos:</p>
+   <ul>
+    <li><b>Absolute/Relative Mode:</b> Permite configurar knobs incrementais (encoders).</li>
+    <li><b>CC Value Range:</b> Configura a forma como os valores MIDI CC são mapeados para o parâmetro associado.</li>
+    <li><b>X-axis:</b> Selecione para utilizar o parâmetro no eixo X no modo <b>X-Y Touchpad</b>.</li>
+    <li><b>Y-axis:</b> Selecione para utilizar o parâmetro no eixo Y no modo <b>X-Y Touchpad</b>.</li>
+   </ul>
+
+   <p>Estas são as opções específicas para controladores de alternância:</p>
+   <ul>
+    <li><b>Momentary => Latch:</b> Interpreta os impulsos MIDI CC como alternâncias (modo latch).</li>
+    <li><b>Debounce:</b> Ativa o debounce para evitar comutações espúrias.</li>
+   </ul>
+
+   <h4>X-Y Touchpad</h4>
+   <p>No modo X-Y Touchpad, pode controlar os 2 parâmetros atribuídos em simultâneo, deslizando o dedo pelo ecrã tátil, «à la chaos-pad».</p>
+
+  </div>
+
+  <div class="clear"></div>
+ </body>
+</html>

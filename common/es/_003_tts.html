@@ -1,0 +1,37 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+  <h1>Interfaz asistida por TTS: ZynVoice</h1>
+  <p>Zynthian dispone de un asistente de texto a voz muy completo, llamado ZynVoice, diseñado para usuarios con discapacidad visual. ZynVoice permite controlar completamente el dispositivo mediante los botones y los mandos del hardware, con indicaciones sonoras que sirven de guía. La navegación y el manejo se facilitan mediante anuncios hablados y tonos. ZynVoice utiliza una interfaz de audio o tarjeta de sonido adicional para ofrecer una salida de audio independiente de la salida principal. Así se obtiene un audio limpio para la producción, mientras los anuncios de ZynVoice se envían a la monitorización personal del usuario.</p>
+  <h1>Primeros pasos</h1>
+  <p>Conecte un dispositivo de audio para que lo utilice ZynVoice; por ejemplo, conecte una tarjeta de sonido USB. No es necesario que sea un dispositivo caro ni de alta fidelidad. Se ha comprobado que un dispositivo de 2 $ es suficiente.</p>
+  <p>
+   Recuerde los siguientes términos, que se utilizan en todo el sistema de ayuda:
+   <ul>
+   <li>Pulsación: significa pulsar brevemente un botón y soltarlo.</li>
+   <li>Pulsación prolongada breve: significa mantener pulsado un botón durante aproximadamente 1,5 segundos y soltarlo.</li>
+   <li>Pulsación larga: significa mantener pulsado un botón durante al menos 2 segundos.</li>
+   </ul>
+  </p>
+  <p>El botón F4 está asignado a ZynVoice. En un zynthian V5, este botón se encuentra en la parte inferior derecha del teclado de 20 botones. En un zynthian V4, está a la derecha de los 4 botones centrales. De forma predeterminada, ZynVoice está desactivado, pero puede activarlo fácilmente manteniendo pulsado el botón ZynVoice. Esta acción alterna ZynVoice entre activado y desactivado. Al activar ZynVoice, debería oír el anuncio «ZynVoice activado». Del mismo modo, al desactivarlo, debería oír el anuncio «ZynVoice desactivado».</p>
+  <p>Cuando ZynVoice está activado, oirá anuncios mientras navega por la interfaz de usuario y realiza acciones. Por ejemplo, al entrar en una vista se anunciará su nombre, para que sepa dónde se encuentra en el árbol de navegación. Al desplazarse por las listas, se anunciará cada elemento.</p>
+  <p>Antes de cada anuncio hay una breve demora de unos 0,2 segundos. Si es necesario, los anuncios pueden ponerse en cola, aunque la mayoría de las veces el más reciente interrumpe al anterior. Por ejemplo, al desplazarse por una lista, es posible que se omitan los elementos intermedios.</p>
+  <p>Puede utilizar el botón ZynVoice para detener los anuncios en curso. Si ZynVoice está en silencio, al pulsar el botón ZynVoice se anunciará el contexto. De forma predeterminada, se anuncia el nombre de la vista actual, pero también se puede incluir información contextual de esa vista. Por ejemplo, puede anunciar la entrada resaltada de una lista. Mantenga pulsado el botón ZynVoice para activar o desactivar ZynVoice.</p>
+  <p>Además de los anuncios hablados, ZynVoice emite un tono breve cada segundo mientras la interfaz de usuario está ocupada, por ejemplo, al cargar un snapshot. El fin del periodo de actividad se indica con un tono más largo y agudo.</p>
+  <p>Puede configurar ZynVoice desde una opción del menú de administración. La configuración incluye:
+   <ul>
+    <li>Activar ZynVoice</li>
+    <li>Nombre de la voz</li>
+    <li>Velocidad</li>
+    <li>Volumen</li>
+    <li>Salida de la tarjeta de sonido</li>
+   </ul>
+  <p>Pulse brevemente el botón ALT para acceder a la vista de ayuda. ZynVoice empezará a leer la información de ayuda de la vista actual. El mando 3 permite controlar la lectura de la ayuda. Al pulsar el mando 3, se activa o desactiva la pausa: se detiene la reproducción o se reanuda desde el principio de la frase actual. Al girar el mando 3, se selecciona la frase anterior o siguiente. Si mantiene pulsado el mando 3, se anunciarán las acciones de los mandos en esta vista, incluidas las acciones de giro, pulsación y pulsación prolongada breve. Puede utilizar el botón Navigator para detener la lectura o reiniciarla desde el principio de la página. Pulse el mando 4 para activar o desactivar el modo de hipervínculos. Gire el mando 4 para seleccionar un enlace y, a continuación, púlselo para abrirlo. Pulse el botón de retroceso para salir del modo de enlaces. El primer enlace de cada página lleva a un índice de todas las páginas de ayuda disponibles. Si la página no contiene otros enlaces, al pulsar el mando 4 se abrirá directamente el índice.</p>
+  <p>Algunas vistas contienen listas de opciones con información adicional para cada elemento. De forma predeterminada, solo se anuncia el título del elemento de la lista. Al pulsar el botón ZynVoice, puede hacer que se lea esta información adicional. Es posible que estas vistas no tengan páginas de ayuda específicas, ya que su funcionamiento es bastante intuitivo.</p>
+  <p>Si una acción requiere confirmación, se anunciará el mensaje de confirmación y podrá utilizar los botones SELECT o BACK para confirmar o cancelar. Solo al confirmar se emitirá un tono breve.</p>
+  <div class="clear"></div>
+ </body>
+</html>

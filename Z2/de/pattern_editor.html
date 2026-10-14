@@ -1,0 +1,215 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">---</div>
+   <div class="action short_press">CC editor</div>
+   <div class="action bold_press">CC editor</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">Vergrößern/verkleinern</div>
+   <div class="action short_press">Zoom zurücksetzen</div>
+   <div class="action bold_press">Pattern-Länge</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">Vertikal verschieben</div>
+   <div class="action short_press">Block auswählen</div>
+   <div class="action bold_press">Block auswählen</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">Horizontal verschieben</div>
+   <div class="action short_press">Note hinzufügen/entfernen</div>
+   <div class="action bold_press">Note bearbeiten</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>Pattern-Note-Editor</h1>
+  <p>Mit dem Pattern-Note-Editor können Sie Notes zu einem Pattern hinzufügen oder daraus entfernen, Note-Parameter ändern, Blöcke kopieren/einfügen usw. Über das Kontextmenü (<b>OPT</b>) können Sie die Pattern-Parameter ändern und Bearbeitungsoptionen aufrufen.</p>
+  <p>Mit den <b>PLAY/STOP-Tasten</b> können Sie das Pattern wiedergeben/anhalten. Die <b>REC-Taste</b> aktiviert die MIDI-Aufnahme, die schrittweise oder als Live-Aufnahme (in Echtzeit) erfolgen kann.</p>
+  <p>Im <b>ALT-Modus</b> können Sie auf Sonderfunktionen wie Rückgängigmachen/Wiederherstellen, Blockoperationen und das Kopieren/Einfügen von Patterns zugreifen.</p>
+ </div>
+
+ <div class="full_container">
+  <h2>Grundlegende Bedienung</h2>
+  <ul>
+   <li><b>Drehen Sie die Regler 3 und 4</b>, um den Cursor vertikal oder horizontal zu bewegen. Bei <b>deaktiviertem ALT-Modus</b> können Sie dafür auch die Pfeiltasten verwenden.</li>
+   <li><b>Drücken Sie Regler 4 kurz</b>, um Notes hinzuzufügen oder zu entfernen. <b>Drücken Sie Regler 4 fest</b>, um Note-Parameter zu bearbeiten. Sie können dafür auch die <b>SEL-Taste</b> verwenden.</li>
+   <li><b>Drehen Sie Regler 2</b>, um die Zoomstufe anzupassen. <b>Drücken Sie Regler 2 kurz</b>, um den Zoom auf den Standardwert zurückzusetzen.</li>
+   <li><b>Drücken Sie Regler 3 kurz</b>, um die Blockauswahl aufzurufen. Der Ablauf für Blockoperationen wird im folgenden Abschnitt ausführlich erklärt.</li>
+   <li><b>Drücken Sie die OPT-Taste kurz</b>, um das Menü mit den Pattern-Optionen zu öffnen. Dort können Sie alle Pattern-Parameter ändern. <b>Drücken Sie Regler 2 fest</b>, um direkt die Pattern-Länge zu ändern.</li>
+   <li><b>Drücken Sie Regler 1 kurz</b>, um zwischen dem Note-Editor und dem <a href="pated_cc.html">CC editor</a> zu wechseln.</li>
+  </ul>
+
+  <h2>Patterns aufnehmen</h2>
+  <p><b>Drücken Sie die REC-Taste</b>, um die MIDI-Aufnahme zu aktivieren. Wenn die Aufnahme scharfgeschaltet ist, leuchtet die REC-Taste rot.</p>
+  <h3>Schrittweise Aufnahme</h3>
+  <p>Wird das Pattern nicht wiedergegeben, werden Note-Ereignisse an der Cursorposition aufgenommen und der Cursor anschließend zum nächsten Step bewegt. Mit dem Sustain-Pedal können Sie Steps überspringen.</p>
+  <h3>Live-Aufnahme</h3>
+  <p>Wird das Pattern wiedergegeben, werden Note- und CC-Ereignisse in Echtzeit aufgenommen. Sie werden exakt zum Aufnahmezeitpunkt und ohne Quantisierung aufgezeichnet. Bei Bedarf können Sie bei der Wiedergabe eine Quantisierung anwenden (siehe Menü mit den Pattern-Optionen). Während der Live-Aufnahme wird bei jedem Pattern-Durchlauf ein Verlauf gespeichert, jedoch nur, wenn neue Notes aufgenommen wurden.</p>
+
+  <h2>Rückgängigmachen/Wiederherstellen</h2>
+  <p>Im ALT-Modus können Sie mit den Pfeiltasten Änderungen rückgängig machen oder wiederherstellen:</p>
+  <ul>
+   <li><b>LINKS:</b> Letzten Bearbeitungsschritt rückgängig machen.</li>
+   <li><b>RECHTS:</b> Letzten rückgängig gemachten Schritt wiederherstellen.</li>
+   <li><b>UNTEN:</b> ALLES rückgängig machen.</li>
+   <li><b>OBEN:</b> ALLES wiederherstellen.</li>
+  </ul>
+  <p>Alternativ können Sie Änderungen wie folgt rückgängig machen oder wiederherstellen. Dieser Ablauf ist praktisch, wenn der ALT-Modus nicht ohne Weiteres verfügbar ist:</p>
+  <ul>
+   <li>Wenn die Aufnahme scharfgeschaltet ist (REC-Taste leuchtet rot) ...</li>
+   <li><b>Drücken Sie die BACK-Taste fest</b>, um den Verlaufsnavigationsmodus aufzurufen.</li>
+   <li><b>Drehen Sie Regler 4</b>, um den Verlauf zu durchlaufen.</li>
+   <lI><b>Drücken Sie BACK</b>, um den Modus zu verlassen.</li>
+  </ul>
+  <p>Die Anzahl der Verlaufsschritte ist zwar unbegrenzt, der Verlauf wird jedoch nicht im Zustand gespeichert und geht verloren, wenn Sie den snapshot erneut laden.
+  Snapshots speichern nur den jeweils letzten Zustand.</p>
+
+  <h2>Note-Parameter</h2>
+  <p>Sie können jede Note im Pattern bearbeiten, indem Sie den Cursor darauf positionieren und sie durch festes Drücken auswählen:</p>
+  <ul>
+   <li><b>Drücken Sie Regler 4 fest</b> oder <b>SELECT fest</b>, um den Parameter-Editor für die ausgewählte Note aufzurufen.</li>
+   <li><b>Drehen Sie Regler 4</b> oder verwenden Sie die <b>LINKS-/RECHTS-Tasten</b>, um den Parameter auszuwählen.</li>
+   <li><b>Drehen Sie Regler 3</b> oder verwenden Sie die <b>OBEN-/UNTEN-Tasten</b>, um den Wert des ausgewählten Parameters zu ändern.</li>
+   <li>Falls verfügbar, können Sie den Wert des ausgewählten Parameters mit <b>Regler 2 fein einstellen</b>.</li>
+  </ul>
+  <p>Folgende Parameter können bearbeitet werden:</p>
+  <ul>
+   <li><b>Duration:</b> In Steps. Verwenden Sie Regler 2 für die Feineinstellung.</li>
+   <li><b>Velocity:</b> MIDI-Note-Velocity von 0 bis 127.</li>
+   <li><b>Offset:</b> Relative Verschiebung zum Start-Step der Note.</li>
+   <li><b>Stutter Speed:</b> Anzahl der Retrigger <b>pro Beat</b>.</li>
+   <li><b>Stutter Velo:</b> Verlauf der Note-Velocity während des Stutters. Mögliche Werte: FLAT, FADE-IN, FADE-OUT.</li>
+   <li><b>Stutter Ramp:</b> Verlauf der Retrigger-Geschwindigkeit während der Notendauer. Mögliche Werte: NONE, SPEED-DOWN, SPEED-UP.</li>
+   <li><b>Play Frequency:</b> In jedem N-ten Loop überspringen/wiedergeben.</li>
+   <li><b>Play Chance:</b> Wiedergabewahrscheinlichkeit.</li>
+   <li><b>Stutter Frequency:</b> In jedem N-ten Loop stuttern.</li>
+   <li><b>Stutter Chance:</b> Stutter-Wahrscheinlichkeit.</li>
+  </ul>
+
+  <p>Der Stutter-Speed-Ramp-Effekt funktioniert folgendermaßen:</p>
+  <ul>
+   <li><b>Speed ramp-up:</b> Erhöht die Stutter-Geschwindigkeit ausgehend vom angegebenen Wert über die Dauer der Note.</li>
+   <li><b>Speed ramp-down:</b> Verringert die Stutter-Geschwindigkeit ausgehend von einem berechneten Wert, sodass am Ende der Notendauer die angegebene Geschwindigkeit erreicht wird.</li>
+  </ul>
+
+  <div class="note-block">
+  Änderungen an Note-Parametern werden sofort und in Echtzeit übernommen. Sie können die Note-Parameter auch während der Wiedergabe des Patterns ändern. Das Ergebnis hören Sie, sobald der Wiedergabe-Cursor die bearbeitete Note erreicht.
+  </div>
+
+  <h3>Visuelle Rückmeldung</h3>
+  <p>Die meisten Note-Parameter werden visuell dargestellt:</p>
+  <ul>
+   <li>Die Dauer der Note wird durch die Länge des Rechtecks dargestellt.</li>
+   <li>Die Velocity der Note wird durch die Hintergrundfarbe des Rechtecks dargestellt. Je niedriger die Velocity, desto dunkler die Farbe. Je höher die Velocity, desto heller die Farbe.</li>
+   <li>Der Stutter einer Note wird als Folge vertikaler Balken dargestellt.</li>
+   <li>Die <b>Stutter-Geschwindigkeit</b> ist proportional zur „Balkendichte“.</li>
+   <li>Der <b>Stutter-Velocity-Effekt</b> wird durch die Wuchsrichtung der Balken dargestellt.</li>
+   <li>Für <b>Stutter Speed Ramp</b> gibt es keine visuelle Rückmeldung. Entschuldigung!</li>
+   <li>Weiße Beschriftungen stehen für Play Frequency oder Play Chance.</li>
+   <li>Violette Beschriftungen stehen für Stutter Frequency oder Stutter Chance.</li>
+  </ul>
+  <p>Wenn Sie mehrere Chance- oder Frequency-Eigenschaften gleichzeitig anwenden, wird nur eine davon als Beschriftung angezeigt. Die Priorität ist:</p>
+  <ol>
+   <li>Play Freq</li>
+   <li>Play Chance</li>
+   <li>Stutter Freq</li>
+   <li>Stutter Chance</li>
+  </ol>
+
+  <h2>Blockoperationen</h2>
+  <p>Mit Blockoperationen können Sie mehrere Notes auswählen und auf alle gleichzeitig eine Operation anwenden, zum Beispiel kopieren/einfügen oder einen Note-Parameter ändern.</p>
+  <p>Blockoperationen können Sie mit den Reglern oder im <b>ALT-Modus</b> mit den Tasten ausführen. Wählen Sie den Ablauf, der am besten zu Ihnen passt:</p>
+  <ol>
+   <li><b>Drücken Sie Regler 3 kurz</b> oder <b>F3 kurz</b>, um den Modus zur Blockauswahl aufzurufen.</li>
+   <li><b>Drehen Sie Regler 3 und 4</b> oder verwenden Sie die <b>Pfeiltasten</b>, um die Auswahl anzupassen.
+    <ol>
+     <li><b>Drücken Sie Regler 4 kurz</b> oder <b>SEL kurz</b>, um die Auswahl zu kopieren.</li>
+     <li><b>Drücken Sie Regler 3 kurz</b> oder <b>F3 kurz</b>, um die Auswahl auszuschneiden.</li>
+     <li><b>Drücken Sie Regler 4 fest</b> oder <b>SEL fest</b>, um die Notes auszuwählen und den <b>MULTI-Bearbeitungsmodus</b> aufzurufen.</li>
+    </ol></li>
+   <li><b>Drehen Sie Regler 3 und 4</b> oder verwenden Sie die <b>Pfeiltasten</b>, um den Block über das Pattern-Raster zu bewegen.</li>
+   <li><b>Drücken Sie Regler 4 kurz</b> oder <b>SEL kurz</b>, um den Block einzufügen.</li>
+   <li>Wiederholen Sie die Schritte 4 und 5 beliebig oft.</li>
+   <li><b>Drücken Sie BACK</b>, um den Vorgang zu beenden.</li>
+  </ol>
+  <p>Dieser Ablauf gilt für die verschiedenen Blockoperationen. Der Unterschied liegt in Schritt 2.
+  Bei Kopieren/Ausschneiden und Einfügen ist die Auswahl grün markiert, während der MULTI-Bearbeitungsblock blau markiert ist.</p>
+
+  <div class="note-block">
+  Wenn Sie im ALT-Modus den Ablauf mit der F3-Taste verwenden, beachten Sie bitte, dass die Pfeiltasten im ALT-Modus normalerweise zum Navigieren im Verlauf (Rückgängigmachen/Wiederherstellen) dienen.
+  Wenn Sie den Modus zur <b>Blockauswahl</b> durch Drücken von F3 aufrufen, ändert sich die Funktion der Pfeiltasten: Sie können damit die Auswahl anpassen und zum Einfügen verschieben.
+  </div>
+
+  <h3>MULTI-Bearbeitungsmodus</h3>
+  <p>Sie können dem Ablauf unter <b>2.c</b> folgen, um mehrere Notes gleichzeitig zu bearbeiten. Derzeit können nur die Parameter <i>velocity</i> und <i>duration</i> gemeinsam bearbeitet werden.
+  Im MULTI-Bearbeitungsmodus können Sie Folgendes tun:</p>
+  <ul>
+   <li><b>Drehen Sie Regler 4</b>, um den gemeinsam zu bearbeitenden Parameter auszuwählen. Derzeit sind nur <i>velocity</i> und <i>duration</i> verfügbar.</li>
+   <li><b>Drehen Sie Regler 3</b>, um den Wert des ausgewählten Parameters zu ändern. Die Werte werden schrittweise und relativ zu den ursprünglichen Werten geändert, sofern die Wertebereichsgrenzen nicht erreicht werden.</li>
+   <li><b>Drücken Sie BACK kurz</b>, um den MULTI-Bearbeitungsmodus zu verlassen.</li>
+  </ul>
+
+  <p>Wenn Sie den MULTI-Bearbeitungsmodus verlassen, bleibt der Block „ausgewählt“. Dies erkennen Sie an der bläulichen Farbe der ausgewählten Notes.
+  Sie können weiterhin Notes hinzufügen, einzelne Notes bearbeiten usw. Die Auswahl des Blocks hat keinen Einfluss auf die normale Bedienung.
+  Sie können den MULTI-Bearbeitungsmodus jedoch erneut aufrufen, indem Sie Regler 4 fest drücken. Drücken Sie BACK, um die Blockauswahl aufzuheben.</p>
+
+  <div class="note-block">
+  <b>Drücken Sie Regler 3 fest</b>, um alle Notes im Pattern gemeinsam zu bearbeiten.
+  </div>
+
+  <h2>Pattern-Optionen</h2>
+  <p>Drücken Sie ALT kurz, um das Menü mit den <b>Pattern-Optionen</b> zu öffnen. Dort können Sie die Pattern-Eigenschaften sowie verschiedene Bearbeitungsoptionen ändern. Dies sind die Pattern-Parameter:</p>
+  <ul>
+   <li><b>Rename:</b> Ändert den Namen der Sequenz, der auf den Pads des Launchers angezeigt wird.</li>
+   <li><b>Play mode:</b> DISABLED, LOOP, ONE-SHOT, PLAY 2 TIMES, ... PLAY 24 TIMES</li>
+   <li><b>Program Change:</b> Die Program-Change-Nummer, die mit dem Pattern ausgelöst wird. Damit können Sie beispielsweise ZS3 wechseln.</li>
+   <li><b>Length:</b> Die Pattern-Länge in Takten und Beats.</li>
+   <li><b>Steps/Beat:</b> Die Anzahl der Steps pro Beat. Der Step ist die kleinste Zeiteinheit im Pattern-Raster. Die Position und Dauer eines Ereignisses können jedoch auch in Step-Bruchteilen angepasst werden.</li>
+   <li><b>Quantization:</b> Die Quantisierung kann deaktiviert oder auf 1, 1/2, 1/3, 1/4 oder 1/6 Step eingestellt werden.</li>
+   <li><b>Swing Amount:</b> Die Stärke des Swing-Effekts in %.</li>
+   <li><b>Swing Divisor:</b> Die Anzahl der Unterteilungen für Swing. Mit dem Wert 1 und 30 % erhalten Sie einen perfekten ternären Swing.</li>
+   <li><b>Time Humanization:</b> Die Note-Zeit wird gemäß einer Gauß-Verteilung randomisiert, um menschliche Ungenauigkeit zu simulieren.</li>
+   <li><b>Velocity Humanization:</b> Die Note-Velocity wird gemäß einer Gauß-Verteilung randomisiert, um menschliche Ungenauigkeit zu simulieren.</li>
+   <li><b>Note Play Chance:</b> Die Wahrscheinlichkeit, dass Pattern-Notes wiedergegeben werden, in %. Damit können Notes zufällig ausgelassen werden.</li>
+   <li><b>Scale:</b> Die vom Pattern-Editor verwendete Tonleiter.</li>
+   <li><b>Tonic:</b> </li>
+  </ul>
+  <h3>Bearbeitungsoptionen</h3>
+  <ul>
+   <li><b>Rest note:</b> </li>
+   <li><b>Chord mode</b> Ermöglicht das Hinzufügen vollständiger Akkorde anstelle einzelner Notes.</li>
+   <li><b>Transpose pattern:</b> Transponiert das Pattern um eine bestimmte Anzahl von Halbtönen.</li>
+   <li><b>Copy this to clipboard:</b> Kopiert das Pattern in die Zwischenablage.</li>
+   <li><b>Paste from clipboard:</b> Fügt den Inhalt der Zwischenablage in das aktuelle Pattern ein.</li>
+   <li><b>Load pattern:</b> Lädt ein Pattern aus einer Datei.</li>
+   <li><b>Save pattern:</b> Speichert das Pattern in einer Datei.</li>
+   <li><b>Import from SMF:</b> Lädt ein Pattern aus einer Standard-MIDI-Datei (.mid).</li>
+   <li><b>Export to SMF:</b> Speichert das Pattern als Standard-MIDI-Datei (.mid).</li>
+   <li><b>Clear pattern ALL:</b> Löscht alle Notes und CC-Ereignisse aus dem Pattern.</li>
+   <li><b>Clear pattern notes:</b> Löscht alle Notes aus dem Pattern.</li>
+  </ul>
+
+  <h2>Patterns kopieren/einfügen</h2>
+  <p>Sie können vollständige Patterns kopieren/einfügen, indem Sie den <b>ALT-Modus</b> aufrufen. Es gibt zwei Kopier-/Einfüge-Puffer (F1 und F2).
+  Nicht belegte Puffer leuchten orange. Belegte Puffer blinken wie folgt:</p>
+  <ul>
+   <li><b>Blinkt grün:</b> Der Inhalt kann durch <b>kurzes Drücken</b> eingefügt werden.</li>
+   <li><b>Blinkt rot:</b> Der Inhalt kann nicht eingefügt werden. Es handelt sich um einen Audio-Clip.</li>
+   <li><b>Blinkt orange:</b> Der Inhalt kann nicht an seiner eigenen Position eingefügt werden. Das ausgewählte Pattern ist das kopierte Pattern.</li>
+  </ul>
+  <p><b>Drücken Sie F1 oder F2 fest</b>, um das Pattern in die Zwischenablage zu kopieren. Ist der Puffer belegt, wird sein Inhalt überschrieben.</p>
+  <p><b>Drücken Sie F1 oder F2 kurz</b>, während die Taste grün blinkt, um den Inhalt in das aktuelle Pattern einzufügen. Ist das aktuelle Pattern nicht leer, werden Sie zur Bestätigung aufgefordert.</p>
+  <p>Dieser Ablauf ergänzt den Kopier-/Einfüge-Ablauf des Launchers. Sie können Patterns einfügen, die Sie im Launcher kopiert haben, und das aktuelle Pattern kopieren,
+  um es später über den Launcher einzufügen.</p>
+
+ </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

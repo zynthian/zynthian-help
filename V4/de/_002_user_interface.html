@@ -1,0 +1,298 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>Die Benutzeroberfläche</h1>
+  <p>Die Benutzeroberfläche des zynthian V4 wird hauptsächlich über Folgendes bedient:</p>
+  <ul>
+   <li>4 Drehregler mit Schalter</li>
+   <li>4 Tasten (S1-S4)</li>
+   <li>resistives Touchdisplay</li>
+  </ul>
+
+  <p>Alternativ kann die zynthian-Benutzeroberfläche bedient werden:</p>
+  <ul>
+   <li>über die VNC-Schnittstelle</li>
+   <li>mit einem unterstützten MIDI-Controller</li>
+   <li>mit MIDI-Noten im MIDI-Master-Kanal</li>
+   <li>mit einer Computertastatur (Tastenzuordnungen)</li>
+   <li>über OSC CUIA</li>
+  </ul>
+
+  <p>Diese Anleitung behandelt nur die grundlegende Benutzeroberfläche mit Drehreglern, Tasten und Touch-Bedienung. Weitere Informationen finden Sie im <a href="https://wiki.zynthian.org">zynthian-Wiki</a>.</p>
+
+  <h2>Drehregler-Aktionen</h2>
+  <p>
+   Es gibt fünf Drehregler-Aktionen:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Kurzer Druck:</b> Wird ein Drehregler weniger als 0,3 Sekunden lang gedrückt, wird die <b>Aktion für kurzen Druck</b>(*) ausgelöst.</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Mittellanger Druck:</b> Wird ein Drehregler länger als 0,3 und weniger als 2 Sekunden lang gedrückt, wird die <b>Aktion für mittellangen Druck</b>(*) ausgelöst.</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Langer Druck:</b> Wird ein Drehregler länger als 2 Sekunden gedrückt gehalten, wird die <b>Aktion für langen Druck</b>(*) ausgelöst.</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Drehen:</b> Durch Drehen eines Reglers können Sie einen Parameterwert anpassen, das ausgewählte Element in einer Liste ändern oder den Cursor horizontal oder vertikal bewegen. Die Beschleunigung der Drehregler ermöglicht feinere Anpassungen bei langsamer und gröbere Anpassungen bei schneller Drehung.</li>
+    <li><b>Drücken + Drehen:</b> Wird ein Drehregler gedrückt gehalten und gedreht, kann sich die Auflösung erhöhen und dadurch eine feinere Anpassung ermöglichen.</li>
+   </ul>
+  </p>
+
+  <h2>Tastenaktionen</h2>
+  <p>
+   Es gibt drei Tastenaktionen:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Kurzer Druck:</b> Wird eine Taste weniger als 0,3 Sekunden lang gedrückt, wird die <b>Aktion für kurzen Druck</b> (*) ausgelöst.</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Mittellanger Druck:</b> Wird eine Taste länger als 0,3 und weniger als 2 Sekunden lang gedrückt, wird die <b>Aktion für mittellangen Druck</b>(*) ausgelöst.</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Langer Druck:</b> Wird eine Taste länger als 2 Sekunden gedrückt gehalten, wird die <b>Aktion für langen Druck</b>(*) ausgelöst.</li>
+   </ul>
+  </p>
+
+  <p>(*) Die Dauer der Druckaktionen kann im Tab „Advanced UI options“ des Webconf-Tools konfiguriert werden.</p>
+  <p>Beachten Sie, dass nicht allen Drehreglern und Tasten für jeden Aktionstyp Funktionen zugeordnet sind. Die Funktionen der Drehregler und Tasten können sich je nach Kontext ändern. Dies wird auf den Hilfeseiten zu den verschiedenen Ansichten ausführlich dokumentiert. Merken Sie sich die oben gezeigten Aktionssymbole, da sie in dieser Anleitung verwendet werden.</p>
+
+  <img src="img/ui_action_global_v4.png" class="full"/>
+
+  <h2>Verwendung der Drehregler</h2>
+
+  <p>Die V4-Drehregler sind das wichtigste Bedienelement zum Navigieren in der Benutzeroberfläche. Ihre Funktion ist kontextabhängig, insbesondere beim Drehen sowie bei Aktionen durch kurzen und mittellangen Druck. Aktionen durch langen Druck gelten immer global. Die Drehregler sind von oben nach unten und von links nach rechts nummeriert. Die Bezeichnungen der Regler, wie sie auf dem V4-Aluminiumgehäuse aufgedruckt sind, sind folgendermaßen zugeordnet:</p>
+
+  <ul>
+   <li><b>layer</b> => Drehregler #1
+   <li><b>back</b> => Drehregler #2
+   <li><b>learn/shot</b> => Drehregler #3
+   <li><b>select</b> => Drehregler #4
+  </ul>
+
+  <p>In dieser Anleitung werden die Reglerbezeichnungen und -nummern gleichbedeutend verwendet.</p>
+
+  <h3>Allgemeine Regel</h3>
+  <p>Obwohl das Verhalten der Drehregler kontextabhängig ist, gibt es ein Muster, das als <i>allgemeine Regel</i> für viele Ansichten gilt:</p>
+
+  <h4>SELECT-Drehregler</h4>
+  <ul>
+   <li>In <b>Auswahlanzeigen</b> (Listen):
+    <ul>
+     <li><b>Drehen</b>, um die Liste zu durchblättern.</li>
+     <li><b>Kurzer Druck</b>, um Elemente auszuwählen.</li>
+     <li><b>Mittellanger Druck</b>, um kontextbezogene Optionen zu öffnen.</li>
+    </ul></li>
+   <li>In <b>Rasteransichten</b> ist dies der Regler für die X-Achse. <b>Drehen</b>, um den Cursor horizontal zu bewegen.
+   <li>In <b>geteilten Ansichten</b> mit zwei scrollbaren Listen bedient er die rechte Liste.</li>
+  </ul>
+
+  <h4>BACK-Drehregler</h4>
+  <ul>
+   <li><b>Kurzer Druck</b>, um zur vorherigen Ansicht zurückzukehren.</li>
+   <li>In <b>Rasteransichten</b> ist dies der Regler für die Y-Achse. <b>Drehen</b>, um den Cursor vertikal zu bewegen.</li>
+  </ul>
+
+  <h4>LEARN/SHOT-Drehregler</h4>
+  <ul>
+   <li>In <b>geteilten Ansichten</b> mit zwei scrollbaren Listen bedient er die linke Liste.
+    <ul>
+     <li><b>Drehen</b>, um die linke Liste zu durchblättern.</li>
+     <li><b>Kurzer Druck</b>, um ein Element in der linken Liste auszuwählen.</li>
+    </ul></li>
+  </ul>
+
+  <b>Diese allgemeine Regel wird im nächsten Abschnitt erweitert.</b>
+
+  <div class="clear"></div>
+  <div class="note-block">
+   Die Hauptlautstärke ist jederzeit mit einem Klick verfügbar. Drücken Sie den <b>BACK-Drehregler mittellang</b>, um die Mixer-Ansicht zu öffnen, und drehen Sie anschließend den <b>Learn/Shot-Drehregler</b>, um die Hauptlautstärke zu ändern.
+  </div>
+
+  <h2>Verwendung der Drucktasten</h2>
+
+  <p>Der klassische zynthian-Workflow (V1-V4) basiert auf den Schaltern der vier Drehregler. Aktionen durch kurzen Druck sind in der Regel kontextabhängig, während Aktionen durch mittellangen und langen Druck in der Regel global gelten.</p>
+  <p>Sofern in den folgenden Abschnitten nicht anders angegeben, gelten diese Standardaktionen bei Tastendruck:</p>
+
+  <ul>
+   <li><b>LAYER</b>
+    <ul>
+     <li><b>kurzer Druck</b> ist kontextabhängig.</li>
+     <li><b>mittellanger Druck</b>, um den <b>chain manager</b> zu öffnen.</li>
+     <li><b>langer Druck</b>, um die <b>Hilfe</b> zu öffnen.</li>
+    </ul></li>
+   <li><b>BACK</b>
+    <ul>
+     <li><b>kurzer Druck</b>, um zur <b>vorherigen Ansicht</b> zurückzukehren. Wechselt zwischen Mixer- und Launcher-Ansicht.</li>
+     <li><b>mittellanger Druck</b>> öffnet das <b>Hauptmenü</b>.</li>
+     <li><b>langer Druck</b>, um das Menü zum <b>Ausschalten</b> zu öffnen.</li>
+    </ul></li>
+   <li><b>LEARN/SHOT</b>
+    <ul>
+     <li><b>kurzer Druck</b> ist kontextabhängig.</li>
+     <li><b>mittellanger Druck</b>, um die <b>ZS3-Liste</b> zu öffnen.</li>
+     <li><b>langer Druck</b>, um die <b>snapshot-Liste</b> zu öffnen.</li>
+    </ul></li>
+   <li><b>SELECT</b>
+    <ul>
+     <li><b>kurzer Druck</b>, um das ausgewählte Element <b>auszuwählen oder zu aktivieren/deaktivieren</b>.</li>
+     <li><b>mittellanger Druck</b>, um Optionen für das ausgewählte Element anzuzeigen. Kontextabhängig.</li>
+     <li><b>langer Druck</b>, um <b>PANIC!</b> auszulösen. Alle Noten und Klänge stoppen.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Kontextbezogene Hilfe</h3>
+  <p><b>Drücken Sie die LAYER-Taste lange</b>, um die kontextbezogene Hilfe für die aktuelle Ansicht zu öffnen. In der Hilfeansicht können Sie:</p>
+  <ul>
+   <li><b>Drehregler 4 drehen</b> oder die <b>Tasten S3/S4 drücken</b>, um durch den Inhalt zu scrollen.</li>
+   <li><b>Drehregler 4 kurz drücken</b>, um die Links aufzurufen.</li>
+   <li><b>BACK kurz drücken</b>, um zur vorherigen Seite zurückzukehren oder die Hilfeansicht zu schließen.</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Zusätzliche Tasten des V4</h3>
+
+  <p>Die zusätzlichen Silikon-Drucktasten des V4 (S1-S4) können nach den persönlichen Vorlieben konfiguriert werden. Dies erfolgt im Webconf-Tool über die erweiterten Optionen im Abschnitt „Wiring layout“. Dort stehen einige vordefinierte <b>Anpassungsprofile</b> zur Verfügung:</b>
+
+  <h4>V4 Studio</h4>
+  <p>Die vier Silikon-Drucktasten sind folgendermaßen belegt:</p>
+  <ul>
+   <li><b>S1</b>
+    <ul>
+     <li><b>kurzer Druck</b> => Audio Recorder/Player</li>
+     <li><b>mittellanger Druck</b>> => MIDI Recorder/Player</li>
+     <li><b>langer Druck</b>> => All Sounds Off (PANIC!)</li>
+    </ul></li>
+   <li><b>S2</b>
+    <ul>
+     <li><b>kurzer Druck</b> => Launcher</li>
+     <li><b>mittellanger Druck</b> => Pattern Editor</li>
+     <li><b>langer Druck</b> => All Sounds Off (PANIC!)</li>
+    </ul></li>
+   <li><b>S3</b>
+    <ul>
+     <li><b>kurzer/mittellanger Druck</b> => Pfeil nach oben</li>
+     <li><b>langer Druck</b> => All Sounds Off (PANIC!)</li>
+    </ul></li>
+   <li><b>S4</b>
+    <ul>
+     <li><b>kurzer/mittellanger Druck</b> => Pfeil nach unten</li>
+     <li><b>langer Druck</b> => TTS-Schnittstelle (Text-To-Speech) ein-/ausschalten.</li>
+    </ul></li>
+  </ul>
+
+  <h4>V4 Stage</h4>
+  <p>Die vier Silikon-Drucktasten sind den MIDI-program-change-Werten 1-4 zugeordnet. Dieses Profil ist insbesondere für die Verwendung mit ZS3 gedacht.</p>
+  <ul>
+   <li><b>S1</b> => MIDI-Programm 1
+   <li><b>S2</b> => MIDI-Programm 2
+   <li><b>S3</b> => MIDI-Programm 3
+   <li><b>S4</b> => MIDI-Programm 4
+  </ul>
+
+  <h4>V4 CC Switches</h4>
+  <p>Die vier Silikon-Drucktasten sind den MIDI-CC-Werten 47-50 zugeordnet. Dieses Profil ist insbesondere für MIDI-learn von Umschaltparametern gedacht (z. B. zur Verwendung mit SooperLooper).</p>
+  <ul>
+   <li><b>S1</b> => CC 47 umschalten (Wert 0/127)
+   <li><b>S2</b> => CC 48 umschalten (Wert 0/127)
+   <li><b>S3</b> => CC 49 umschalten (Wert 0/127)
+   <li><b>S4</b> => CC 50 umschalten (Wert 0/127)
+  </ul>
+
+  <h2>Die obere Leiste</h2>
+  <p>Oben im Display befindet sich üblicherweise eine Leiste mit Informationen. In einigen Ansichten, etwa in Bestätigungs- oder Informations-Pop-ups, ist sie möglicherweise nicht sichtbar.
+  Die obere Leiste besteht aus zwei Bereichen:</p>
+
+  <h3>Die Titelleiste</h3>
+  <p>Die Titelleiste dient als eine Art Breadcrumb-Navigation. Normalerweise zeigt sie den Titel der Ansicht oder Informationen zum aktuellen snapshot, zs3 oder chain an (MIDI-Kanal, Engine, Bank und Preset).</p>
+  <img src="img/title_bar_mixer.png" class="full"/>
+
+  <h3>Der Statusbereich</h3>
+  <p>Oben rechts neben der Titelleiste befindet sich ein Bereich, in dem einige nützliche Informationen in Echtzeit angezeigt werden:</p>
+  <ul>
+   <li><b>Digital Audio Peak Meter (DPM)</b>: Animierte horizontale Balken zeigen den digitalen Audiopegel und die Spitzenpegel an.</li>
+   <li><b>Statussymbole</b>: Zeigen verschiedene zynthian-Systemzustände an.</li>
+  </ul>
+  <img src="img/ui_status_bar.png" class="full"/>
+
+  <h4>Der Digital Audio Peak Meter (DPM)</h4>
+  <p>Der DPM deckt den Bereich von -50 dBFS bis 0 dBFS ab, d. h. vom maximal zulässigen Pegel bei Vollaussteuerung (ganz rechts) bis 50 dB darunter (ganz links):</p>
+  <ul>
+   <li>Das grüne Segment deckt den Bereich von -50 dBFS bis -10 dBFS ab.</li>
+   <li>Das gelbe Segment deckt den Bereich von -10 dBFS bis -3 dBFS ab.</li>
+   <li>Das rote Segment deckt den Bereich von -3 dBFS bis 0 dBFS ab.</li>
+  </ul>
+  <p>Für den linken und rechten Kanal gibt es separate Pegelanzeigen, die den Systemausgang überwachen, also den Audiomix am Zynthian-Ausgang. Der Pegel fällt logarithmisch ab und benötigt eine Sekunde, um auf -200 dBFS abzufallen. Daher sinkt er in etwa einer Viertelsekunde auf -50 dBFS (den angezeigten Bereich). Spitzenpegel werden sofort angezeigt, d. h. die Ansprechzeit der Anzeige ist unmittelbar (*). Die Spitzenwert-Halteanzeige bleibt zwei Sekunden lang sichtbar oder bis ein höherer Spitzenpegel erreicht wird.</p>
+
+  <p>Diese Anzeige entspricht dem DPM des Main-Mixbus, der in der Mixer-Ansicht immer sichtbar ist. Daher wird sie ausgeblendet, wenn die Audio-Mixer-Ansicht geöffnet ist.</p>
+
+  <div class="note-block">
+  (*) Der DPM wird fünfmal pro Sekunde aktualisiert. Daher kann die Anzeige eines Spitzenpegels um 200 ms verzögert sein.
+  </div>
+
+  <h4>Die Statussymbole</h4>
+  <br/>
+  <table>
+   <tr>
+    <th colspan="3">Systemzustand und Auslastung</th>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&hearts;</span></td>
+    <td>CPU-Auslastung</td>
+    <td class="small">Herzsymbol zur Anzeige der CPU-Auslastung. Bei weniger als 50 % wird es grün, bei mehr als 50 % gelb und bei mehr als 75 % rot angezeigt.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#8634;</span></td>
+    <td class="nowrap">Software-Update verfügbar</td>
+    <td class="small">Wenn ein Software-Update verfügbar ist, wird das grüne Recycling-Symbol angezeigt. Sie können das Update über das Admin-Menü, Webconf oder das Terminal installieren.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9888;</span></td>
+    <td>XRun</td>
+    <td class="small">Wird angezeigt, wenn XRuns auftreten. Dabei können Klick- und Knackgeräusche am Audioausgang hörbar sein. Das bedeutet, dass die CPU Audio nicht schnell genug verarbeiten oder übertragen kann. Deaktivieren Sie in diesem Fall ressourcenintensive Optionen (z. B. VNC, Kopfhörer usw.) oder reduzieren Sie die Komplexität Ihrer chains.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
+    <td>Unterspannung</td>
+    <td class="small">Zynthian arbeitet mit eingeschränkter Leistung. Die CPU-Frequenz ist auf 600-800 MHz begrenzt, um das System zu stabilisieren und einen Systemabsturz zu vermeiden. Dieses Symbol sollte nicht angezeigt werden. Falls doch, sollten Sie eine bessere Stromversorgung verwenden.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#127777;</span></td><!---->
+    <td>Übertemperatur</td>
+    <td class="small">Zynthian arbeitet mit eingeschränkter Leistung. Die CPU-Frequenz ist auf 600-800 MHz begrenzt, um das System zu stabilisieren und einen Systemabsturz zu vermeiden. Dieses Symbol sollte nicht angezeigt werden. Falls doch, sollten Sie die Wärmeableitung verbessern (z. B. durch einen Kühlkörper).</td>
+   </tr>
+   <tr>
+    <th colspan="3">MIDI-Aktivität und Wiedergabe/Aufnahme</th>
+   </tr>
+   <tr>
+    <td><span class="color-blue symbol"><b>m</b></span></td>
+    <td>MIDI-IN</td>
+    <td class="small">MIDI-Nachrichten werden empfangen. Ein Unterstrich kennzeichnet Systemnachrichten wie MIDI clock.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9679;</span></td>
+    <td class="nowrap">Audio-Track wird aufgenommen</td>
+    <td class="small">Ein Audio-Track wird aufgenommen.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#9654;</span></td>
+    <td class="nowrap">Audio-Track wird wiedergegeben</td>
+    <td class="small">Ein Audio-Track wird wiedergegeben.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9679;</span></td>
+    <td class="nowrap">MIDI-Track wird aufgenommen</td>
+    <td class="small">Ein MIDI-Track wird aufgenommen.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9654;</span></td>
+    <td class="nowrap">MIDI-Track wird wiedergegeben</td>
+    <td class="small">Ein MIDI-Track wird wiedergegeben.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9679;</span></td>
+    <td class="nowrap">Pattern wird aufgenommen</td>
+    <td class="small">Die Aufnahme ist im Pattern Editor aktiviert.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9654;</span></td>
+    <td>Pattern wird wiedergegeben<br/>Audio-Clip wird wiedergegeben</td>
+    <td class="small">Ein Step-Sequencer-Pattern oder Audio-Clip wird über den Launcher wiedergegeben.</td>
+   </tr>
+  </table>
+
+ </body>
+</html>

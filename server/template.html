@@ -15,6 +15,12 @@
  <div class="help_header">
   <div class="container">
    <a href="/"><img src="/img/zynthian_logo_black_trans_320.png"/><span>- HELP</span></a>
+   <select id="language" onchange="change_language(this.value)">
+    <option value="en" {% if config['lang'] == "en" %}selected{% end %}>en</option>
+    <option value="es" {% if config['lang'] == "es" %}selected{% end %}>es</option>
+    <option value="de" {% if config['lang'] == "de" %}selected{% end %}>de</option>
+    <option value="pt" {% if config['lang'] == "pt" %}selected{% end %}>pt</option>
+   </select>
    <select id="layout" onchange="change_layout(this.value)">
     <option value="Z2" {% if config['layout'] == "Z2" %}selected{% end %}>V5</option>
     <option value="V4" {% if config['layout'] == "V4" %}selected{% end %}>V4</option>
@@ -43,6 +49,11 @@ function setServerReadableCookie(name, value, days) {
 
 function change_layout(layout_value) {
     setServerReadableCookie("layout", layout_value, 180);
+    window.location.reload();
+}
+
+function change_language(language_value) {
+    setServerReadableCookie("language", language_value, 180);
     window.location.reload();
 }
 

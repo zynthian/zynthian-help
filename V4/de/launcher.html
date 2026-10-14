@@ -1,0 +1,111 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">chain-Lautstärke</div>
+   <div class="action short_press">chain solo schalten</div>
+   <div class="action bold_press">chain-Verwaltung</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">chain-Balance</div>
+   <div class="action short_press">Mixer</div>
+   <div class="action bold_press">Hauptmenü</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">Phrase auswählen</div>
+   <div class="action short_press">chain stummschalten</div>
+   <div class="action bold_press">Tempo</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">chain auswählen</div>
+   <div class="action short_press">Wiedergabe/Stopp</div>
+   <div class="action bold_press">Pattern/Clip bearbeiten</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Launcher-Ansicht</h1>
+  <p>Der Launcher ist die Hauptansicht des Sequencers. Sie können jederzeit zum Launcher wechseln, indem Sie <b>Knob 1 (BACK) wiederholt kurz drücken</b>, bis Sie ihn erreichen.</p>
+  <p>Vom <a href="mixer.html">Mixer</a> aus können Sie durch Drücken von BACK zum Launcher wechseln. Vom Launcher aus gelangen Sie durch Drücken von BACK zum Mixer.
+  Launcher und <a href="mixer.html">Mixer</a> sind tatsächlich eine einzige Ansicht mit zwei Modi.</p>
+
+  <div class="note-block">
+  Bitte beachten Sie, dass die <b>zusätzlichen Tasten von V4</b> neu zugewiesen wurden, damit bestimmte Funktionen wie das Kopieren/Einfügen aus der Zwischenablage und das Verschieben von Spalten einfacher zugänglich sind.
+  </div>
+
+  <p>Der Launcher ist ein Raster, dessen Spalten den chains (Mixer-Kanälen) entsprechen. Die Zeilen werden „Phrasen“ genannt und sind den „Scenes“ in Ableton Live recht ähnlich. Zellen können Sequencer-Patterns oder Audio-Clips enthalten. Eine Ausnahme ist die Hauptspalte, die Phrase-Launcher enthält.</p>
+
+  <p>Anfangs ist das Raster leer und zeigt nur den Hauptkanal. Wenn Sie einen chain hinzufügen, wird dem Raster eine neue Spalte hinzugefügt.
+  Wenn Sie einen chain löschen, wird die zugehörige Spalte aus dem Raster entfernt. Beachten Sie, dass die zugehörigen Patterns nicht gelöscht werden. Sie
+  sind dem MIDI-Kanal zugeordnet. Wenn Sie einen neuen chain mit demselben MIDI-Kanal erstellen, sind die entfernten Patterns wieder verfügbar.</p>
+
+  <h2>Zellauswahl</h2>
+  <p>Der Cursor ist ein gelber Rahmen, der die ausgewählte Zelle hervorhebt. Sie können den Cursor durch Drehen von Knob 3 und 4 bewegen:
+  <ul>
+   <li><b>Knob 2</b> => Vertikal bewegen => Phrase auswählen</li>
+   <li><b>Knob 4</b> => Horizontal bewegen => chain auswählen</li>
+  </ul>
+
+  <h2>Zellaktionen</h2>
+  <table class="nowrap">
+   <tr><th class="empty"><br/><br/>ZELL-<br/>AKTIONEN</th>
+    <th>Knob 4 kurz<br/>SELECT kurz<br/>Touch kurz</th>
+    <th>PAD kurz<br/>Knob 4 lang<br/>SELECT lang<br/>Touch lang</th>
+   </tr>
+   <tr><td class="empty"></td><th>&gt; WIEDERGABE/STOPP</th><th>&gt; BEARBEITEN</th></tr>
+   <tr><th>Step-Pattern</th><td>Wiedergabe/Stopp</td><td>Pattern-Editor</td></tr>
+   <tr><th>Audio-Clip</th><td>Wiedergabe/Stopp</td><td>Clip-Steuerung</td></tr>
+   <tr><th>Phrase-<br/>Launcher</th><td>Wiedergabe/Stopp</td><td>Phrase-Optionen</td></tr>
+  </table>
+
+  <h2>chains hinzufügen</h2>
+  <p>Um einen neuen chain zu erstellen, <b>drücken Sie S3 kurz</b>. Sie können auch das Hauptmenü verwenden (BACK lang drücken).</p>
+
+  <h2>chain-Auswahl</h2>
+  <p>Der aktive chain ist daran zu erkennen, dass die Legende am unteren Rand des Kanals rot hervorgehoben ist. Sie können den aktiven chain ändern, indem Sie <b>Knob 4 drehen</b>. Ein dünner Streifen am unteren Rand der Legende zeigt an, dass der chain für MIDI-Eingaben aktiv ist.</p>
+
+  <h2>chains verschieben</h2>
+  <p>Sie können Ihre Spalten (chains) neu anordnen, indem Sie einen beliebigen chain horizontal an die gewünschte Position verschieben. Sie können die gewünschten chains auch rechts andocken, direkt neben dem Haupt-chain:</p>
+  <ul>
+   <li><b>S3 lang drücken</b>, um den ausgewählten chain zu verschieben. In der chain-Legende wird ein Doppelpfeil angezeigt.</li>
+   <li><b>Knob 4 drehen</b>, um den chain an die gewünschte Position zu verschieben. Um einen chain rechts anzudocken, verschieben Sie ihn einfach weiter nach rechts.</li>
+   <li><b>SELECT oder BACK kurz drücken</b>, um den Vorgang abzuschließen.</li>
+  </ul>
+  <p>Beachten Sie, dass Sie Ihre chains auch in der Mixer-Ansicht auf diese Weise verschieben können.</p>
+
+  <h2>Patterns und Audio-Clips kopieren/einfügen</h2>
+  <p>Verwenden Sie zum Kopieren und Einfügen von Patterns oder Audio-Clips die Puffertasten S1/S2 wie folgt:</p>
+  <ul>
+   <li><b>S1 oder S2 lang drücken</b>, um den Inhalt der ausgewählten Zelle in den Puffer zu kopieren. Es gibt keine visuelle Rückmeldung.</li>
+   <li><b>Knob 2 und 4 drehen</b>, um den Cursor an die gewünschte Position zu bewegen. Beachten Sie, dass Sie beispielsweise kein Sequencer-Pattern in eine Audio-Clip-Zelle einfügen können.</li>
+   <li><b>S1/S2 kurz drücken</b>, um den Inhalt einzufügen. Sie können den Inhalt des Puffers beliebig oft einfügen. Ist die Zielzelle nicht leer, werden Sie um eine Bestätigung gebeten.</li>
+  </ul>
+
+  <h2>Phrase-Optionen</h2>
+  <p>Im Menü „Phrase-Optionen“ können Sie Parameter konfigurieren und Phrasen verwalten.</p>
+  <p>Die Phrase-Parameter sind:</p>
+  <ul>
+  <li><b>Dauer:</b> Anzahl der Takte. Standardmäßig wird der Wert der längsten Sequenz in der Zeile verwendet.</li>
+  <li><b>Tempo:</b> Beim Starten der Phrase wird das Tempo auf den angegebenen BPM-Wert geändert.</li>
+  <li><b>Beats per Bar:</b> Die in den Patterns verwendete Taktart.</li>
+  <li><b>Automatisieren:</b> Mit den Optionen „Loop from“, „loops to play“ und „jump to“ können Sie einfache Songstrukturen erstellen.</li>
+  </ul>
+  <p>Die Optionen zur Phrasenverwaltung sind:</p>
+  <ul>
+  <li><b>Phrase einfügen:</b> Eine neue Phrase (Zeile) in den Launcher einfügen.</li>
+  <li><b>Phrase klonen:</b> Die ausgewählte Phrase (Zeile) klonen.</li>
+  <li><b>Phrase verschieben:</b> Die ausgewählte Phrase (Zeile) an eine neue Position verschieben.</li>
+  <li><b>Phrase löschen:</b> Die ausgewählte Phrase (Zeile) löschen.</li>
+  </ul>
+  <p>Beim Verwalten von Phrasen müssen Sie möglicherweise die Automatisierungsparameter der betroffenen Phrasen anpassen.</p>
+  </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">---</div>
+   <div class="action short_press">nächste chain</div>
+   <div class="action bold_press">chain-Manager</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">---</div>
+   <div class="action short_press">zurück</div>
+   <div class="action bold_press">Hauptmenü</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">Kategorien durchsuchen</div>
+   <div class="action short_press">erweiterte Informationen</div>
+   <div class="action bold_press">ZS3s</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">Engines durchsuchen</div>
+   <div class="action short_press">Engine auswählen</div>
+   <div class="action bold_press">Erweiterter Modus</div>
+  </div>
+ </div>
+
+  <div class="full_container">
+   <h1>Engine-Auswahlansicht</h1>
+   <p>Mit der Engine-Auswahl können Sie Engines für den ausgewählten Typ durchsuchen und auswählen. Mögliche Typen sind:</p>
+   <ul>
+    <li>MIDI Synth</li>
+    <li>Audio Effect</li>
+    <li>MIDI Tool</li>
+    <li>Audio Generator</li>
+    <li>Special</li>
+   </ul>
+   <p>Diese Ansicht wird angezeigt, wenn Sie eine neue chain hinzufügen oder Prozessoren in einer vorhandenen chain hinzufügen/ersetzen.</p>
+   <p>Die Ansicht ist in drei Spalten unterteilt:</p>
+   <ul>
+    <li><b>[Links] Kategorieliste </b> für den ausgewählten Typ.</li>
+    <li><b>[Mitte] Engine-Liste </b> für die ausgewählte Kategorie. Standardmäßig werden nur aktivierte Engines angezeigt. Siehe <i>Erweiterter Modus</i> weiter unten.</li>
+    <li><b>[Rechts] Informationen</b> zur hervorgehobenen Engine, bestehend aus:
+     <ul>
+      <li><b>Qualität:</b> Bewertung mit 0 bis 5 Sternen.</li>
+      <li><b>Komplexität:</b> Bewertung mit 0 bis 5 Zahnrädern.</li>
+      <li><b>Beschreibung:</b> ein kurzer Text zu den Funktionen der Engine.</li>
+     </ul>
+    </li>
+   </ul>
+   <p>Sie können folgende Aktionen ausführen:</p>
+   <ul>
+    <li><b>Knob 3 drehen (LEARN/SHOT)</b>, um die Kategorieliste zu durchlaufen.</li>
+    <li><b>Knob 4 drehen (SELECT) </b>, um die Engine-Liste zu durchlaufen.</li>
+    <li><b>Knob 4 drücken</b>, um die hervorgehobene Engine auszuwählen und die Engine-Auswahl zu schließen.</li>
+    <li><b>Knob 4 kräftig drücken</b>, um den <b>Erweiterten Modus</b> aufzurufen. Dort werden ALLE Engines angezeigt, die aktiviert oder deaktiviert werden können.</li>
+    <li><b>Knob 3 drücken</b>, um den Bildschirm mit den erweiterten Informationen zu öffnen und ausführliche Beschreibungen zu lesen.</li>
+    <li><b>Knob 2 drücken (BACK)</b>, um zur vorherigen Ansicht zurückzukehren.</li>
+   </ul>
+   <p>Sie können die Kategorie- und Engine-Liste auch per Touch bedienen. Durch Berühren der Informationsspalte wird der Bildschirm mit den erweiterten Informationen geöffnet.</p>
+
+   <h2>Erweiterter Modus</h2>
+   <p>Sie rufen den erweiterten Modus auf, indem Sie <b>Knob 4 kräftig drücken</b>. Im erweiterten Modus wird die vollständige Engine-Liste angezeigt,
+   einschließlich der deaktivierten Engines, die normalerweise ausgeblendet sind. Aktivieren oder deaktivieren Sie Engines, indem Sie die Kontrollkästchen markieren oder deren Markierung aufheben. Drücken Sie BACK, um
+   zum normalen Modus zurückzukehren.</p>
+
+  </div>
+
+  <div class="clear"></div>
+ </body>
+</html>

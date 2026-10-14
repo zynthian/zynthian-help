@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+ <h1>Tempo View</h1>
+    <p>Die Tempo-Ansicht ermöglicht die Steuerung der zynthian-Zeitbasis, die für Sequencing, Arpeggiators usw. verwendet wird.</p>
+    <p>Mit dem BPM-Regler wird das interne Tempo auf einen Wert zwischen 10 und 420 BPM eingestellt. Drücken und drehen Sie den Regler, um Anpassungen in Schritten von 0,1 BPM vorzunehmen. Diese Steuerung ist verfügbar, wenn die interne Clock verwendet wird.</p>
+    <p> Bei Verwendung einer externen Clock wird der BPM-Regler zu einem Clock-Divider. Standardmäßig wird ein Eingangssignal mit 24 PPQN erwartet, wie es bei MIDI Clock verwendet wird. Der Wert kann jedoch angepasst werden, um andere externe Clock-Raten im Bereich von 1 bis 48 PPQN zu unterstützen. Die interne Clock läuft mit 1920 PPQN und verwendet eine phase-locked loop, um diese hochauflösende Clock aus der langsamen Eingangs-Clock abzuleiten. Um eine externe Clock zu verwenden, wählen Sie für einen MIDI-Eingang in der Ansicht <a href="chain_midi_input.html">MIDI-Eingang</a> „MIDI Clock Source“ aus.</p>
+    <p>Mit der Steuerung „Metronome Mode“ wird das Metronom von zynthian konfiguriert. Folgende Werte sind verfügbar:
+      <ul>
+         <li>OFF: Das Metronom ist deaktiviert.</li>
+         <li>AUTO: Das Metronom ertönt, wenn eine Sequence abgespielt wird, und stoppt am Ende des Takts, nachdem die letzte Sequence beendet wurde.</li>
+         <li>ON: Das Metronom spielt kontinuierlich.</li>
+         <li>INTRO: Das Metronom spielt, bis eine Sequence startet. Sie können diese Einstellung als Einzähler verwenden, wenn das Metronom während der Performance nicht spielen soll oder muss.</li>
+         <li>NO ACCENT: Das Metronom spielt kontinuierlich, jedoch ohne Betonung des ersten Schlags jedes Takts. Dadurch verhält es sich eher wie ein herkömmliches Metronom, das ausschließlich für das Tempo und nicht für die Zeitbasis verwendet wird.</li>
+         <li>SILENT: Das Metronom läuft, gibt jedoch keinen Ton aus. Dies kann nützlich sein, um den Transport laufen zu lassen, wenn keine Sequences abgespielt werden. Einige plugins können davon profitieren.</li>
+      </ul>
+      Über eine Steuerung lässt sich die Lautstärke des Metronoms einstellen.</p>
+    <p>Das Tempo wird groß angezeigt. Tippen Sie auf die Anzeige, um das Tempo einzustellen. Ebenso können Sie auf die Tempo-Taste tippen, um das Tempo einzustellen.</p>
+    <div class="note-block">Hinweis: Das Metronom wird über seinen Aux-Mix-Send in die Haupt-chain eingespeist. Dadurch lassen sich Pegel, Balance usw. individuell steuern. Der globale Audio-Player nutzt denselben Aux-Mix.</div>
+ </body>
+</html>
