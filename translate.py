@@ -126,7 +126,7 @@ def get_openai_apikey():
         sdir = Path(__file__).resolve().parent
         with open(f"{sdir}/OPENAI.APIKEY", 'r', encoding='utf-8') as f:
             apikey = f.read().strip()
-            print(f"OPENAI APIKEY => {apikey}")
+            #print(f"OPENAI APIKEY => {apikey}")
             return apikey
     except:
         pass
