@@ -6,6 +6,19 @@ body {
 	padding: 0;
 }
 
+* {
+	box-sizing: border-box;
+}
+
+body, main, div {
+	max-width: 100%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 div.help_header {
 	position: sticky;
 	top: 0;
@@ -25,24 +38,25 @@ div.help_header a:hover,
 div.help_header a:active,
 div.help_header a:visited {
 	font-family: 'Audiowide';
-	font-size: 32px;
+	font-size: 120%;
 	text-decoration: none;
 	color: #f0f0f0;
 }
 
-div.help_header img {
+div.help_header div.container img {
 	height: 50px;
 	vertical-align: middle;
 }
 
-div.help_header span {
+div.help_header  div.container span {
+	font-size: 160%;
 	vertical-align: middle;
 }
 
-div.help_header select {
-	font-size: 16pt;
-	margin: 8px 12px;
-	padding: 2px 12px;
+div.help_header  div.container select {
+	font-size: 150%;
+	margin: 0.2em 0.2em;
+	padding: 0.1em 0.2em;
 	float: right;
 }
 
@@ -52,7 +66,7 @@ div.help_container {
 	color: #202020;
 	max-width: 1100px;
 	margin: auto;
-	padding: 2em;
+	padding: 1em;
 }
 
 div.help_container a,
@@ -71,14 +85,17 @@ div.help_container h1 {
 	padding-top: 0em;
 	font-size: 26pt;
 }
+
 div.help_container h2 {
 	padding-top: 0.5em;
 	font-size: 20pt;
 }
+
 div.help_container h3 {
 	padding-top: 0.5em;
 	font-size: 16pt;
 }
+
 div.help_container h4 {
 	padding-top: 0.5em;
 	font-size: 14pt;
@@ -93,4 +110,61 @@ div.help_container p {
 	margin-left: 0em;
 	padding-left: 0em;
 }
+
+
+@media screen and (max-width: 768px) {
+
+	div.help_header {
+		height: 35px;
+	}
+
+	div.help_header div.container img {
+		height: 35px;
+	}
+
+	div.help_header  div.container span {
+		font-size: 110%;
+	}
+
+	div.help_header  div.container select {
+		font-size: 105%;
+	}
+
+	.help_ui img.float_right {
+		float: none;
+		width: 100%;
+		margin: 0.2em 0.2em;
+	}
+
+	.help_ui img.float_right_mobile {
+		float: right;
+		width: none;
+		max-width: 35%;
+		margin-right: 0;
+		margin-left: 0.3em;
+	}
+
+	div.help_container h1 {
+		font-size: 20pt;
+	}
+
+	div.help_container h2 {
+		font-size: 17pt;
+	}
+
+	div.help_container h3 {
+		font-size: 15pt;
+	}
+
+	div.help_container h4 {
+		font-size: 13pt;
+	}
+
+	div.help_container {
+		font-size: 12pt;
+		padding: 0.5em;
+	}
+
+}
+
 

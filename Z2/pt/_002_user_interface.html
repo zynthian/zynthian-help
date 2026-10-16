@@ -6,7 +6,7 @@
   <h1>A interface do utilizador</h1>
   <p>A interface do utilizador do zynthian V5 é controlada principalmente através de:</p>
   <ul>
-   <li>4 botões rotativos com interruptor</li>
+   <li>4 knobs com interruptor</li>
    <li>20 botões com LEDs RGB</li>
    <li>ecrã multitoque capacitivo</li>
   </ul>
@@ -15,79 +15,81 @@
   <ul>
    <li>através da interface VNC</li>
    <li>com um controlador MIDI compatível</li>
-   <li>com notas MIDI no canal MIDI master</li>
+   <li>com notas MIDI no canal master MIDI</li>
    <li>com um teclado de computador (atalhos de teclado)</li>
    <li>através de OSC CUIA</li>
   </ul>
 
-  <p>Este guia aborda apenas a interface principal, utilizando botões rotativos, botões e interações por toque. Para consultar as restantes opções, visite a <a href="https://wiki.zynthian.org">wiki do zynthian</a>.</p>
+  <p>Este guia aborda apenas a interface principal, utilizando knobs, botões e interações táteis. Para saber mais sobre as restantes opções, consulte a <a href="https://wiki.zynthian.org">wiki do zynthian</a>.</p>
 
-  <h2>Ações dos botões rotativos</h2>
+  <h2>Ações dos knobs</h2>
   <p>
-   Existem cinco ações para os botões rotativos:<br>
+   Existem cinco ações dos knobs:<br>
    <ul>
-    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pressão breve:</b> Premir um botão rotativo durante menos de 0,3 segundos aciona a <b>ação de pressão breve</b>(*).</li>
-    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pressão prolongada:</b> Premir um botão rotativo durante mais de 0,3 e menos de 2 segundos aciona a <b>ação de pressão prolongada</b>(*).</li>
-    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pressão longa:</b> Premir e manter premido um botão rotativo durante mais de 2 segundos aciona a <b>ação de pressão longa</b>(*).</li>
-    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rodar:</b> Rodar um botão rotativo pode ajustar o valor de um parâmetro, alterar o item selecionado numa lista ou mover o cursor na horizontal ou na vertical. A aceleração dos botões rotativos permite ajustes mais precisos a rotações lentas e ajustes mais amplos a rotações rápidas.</li>
-    <li><b>Premir + rodar:</b> Rodar um botão rotativo enquanto está premido pode aumentar a resolução, permitindo um ajuste preciso.</li>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pressão breve:</b> pressionar um knob durante menos de 0,3 segundos ativa a <b>ação de pressão breve</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pressão prolongada:</b> pressionar um knob durante mais de 0,3 e menos de 2 segundos ativa a <b>ação de pressão prolongada</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pressão longa:</b> pressionar e manter um knob premido durante mais de 2 segundos ativa a <b>ação de pressão longa</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rodar:</b> rodar um knob pode ajustar o valor de um parâmetro, alterar o item selecionado numa lista ou mover o cursor na horizontal ou na vertical. A aceleração do knob permite ajustes mais precisos a uma rotação lenta e ajustes mais amplos a uma rotação mais rápida.</li>
+    <li><b>Pressionar + rodar:</b> rodar um knob enquanto está premido pode aumentar a resolução, permitindo um ajuste mais preciso.</li>
    </ul>
   </p>
 
   <h2>Ações dos botões</h2>
   <p>
-   Existem três ações para os botões:<br>
+   Existem três ações dos botões:<br>
    <ul>
-    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pressão breve:</b> Premir um botão durante menos de 0,3 segundos aciona a <b>ação de pressão breve</b> (*).</li>
-    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pressão prolongada:</b> Premir um botão durante mais de 0,3 e menos de 2 segundos aciona a <b>ação de pressão prolongada</b>(*).</li>
-    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pressão longa:</b> Premir e manter premido um botão durante mais de 2 segundos aciona a <b>ação de pressão longa</b>(*).</li>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pressão breve:</b> pressionar um botão durante menos de 0,3 segundos ativa a <b>ação de pressão breve</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pressão prolongada:</b> pressionar um botão durante mais de 0,3 e menos de 2 segundos ativa a <b>ação de pressão prolongada</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pressão longa:</b> pressionar e manter um botão premido durante mais de 2 segundos ativa a <b>ação de pressão longa</b>(*).</li>
    </ul>
   </p>
 
-  <p>(*) A duração das ações de pressão pode ser configurada na ferramenta webconf, no separador de opções avançadas da interface.</p>
-  <p>Tenha em atenção que nem todos os botões rotativos/botões têm funções atribuídas a cada tipo de ação. As ações dos botões rotativos/botões podem variar consoante o contexto. Estas estão documentadas nas páginas de ajuda das diferentes vistas. Memorize os ícones de ação apresentados acima, pois serão utilizados ao longo deste guia.</p>
-  <p>Por fim, pode modificar o mapa de ações predefinido na ferramenta webconf, acedendo às opções avançadas na secção de disposição da cablagem. Não recomendamos que o faça, mas a decisão é sua!</p>
+  <p>(*) O tempo das ações de pressão pode ser configurado na ferramenta webconf, no separador das opções avançadas da interface.</p>
+  <p>Tenha em atenção que nem todos os knobs/botões têm funções atribuídas a cada tipo de ação. As funções dos knobs/botões podem variar consoante o contexto. Isto está documentado nas páginas de ajuda das diferentes vistas. Memorize os ícones de ação apresentados acima, pois serão utilizados ao longo deste guia.</p>
+  <p>Por fim, pode modificar o mapa de ações predefinido na ferramenta webconf, acedendo às opções avançadas na secção do esquema da cablagem. Não recomendamos que o faça, mas a decisão é sua!</p>
 
-  <img src="img/V5_render_knobs_numbered.png" class="float_right"/>
+  <div class="clear"></div>
 
-  <h2>Utilizar os botões rotativos</h2>
+  <h2>Utilizar os knobs</h2>
 
-  <p>Os botões rotativos do V5 funcionam de forma bastante diferente dos botões rotativos do V1-V4. Como existem 20 botões de silicone, não é necessário utilizar os interruptores dos botões rotativos para navegar na interface, tarefa que agora é mais fácil com os botões. Por isso, os interruptores dos botões rotativos foram atribuídos a funções mais contextuais, como MIDI-learning. Os botões rotativos estão numerados de cima para baixo: o de cima é o <b>botão rotativo n.º 1</b> e o de baixo é o <b>botão rotativo n.º 4</b>. Ao longo deste guia, iremos identificá-los desta forma.</p>
+  <img src="img/V5_render_knobs_numbered.png" class="float_right, float_right_mobile"/>
+
+  <p>Os knobs do V5 funcionam de forma bastante diferente dos knobs do V1-V4. Devido aos 20 botões de silicone, não é necessário utilizar os interruptores dos knobs para navegar na interface, uma vez que agora é mais prático fazê-lo com os botões. Assim, os interruptores dos knobs foram atribuídos a funções mais contextuais, como MIDI-learning. Os knobs estão numerados de cima para baixo, pelo que o de cima é o <b>knob #1</b> e o de baixo é o <b>knob #4</b>. Ao longo deste guia, iremos referir-nos aos knobs desta forma.</p>
 
   <h3>Regra geral</h3>
-  <p>Embora o comportamento dos botões rotativos dependa do contexto, existe um padrão que pode servir de <i>regra geral</i> e que se aplica a muitas vistas:</p>
+  <p>Embora o comportamento dos knobs dependa do contexto, existe um padrão que pode servir de <i>regra geral</i> e que se aplica a muitas vistas:</p>
 
-  <h4>Botão rotativo n.º 4</h4>
+  <h4>Knob #4</h4>
   <ul>
    <li>Nas <b>vistas de seleção</b> (listas):
     <ul>
-     <li><b>Rode</b> para percorrer a lista.</li>
-     <li><b>Prima brevemente</b> para selecionar itens, tal como o botão SEL.</li>
-     <li><b>Prima prolongadamente</b> para abrir as opções contextuais, tal como o botão OPT.</li>
+     <li><b>Rodar</b> para percorrer a lista.</li>
+     <li><b>Pressão breve</b> para selecionar itens, como com o botão SEL.</li>
+     <li><b>Pressão prolongada</b> para abrir as opções contextuais, como com o botão OPT.</li>
     </ul></li>
-   <li>Nas <b>vistas de grelha</b>, controla o eixo X. <b>Rode</b> para mover o cursor na horizontal.
+   <li>Nas <b>vistas de grelha</b>, é o knob do eixo X. <b>Rodar</b> para mover o cursor na horizontal.
    <li>Nas <b>vistas divididas</b> com 2 listas percorríveis, controla a lista à direita.</li>
   </ul>
 
-  <h4>Botão rotativo n.º 3</h4>
+  <h4>Knob #3</h4>
   <ul>
-   <li>Nas <b>vistas de grelha</b>, controla o eixo Y. <b>Rode</b> para mover o cursor na vertical.</li>
+   <li>Nas <b>vistas de grelha</b>, é o knob do eixo Y. <b>Rodar</b> para mover o cursor na vertical.</li>
    <li>Nas <b>vistas divididas</b> com 2 listas percorríveis, controla a lista à esquerda.
     <ul>
-     <li><b>Rode</b> para percorrer a lista à esquerda.</li>
-     <li><b>Prima brevemente</b> para selecionar um item na lista à esquerda.</li>
+     <li><b>Rodar</b> para percorrer a lista à esquerda.</li>
+     <li><b>Pressão breve</b> para selecionar itens na lista à esquerda.</li>
     </ul></li>
   </ul>
 
   <div class="clear"></div>
   <div class="note-block">
-   O volume principal está sempre acessível com um clique. Prima brevemente o <b>botão MIX</b> e, em seguida, rode o <b>botão rotativo 3</b> para alterar o volume principal.
+   O volume principal está sempre disponível com um só clique. Faça uma pressão breve no <b>botão MIX</b> e, em seguida, rode o <b>Knob 3</b> para alterar o volume principal.
   </div>
 
   <h2>Utilizar os botões</h2>
   <img src="img/V5_buttons_outlined.png" class="float_right">
 
-  <p>A grelha de botões do V5 está dividida em 5 grupos. A imagem mostra os contornos dos 5 grupos em cores diferentes:</p>
+  <p>A grelha de botões do V5 está dividida em 5 grupos. A imagem apresenta os 5 grupos contornados com cores diferentes:</p>
 
   <ul>
    <li><b>Botões de vista</b> => Verde</li>
@@ -102,9 +104,9 @@
   <h3>Botões de vista</h3>
   <img src="img/V5_buttons_outlined-3-detail2.png" class="float_right"/>
 
-  <p>Os botões de vista estão contornados a verde na imagem e permitem o acesso direto às vistas principais. A maioria destes botões tem 2 vistas atribuídas, separadas por uma linha horizontal entre as duas etiquetas impressas. A vista principal está impressa em cima e a vista secundária em baixo. O botão «metronome» é a exceção.</p>
+  <p>Os botões de vista estão contornados a verde na imagem e permitem aceder diretamente às vistas principais. A maioria destes botões tem 2 vistas atribuídas, com uma linha horizontal a separar as duas legendas impressas. A vista principal está impressa em cima e a vista secundária em baixo. O botão "metronome" é a exceção.</p>
 
-  <p><b>Prima brevemente</b> o botão para aceder a:
+  <p>Faça uma <b>pressão breve</b> no botão para aceder a:
   <ul>
    <li>à vista principal, quando esta não estiver apresentada</li>
    <li>à vista secundária, quando a vista principal do botão estiver apresentada</li>
@@ -118,10 +120,10 @@
   </ul>
 
   <div class="note-block">
-   Lembre-se: prima brevemente para aceder à vista principal e volte a premir para aceder à vista secundária. <b>Prima prolongadamente</b> para aceder à vista secundária, independentemente da vista atual.
+   Lembre-se: faça uma pressão breve para aceder à vista principal e pressione novamente para aceder à vista secundária. Faça uma <b>pressão prolongada</b> para aceder à vista secundária, independentemente da vista atual.
   </div>
 
-  <p>Os botões de vista são, da esquerda para a direita e de cima para baixo:
+  <p>Os botões de vista, da esquerda para a direita e de cima para baixo, são:</p>
 
   <ul>
    <li><b>OPT/ADMIN</b>
@@ -136,7 +138,7 @@
     </ul></li>
    <li>
     <ul><b>CTRL/PRESET</b>
-     <li><b>Principal:</b> Vista de controlo de chain</li>
+     <li><b>Principal:</b> Vista de controlo da chain</li>
      <li><b>Secundária:</b> Seleção de banco/preset</li>
     </ul></li>
    <li>
@@ -147,12 +149,12 @@
    <li>
     <ul><b>METRONOME</b>
      <li><b>Primeira pressão:</b> Vista de tempo
-     <li><b>Pressões seguintes:</b> Tap tempo. Ajustar o tempo em BPM.
+     <li><b>Pressões seguintes:</b> Tap tempo. Ajusta o tempo em BPM.
     </ul></li>
    <li>
     <ul><b>PAD/STEP</b>
      <li><b>Principal:</b> Vista do launcher</li>
-     <li><b>Secundária:</b> Editor de patterns</li>
+     <li><b>Secundária:</b> Editor de pattern</li>
     </ul></li>
    </ul>
 
@@ -164,25 +166,25 @@
   <p>O botão ALT tem 2 funções:</p>
 
   <ul>
-   <li><b>pressão breve</b> para ativar ou desativar o <b>modo ALT</b> (modo de funções alternativas).</li>
+   <li><b>pressão breve</b> para ativar/desativar o <b>modo ALT</b> (modo de função alternativa).</li>
    <li><b>pressão prolongada</b> para abrir a <b>ajuda contextual</b> no ecrã.</li>
   </ul>
 
   <h4>Modo ALT</h4>
   <p>Quando o modo ALT está ativo, o botão ALT e os botões com uma função alternativa mudam a cor predefinida de azul para roxo ou laranja. O roxo indica a função ALT predefinida. O laranja indica uma função ALT personalizada.</p>
-  <p>O modo ALT depende do contexto, ou seja, da vista atual. Por predefinição, apenas os botões de transporte e os botões de função (F1-F4) têm funções alternativas, definidas da seguinte forma:</p>
+  <p>O modo ALT depende do contexto, ou seja, da vista atual. Por predefinição, apenas os botões de transporte e de função (F1-F4) têm funções alternativas, definidas da seguinte forma:</p>
   <ul>
    <li>Os <b>botões de transporte</b> alternam entre Audio Player/Recorder <span style="color:#0000F0">(normal)</span> e MIDI Player/Recorder <span style="color:#D000D0">(ALT)</span>.</li>
-   <li>Os <b>botões F1-F4</b> alternam entre os programas 1-4 <span style="color:#0000F0">(normal)</span> e os programas 5-8 <span style="color:#D000D0">(ALT)</span>. Pode, por exemplo, utilizá-los para memorizar e recuperar até 8 subsnapshots (ZS3s).</li>
+   <li>Os <b>botões F1-F4</b> alternam entre os programas 1-4 <span style="color:#0000F0">(normal)</span> e os programas 5-8 <span style="color:#D000D0">(ALT)</span>. Pode utilizá-los, por exemplo, para guardar e recuperar até 8 subsnapshots (ZS3s).</li>
   </ul>
-  <p>Algumas vistas têm um <b>modo ALT personalizado</b>, com funções específicas que substituem parcial ou totalmente as predefinições. <b>O estado do modo ALT é mantido para cada vista</b>. Os detalhes dos modos ALT personalizados estão documentados separadamente para cada vista.</p>
+  <p>Algumas vistas têm um <b>modo ALT personalizado</b>, com funcionalidades específicas que substituem parcial ou totalmente as predefinições. <b>O estado do modo ALT é mantido para cada vista</b>. Os detalhes dos modos ALT personalizados estão documentados separadamente para cada vista.</p>
 
   <h4>Ajuda contextual</h4>
-  <p><b>Prima prolongadamente o botão ALT</b> para abrir a ajuda contextual da vista atual. No ecrã de ajuda, pode:</p>
+  <p>Faça uma <b>pressão prolongada no botão ALT</b> para abrir a ajuda contextual da vista atual. No ecrã de ajuda, pode:</p>
   <ul>
-   <li><b>Rodar o botão rotativo 4</b> ou premir os botões UP/DOWN para percorrer o conteúdo.</li>
-   <li><b>Premir brevemente o botão rotativo 4</b> para percorrer as ligações.</li>
-   <li><b>Premir brevemente BACK</b> para voltar à página anterior ou sair do ecrã de ajuda.</li>
+   <li><b>Rodar o knob 4</b> ou pressionar os botões UP/DOWN para percorrer o conteúdo.</li>
+   <li>Fazer uma <b>pressão breve no knob 4</b> para percorrer as ligações.</li>
+   <li>Fazer uma <b>pressão breve em BACK</b> para voltar à página anterior ou sair do ecrã de ajuda.</li>
   </ul>
 
   <div class="clear"></div>
@@ -193,14 +195,14 @@
   <p>Por predefinição, os botões de transporte controlam o <b>gravador/reprodutor de áudio global</b> e a cor predefinida é azul. Quando o <b>modo ALT</b> está ativado, os botões de transporte controlam o <b>gravador/reprodutor MIDI</b> e a cor é roxa.</p>
 
   <ul>
-   <li><b>Prima brevemente REC</b> para iniciar/parar uma gravação. Durante uma gravação, o botão de gravação acende-se a vermelho e deverá também ver o ícone de gravação na área de estado do ecrã, no canto superior direito.</li>
-   <li><b>Prima brevemente PLAY</b> para reproduzir/interromper a faixa selecionada. Por predefinição, está selecionada a última faixa gravada. Durante a reprodução de uma faixa, o botão de reprodução acende-se a verde. Depois de interromper a reprodução, volte a premir o botão para retomar a partir do ponto em que foi interrompida.</li>
-   <li><b>Prima prolongadamente PLAY</b> para abrir a lista de faixas. Depois de selecionar uma faixa, é apresentada a vista de controlo do Audio Player.</li>
-   <li><b>Prima brevemente STOP</b> para parar a reprodução de uma faixa e rebobinar. Se voltar a premir PLAY, a reprodução começa do início.</li>
-   <li><b>Prima prolongadamente STOP</b> para parar todos os sons, incluindo quaisquer faixas e sequências de áudio/MIDI. <b>PANIC!</b></li>
+   <li>Faça uma <b>pressão breve em REC</b> para iniciar/parar uma gravação. Durante a gravação, o botão de gravação acende-se a vermelho e o ícone de gravação também aparece na área de estado do ecrã, no canto superior direito.</li>
+   <li>Faça uma <b>pressão breve em PLAY</b> para reproduzir/interromper a faixa selecionada. Por predefinição, está selecionada a última faixa gravada. Durante a reprodução de uma faixa, o botão de reprodução acende-se a verde. Após uma pausa, pressione novamente para retomar a reprodução a partir do ponto em que foi interrompida.</li>
+   <li>Faça uma <b>pressão prolongada em PLAY</b> para abrir a lista de faixas. Depois de selecionar uma faixa, é apresentada a vista de controlo do audio player.</li>
+   <li>Faça uma <b>pressão breve em STOP</b> para parar a reprodução de uma faixa e rebobiná-la. Se voltar a pressionar PLAY, a reprodução começa do início.</li>
+   <li>Faça uma <b>pressão prolongada em STOP</b> para parar todos os sons, incluindo quaisquer faixas e sequências de áudio/MIDI. <b>PANIC!</b></li>
   </ul>
 
-  <p>Em algumas vistas, os botões de transporte têm um comportamento específico (contextual). Nesse caso, acendem-se a laranja para indicar que o comportamento normal foi alterado. Consulte a secção da vista correspondente para obter mais informações.</p>
+  <p>Em algumas vistas, os botões de transporte têm um comportamento específico (contextual). Quando isso acontece, acendem-se a laranja para indicar que o seu comportamento normal foi alterado. Consulte a secção da vista correspondente para obter mais detalhes.</p>
 
   <div class="clear"></div>
   <h3>Botões de navegação</h3>
@@ -211,26 +213,26 @@
    <li><b>UP/DOWN</b>
     <ul>
      <li>Percorrer listas e menus</li>
-     <li>Mover o cursor (item selecionado) na vertical nas vistas de grelha: editor de patterns, launcher, etc.</li>
+     <li>Mover o cursor (item selecionado) na vertical nas vistas de grelha: editor de pattern, launcher, etc.</li>
     </ul></li>
    <li><b>LEFT/RIGHT</b>
     <ul>
-     <li>Selecionar a chain ativa nas vistas do mixer e de controlo de chain.</li>
-     <li>Mover o cursor (item selecionado) na horizontal nas vistas de grelha: editor de patterns, launcher, etc.</li>
+     <li>Selecionar a chain ativa nas vistas do mixer e de controlo da chain.</li>
+     <li>Mover o cursor (item selecionado) na horizontal nas vistas de grelha: editor de pattern, launcher, etc.</li>
     </ul></li>
    <li><b>SEL/YES</b>
     <ul>
      <li>Selecionar itens em listas e menus.</li>
-     <li>Entrar no <b>modo de seleção</b> na vista de controlo de chain para percorrer as páginas de controladores.</li>
-     <li>Adicionar/remover notas no editor de patterns.</li>
+     <li>Entrar no <b>modo de seleção</b> na vista de controlo da chain para percorrer as páginas dos controladores.</li>
+     <li>Adicionar/remover notas no editor de pattern.</li>
      <li>Reproduzir/parar frases, sequências ou clips de áudio no launcher.</li>
-     <li>Responder «Sim» nas caixas de diálogo de confirmação.</li>
+     <li>Responder "Sim" nas caixas de diálogo de confirmação.</li>
      <li>Uma <b>pressão prolongada</b> pode abrir o menu de opções do item selecionado.</li>
     </ul></li>
    <li><b>BACK/NO</b>
     <ul>
-     <li>Fechar a vista atual e regressar à vista anterior.</li>
-     <li>Responder «Não» nas caixas de diálogo de confirmação.</li>
+     <li>Fechar a vista atual e voltar à vista anterior.</li>
+     <li>Responder "Não" nas caixas de diálogo de confirmação.</li>
     </ul></li>
   </ul>
 
@@ -238,62 +240,61 @@
 
   <h3>Botões de função (F1-F4)</h3>
 
-  <p>Estes botões são personalizáveis. Por exemplo, se pretender aceder diretamente a outras vistas, pode reconfigurá-los através da ferramenta webconf.</p>
-  <p>Conforme explicado acima, na descrição do modo ALT, por predefinição estes botões estão atribuídos a mensagens MIDI Program Change:</p>
+  <p>Estes botões são personalizáveis. Por exemplo, se quiser aceder diretamente a outras vistas, pode reconfigurá-los através da ferramenta webconf.</p>
+  <p>Conforme explicado acima, na descrição do modo ALT, estes botões estão atribuídos por predefinição a mensagens MIDI Program Change:</p>
   <ul>
    <li><b>Modo normal</b>: Program Change 1-4</li>
    <li><b>Modo ALT</b>: Program Change 5-8</li>
   </ul>
-  <p>Esta configuração predefinida é adequada para memorizar/recuperar subsnapshots (ZS3) e pode ser muito útil se utilizar o zynthian como expansor de teclado.</li>
-  <p>Algumas vistas têm modos ALT personalizados que redefinem as funções dos botões F1-F4. Por exemplo, a <a href="launcher.html">vista do launcher</a> ou o
-  <a href="pattern_editor.html">editor de patterns</a>.</p>
+  <p>Esta configuração predefinida é adequada para guardar/recuperar subsnapshots (ZS3), podendo ser muito útil se utilizar o zynthian como expansor de teclado.</p>
+  <p>Algumas vistas têm modos ALT personalizados que redefinem a funcionalidade dos botões F1-F4. Por exemplo, a <a href="launcher.html">vista do launcher</a> ou o <a href="pattern_editor.html">editor de pattern</a>.</p>
 
   <div class="note-block">
-   Embora todos os botões e interruptores sejam totalmente configuráveis através da ferramenta webconf, este guia refere-se à configuração do perfil oficial V5, que corresponde às legendas impressas nos botões. Naturalmente, pode experimentar atribuições diferentes e testar várias configurações.</p>
+   Embora todos os botões e interruptores possam ser configurados através da ferramenta webconf, este guia refere-se à configuração do perfil oficial do V5, que corresponde às legendas impressas nos botões. Naturalmente, pode experimentar atribuições diferentes para os botões e testar outras configurações.</p>
   </div>
 
   <h3>Funções globais</h3>
-  <p>Alguns botões têm uma função terciária global atribuída à ação de <b>pressão longa</b>:
+  <p>Alguns botões têm uma terceira função global atribuída à ação de <b>pressão longa</b>:
 
   <ul>
    <li><b>BACK/NO</b>: pressão longa para aceder ao menu de <b>desligar</b>.</li>
    <li><b>CTRL/PRESET</b>: pressão longa para aceder aos <b>presets favoritos</b>.</li>
-   <li><b>STOP</b>: pressão longa para <b>parar completamente todos os sons</b>. <b>SUPER PANIC!</b></li>
+   <li><b>STOP</b>: pressão longa para <b>parar totalmente todos os sons</b>. <b>SUPER PANIC!</b></li>
    <li><b>F4</b>: pressão longa para <b>ativar/desativar a interface TTS</b> (Text-To-Speech).</li>
   </ul>
 
   <h2>A barra superior</h2>
-  <p>Normalmente, na parte superior do ecrã existe uma barra com informações. Esta poderá não estar visível em algumas vistas, como as janelas de confirmação ou de informação.
+  <p>Na parte superior do ecrã existe, normalmente, uma barra com informações. Esta barra poderá não estar visível em algumas vistas, como as janelas de confirmação ou de informação.
   A barra superior é composta por 2 blocos:</p>
 
   <h3>A barra de título</h3>
-  <p>A barra de título funciona como uma espécie de navegação hierárquica. Normalmente, apresenta o título da vista ou informações sobre o snapshot, zs3 ou chain atual (canal MIDI, engine, banco e preset).</p>
+  <p>A barra de título funciona como uma espécie de trilho de navegação. Normalmente, apresenta o título da vista ou informações sobre o snapshot, o ZS3 ou a chain atual (canal MIDI, engine, banco e preset).</p>
   <img src="img/title_bar_mixer.png" class="full"/>
 
   <h3>A área de estado</h3>
-  <p>No canto superior direito, ao lado da barra de título, encontra-se uma área onde são apresentadas informações úteis em tempo real:</p>
+  <p>No canto superior direito, ao lado da barra de título, encontra-se uma área que apresenta algumas informações úteis em tempo real:</p>
   <ul>
-   <li><b>Medidor de picos de áudio digital (DPM)</b>: barras horizontais animadas que indicam o nível e os picos do áudio digital.</li>
-   <li><b>Ícones de estado</b>: indicação de vários estados do zynthian.</li>
+   <li><b>Medidor de pico de áudio digital (DPM)</b>: barras horizontais animadas que indicam o nível e os picos do áudio digital.</li>
+   <li><b>Ícones de estado</b>: indicam vários estados do zynthian.</li>
   </ul>
   <img src="img/ui_status_bar.png" class="full"/>
 
-  <h4>O medidor de picos de áudio digital (DPM)</h4>
-  <p>O DPM abrange o intervalo de -50dBFS a 0dBFS, ou seja, desde o nível máximo permitido em escala total (na extremidade direita) até 50dB abaixo (na extremidade esquerda):</p>
+  <h4>Medidor de pico de áudio digital (DPM)</h4>
+  <p>O DPM abrange o intervalo de -50dBFS a 0dBFS, ou seja, desde o nível máximo permitido em escala completa (extremo direito) até 50dB abaixo (extremo esquerdo):</p>
   <ul>
    <li>O segmento verde abrange o intervalo de -50dBFS a -10dBFS.</li>
    <li>O segmento amarelo abrange o intervalo de -10dBFS a -3dBFS.</li>
    <li>O segmento vermelho abrange o intervalo de -3dBFS a 0dBFS.</li>
   </ul>
-  <p>Existem medidores independentes para os canais esquerdo e direito, que monitorizam a saída do sistema, ou seja, a mistura de áudio enviada para a saída do Zynthian. O nível diminui segundo uma regra logarítmica: demora um segundo a diminuir até -200dBFS e, por isso, demora cerca de um quarto de segundo a diminuir até -50dBFS (o intervalo apresentado). Os picos são apresentados instantaneamente, ou seja, o ataque do medidor é imediato (*). A barra de retenção de picos permanece durante dois segundos ou até ser atingido um pico superior.</p>
+  <p>Existem medidores independentes para os canais esquerdo e direito, que monitorizam a saída do sistema, ou seja, a mistura de áudio enviada para a saída do Zynthian. O nível diminui segundo uma regra logarítmica, demorando um segundo a descer até -200dBFS e cerca de um quarto de segundo a descer até -50dBFS (o intervalo apresentado). Os picos são apresentados instantaneamente, ou seja, o tempo de ataque do medidor é imediato (*). A barra de retenção de pico permanece durante dois segundos ou até ser atingido um pico mais elevado.</p>
 
-  <p>Este medidor é igual ao DPM do mixbus principal, sempre visível na vista do mixer, pelo que fica oculto quando a vista do mixer de áudio está apresentada.</p>
+  <p>Este medidor é igual ao DPM do mixbus principal, sempre visível na vista do mixer, e fica, por isso, oculto quando a vista do mixer de áudio está aberta.</p>
 
   <div class="note-block">
-  (*) O DPM é atualizado 5 vezes por segundo, pelo que pode haver um atraso de 200 ms até à apresentação de um pico.
+  (*) O DPM é atualizado 5 vezes por segundo, pelo que pode haver um atraso de 200 ms na apresentação dos picos.
   </div>
 
-  <h4>Os ícones de estado</h4>
+  <h4>Ícones de estado</h4>
   <br/>
   <table>
    <tr>
@@ -302,27 +303,27 @@
    <tr>
     <td><span class="color-red symbol">&hearts;</span></td>
     <td>Carga da CPU</td>
-    <td class="small">Coração que indica a carga da CPU. É apresentado a verde quando a carga é inferior a 50%, a amarelo quando ultrapassa 50% e a vermelho quando ultrapassa 75%.</td>
+    <td class="small">Coração que indica a carga da CPU. É apresentado a verde quando a carga é inferior a 50%, a amarelo quando é superior a 50% e a vermelho quando ultrapassa 75%.</td>
    </tr>
    <tr>
     <td><span class="color-green symbol">&#8634;</span></td>
     <td class="nowrap">Atualização de software disponível</td>
-    <td class="small">Quando há uma atualização de software disponível, é apresentado o símbolo verde de reciclagem. Pode atualizar a partir do menu de administração, da webconf ou do terminal.</td>
+    <td class="small">Quando está disponível uma atualização de software, é apresentado o símbolo verde de reciclagem. Pode atualizar através do menu de administração, do webconf ou do terminal.</td>
    </tr>
    <tr>
     <td><span class="color-red symbol">&#9888;</span></td>
     <td>XRun</td>
-    <td class="small">É apresentado quando ocorrem XRuns. Estes podem ser acompanhados por estalidos e ruídos na saída de áudio. Significa que a CPU não consegue processar ou transferir áudio com rapidez suficiente. Considere desativar opções que consomem muitos recursos da CPU (como VNC, auscultadores, etc.) ou reduzir a complexidade das chains.</td>
+    <td class="small">É apresentado quando ocorrem XRuns. Estes podem ser acompanhados de estalidos e ruídos na saída de áudio. Significa que a CPU não consegue processar ou transferir áudio com rapidez suficiente. Considere desativar algumas opções que exigem muitos recursos da CPU (como VNC, auscultadores, etc.) ou reduzir a complexidade das chains.</td>
    </tr>
    <tr>
     <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
     <td>Subtensão</td>
-    <td class="small">O Zynthian está a funcionar num estado degradado, com a frequência da CPU limitada a 600-800 MHz, numa tentativa de estabilizar o sistema e evitar uma falha. Não deverá ver este ícone; se o vir, considere procurar uma fonte de alimentação melhor.</td>
+    <td class="small">O Zynthian está a funcionar num estado degradado, com a frequência da CPU limitada a 600-800 MHz, numa tentativa de estabilizar o sistema e evitar uma falha. Não deverá ver este ícone. Se o vir, considere utilizar uma fonte de alimentação melhor.</td>
    </tr>
    <tr>
     <td><span class="color-red symbol">&#127777;</span></td><!---->
-    <td>Temperatura excessiva</td>
-    <td class="small">O Zynthian está a funcionar num estado degradado, com a frequência da CPU limitada a 600-800 MHz, numa tentativa de estabilizar o sistema e evitar uma falha. Não deverá ver este ícone; se o vir, deverá melhorar a dissipação do calor (utilizando um dissipador, etc.).</td>
+    <td>Sobretemperatura</td>
+    <td class="small">O Zynthian está a funcionar num estado degradado, com a frequência da CPU limitada a 600-800 MHz, numa tentativa de estabilizar o sistema e evitar uma falha. Não deverá ver este ícone. Se o vir, deverá melhorar a dissipação do calor (utilizando um dissipador, etc.).</td>
    </tr>
    <tr>
     <th colspan="3">Atividade MIDI e reprodução/gravação</th>
@@ -334,32 +335,32 @@
    </tr>
    <tr>
     <td><span class="color-red symbol">&#9679;</span></td>
-    <td class="nowrap">Gravação de faixa de áudio</td>
+    <td class="nowrap">A gravar uma faixa de áudio</td>
     <td class="small">Está a ser gravada uma faixa de áudio.</td>
    </tr>
    <tr>
     <td><span class="color-green symbol">&#9654;</span></td>
-    <td class="nowrap">Reprodução de faixa de áudio</td>
+    <td class="nowrap">A reproduzir uma faixa de áudio</td>
     <td class="small">Está a ser reproduzida uma faixa de áudio.</td>
    </tr>
    <tr>
     <td><span class="color-purple symbol">&#9679;</span></td>
-    <td class="nowrap">Gravação de faixa MIDI</td>
+    <td class="nowrap">A gravar uma faixa MIDI</td>
     <td class="small">Está a ser gravada uma faixa MIDI.</td>
    </tr>
    <tr>
     <td><span class="color-purple symbol">&#9654;</span></td>
-    <td class="nowrap">Reprodução de faixa MIDI</td>
+    <td class="nowrap">A reproduzir uma faixa MIDI</td>
     <td class="small">Está a ser reproduzida uma faixa MIDI.</td>
    </tr>
    <tr>
     <td><span class="color-orange symbol">&#9679;</span></td>
-    <td class="nowrap">Gravação de pattern</td>
-    <td class="small">A gravação está armada no editor de patterns.</td>
+    <td class="nowrap">A gravar um pattern</td>
+    <td class="small">A gravação está armada no editor de pattern.</td>
    </tr>
    <tr>
     <td><span class="color-orange symbol">&#9654;</span></td>
-    <td>Reprodução de pattern<br/>Reprodução de clip de áudio</td>
+    <td>A reproduzir um pattern<br/>A reproduzir um clip de áudio</td>
     <td class="small">Está a ser reproduzido um pattern do step sequencer ou um clip de áudio a partir do launcher.</td>
    </tr>
   </table>

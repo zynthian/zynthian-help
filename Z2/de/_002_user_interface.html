@@ -4,124 +4,126 @@
  </head>
  <body class="help_ui">
   <h1>Die Benutzeroberfläche</h1>
-  <p>Die Benutzeroberfläche des zynthian V5 wird hauptsächlich bedient mit:</p>
+  <p>Die Benutzeroberfläche des zynthian V5 wird hauptsächlich über folgende Bedienelemente gesteuert:</p>
   <ul>
-   <li>4 Drehreglern mit Schalter</li>
-   <li>20 Tastern mit RGB-LEDs</li>
-   <li>kapazitivem Multi-Touch-Display</li>
+   <li>4 Drehregler mit Schalter</li>
+   <li>20 Tasten mit RGB-LEDs</li>
+   <li>kapazitives Multi-Touch-Display</li>
   </ul>
 
-  <p>Alternativ lässt sich die zynthian UI bedienen:</p>
+  <p>Alternativ kann die zynthian-Benutzeroberfläche auch folgendermaßen gesteuert werden:</p>
   <ul>
    <li>über die VNC-Schnittstelle</li>
    <li>mit einem unterstützten MIDI-Controller</li>
-   <li>mit MIDI-Noten auf dem MIDI-Master-Channel</li>
+   <li>mit MIDI-Noten im MIDI-Master-Channel</li>
    <li>mit einer Computertastatur (Tastenbelegungen)</li>
    <li>über OSC CUIA</li>
   </ul>
 
-  <p>Diese Anleitung behandelt nur die primäre UI-Bedienung mit Drehreglern, Tastern und Touch-Gesten. Informationen zu den übrigen Möglichkeiten finden Sie im <a href="https://wiki.zynthian.org">zynthian-Wiki</a>.</p>
+  <p>Diese Anleitung behandelt nur die primäre Benutzeroberfläche mit Drehreglern, Tasten und Touch-Bedienung. Weitere Informationen finden Sie im <a href="https://wiki.zynthian.org">zynthian-Wiki</a>.</p>
 
   <h2>Aktionen der Drehregler</h2>
   <p>
    Es gibt fünf Aktionen für Drehregler:<br>
    <ul>
-    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Kurzer Druck:</b> Wenn Sie einen Drehregler weniger als 0.3 Sekunden drücken, wird die <b>Aktion für kurzen Druck</b>(*) ausgelöst.</li>
-    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Längerer Druck:</b> Wenn Sie einen Drehregler länger als 0.3 und weniger als 2 Sekunden drücken, wird die <b>Aktion für längeren Druck</b>(*) ausgelöst.</li>
-    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Langer Druck:</b> Wenn Sie einen Drehregler länger als 2 Sekunden gedrückt halten, wird die <b>Aktion für langen Druck</b>(*) ausgelöst.</li>
-    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Drehen:</b> Durch Drehen eines Drehreglers lässt sich ein Parameterwert anpassen, ein Eintrag in einer Liste auswählen oder der Cursor horizontal bzw. vertikal bewegen. Die Beschleunigung der Drehregler ermöglicht eine feinere Anpassung bei langsamem und eine gröbere Anpassung bei schnellerem Drehen.</li>
-    <li><b>Drücken + Drehen:</b> Wenn Sie einen Drehregler gedrückt halten und drehen, kann sich die Auflösung erhöhen, wodurch eine feinere Anpassung möglich ist.</li>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Kurzer Druck:</b> Wenn Sie einen Drehregler weniger als 0,3 Sekunden drücken, wird die <b>Aktion für kurzen Druck</b> ausgelöst (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Langer Druck:</b> Wenn Sie einen Drehregler länger als 0,3 und kürzer als 2 Sekunden drücken, wird die <b>Aktion für langen Druck</b> ausgelöst (*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Sehr langer Druck:</b> Wenn Sie einen Drehregler länger als 2 Sekunden gedrückt halten, wird die <b>Aktion für sehr langen Druck</b> ausgelöst (*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Drehen:</b> Durch Drehen eines Reglers können Sie einen Parameterwert anpassen, ein Element in einer Liste auswählen oder den Cursor horizontal oder vertikal bewegen. Die Beschleunigung des Drehreglers ermöglicht eine feinere Anpassung bei langsamer Drehung und eine gröbere Anpassung bei schneller Drehung.</li>
+    <li><b>Drücken + Drehen:</b> Wenn Sie einen Drehregler beim Drehen gedrückt halten, kann die Auflösung erhöht werden, sodass eine feinere Anpassung möglich ist.</li>
    </ul>
   </p>
 
-  <h2>Aktionen der Taster</h2>
+  <h2>Tastenaktionen</h2>
   <p>
-   Es gibt drei Aktionen für Taster:<br>
+   Es gibt drei Tastenaktionen:<br>
    <ul>
-    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Kurzer Druck:</b> Wenn Sie einen Taster weniger als 0.3 Sekunden drücken, wird die <b>Aktion für kurzen Druck</b> (*) ausgelöst.</li>
-    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Längerer Druck:</b> Wenn Sie einen Taster länger als 0.3 und weniger als 2 Sekunden drücken, wird die <b>Aktion für längeren Druck</b>(*) ausgelöst.</li>
-    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Langer Druck:</b> Wenn Sie einen Taster länger als 2 Sekunden gedrückt halten, wird die <b>Aktion für langen Druck</b>(*) ausgelöst.</li>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Kurzer Druck:</b> Wenn Sie eine Taste weniger als 0,3 Sekunden drücken, wird die <b>Aktion für kurzen Druck</b> ausgelöst (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Langer Druck:</b> Wenn Sie eine Taste länger als 0,3 und kürzer als 2 Sekunden drücken, wird die <b>Aktion für langen Druck</b> ausgelöst (*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Sehr langer Druck:</b> Wenn Sie eine Taste länger als 2 Sekunden gedrückt halten, wird die <b>Aktion für sehr langen Druck</b> ausgelöst (*).</li>
    </ul>
   </p>
 
-  <p>(*) Die Dauer für die Druckaktionen lässt sich im Webconf-Tool auf der Registerkarte mit den erweiterten UI-Optionen konfigurieren.</p>
-  <p>Beachten Sie, dass nicht allen Drehreglern/Tastern für jeden Aktionstyp Funktionen zugewiesen sind. Die Funktionen der Drehregler/Taster können sich je nach Kontext ändern. Dies wird auf den Hilfeseiten zu den verschiedenen Ansichten ausführlich dokumentiert. Merken Sie sich die oben gezeigten Aktionssymbole, da sie in dieser Anleitung verwendet werden.</p>
-  <p>Schließlich können Sie die Standardbelegung der Aktionen im Webconf-Tool ändern. Rufen Sie dazu im Abschnitt „Wiring Layout“ die erweiterten Optionen auf. Wir empfehlen dies nicht, aber die Entscheidung liegt bei Ihnen!</p>
+  <p>(*) Die Dauer der Tastendrücke kann im Webconf-Tool auf der Registerkarte mit den erweiterten UI-Optionen konfiguriert werden.</p>
+  <p>Beachten Sie, dass nicht allen Drehreglern/Tasten für jeden Aktionstyp Funktionen zugewiesen sind. Die Funktion einer Drehregler-/Tastenaktion kann sich je nach Kontext ändern. Dies wird auf den Hilfeseiten zu den verschiedenen Ansichten ausführlich dokumentiert. Merken Sie sich die oben gezeigten Aktionssymbole, da sie in dieser Anleitung verwendet werden.</p>
+  <p>Sie können die Standard-Aktionsbelegung auch im Webconf-Tool ändern, indem Sie im Abschnitt „Wiring Layout“ die erweiterten Optionen aufrufen. Wir empfehlen dies nicht, aber die Entscheidung liegt bei Ihnen!</p>
 
-  <img src="img/V5_render_knobs_numbered.png" class="float_right"/>
+  <div class="clear"></div>
 
-  <h2>Verwendung der Drehregler</h2>
+  <h2>Verwenden der Drehregler</h2>
 
-  <p>Die Drehregler des V5 funktionieren ganz anders als die Drehregler des V1-V4. Da es 20 Silikon-Taster gibt, müssen die Schalter der Drehregler nicht zur Navigation in der UI verwendet werden. Diese erfolgt am besten über die Drucktaster. Daher wurden den Schaltern der Drehregler kontextbezogenere Funktionen zugewiesen, beispielsweise MIDI-learning. Die Drehregler sind von oben nach unten nummeriert: Der oberste ist <b>Drehregler #1</b>, der unterste <b>Drehregler #4</b>. In dieser Anleitung werden wir uns auf diese Weise auf die Drehregler beziehen.</p>
+  <img src="img/V5_render_knobs_numbered.png" class="float_right, float_right_mobile"/>
+
+  <p>Die Drehregler des V5 unterscheiden sich deutlich von denen der Modelle V1 bis V4. Aufgrund der 20 Silikontasten müssen die Schalter der Drehregler nicht mehr zur Navigation in der Benutzeroberfläche verwendet werden. Dafür eignen sich jetzt die Drucktasten besser. Daher wurden den Schaltern der Drehregler kontextbezogene Funktionen wie MIDI-learning zugewiesen. Die Drehregler sind von oben nach unten nummeriert: Der oberste ist <b>Drehregler Nr. 1</b>, der unterste <b>Drehregler Nr. 4</b>. In dieser Anleitung verwenden wir diese Bezeichnungen.</p>
 
   <h3>Allgemeine Regel</h3>
-  <p>Auch wenn das Verhalten der Drehregler kontextabhängig ist, gibt es ein Muster, das als <i>allgemeine Regel</i> für viele Ansichten gilt:</p>
+  <p>Obwohl das Verhalten der Drehregler kontextabhängig ist, gibt es ein Muster, das als <i>allgemeine Regel</i> für viele Ansichten gilt:</p>
 
-  <h4>Drehregler #4</h4>
+  <h4>Drehregler Nr. 4</h4>
   <ul>
    <li>In <b>Auswahlansichten</b> (Listen):
     <ul>
      <li><b>Drehen</b>, um die Liste zu durchsuchen.</li>
-     <li><b>Kurz drücken</b>, um Einträge auszuwählen, wie mit dem SEL-Taster.</li>
-     <li><b>Länger drücken</b>, um kontextbezogene Optionen zu öffnen, wie mit dem OPT-Taster.</li>
+     <li><b>Kurzer Druck</b>, um Elemente auszuwählen, wie mit der SEL-Taste.</li>
+     <li><b>Langer Druck</b>, um kontextbezogene Optionen zu öffnen, wie mit der OPT-Taste.</li>
     </ul></li>
-   <li>In <b>Rasteransichten</b> ist dies der Drehregler für die X-Achse. <b>Drehen</b>, um den Cursor horizontal zu bewegen.
-   <li>In <b>geteilten Ansichten</b> mit 2 scrollbaren Listen steuert er die rechte Liste.</li>
+   <li>In <b>Rasteransichten</b> steuert er die X-Achse. <b>Drehen</b>, um den Cursor horizontal zu bewegen.
+   <li>In <b>geteilten Ansichten</b> mit zwei scrollbaren Listen steuert er die rechte Liste.</li>
   </ul>
 
-  <h4>Drehregler #3</h4>
+  <h4>Drehregler Nr. 3</h4>
   <ul>
-   <li>In <b>Rasteransichten</b> ist dies der Drehregler für die Y-Achse. <b>Drehen</b>, um den Cursor vertikal zu bewegen.</li>
-   <li>In <b>geteilten Ansichten</b> mit 2 scrollbaren Listen steuert er die linke Liste.
+   <li>In <b>Rasteransichten</b> steuert er die Y-Achse. <b>Drehen</b>, um den Cursor vertikal zu bewegen.</li>
+   <li>In <b>geteilten Ansichten</b> mit zwei scrollbaren Listen steuert er die linke Liste.
     <ul>
      <li><b>Drehen</b>, um die linke Liste zu durchsuchen.</li>
-     <li><b>Kurz drücken</b>, um einen Eintrag in der linken Liste auszuwählen.</li>
+     <li><b>Kurzer Druck</b>, um ein Element in der linken Liste auszuwählen.</li>
     </ul></li>
   </ul>
 
   <div class="clear"></div>
   <div class="note-block">
-   Die Hauptlautstärke ist jederzeit mit einem Tastendruck erreichbar. Drücken Sie kurz den <b>MIX-Taster</b> und drehen Sie dann <b>Drehregler 3</b>, um die Hauptlautstärke zu ändern.
+   Die Hauptlautstärke ist jederzeit mit einem Klick erreichbar. Drücken Sie kurz die <b>MIX-Taste</b> und drehen Sie anschließend <b>Drehregler 3</b>, um die Hauptlautstärke zu ändern.
   </div>
 
-  <h2>Verwendung der Drucktaster</h2>
+  <h2>Verwenden der Drucktasten</h2>
   <img src="img/V5_buttons_outlined.png" class="float_right">
 
-  <p>Das Drucktasterfeld des V5 ist in 5 Gruppen unterteilt. In der Abbildung sind die 5 Gruppen mit unterschiedlichen Farben umrandet:</p>
+  <p>Das Raster der V5-Drucktasten ist in fünf Gruppen unterteilt. In der Abbildung sind die fünf Gruppen in unterschiedlichen Farben umrandet:</p>
 
   <ul>
-   <li><b>Ansichtstaster</b> => Grün</li>
-   <li><b>ALT-Taster</b> => Violett</li>
-   <li><b>Transporttaster</b> => Rot</li>
-   <li><b>Navigationstaster</b> => Gelb</li>
-   <li><b>Funktionstaster</b> => Blau</li>
+   <li><b>Ansichtstasten</b> => Grün</li>
+   <li><b>ALT-Taste</b> => Violett</li>
+   <li><b>Transporttasten</b> => Rot</li>
+   <li><b>Navigationstasten</b> => Gelb</li>
+   <li><b>Funktionstasten</b> => Blau</li>
   </ul>
 
   <div class="clear"></div>
 
-  <h3>Ansichtstaster</h3>
+  <h3>Ansichtstasten</h3>
   <img src="img/V5_buttons_outlined-3-detail2.png" class="float_right"/>
 
-  <p>Die Ansichtstaster sind in der Abbildung grün umrandet und ermöglichen den direkten Zugriff auf die Hauptansichten. Den meisten dieser Taster sind 2 Ansichten zugewiesen, deren aufgedruckte Bezeichnungen durch eine horizontale Linie getrennt sind. Die primäre Ansicht ist oben, die sekundäre Ansicht unten aufgedruckt. Eine Ausnahme bildet der „Metronome“-Taster.</p>
+  <p>Die Ansichtstasten sind in der Abbildung grün umrandet und ermöglichen den direkten Zugriff auf die Hauptansichten. Den meisten dieser Tasten sind zwei Ansichten zugewiesen, deren Bezeichnungen durch eine horizontale Linie getrennt sind. Die primäre Ansicht ist oben und die sekundäre Ansicht unten aufgedruckt. Die Taste „Metronome“ bildet eine Ausnahme.</p>
 
-  <p><b>Kurz drücken</b>, um Folgendes aufzurufen:
+  <p><b>Drücken Sie kurz</b> die Taste, um Folgendes aufzurufen:
   <ul>
-   <li>die primäre Ansicht, wenn sie nicht angezeigt wird</li>
-   <li>die sekundäre Ansicht, wenn die primäre Ansicht des Tasters angezeigt wird</li>
+   <li>die primäre Ansicht, wenn die primäre Ansicht der Taste nicht angezeigt wird</li>
+   <li>die sekundäre Ansicht, wenn die primäre Ansicht der Taste angezeigt wird</li>
   </ul>
 
   <p>Die Farbe der LED hängt von der aktuellen Ansicht ab:</p>
   <ul>
-   <li>Wenn die primäre Ansicht angezeigt wird, leuchtet der Taster grün.</li>
-   <li>Wenn die sekundäre Ansicht angezeigt wird, leuchtet der Taster orange.</li>
-   <li>Wenn keine der Ansichten des Tasters angezeigt wird, leuchtet der Taster blau.</li>
+   <li>Wenn die primäre Ansicht angezeigt wird, leuchtet die Taste grün.</li>
+   <li>Wenn die sekundäre Ansicht angezeigt wird, leuchtet die Taste orange.</li>
+   <li>Wenn keine der Ansichten der Taste angezeigt wird, leuchtet die Taste blau.</li>
   </ul>
 
   <div class="note-block">
-   Denken Sie daran: Kurz drücken, um die primäre Ansicht aufzurufen, und erneut drücken, um die sekundäre Ansicht aufzurufen. <b>Länger drücken</b>, um die sekundäre Ansicht aufzurufen, unabhängig davon, welche Ansicht gerade angezeigt wird.
+   Denken Sie daran: Drücken Sie kurz, um die primäre Ansicht aufzurufen, und drücken Sie erneut, um die sekundäre Ansicht aufzurufen. <b>Drücken Sie lang</b>, um die sekundäre Ansicht unabhängig von der aktuellen Ansicht aufzurufen.
   </div>
 
-  <p>Die Ansichtstaster sind von links nach rechts und von oben nach unten:
+  <p>Die Ansichtstasten sind von links nach rechts und von oben nach unten angeordnet:</p>
 
   <ul>
    <li><b>OPT/ADMIN</b>
@@ -136,18 +138,18 @@
     </ul></li>
    <li>
     <ul><b>CTRL/PRESET</b>
-     <li><b>Primär:</b> Chain-Steuerungsansicht</li>
+     <li><b>Primär:</b> Chain-Control-Ansicht</li>
      <li><b>Sekundär:</b> Bank-/Preset-Auswahl</li>
     </ul></li>
    <li>
     <ul><b>ZS3/SNAPSHOT</b>
      <li><b>Primär:</b> ZS3-Liste</li>
-     <li><b>Sekundär:</b> Snapshots-Liste</li>
+     <li><b>Sekundär:</b> Snapshot-Liste</li>
     </ul></li>
    <li>
     <ul><b>METRONOME</b>
-     <li><b>Erster Druck:</b> Tempo-Ansicht
-     <li><b>Weitere Tastendrücke:</b> Tap-Tempo. Tempo in BPM anpassen.
+     <li><b>Erster Druck:</b> Tempo-Ansicht</li>
+     <li><b>Weitere Schläge:</b> Tap tempo. BPM-Tempo anpassen.
     </ul></li>
    <li>
     <ul><b>PAD/STEP</b>
@@ -158,74 +160,74 @@
 
   <div class="clear"></div>
 
-  <h3>ALT-Taster</h3>
+  <h3>ALT-Taste</h3>
   <img src="img/V5_buttons_outlined-4.png" class="float_right"/>
 
-  <p>Der ALT-Taster hat 2 Funktionen:</p>
+  <p>Die ALT-Taste hat zwei Funktionen:</p>
 
   <ul>
-   <li><b>kurz drücken</b>, um den <b>ALT-Modus</b> (Modus für alternative Funktionen) ein- oder auszuschalten.</li>
-   <li><b>länger drücken</b>, um die <b>kontextbezogene Hilfe</b> auf dem Bildschirm zu öffnen.</li>
+   <li><b>kurz drücken</b>, um den <b>ALT-Modus</b> (Modus für alternative Funktionen) umzuschalten.</li>
+   <li><b>lang drücken</b>, um die <b>kontextbezogene Hilfe</b> auf dem Bildschirm zu öffnen.</li>
   </ul>
 
   <h4>ALT-Modus</h4>
-  <p>Wenn Sie den ALT-Modus aktivieren, ändern der ALT-Taster und die Taster mit alternativer Funktion ihre Standardfarbe von Blau zu Violett oder Orange. Violett kennzeichnet die Standard-Alt-Funktion. Orange kennzeichnet eine benutzerdefinierte Alt-Funktion.</p>
-  <p>Der ALT-Modus ist kontextabhängig und richtet sich nach der aktuellen Ansicht. Standardmäßig haben nur die Transporttaster und die Funktionstaster (F1-F4) alternative Funktionen, die wie folgt festgelegt sind:</p>
+  <p>Wenn der ALT-Modus aktiviert ist, wechselt die Standardfarbe der ALT-Taste und der Tasten mit alternativer Funktion von Blau zu Violett oder Orange. Violett kennzeichnet die standardmäßige ALT-Funktion. Orange kennzeichnet eine benutzerdefinierte ALT-Funktion.</p>
+  <p>Der ALT-Modus ist kontextabhängig und richtet sich nach der aktuellen Ansicht. Standardmäßig haben nur die Transport- und Funktionstasten (F1–F4) alternative Funktionen, die folgendermaßen festgelegt sind:</p>
   <ul>
-   <li>Mit den <b>Transporttastern</b> wird zwischen Audio Player/Recorder <span style="color:#0000F0">(normal)</span> und MIDI Player/Recorder <span style="color:#D000D0">(Alt)</span> umgeschaltet.</li>
-   <li>Mit den <b>F1-F4-Tastern</b> wird zwischen den Programmen 1-4 <span style="color:#0000F0">(normal)</span> und den Programmen 5-8 <span style="color:#D000D0">(Alt)</span> umgeschaltet. Sie können diese Funktion beispielsweise verwenden, um bis zu 8 subsnapshots (ZS3s) zu speichern und aufzurufen.</li>
+   <li>Mit den <b>Transporttasten</b> wird zwischen Audio Player/Recorder <span style="color:#0000F0">(normal)</span> und MIDI Player/Recorder <span style="color:#D000D0">(ALT)</span> umgeschaltet.</li>
+   <li>Mit den <b>Tasten F1–F4</b> wird zwischen den Programmen 1–4 <span style="color:#0000F0">(normal)</span> und den Programmen 5–8 <span style="color:#D000D0">(ALT)</span> umgeschaltet. Sie können diese Funktion beispielsweise verwenden, um bis zu 8 subsnapshot (ZS3) zu speichern und aufzurufen.</li>
   </ul>
-  <p>Einige Ansichten verfügen über einen <b>benutzerdefinierten ALT-Modus</b> mit speziellen Funktionen, die die Standardeinstellungen teilweise oder vollständig überschreiben. <b>Der Status des ALT-Modus wird für jede Ansicht separat gespeichert</b>. Details zu den benutzerdefinierten ALT-Modi sind in den jeweiligen Abschnitten zu den Ansichten dokumentiert.</p>
+  <p>Einige Ansichten bieten einen <b>benutzerdefinierten ALT-Modus</b> mit spezifischen Funktionen, der die Standardfunktionen teilweise oder vollständig überschreibt. <b>Der Status des ALT-Modus wird für jede Ansicht separat gespeichert</b>. Details zu den benutzerdefinierten ALT-Modi werden für jede Ansicht einzeln dokumentiert.</p>
 
   <h4>Kontextbezogene Hilfe</h4>
-  <p><b>Drücken Sie den ALT-Taster länger</b>, um die kontextbezogene Hilfe zur aktuellen Ansicht zu öffnen. Auf dem Hilfe-Bildschirm können Sie:</p>
+  <p><b>Drücken Sie die ALT-Taste lang</b>, um die kontextbezogene Hilfe für die aktuelle Ansicht zu öffnen. Im Hilfebildschirm können Sie Folgendes tun:</p>
   <ul>
-   <li><b>Drehregler 4 drehen</b> oder die Taster UP/DOWN drücken, um durch den Inhalt zu scrollen.</li>
-   <li><b>Drehregler 4 kurz drücken</b>, um die Links zu durchsuchen.</li>
-   <li><b>BACK kurz drücken</b>, um zur vorherigen Seite zurückzukehren oder den Hilfe-Bildschirm zu schließen.</li>
+   <li><b>Drehen Sie Drehregler 4</b> oder drücken Sie die Tasten UP/DOWN, um durch den Inhalt zu scrollen.</li>
+   <li><b>Drücken Sie kurz Drehregler 4</b>, um die Links zu durchsuchen.</li>
+   <li><b>Drücken Sie kurz BACK</b>, um zur vorherigen Seite zurückzukehren oder den Hilfebildschirm zu schließen.</li>
   </ul>
 
   <div class="clear"></div>
 
-  <h3>Transporttaster</h3>
+  <h3>Transporttasten</h3>
   <img src="img/V5_buttons_outlined-3-detail.png" class="float_right"/>
 
-  <p>Standardmäßig steuern die Transporttaster den <b>globalen Audio-Recorder/Player</b> und leuchten blau. Wenn der <b>ALT-Modus</b> aktiviert ist, steuern die Transporttaster den <b>MIDI-Recorder/Player</b> und leuchten violett.</p>
+  <p>Standardmäßig steuern die Transporttasten den <b>globalen Audio-Recorder/Player</b> und leuchten blau. Wenn der <b>ALT-Modus</b> aktiviert ist, steuern die Transporttasten den <b>MIDI-Recorder/Player</b> und leuchten violett.</p>
 
   <ul>
-   <li><b>REC kurz drücken</b>, um eine Aufnahme zu starten bzw. zu beenden. Während einer Aufnahme leuchtet der Aufnahmetaster rot. Außerdem sollte oben rechts im Statusbereich des Displays das Aufnahmesymbol angezeigt werden.</li>
-   <li><b>PLAY kurz drücken</b>, um den aktuell ausgewählten Track abzuspielen oder die Wiedergabe anzuhalten. Standardmäßig ist der zuletzt aufgenommene Track ausgewählt. Während der Wiedergabe leuchtet der Play-Taster grün. Nach dem Anhalten wird die Wiedergabe an der angehaltenen Stelle fortgesetzt, wenn Sie den Taster erneut drücken.</li>
-   <li><b>PLAY länger drücken</b>, um die Track-Liste zu öffnen. Nach der Auswahl eines Tracks wird die Steuerungsansicht des Audio-Players angezeigt.</li>
-   <li><b>STOP kurz drücken</b>, um die Wiedergabe eines Tracks zu beenden und zurückzuspulen. Wenn Sie PLAY erneut drücken, beginnt die Wiedergabe am Anfang.</li>
-   <li><b>STOP länger drücken</b>, um alle Sounds anzuhalten, einschließlich aller Audio-/MIDI-Tracks und Sequenzen. <b>PANIC!</b></li>
+   <li><b>Drücken Sie REC kurz</b>, um eine Aufnahme zu starten oder zu stoppen. Während einer Aufnahme leuchtet die Aufnahmetaste rot. Außerdem sollte das Aufnahmesymbol oben rechts im Statusbereich des Displays angezeigt werden.</li>
+   <li><b>Drücken Sie PLAY kurz</b>, um den aktuell ausgewählten Track abzuspielen oder anzuhalten. Standardmäßig ist der zuletzt aufgenommene Track ausgewählt. Während der Wiedergabe leuchtet die Wiedergabetaste grün. Nach dem Anhalten wird die Wiedergabe an der angehaltenen Stelle fortgesetzt, wenn Sie die Taste erneut drücken.</li>
+   <li><b>Drücken Sie PLAY lang</b>, um die Track-Liste zu öffnen. Nach der Auswahl eines Tracks wird die Steuerungsansicht des Audio Players angezeigt.</li>
+   <li><b>Drücken Sie STOP kurz</b>, um die Wiedergabe eines Tracks anzuhalten und zurückzuspulen. Wenn Sie anschließend PLAY drücken, beginnt die Wiedergabe von Anfang an.</li>
+   <li><b>Drücken Sie STOP lang</b>, um alle Sounds anzuhalten, einschließlich aller Audio-/MIDI-Tracks und Sequenzen. <b>PANIC!</b></li>
   </ul>
 
-  <p>In einigen Ansichten haben die Transporttaster ein spezielles (kontextbezogenes) Verhalten. In diesem Fall leuchten sie orange, um anzuzeigen, dass ihr normales Verhalten geändert wurde. Einzelheiten finden Sie im Abschnitt zur jeweiligen Ansicht.</p>
+  <p>In einigen Ansichten haben die Transporttasten ein bestimmtes, kontextabhängiges Verhalten. In diesem Fall leuchten sie orange, um darauf hinzuweisen, dass ihre normale Funktion geändert wurde. Weitere Informationen finden Sie im Abschnitt zur jeweiligen Ansicht.</p>
 
   <div class="clear"></div>
-  <h3>Navigationstaster</h3>
+  <h3>Navigationstasten</h3>
   <img src="img/V5_buttons_outlined-detail3.png" class="float_right"/>
 
-  <p>Die Navigationstaster dienen der grundlegenden Navigation und Bedienung:</p>
+  <p>Die Navigationstasten dienen der grundlegenden Navigation und Bedienung:</p>
   <ul>
    <li><b>UP/DOWN</b>
     <ul>
      <li>Listen und Menüs durchsuchen</li>
-     <li>Den Cursor (ausgewählten Eintrag) in Rasteransichten vertikal bewegen: Pattern-Editor, Launcher usw.</li>
+     <li>Den Cursor (das ausgewählte Element) in Rasteransichten vertikal bewegen, z. B. im Pattern-Editor oder Launcher</li>
     </ul></li>
    <li><b>LEFT/RIGHT</b>
     <ul>
-     <li>Die aktive chain in der Mixer- und Chain-Steuerungsansicht auswählen.</li>
-     <li>Den Cursor (ausgewählten Eintrag) in Rasteransichten horizontal bewegen: Pattern-Editor, Launcher usw.</li>
+     <li>Die aktive chain in der Mixer- und Chain-Control-Ansicht auswählen.</li>
+     <li>Den Cursor (das ausgewählte Element) in Rasteransichten horizontal bewegen, z. B. im Pattern-Editor oder Launcher.</li>
     </ul></li>
    <li><b>SEL/YES</b>
     <ul>
-     <li>Einträge in Listen und Menüs auswählen.</li>
-     <li>In der Chain-Steuerungsansicht den <b>Auswahlmodus</b> aktivieren, um Controller-Seiten zu durchsuchen.</li>
-     <li>Im Pattern-Editor Noten hinzufügen/entfernen.</li>
-     <li>Phrasen, Sequenzen oder Audio-Clips im Launcher abspielen/anhalten.</li>
+     <li>Elemente in Listen und Menüs auswählen.</li>
+     <li>In der Chain-Control-Ansicht den <b>Auswahlmodus</b> aktivieren, um Controller-Seiten zu durchsuchen.</li>
+     <li>Noten im Pattern-Editor hinzufügen oder entfernen.</li>
+     <li>Phrasen, Sequenzen oder Audio-Clips im Launcher abspielen oder anhalten.</li>
      <li>In Bestätigungsdialogen mit „Yes“ antworten.</li>
-     <li><b>Länger drücken</b>, um das Optionsmenü für den ausgewählten Eintrag zu öffnen.</li>
+     <li><b>Langes Drücken</b> kann das Optionsmenü des ausgewählten Elements öffnen.</li>
     </ul></li>
    <li><b>BACK/NO</b>
     <ul>
@@ -236,61 +238,61 @@
 
   <div class="clear"></div>
 
-  <h3>Funktionstaster (F1-F4)</h3>
+  <h3>Funktionstasten (F1–F4)</h3>
 
-  <p>Diese Taster können individuell angepasst werden. Wenn Sie beispielsweise direkt auf andere Ansichten zugreifen möchten, können Sie sie mit dem Webconf-Tool neu konfigurieren.</p>
-  <p>Wie oben bei der Beschreibung des ALT-Modus erläutert, sind diese Taster standardmäßig MIDI Program Change-Nachrichten zugewiesen:</p>
+  <p>Diese Tasten sind anpassbar. Wenn Sie beispielsweise direkten Zugriff auf andere Ansichten wünschen, können Sie die Tasten im Webconf-Tool neu konfigurieren.</p>
+  <p>Wie oben bei der Beschreibung des ALT-Modus erläutert, sind diesen Tasten standardmäßig MIDI Program Change-Nachrichten zugewiesen:</p>
   <ul>
-   <li><b>Normalmodus</b>: Program Change 1-4</li>
-   <li><b>ALT-Modus</b>: Program Change 5-8</li>
+   <li><b>Normalmodus</b>: Program Change 1–4</li>
+   <li><b>ALT-Modus</b>: Program Change 5–8</li>
   </ul>
-  <p>Diese Standardkonfiguration eignet sich gut zum Speichern/Aufrufen von subsnapshots (ZS3). Wenn Sie Ihren zynthian als Keyboard-Expander verwenden, ist diese Funktion möglicherweise besonders praktisch.</li>
-  <p>Einige Ansichten verfügen über benutzerdefinierte ALT-Modi, die die Funktionen der Taster F1-F4 neu festlegen. Beispiele dafür sind die <a href="launcher.html">Launcher-Ansicht</a> und der
+  <p>Diese Standardkonfiguration eignet sich zum Speichern und Aufrufen von subsnapshot (ZS3). Das kann besonders nützlich sein, wenn Sie Ihren zynthian als Keyboard-Expander verwenden.</p>
+  <p>Einige Ansichten verfügen über benutzerdefinierte ALT-Modi, die die Funktion der Tasten F1–F4 neu festlegen. Dazu gehören beispielsweise die <a href="launcher.html">Launcher-Ansicht</a> und der
   <a href="pattern_editor.html">Pattern-Editor</a>.</p>
 
   <div class="note-block">
-   Obwohl alle Taster und Schalter im Webconf-Tool vollständig konfigurierbar sind, bezieht sich diese Anleitung auf die offizielle V5-Profilkonfiguration, die den aufgedruckten Tasterbezeichnungen entspricht. Sie können selbstverständlich gern mit der Tasterbelegung experimentieren und verschiedene Konfigurationen ausprobieren.</p>
+   Obwohl alle Tasten und Schalter im Webconf-Tool vollständig konfigurierbar sind, bezieht sich diese Anleitung auf die offizielle V5-Profilkonfiguration, die den aufgedruckten Tastenbezeichnungen entspricht. Natürlich können Sie die Tastenbelegung gerne ausprobieren und verschiedene Konfigurationen testen.</p>
   </div>
 
   <h3>Globale Funktionen</h3>
-  <p>Einigen Tastern ist als <b>Aktion für langen Druck</b> eine globale Tertiärfunktion zugewiesen:
+  <p>Einigen Tasten ist eine globale dritte Funktion für die Aktion <b>sehr langer Druck</b> zugewiesen:</p>
 
   <ul>
-   <li><b>BACK/NO</b>: Lange drücken, um das Menü zum <b>Ausschalten</b> aufzurufen.</li>
-   <li><b>CTRL/PRESET</b>: Lange drücken, um auf die <b>Preset-Favoriten</b> zuzugreifen.</li>
-   <li><b>STOP</b>: Lange drücken, um <b>alle Sounds vollständig anzuhalten</b>. <b>SUPER PANIC!</b></li>
-   <li><b>F4</b>: Lange drücken, um die <b>TTS-Schnittstelle</b> (Text-To-Speech) ein- oder auszuschalten.</li>
+   <li><b>BACK/NO</b>: lange drücken, um das Menü zum <b>Ausschalten</b> aufzurufen.</li>
+   <li><b>CTRL/PRESET</b>: lange drücken, um die <b>Preset-Favoriten</b> aufzurufen.</li>
+   <li><b>STOP</b>: lange drücken, um <b>alle Sounds vollständig anzuhalten</b>. <b>SUPER PANIC!</b></li>
+   <li><b>F4</b>: lange drücken, um die <b>TTS-Schnittstelle</b> (Text-To-Speech) umzuschalten.</li>
   </ul>
 
   <h2>Die obere Leiste</h2>
-  <p>Am oberen Rand des Displays befindet sich normalerweise eine Leiste mit Informationen. In einigen Ansichten, beispielsweise bei Bestätigungs- oder Informations-Pop-ups, ist sie möglicherweise nicht sichtbar.
-  Die obere Leiste besteht aus 2 Bereichen:</p>
+  <p>Oben auf dem Display befindet sich üblicherweise eine Leiste mit Informationen. In einigen Ansichten, zum Beispiel bei Bestätigungs- oder Informations-Pop-ups, ist sie möglicherweise nicht sichtbar.
+  Die obere Leiste besteht aus zwei Bereichen:</p>
 
   <h3>Die Titelleiste</h3>
-  <p>Die Titelleiste dient als eine Art Breadcrumb-Navigation. Normalerweise zeigt sie den Titel der Ansicht oder Informationen zum aktuellen Snapshot, ZS3 oder zur aktuellen chain (MIDI-Channel, Engine, Bank und Preset) an.</p>
+  <p>Die Titelleiste dient als eine Art Breadcrumb-Navigation. Normalerweise zeigt sie den Titel der Ansicht oder Informationen zum aktuellen snapshot, ZS3 oder zur aktuellen chain an (MIDI-Channel, Engine, Bank und Preset).</p>
   <img src="img/title_bar_mixer.png" class="full"/>
 
   <h3>Der Statusbereich</h3>
-  <p>Oben rechts neben der Titelleiste befindet sich ein Bereich, in dem nützliche Informationen in Echtzeit angezeigt werden:</p>
+  <p>Oben rechts neben der Titelleiste befindet sich ein Bereich, in dem einige nützliche Informationen in Echtzeit angezeigt werden:</p>
   <ul>
-   <li><b>Digital Audio Peak Meter (DPM)</b>: Animierte horizontale Balken zeigen den Digital-Audio-Pegel und die Spitzenpegel an.</li>
-   <li><b>Statussymbole</b>: Zeigen verschiedene zynthian-Statusinformationen an.</li>
+   <li><b>Digital Audio Peak Meter (DPM)</b>: Animierte horizontale Balken zeigen den digitalen Audiopegel und die Spitzenwerte an.</li>
+   <li><b>Statussymbole</b>: Zeigen verschiedene zynthian-Status an.</li>
   </ul>
   <img src="img/ui_status_bar.png" class="full"/>
 
   <h4>Der Digital Audio Peak Meter (DPM)</h4>
-  <p>Der DPM deckt den Bereich von -50dBFS bis 0dBFS ab, also vom maximal zulässigen Pegel bei Vollaussteuerung (ganz rechts) bis 50dB darunter (ganz links):</p>
+  <p>Der DPM deckt den Bereich von -50 dBFS bis 0 dBFS ab, d. h. vom maximal zulässigen Pegel bei Vollaussteuerung (ganz rechts) bis zu einem Pegel von 50 dB darunter (ganz links):</p>
   <ul>
-   <li>Das grüne Segment deckt den Bereich von -50dBFS bis -10dBFS ab.</li>
-   <li>Das gelbe Segment deckt den Bereich von -10dBFS bis -3dBFS ab.</li>
-   <li>Das rote Segment deckt den Bereich von -3dBFS bis 0dBFS ab.</li>
+   <li>Das grüne Segment deckt den Bereich von -50 dBFS bis -10 dBFS ab.</li>
+   <li>Das gelbe Segment deckt den Bereich von -10 dBFS bis -3 dBFS ab.</li>
+   <li>Das rote Segment deckt den Bereich von -3 dBFS bis 0 dBFS ab.</li>
   </ul>
-  <p>Für den linken und rechten Channel gibt es jeweils ein eigenes Meter, das den Systemausgang überwacht, also den Mix des Audiosignals, das an den Zynthian-Ausgang geleitet wird. Der Pegel fällt logarithmisch ab. Bis zu einem Abfall auf -200dBFS vergeht eine Sekunde; bis zum Erreichen von -50dBFS (dem angezeigten Bereich) dauert es daher etwa eine Viertelsekunde. Spitzenpegel werden sofort angezeigt, d. h. das Meter reagiert unmittelbar (*). Die Spitzenwertanzeige bleibt zwei Sekunden lang bestehen oder bis ein höherer Spitzenpegel erreicht wird.</p>
+  <p>Für den linken und rechten Channel gibt es separate Pegelanzeigen, die den Systemausgang überwachen, also den Audio-Mix, der an den Zynthian-Ausgang geleitet wird. Der Pegel fällt logarithmisch ab und benötigt eine Sekunde, um auf -200 dBFS zu sinken. Daher fällt er in etwa einer Viertelsekunde auf -50 dBFS (den angezeigten Bereich). Spitzenwerte werden sofort angezeigt, d. h. die Reaktionszeit des Pegelmessers ist unmittelbar (*). Der Spitzenwert-Balken bleibt zwei Sekunden lang sichtbar oder bis ein höherer Spitzenwert erreicht wird.</p>
 
-  <p>Dieses Meter entspricht dem DPM des Main-Mixbus, der in der Mixer-Ansicht immer sichtbar ist. Daher wird es ausgeblendet, wenn die Audio-Mixer-Ansicht angezeigt wird.</p>
+  <p>Dieser Pegelmesser entspricht dem DPM des Haupt-Mixbus, der in der Mixer-Ansicht immer sichtbar ist. Daher wird er ausgeblendet, wenn die Audio-Mixer-Ansicht angezeigt wird.</p>
 
   <div class="note-block">
-  (*) Der DPM wird fünfmal pro Sekunde aktualisiert. Daher kann es bis zu 200 ms dauern, bis ein Spitzenpegel angezeigt wird.
+  (*) Der DPM wird fünfmal pro Sekunde aktualisiert. Daher kann es zu einer Verzögerung von 200 ms kommen, bevor ein Spitzenwert angezeigt wird.
   </div>
 
   <h4>Die Statussymbole</h4>
@@ -302,7 +304,7 @@
    <tr>
     <td><span class="color-red symbol">&hearts;</span></td>
     <td>CPU-Auslastung</td>
-    <td class="small">Herzsymbol für die CPU-Auslastung. Bei weniger als 50 % wird es grün angezeigt, bei mehr als 50 % gelb und bei mehr als 75 % rot.</td>
+    <td class="small">Herzsymbol zur Anzeige der CPU-Auslastung. Es wird grün angezeigt, wenn die Auslastung unter 50 % liegt, gelb bei mehr als 50 % und rot bei mehr als 75 %.</td>
    </tr>
    <tr>
     <td><span class="color-green symbol">&#8634;</span></td>
@@ -312,17 +314,17 @@
    <tr>
     <td><span class="color-red symbol">&#9888;</span></td>
     <td>XRun</td>
-    <td class="small">Wird bei XRuns angezeigt. Dies kann zu Klick- und Knackgeräuschen am Audioausgang führen. Das bedeutet, dass die CPU Audiodaten nicht schnell genug verarbeiten oder übertragen kann. Deaktivieren Sie gegebenenfalls CPU-intensive Optionen (wie VNC, Kopfhörer usw.) oder verringern Sie die Komplexität Ihrer chains.</td>
+    <td class="small">Wird bei XRuns angezeigt. Dies kann zu Klicks und Knackgeräuschen am Audioausgang führen. Das bedeutet, dass die CPU Audio nicht schnell genug verarbeiten oder übertragen kann. Deaktivieren Sie in diesem Fall eine CPU-intensive Option (z. B. VNC oder Kopfhörer) oder reduzieren Sie die Komplexität Ihrer chains.</td>
    </tr>
    <tr>
     <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
     <td>Unterspannung</td>
-    <td class="small">Zynthian arbeitet mit eingeschränkter Leistung. Die CPU-Frequenz ist auf 600-800 MHz begrenzt, um das System zu stabilisieren und einen Systemabsturz zu verhindern. Dieses Symbol sollte nicht angezeigt werden. Falls es doch erscheint, sollten Sie eine bessere Stromquelle verwenden.</td>
+    <td class="small">Zynthian läuft in einem eingeschränkten Zustand. Die CPU-Frequenz ist auf 600–800 MHz begrenzt, um das System zu stabilisieren und einen Systemabsturz zu verhindern. Dieses Symbol sollte nicht angezeigt werden. Falls es doch erscheint, sollten Sie eine bessere Stromquelle verwenden.</td>
    </tr>
    <tr>
     <td><span class="color-red symbol">&#127777;</span></td><!---->
     <td>Übertemperatur</td>
-    <td class="small">Zynthian arbeitet mit eingeschränkter Leistung. Die CPU-Frequenz ist auf 600-800 MHz begrenzt, um das System zu stabilisieren und einen Systemabsturz zu verhindern. Dieses Symbol sollte nicht angezeigt werden. Falls es doch erscheint, sollten Sie die Wärmeableitung verbessern (z. B. durch einen Kühlkörper).</td>
+    <td class="small">Zynthian läuft in einem eingeschränkten Zustand. Die CPU-Frequenz ist auf 600–800 MHz begrenzt, um das System zu stabilisieren und einen Systemabsturz zu verhindern. Dieses Symbol sollte nicht angezeigt werden. Falls es doch erscheint, sollten Sie die Wärmeableitung verbessern (z. B. durch einen Kühlkörper).</td>
    </tr>
    <tr>
     <th colspan="3">MIDI-Aktivität und Wiedergabe/Aufnahme</th>
@@ -355,12 +357,12 @@
    <tr>
     <td><span class="color-orange symbol">&#9679;</span></td>
     <td class="nowrap">Pattern wird aufgenommen</td>
-    <td class="small">Die Aufnahme im Pattern-Editor ist aktiviert.</td>
+    <td class="small">Die Aufnahme ist im Pattern-Editor aktiviert.</td>
    </tr>
    <tr>
     <td><span class="color-orange symbol">&#9654;</span></td>
     <td>Pattern wird wiedergegeben<br/>Audio-Clip wird wiedergegeben</td>
-    <td class="small">Ein Step-Sequencer-Pattern oder Audio-Clip wird über den Launcher wiedergegeben.</td>
+    <td class="small">Ein Step-Sequencer-Pattern oder Audio-Clip wird im Launcher wiedergegeben.</td>
    </tr>
   </table>
 

@@ -49,3 +49,21 @@ div.help_ui {
 .help_ui table th.empty {
 	color: #202020;
 }
+
+@media screen and (max-width: 768px) {
+	div.help_container div.knobs_action_container,
+	div.help_container div.knobs_action_container_left,
+	div.help_container div.knobs_action_container_right {
+		float: none;
+		width: 100%;
+	}
+
+	div.help_container div.left_container {
+		width: 100%;
+	}
+
+	div.help_container div.right_float_container {
+		float: none;
+		width: 100%;
+	}
+}
