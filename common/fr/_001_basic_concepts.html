@@ -1,0 +1,109 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>Concepts de base</h1>
+  <p>Cette introduction présente les principes fondamentaux nécessaires à l’utilisation de zynthian. Il est essentiel de comprendre ces concepts de base.<p>
+
+  <h2>Processeurs et chains</h2>
+  <img src="img/vangelis_chains_processors.png" class="float_right, float_right_mobile"/>
+  <p>Le composant fondamental de l’architecture sonore de zynthian est le processeur. Un processeur génère ou manipule des signaux audio et MIDI. zynthian propose plus de 1 000 moteurs de processeur, classés par type et par catégorie.</p>
+  <p>Les processeurs sont regroupés et interconnectés au sein de chains. Les chains sont un concept clé de zynthian. La première chose à faire après avoir allumé zynthian pour la première fois est de <b>créer une chain et d’y ajouter des processeurs</b>. zynthian ne fait pas grand-chose sans chain !</p>
+  <p>Les processeurs peuvent être placés en série ou en parallèle dans la chain. Le nombre de chains ou de processeurs par chain est uniquement limité par la puissance de calcul disponible.</p>
+  <p>Par défaut, les signaux audio sortant des chains sont envoyés vers un mixeur stéréo doté des commandes habituelles d’une tranche de console : fader, balance, mute, solo, inversion de phase, etc. Les processeurs audio peuvent être placés avant ou après le fader. Notez que zynthian traite la plupart des signaux audio en stéréo. Consultez la <a href="mixer.html">vue du mixeur</a> pour plus de détails.</p>
+  <p>Les signaux audio et MIDI sont acheminés entre les entrées physiques, les entrées de chain, les sorties de chain, les sorties physiques et les entrées side-chain des processeurs. Cela offre une grande flexibilité tout en conservant une approche simple du routage des signaux, basée sur les chains. Consultez le <a href="chain_manager.html">gestionnaire de chain</a> pour plus de détails.</p>
+
+  <div class="clear"></div>
+
+  <h2>Types de processeur</h2>
+  <p>Il existe cinq types de processeur :</p>
+  <ul>
+   <li><b>Synth :</b> reçoit des événements MIDI et génère une sortie audio.</li>
+   <li><b>MIDI :</b> reçoit des événements MIDI et génère une sortie MIDI.</li>
+   <li><b>Audio :</b> reçoit une entrée audio et génère une sortie audio.</li>
+   <li><b>Generator :</b> génère une sortie audio et ne possède aucune entrée.</li>
+   <li><b>Special :</b> reçoit des événements MIDI et une entrée audio, puis génère une sortie MIDI et une sortie audio.</li>
+  </ul>
+  <p>Chaque type de processeur est classé par catégorie afin de faciliter la sélection. Par exemple, les processeurs de synthé comprennent les catégories suivantes : synthé, sampler, piano, orgue, acoustique et percussions.
+  Consultez le <a href="engine.html">sélecteur de moteur</a> pour plus de détails.</p>
+  <p>Les processeurs disposent de paramètres qui peuvent être contrôlés à l’aide des boutons de zynthian ou associés à des messages MIDI CC. Consultez la <a href="chain_control.html">commande de chain</a> pour plus de détails.</p>
+  <p>Les processeurs peuvent disposer de presets, qui peuvent être organisés en banques. Consultez la <a href="preset.html">vue des presets</a> pour plus de détails.</p>
+
+  <h2>Types de chain</h2>
+  <p>Vous pouvez créer 8 types de chain :</p>
+  <ul>
+   <li><b>Instrument :</b> reçoit des événements MIDI et génère une sortie audio. Elle est basée sur un processeur synthé qui ne peut pas être supprimé. Des processeurs MIDI et audio peuvent être ajoutés.</li>
+   <li><b>Audio Input :</b> reçoit une entrée audio et génère une sortie audio. Elle est uniquement composée de processeurs audio.</li>
+   <li><b>Clip Launcher :</b> reçoit des événements internes de déclenchement/arrêt synchronisés. Elle est basée sur un lanceur de clips audio qui génère une sortie audio. Seuls des processeurs audio peuvent être ajoutés.</li>
+   <li><b>MIDI :</b> reçoit des événements MIDI et génère des événements de sortie MIDI. Elle est uniquement composée de processeurs MIDI.</li>
+   <li><b>MIDI + Audio :</b> utilisez ce type de chain avec des processeurs hybrides recevant du MIDI et de l’audio (vocoders, Autotune, etc.) ou des convertisseurs audio vers MIDI (Onset-Trigger, etc.).</li>
+   <li><b>Audio Generator :</b> ne reçoit aucune entrée. Elle est basée sur un processeur générateur audio qui génère une sortie audio. Seuls des processeurs audio peuvent être ajoutés.</li>
+   <li><b>Special :</b> reçoit des événements MIDI et une entrée audio, puis génère une sortie MIDI et une sortie audio. Elle est basée sur un processeur spécial, comme puredata.</li>
+   <li><b>Mixbus :</b> reçoit l’audio envoyé par d’autres chains (sends) et génère une sortie audio. Elle est uniquement composée de processeurs audio.</li>
+  </ul>
+
+  <h2>Entrée MIDI</h2>
+  <p>Les chains Instrument et MIDI reçoivent des événements provenant d’un ensemble configurable d’entrées MIDI. Ces entrées MIDI peuvent être :</p>
+  <ul>
+   <li><b>Sources MIDI externes :</b> appareils connectés aux connecteurs DIN-5 et USB ou appareils MIDI réseau (RTP-MIDI, QMidiNet, UMP, etc.).</li>
+   <li><b>Sources MIDI internes :</b> le séquenceur pas à pas intégré, le lecteur MIDI ou la sortie MIDI acheminée depuis d’autres chains.
+  </ul>
+  <p>Les sources MIDI peuvent être activées séparément pour chaque chain. Chaque entrée MIDI peut fonctionner selon 2 modes différents :</p>
+
+  <h3>Mode actif</h3>
+  <img src="img/Active_multi_mode.png" class="float_right"/>
+  <p>Lorsqu’une entrée MIDI est configurée en mode actif, la chain active reçoit toutes les données MIDI provenant de cette entrée et tous les événements MIDI sont transposés sur le canal MIDI de la chain active. Il s’agit du mode par défaut pour toutes les entrées MIDI. En mode actif, vous n’avez pas à vous soucier du canal MIDI utilisé par votre clavier ou votre contrôleur. Pour changer d’instrument, il suffit de changer la chain active sur votre zynthian. Consultez la <a href="mixer.html">vue du mixeur</a> pour plus de détails.</p>
+  <p>Le comportement du mode actif peut être modifié par le paramètre global <b>Active MIDI channel</b>. Celui-ci peut être activé dans le menu d’administration et fonctionne comme suit :</p>
+  <ul>
+   <li><b>Active MIDI channel désactivé</b> : seule la chain active reçoit les données de l’entrée MIDI en mode actif. Il s’agit du réglage par défaut.</li>
+   <li><b>Active MIDI channel activé</b> : toutes les chains dont le canal MIDI est identique à celui de la chain active reçoivent les données de l’entrée MIDI en mode actif. Cette option est très utile pour superposer des sons sans routage supplémentaire. Il suffit de créer plusieurs chains de synthé avec le même canal MIDI pour qu’elles jouent à l’unisson. Vous pouvez également créer des splits de clavier en ajustant la plage de notes et la transposition de chaque chain. Consultez la <a href="midi_key_range.html">plage de notes MIDI</a> pour plus de détails.</li>
+  </ul>
+  <h3>Mode multitimbral</h3>
+  <p>Lorsqu’une entrée MIDI est configurée en mode multitimbral, seules les chains correspondant au canal MIDI de l’entrée reçoivent les événements de cette entrée. Aucune transposition de canal MIDI n’est effectuée. Le mode multitimbral permet de recevoir et de gérer chaque canal MIDI individuellement. Chaque entrée MIDI sélectionne les chains qu’elle pilote à l’aide du canal MIDI. Si vous utilisez un séquenceur externe ou un contrôleur MIDI qui envoie des données sur plusieurs canaux MIDI, le mode multitimbral peut vous être utile.</p>
+
+  <div class="clear"></div>
+
+  <h2>Snapshots</h2>
+  <p>Un snapshot correspond à l’état de zynthian au moment de son enregistrement. Les snapshots sont enregistrés dans un fichier JSON avec l’extension .zss et peuvent être chargés à tout moment, ce qui restaure l’état de l’appareil zynthian tel qu’il était lors de l’enregistrement du snapshot. Les snapshots comprennent :</p>
+  <ul>
+   <li>Disposition des chains : configuration de chaque chain, y compris ses processeurs, leur organisation et leurs connexions</li>
+   <li>Niveaux audio : (facultatif) réglages de l’interface audio physique</li>
+   <li>Séquenceur : patterns et séquences</li>
+   <li>Réglages MIDI : réglages MIDI généraux, noms des ports MIDI USB, etc.</li>
+   <li>Réglages d’enregistrement multipiste : tranches de mixeur armées pour l’enregistrement multipiste</li>
+   <li>État de l’interface utilisateur : certains réglages de l’interface utilisateur liés au snapshot (la plupart des réglages de l’interface sont globaux)</li>
+   <li>Sub-snapshots : la plupart des autres réglages. (Voir ZS3 ci-dessous.)</li>
+  </ul>
+  <p>Chaque fois que vous remplacez un fichier snapshot existant, une copie de sauvegarde est créée. Les sauvegardes peuvent également être restaurées à tout moment, ce qui peut vous éviter bien des soucis. En cas de panique, rappelez-vous que zynthian conserve l’historique complet des sauvegardes de tous les snapshots !</p>
+
+  <img src="img/Snapshot_structure.png" class="full">
+
+  <div class="note-block">
+   Remarque : de nombreux utilisateurs de zynthian considèrent un snapshot comme un projet zynthian. C’est une approche tout à fait valable.
+  </div>
+
+  <h2>Sub-snapshots : ZS3</h2>
+  <p>ZS3 signifie zynthian Sub-SnapShot. Un ZS3 est un état partiel stocké en mémoire et qui peut être rappelé très rapidement. Chaque ZS3 peut facilement être associé (ou appris) à des MIDI Programs, c’est-à-dire à des événements program-change. Bien entendu, chaque ZS3 est enregistré et restauré avec son snapshot. Lors du premier chargement d’un snapshot, le sub-snapshot par défaut, nommé ZS3-0, est utilisé.</p>
+
+  <p>Consultez la <a href="zs3.html">vue ZS3</a> pour apprendre à enregistrer et restaurer des ZS3 à l’aide de messages MIDI Program Change, à gérer les ZS3 en concert et bien plus encore.</p>
+
+  <p>Chaque ZS3 comprend :</p>
+  <ul>
+   <li>Configuration des chains : pour chaque chain : canal MIDI, plage de notes, transposition, etc.</li>
+   <li>État des processeurs : pour chaque processeur : banque, preset et valeurs des paramètres.</li>
+   <li>Réglages du mixeur : pour chaque tranche de mixeur : fader, balance, mute, solo, etc.</li>
+   <li>Configuration des appareils MIDI : modes actif et multitimbral, etc.</li>
+   <li>Routage MIDI et audio : connexions entre les chains.</li>
+   <li>MIDI-learning : associations MIDI aux paramètres des processeurs.</li>
+   <li>Réglages globaux : certains réglages pouvant être modifiés par un ZS3, par exemple la transposition MIDI. (La plupart des réglages globaux ne sont pas modifiés par un ZS3.)</li>
+   <li>Chain active : la chain qui était active lors de l’enregistrement du ZS3.</li>
+  </ul>
+  <p>Le concept essentiel à comprendre concernant les ZS3 est que la disposition des chains n’est pas enregistrée dans un ZS3 : elle n’est donc pas modifiée lors de la restauration d’un ZS3. Vous ne pouvez pas ajouter ou supprimer des chains ou des processeurs en restaurant un ZS3, car cette opération est lente et un ZS3 doit être restauré très rapidement. Lors du chargement d’un snapshot complet, toutes les chains et tous les processeurs sont créés. Ensuite, lorsque vous rappelez un ZS3 dans ce snapshot, la disposition des chains reste inchangée. Même si un ZS3 peut modifier le routage, les splits, les banques, les presets, etc., le nombre de chains et de processeurs reste le même.</p>
+
+  <div class="note-block">
+   Remarque : par exemple, si vous êtes claviériste et jouez avec plusieurs groupes, vous pouvez créer un snapshot pour chaque groupe et un ZS3 pour chaque morceau.
+  </div>
+
+ </body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">volume chain</div>
+   <div class="action short_press">solo chain</div>
+   <div class="action bold_press">attiva/disattiva mixer</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">bilanciamento chain</div>
+   <div class="action short_press">mute chain</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">seleziona frase</div>
+   <div class="action short_press">aggiungi chain</div>
+   <div class="action bold_press">sposta chain</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">seleziona chain</div>
+   <div class="action short_press">play/stop</div>
+   <div class="action bold_press">modifica pattern/clip</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>Vista Launcher</h1>
+  <p>Il launcher è la vista principale del sequencer. È sempre possibile accedere al launcher premendo il pulsante PAD.
+   È anche possibile premere ripetutamente BACK fino a raggiungerlo.</p>
+  <p>Dal <a href="mixer.html">mixer</a>, è possibile accedere al launcher premendo BACK. Allo stesso modo, dal launcher è possibile accedere al mixer premendo BACK.
+  Il launcher e il <a href="mixer.html">mixer</a> sono, di fatto, un'unica vista con 2 modalità.</p>
+  <p>Il launcher è una griglia in cui le colonne corrispondono alle chain (le strip del mixer). Le righe sono chiamate <b>frasi</b> e sono abbastanza
+  simili alle scene di Ableton Live. Le celle possono contenere <b>pattern step</b> o <b>clip audio</b>, tranne la colonna principale che
+  contiene i <b>launcher di frase</b>.</p>
+ </div>
+ <div class="full_container">
+  <p>Inizialmente la griglia sarà vuota e mostrerà solo la strip principale. Quando si aggiunge una chain, alla griglia viene aggiunta una nuova colonna.
+  Quando si elimina una chain, la colonna della griglia associata viene rimossa. I pattern associati non vengono eliminati.
+  Sono associati al canale MIDI e, se si crea una nuova chain con lo stesso canale MIDI, i pattern rimossi saranno
+  nuovamente disponibili.</p>
+
+  <h2>Selezione delle celle</h2>
+  <p>Il cursore è un riquadro giallo che evidenzia la cella selezionata. È possibile spostare il cursore ruotando le manopole 3 e 4:
+
+  <ul>
+   <li><b>Manopola 3</b> => Spostamento verticale => Seleziona frase</li>
+   <li><b>Manopola 4</b> => Spostamento orizzontale => Seleziona chain</li>
+  </ul>
+
+  <h2>Azioni sulle celle</h2>
+  <table class="nowrap">
+   <tr><th rowspan="2" class="empty"><br/><br/>AZIONI<br/>CELLA</th>
+    <th rowspan="2">Pressione breve Knob 4<br/>Pressione breve SELECT<br/>Tocco breve</th>
+    <th rowspan="2">Pressione breve PAD<br/>Pressione prolungata Knob 4<br/>Pressione prolungata SELECT<br/>Tocco prolungato</th>
+    <th colspan="2" class="alt">Modalità ALT</th>
+   </tr>
+   <tr>
+    <th>Pressione prolungata F1<br/>Pressione prolungata F2</th>
+    <th>Pressione breve F1<br/>Pressione breve F2</th>
+   </tr>
+   <tr><td class="empty"></td><th>&gt; PLAY/STOP</th><th>&gt; MODIFICA</th><th>&gt; COPIA</th><th>&gt; INCOLLA</th></tr>
+   <tr><th>Pattern step</th><td>Play/Stop</td><td>Editor pattern</td><td>Copia pattern</td><td>Incolla pattern</td></tr>
+   <tr><th>Clip audio</th><td>Play/Stop</td><td>Controllo clip</td><td>Copia clip</td><td>Incolla clip</td></tr>
+   <tr><th>Launcher di frase</th><td>Play/Stop</td><td>Opzioni frase</td><th class="empty" colspan="2">NON IMPLEMENTATO</th></tr>
+  </table>
+
+  <h2>Aggiunta di chain</h2>
+  <p>Per creare una nuova chain, è sufficiente <b>premere brevemente la manopola 3</b> o <b>ALT F3</b>. È anche possibile usare il menu principale (pressione breve OPT).</p>
+
+  <h2>Selezione delle chain</h2>
+  <p>La chain attiva è indicata dalla legenda evidenziata in rosso nella parte inferiore della strip. È possibile cambiare la chain attiva usando i <b>pulsanti freccia SINISTRA/DESTRA o ruotando la manopola 4</b>. Una sottile barra nella parte inferiore della legenda indica che la chain è attiva per l'ingresso MIDI.</p>
+
+  <h2>Spostamento delle chain</h2>
+  <p>È possibile riorganizzare le colonne (chain), spostando orizzontalmente qualsiasi chain nella posizione desiderata. È anche possibile agganciare le chain desiderate sul lato destro, accanto alla chain principale:</p>
+  <ul>
+   <li><b>Premere a lungo la manopola 3</b> o <b>ALT e premere a lungo F3</b> per iniziare a spostare la chain selezionata. Nella legenda della chain verrà visualizzato un simbolo a doppia freccia.</li>
+   <li><b>Usare i pulsanti freccia SINISTRA/DESTRA o ruotare la manopola 4</b> per spostare la chain nella posizione desiderata. Per agganciare una chain sul lato destro, è sufficiente continuare a spostarla verso destra.</li>
+   <li><b>Premere brevemente SELECT o BACK</b> per terminare.</li>
+  </ul>
+  <p>È possibile spostare le chain allo stesso modo anche dalla <a href="mixer.html">vista mixer</a>, ma il pulsante F3 non è disponibile in quella vista.</p>
+
+  <h2>Copiare/incollare pattern e clip audio</h2>
+  <p>Per copiare/incollare pattern o clip audio, accedere alla modalità ALT e usare i tasti buffer F1/F2, come segue:</p>
+  <ul>
+   <li><b>Premere ALT</b> per accedere alla modalità ALT. Il pulsante ALT dovrebbe illuminarsi di viola.</li>
+   <li><b>Premere a lungo F1 o F2</b> per copiare il contenuto della cella selezionata nel buffer. Il pulsante F1/F2 lampeggerà in arancione.</li>
+   <li><b>Usare i pulsanti freccia o ruotare le manopole 3 e 4</b> per spostare il cursore nella posizione desiderata. Si noti che il colore lampeggiante del pulsante cambia quando si sposta il cursore.
+   Verde quando è possibile incollare e rosso quando non è possibile (ad esempio, non è possibile incollare un pattern del sequencer in una cella di clip audio).</li>
+   <li><b>Premere brevemente F1/F2</b> per incollare. È possibile incollare il contenuto del buffer tutte le volte che si desidera. Se la cella di destinazione non è vuota, verrà richiesta una conferma prima di sovrascriverla.</li>
+  </ul>
+
+  <h2>Opzioni frase</h2>
+  <p>Il menu delle opzioni frase consente di configurare i parametri e gestire le frasi.</p>
+  <p>I parametri delle frasi sono:</p>
+  <ul>
+  <li><b>Durata:</b> numero di battute. Per impostazione predefinita, assume il valore della sequenza più lunga della riga.</li>
+  <li><b>Tempo:</b> quando viene avviata la frase, il tempo viene modificato impostandolo sul valore specificato in BPM.</li>
+  <li><b>Battute per misura:</b> la metrica usata nei pattern.</li>
+  <li><b>Automazione:</b> le opzioni "Loop da", "loop da riprodurre" e "salta a" consentono di creare semplici strutture di brani.</li>
+  </ul>
+  <p>Le opzioni di gestione delle frasi sono:</p>
+  <ul>
+  <li><b>Inserisci frase:</b> inserisce una nuova frase (riga) nel launcher.</li>
+  <li><b>Duplica frase:</b> duplica la frase (riga) selezionata.</li>
+  <li><b>Sposta frase:</b> sposta la frase (riga) selezionata in una nuova posizione.</li>
+  <li><b>Elimina frase:</b> elimina la frase (riga) selezionata.</li>
+  </ul>
+  <p>Quando si gestiscono le frasi, potrebbe essere necessario regolare i parametri di automazione delle frasi interessate.</p>
+  </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

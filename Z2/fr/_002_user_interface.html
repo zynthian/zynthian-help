@@ -1,0 +1,369 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>L’interface utilisateur</h1>
+  <p>L’interface utilisateur du zynthian V5 est principalement contrôlée à l’aide des éléments suivants :</p>
+  <ul>
+   <li>4 encodeurs avec interrupteur</li>
+   <li>20 boutons avec LED RVB</li>
+   <li>écran capacitif multipoint</li>
+  </ul>
+
+  <p>L’interface du zynthian peut également être contrôlée :</p>
+  <ul>
+   <li>à l’aide de l’interface VNC</li>
+   <li>avec un contrôleur MIDI compatible</li>
+   <li>avec des notes MIDI sur le canal MIDI maître</li>
+   <li>avec un clavier d’ordinateur (raccourcis clavier)</li>
+   <li>à l’aide d’OSC CUIA</li>
+  </ul>
+
+  <p>Ce guide porte uniquement sur l’interface principale, qui utilise les encodeurs, les boutons et les interactions tactiles. Pour les autres méthodes, consultez le <a href="https://wiki.zynthian.org">wiki zynthian</a>.</p>
+
+  <h2>Actions des encodeurs</h2>
+  <p>
+   Il existe cinq actions possibles avec les encodeurs :<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pression courte :</b> une pression sur un encodeur de moins de 0,3 seconde déclenche l’<b>action de pression courte</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pression appuyée :</b> une pression sur un encodeur de plus de 0,3 et de moins de 2 secondes déclenche l’<b>action de pression appuyée</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pression longue :</b> une pression maintenue sur un encodeur pendant plus de 2 secondes déclenche l’<b>action de pression longue</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rotation :</b> la rotation d’un encodeur peut modifier la valeur d’un paramètre, changer l’élément sélectionné dans une liste ou déplacer le curseur horizontalement ou verticalement. L’accélération des encodeurs permet un réglage plus précis à faible vitesse de rotation et plus grossier à vitesse élevée.</li>
+    <li><b>Pression + rotation :</b> la rotation d’un encodeur lorsqu’il est enfoncé peut augmenter la résolution et permettre un réglage précis.</li>
+   </ul>
+  </p>
+
+  <h2>Actions des boutons</h2>
+  <p>
+   Il existe trois actions possibles avec les boutons :<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pression courte :</b> une pression sur un bouton de moins de 0,3 seconde déclenche l’<b>action de pression courte</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pression appuyée :</b> une pression sur un bouton de plus de 0,3 et de moins de 2 secondes déclenche l’<b>action de pression appuyée</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pression longue :</b> une pression maintenue sur un bouton pendant plus de 2 secondes déclenche l’<b>action de pression longue</b>(*).</li>
+   </ul>
+  </p>
+
+  <p>(*) La durée des actions de pression peut être configurée dans l’outil webconf, sous l’onglet des options avancées de l’interface utilisateur.</p>
+  <p>Notez que tous les encodeurs et boutons ne disposent pas de fonctions associées à chaque type d’action. La fonction des actions peut varier selon le contexte. Ces fonctions sont décrites dans les pages d’aide correspondant aux différentes vues. Gardez en mémoire les icônes d’action ci-dessus : elles seront utilisées dans ce guide.</p>
+  <p>Enfin, vous pouvez modifier la configuration par défaut des actions dans l’outil webconf, en accédant aux options avancées de la section de configuration du câblage. Nous vous déconseillons de le faire, mais le choix vous appartient !</p>
+
+  <div class="clear"></div>
+
+  <h2>Utilisation des encodeurs</h2>
+
+  <img src="img/V5_render_knobs_numbered.png" class="float_right, float_right_mobile"/>
+
+  <p>Les encodeurs du V5 fonctionnent de manière très différente de ceux des V1 à V4. Comme les 20 boutons en silicone permettent désormais de naviguer dans l’interface, il n’est plus nécessaire d’utiliser les interrupteurs des encodeurs à cette fin. Les interrupteurs des encodeurs ont donc été associés à des fonctions contextuelles, comme le MIDI-learning. Les encodeurs sont numérotés de haut en bas : celui du haut est l’<b>encodeur nº 1</b> et celui du bas, l’<b>encodeur nº 4</b>. Dans ce guide, nous les désignerons ainsi.</p>
+
+  <h3>Règle générale</h3>
+  <p>Bien que le comportement des encodeurs dépende du contexte, un schéma peut servir de <i>règle générale</i> dans de nombreuses vues :</p>
+
+  <h4>Encodeur nº 4</h4>
+  <ul>
+   <li>Dans les <b>vues de sélection</b> (listes) :
+    <ul>
+     <li><b>Tournez</b> l’encodeur pour parcourir la liste.</li>
+     <li>Effectuez une <b>pression courte</b> pour sélectionner un élément, comme avec le bouton SEL.</li>
+     <li>Effectuez une <b>pression appuyée</b> pour afficher les options contextuelles, comme avec le bouton OPT.</li>
+    </ul></li>
+   <li>Dans les <b>vues en grille</b>, il contrôle l’axe X. <b>Tournez</b> l’encodeur pour déplacer le curseur horizontalement.
+   <li>Dans les <b>vues divisées</b> comportant deux listes déroulantes, il contrôle la liste de droite.</li>
+  </ul>
+
+  <h4>Encodeur nº 3</h4>
+  <ul>
+   <li>Dans les <b>vues en grille</b>, il contrôle l’axe Y. <b>Tournez</b> l’encodeur pour déplacer le curseur verticalement.</li>
+   <li>Dans les <b>vues divisées</b> comportant deux listes déroulantes, il contrôle la liste de gauche.
+    <ul>
+     <li><b>Tournez</b> l’encodeur pour parcourir la liste de gauche.</li>
+     <li>Effectuez une <b>pression courte</b> pour sélectionner un élément dans la liste de gauche.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+  <div class="note-block">
+   Le volume principal est toujours accessible en un clic. Effectuez une pression courte sur le <b>bouton MIX</b>, puis tournez l’<b>encodeur 3</b> pour régler le volume principal.
+  </div>
+
+  <h2>Utilisation des boutons-poussoirs</h2>
+  <img src="img/V5_buttons_outlined.png" class="float_right">
+
+  <p>La grille de boutons-poussoirs du V5 est divisée en 5 groupes. L’illustration montre ces 5 groupes entourés de couleurs différentes :</p>
+
+  <ul>
+   <li><b>Boutons de vue</b> =&gt; Vert</li>
+   <li><b>Bouton ALT</b> =&gt; Violet</li>
+   <li><b>Boutons de transport</b> =&gt; Rouge</li>
+   <li><b>Boutons de navigation</b> =&gt; Jaune</li>
+   <li><b>Boutons de fonction</b> =&gt; Bleu</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Boutons de vue</h3>
+  <img src="img/V5_buttons_outlined-3-detail2.png" class="float_right"/>
+
+  <p>Les boutons de vue sont entourés en vert sur l’illustration et permettent d’accéder directement aux principales vues. La plupart de ces boutons sont associés à 2 vues, séparées par une ligne horizontale entre les deux libellés imprimés. Le libellé de la vue principale se trouve en haut et celui de la vue secondaire en bas. Le bouton « métronome » fait exception.</p>
+
+  <p>Effectuez une <b>pression courte</b> sur le bouton pour accéder à :
+  <ul>
+   <li>la vue principale, lorsqu’elle n’est pas affichée</li>
+   <li>la vue secondaire, lorsque la vue principale du bouton est affichée</li>
+  </ul>
+
+  <p>La couleur de la LED dépend de la vue actuelle :</p>
+  <ul>
+   <li>lorsque la vue principale est affichée, le bouton s’allume en vert.</li>
+   <li>lorsque la vue secondaire est affichée, le bouton s’allume en orange.</li>
+   <li>lorsqu’aucune des vues associées au bouton n’est affichée, le bouton s’allume en bleu.</li>
+  </ul>
+
+  <div class="note-block">
+   N’oubliez pas : une pression courte permet d’accéder à la vue principale. Appuyez de nouveau pour accéder à la vue secondaire. Une <b>pression appuyée</b> permet d’accéder à la vue secondaire, quelle que soit la vue actuelle.
+  </div>
+
+  <p>Les boutons de vue, de gauche à droite et de haut en bas, sont les suivants :
+
+  <ul>
+   <li><b>OPT/ADMIN</b>
+    <ul>
+     <li><b>Principale :</b> Options contextuelles / Menu principal</li>
+     <li><b>Secondaire :</b> Menu d’administration</li>
+    </ul></li>
+   <li><b>MIX/LEVEL</b>
+    <ul>
+     <li><b>Principale :</b> Vue Mixer</li>
+     <li><b>Secondaire :</b> Niveaux audio</li>
+    </ul></li>
+   <li>
+    <ul><b>CTRL/PRESET</b>
+     <li><b>Principale :</b> Vue Chain Control</li>
+     <li><b>Secondaire :</b> Sélection de la banque/du preset</li>
+    </ul></li>
+   <li>
+    <ul><b>ZS3/SNAPSHOT</b>
+     <li><b>Principale :</b> Liste des ZS3</li>
+     <li><b>Secondaire :</b> Liste des snapshots</li>
+    </ul></li>
+   <li>
+    <ul><b>METRONOME</b>
+     <li><b>Première pression :</b> Vue Tempo
+     <li><b>Pressions suivantes :</b> Tap tempo. Réglage du tempo en BPM.
+    </ul></li>
+   <li>
+    <ul><b>PAD/STEP</b>
+     <li><b>Principale :</b> Vue Launcher</li>
+     <li><b>Secondaire :</b> Éditeur de pattern</li>
+    </ul></li>
+   </ul>
+
+  <div class="clear"></div>
+
+  <h3>Bouton ALT</h3>
+  <img src="img/V5_buttons_outlined-4.png" class="float_right"/>
+
+  <p>Le bouton ALT a 2 fonctions :</p>
+
+  <ul>
+   <li>effectuez une <b>pression courte</b> pour activer ou désactiver le <b>mode ALT</b> (mode de fonction alternative).</li>
+   <li>effectuez une <b>pression appuyée</b> pour afficher l’<b>aide contextuelle</b> à l’écran.</li>
+  </ul>
+
+  <h4>Mode ALT</h4>
+  <p>Lorsque le mode ALT est activé, le bouton ALT et les boutons dotés d’une fonction alternative passent de leur couleur par défaut, le bleu, au violet ou à l’orange. Le violet indique une fonction ALT par défaut. L’orange indique une fonction ALT personnalisée.</p>
+  <p>Le mode ALT dépend du contexte et de la vue actuelle. Par défaut, seuls les boutons de transport et les boutons de fonction (F1-F4) ont des fonctions alternatives, définies comme suit :</p>
+  <ul>
+   <li>Les <b>boutons de transport</b> basculent entre le lecteur/enregistreur audio <span style="color:#0000F0">(normal)</span> et le lecteur/enregistreur MIDI <span style="color:#D000D0">(ALT)</span>.</li>
+   <li>Les <b>boutons F1-F4</b> basculent entre les programmes 1 à 4 <span style="color:#0000F0">(normal)</span> et les programmes 5 à 8 <span style="color:#D000D0">(ALT)</span>. Vous pouvez, par exemple, vous en servir pour mémoriser et rappeler jusqu’à 8 subsnapshots (ZS3).</li>
+  </ul>
+  <p>Certaines vues proposent un <b>mode ALT personnalisé</b>, doté de fonctions spécifiques qui remplacent en partie ou entièrement les fonctions par défaut. <b>L’état du mode ALT est conservé pour chaque vue</b>. Les détails sur les modes ALT personnalisés sont indiqués dans la documentation de chaque vue.</p>
+
+  <h4>Aide contextuelle</h4>
+  <p>Effectuez une <b>pression appuyée sur le bouton ALT</b> pour afficher l’aide contextuelle de la vue actuelle. Depuis l’écran d’aide, vous pouvez :</p>
+  <ul>
+   <li><b>Tourner l’encodeur 4</b> ou appuyer sur les boutons HAUT/BAS pour faire défiler le contenu.</li>
+   <li>Effectuer une <b>pression courte sur l’encodeur 4</b> pour parcourir les liens.</li>
+   <li>Effectuer une <b>pression courte sur BACK</b> pour revenir à la page précédente ou quitter l’écran d’aide.</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Boutons de transport</h3>
+  <img src="img/V5_buttons_outlined-3-detail.png" class="float_right"/>
+
+  <p>Par défaut, les boutons de transport contrôlent le <b>lecteur/enregistreur audio global</b> et sont de couleur bleue. Lorsque le <b>mode ALT</b> est activé, ils contrôlent le <b>lecteur/enregistreur MIDI</b> et sont de couleur violette.</p>
+
+  <ul>
+   <li>Effectuez une <b>pression courte sur REC</b> pour démarrer/arrêter un enregistrement. Pendant un enregistrement, le bouton d’enregistrement s’allume en rouge et l’icône REC apparaît dans la zone d’état de l’écran, en haut à droite.</li>
+   <li>Effectuez une <b>pression courte sur PLAY</b> pour lire/mettre en pause la piste sélectionnée. La dernière piste enregistrée est sélectionnée par défaut. Pendant la lecture d’une piste, le bouton de lecture s’allume en vert. Après une mise en pause, appuyez de nouveau pour reprendre la lecture à l’endroit où elle a été interrompue.</li>
+   <li>Effectuez une <b>pression appuyée sur PLAY</b> pour ouvrir la liste des pistes. Après avoir sélectionné une piste, la vue de contrôle du lecteur audio s’affiche.</li>
+   <li>Effectuez une <b>pression courte sur STOP</b> pour arrêter la lecture d’une piste et revenir au début. Appuyez de nouveau sur PLAY pour lancer la lecture depuis le début.</li>
+   <li>Effectuez une <b>pression appuyée sur STOP</b> pour arrêter tous les sons, y compris les pistes et séquences audio/MIDI. <b>PANIC !</b></li>
+  </ul>
+
+  <p>Dans certaines vues, les boutons de transport ont un comportement spécifique (contextuel). Dans ce cas, ils s’allument en orange pour indiquer que leur fonctionnement normal a été modifié. Consultez la section consacrée à la vue correspondante pour en savoir plus.</p>
+
+  <div class="clear"></div>
+  <h3>Boutons de navigation</h3>
+  <img src="img/V5_buttons_outlined-detail3.png" class="float_right"/>
+
+  <p>Les boutons de navigation servent aux opérations et à la navigation de base :</p>
+  <ul>
+   <li><b>UP/DOWN</b>
+    <ul>
+     <li>Parcourir les listes et les menus</li>
+     <li>Déplacer verticalement le curseur (élément sélectionné) dans les vues en grille : éditeur de pattern, Launcher, etc.</li>
+    </ul></li>
+   <li><b>LEFT/RIGHT</b>
+    <ul>
+     <li>Sélectionner la chain active dans les vues Mixer et Chain Control.</li>
+     <li>Déplacer horizontalement le curseur (élément sélectionné) dans les vues en grille : éditeur de pattern, Launcher, etc.</li>
+    </ul></li>
+   <li><b>SEL/YES</b>
+    <ul>
+     <li>Sélectionner des éléments dans les listes et les menus.</li>
+     <li>Passer en <b>mode de sélection</b> dans la vue Chain Control pour parcourir les pages de contrôleurs.</li>
+     <li>Ajouter/supprimer des notes dans l’éditeur de pattern.</li>
+     <li>Lancer/arrêter des phrases, des séquences ou des clips audio dans le Launcher.</li>
+     <li>Répondre « Oui » dans les boîtes de dialogue de confirmation.</li>
+     <li>Une <b>pression appuyée</b> peut ouvrir le menu d’options de l’élément sélectionné.</li>
+    </ul></li>
+   <li><b>BACK/NO</b>
+    <ul>
+     <li>Fermer la vue actuelle et revenir à la vue précédente.</li>
+     <li>Répondre « Non » dans les boîtes de dialogue de confirmation.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Boutons de fonction (F1-F4)</h3>
+
+  <p>Ces boutons sont personnalisables. Par exemple, si vous souhaitez accéder directement à d’autres vues, vous pouvez les reconfigurer à l’aide de l’outil webconf.</p>
+  <p>Comme indiqué plus haut dans la description du mode ALT, ces boutons sont associés par défaut aux messages MIDI Program Change :</p>
+  <ul>
+   <li><b>Mode normal</b> : Program Change 1-4</li>
+   <li><b>Mode ALT</b> : Program Change 5-8</li>
+  </ul>
+  <p>Cette configuration par défaut convient à la mémorisation et au rappel de subsnapshots (ZS3). Elle peut s’avérer très pratique si vous utilisez votre zynthian comme expandeur de clavier.</li>
+  <p>Certaines vues proposent des modes ALT personnalisés qui redéfinissent la fonction des boutons F1-F4. C’est le cas, par exemple, de la <a href="launcher.html">vue Launcher</a> ou de l’<a href="pattern_editor.html">éditeur de pattern</a>.</p>
+
+  <div class="note-block">
+   Bien que tous les boutons et interrupteurs soient entièrement configurables dans l’outil webconf, ce guide se réfère à la configuration officielle du profil V5, qui correspond aux libellés imprimés sur les boutons. Bien entendu, vous pouvez tout à fait essayer différentes affectations et configurations de boutons.</p>
+  </div>
+
+  <h3>Fonctions globales</h3>
+  <p>Certains boutons ont une troisième fonction globale associée à l’action de <b>pression longue</b> :
+
+  <ul>
+   <li><b>BACK/NO</b> : pression longue pour accéder au menu d’<b>extinction</b>.</li>
+   <li><b>CTRL/PRESET</b> : pression longue pour accéder aux <b>presets favoris</b>.</li>
+   <li><b>STOP</b> : pression longue pour <b>arrêter complètement tous les sons</b>. <b>SUPER PANIC !</b></li>
+   <li><b>F4</b> : pression longue pour <b>activer ou désactiver l’interface TTS</b> (synthèse vocale).</li>
+  </ul>
+
+  <h2>Barre supérieure</h2>
+  <p>En haut de l’écran se trouve généralement une barre d’informations. Elle peut être masquée dans certaines vues, par exemple les fenêtres contextuelles de confirmation ou d’information.
+  La barre supérieure se compose de 2 zones :</p>
+
+  <h3>Barre de titre</h3>
+  <p>La barre de titre sert en quelque sorte de fil d’Ariane. Elle indique généralement le titre de la vue ou des informations sur le snapshot, le zs3 ou la chain en cours (canal MIDI, moteur, banque et preset).</p>
+  <img src="img/title_bar_mixer.png" class="full"/>
+
+  <h3>Zone d’état</h3>
+  <p>En haut à droite, à côté de la barre de titre, une zone affiche en temps réel des informations utiles :</p>
+  <ul>
+   <li><b>Indicateur de crête audio numérique (DPM)</b> : barres horizontales animées indiquant le niveau et les crêtes du signal audio numérique.</li>
+   <li><b>Icônes d’état</b> : indication de différents états du zynthian.</li>
+  </ul>
+  <img src="img/ui_status_bar.png" class="full"/>
+
+  <h4>Indicateur de crête audio numérique (DPM)</h4>
+  <p>Le DPM couvre la plage de -50 dBFS à 0 dBFS, c’est-à-dire du niveau maximal autorisé à pleine échelle (tout à droite) jusqu’à 50 dB en dessous (tout à gauche) :</p>
+  <ul>
+   <li>Le segment vert couvre la plage de -50 dBFS à -10 dBFS.</li>
+   <li>Le segment jaune couvre la plage de -10 dBFS à -3 dBFS.</li>
+   <li>Le segment rouge couvre la plage de -3 dBFS à 0 dBFS.</li>
+  </ul>
+  <p>Des indicateurs indépendants surveillent les canaux gauche et droit à la sortie du système, c’est-à-dire le mix audio envoyé à la sortie du Zynthian. Le niveau décroît selon une loi logarithmique et met une seconde à atteindre -200 dBFS ; il lui faut donc environ un quart de seconde pour atteindre -50 dBFS (limite inférieure de la plage affichée). Les crêtes s’affichent instantanément, c’est-à-dire que le temps d’attaque de l’indicateur est immédiat (*). La barre de maintien de crête reste affichée pendant deux secondes ou jusqu’à ce qu’une crête supérieure soit atteinte.</p>
+
+  <p>Cet indicateur est identique au DPM du mixbus principal, toujours visible dans la vue Mixer. Il est donc masqué lorsque la vue Mixer audio est affichée.</p>
+
+  <div class="note-block">
+  (*) Le DPM est mis à jour 5 fois par seconde ; un délai de 200 ms peut donc s’écouler avant l’affichage d’une crête.
+  </div>
+
+  <h4>Icônes d’état</h4>
+  <br/>
+  <table>
+   <tr>
+    <th colspan="3">État et charge</th>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&hearts;</span></td>
+    <td>Charge CPU</td>
+    <td class="small">Cœur indiquant la charge du CPU. Il s’affiche en vert lorsque la charge est inférieure à 50 %, en jaune au-delà de 50 % et en rouge au-delà de 75 %.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#8634;</span></td>
+    <td class="nowrap">Mise à jour logicielle disponible</td>
+    <td class="small">Lorsqu’une mise à jour logicielle est disponible, le symbole vert de recyclage s’affiche. Vous pouvez effectuer la mise à jour depuis le menu d’administration, webconf ou le terminal.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9888;</span></td>
+    <td>XRun</td>
+    <td class="small">Cette icône s’affiche en cas de XRuns. Ceux-ci peuvent s’accompagner de clics et de crépitements en sortie audio. Cela signifie que le CPU ne parvient pas à traiter ou transférer l’audio assez rapidement. Envisagez de désactiver des options gourmandes en ressources CPU (comme VNC ou le casque) ou de réduire la complexité de vos chains.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
+    <td>Sous-tension</td>
+    <td class="small">Le Zynthian fonctionne en mode dégradé, la fréquence du CPU étant limitée à 600-800 MHz afin de stabiliser le système et d’éviter une panne. Cette icône ne devrait pas apparaître. Si c’est le cas, envisagez d’utiliser une meilleure source d’alimentation.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#127777;</span></td><!---->
+    <td>Température excessive</td>
+    <td class="small">Le Zynthian fonctionne en mode dégradé, la fréquence du CPU étant limitée à 600-800 MHz afin de stabiliser le système et d’éviter une panne. Cette icône ne devrait pas apparaître. Si c’est le cas, améliorez la dissipation thermique (en utilisant un dissipateur thermique, par exemple).</td>
+   </tr>
+   <tr>
+    <th colspan="3">Activité MIDI et lecture/enregistrement</th>
+   </tr>
+   <tr>
+    <td><span class="color-blue symbol"><b>m</b></span></td>
+    <td>MIDI-IN</td>
+    <td class="small">Messages MIDI reçus. Un trait de soulignement indique les messages système, comme MIDI clock.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9679;</span></td>
+    <td class="nowrap">Enregistrement d’une piste audio</td>
+    <td class="small">Une piste audio est en cours d’enregistrement.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#9654;</span></td>
+    <td class="nowrap">Lecture d’une piste audio</td>
+    <td class="small">Une piste audio est en cours de lecture.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9679;</span></td>
+    <td class="nowrap">Enregistrement d’une piste MIDI</td>
+    <td class="small">Une piste MIDI est en cours d’enregistrement.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9654;</span></td>
+    <td class="nowrap">Lecture d’une piste MIDI</td>
+    <td class="small">Une piste MIDI est en cours de lecture.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9679;</span></td>
+    <td class="nowrap">Enregistrement d’un pattern</td>
+    <td class="small">L’enregistrement est armé dans l’éditeur de pattern.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9654;</span></td>
+    <td>Lecture d’un pattern<br/>Lecture d’un clip audio</td>
+    <td class="small">Un pattern de séquenceur pas à pas ou un clip audio est en cours de lecture depuis le Launcher.</td>
+   </tr>
+  </table>
+
+ </body>
+</html>

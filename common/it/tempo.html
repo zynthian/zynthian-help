@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+ <h1>Vista Tempo</h1>
+    <p>La vista Tempo consente di controllare la base dei tempi di zynthian, utilizzata per il sequencing, gli arpeggiator e così via.</p>
+    <p>Il controllo BPM imposta il tempo interno su un valore compreso tra 10 e 420 BPM. Premere e ruotare per regolare il valore con incrementi di 0,1 BPM. Questo controllo è disponibile quando si utilizza il clock interno.</p>
+    <p> Se viene utilizzato un clock esterno, il controllo BPM diventa un divisore di clock. Per impostazione predefinita, si aspetta un ingresso a 24 PPQN, come quello utilizzato dal MIDI clock, ma può essere regolato per supportare altre frequenze di clock esterno comprese tra 1 e 48 PPQN. Il clock interno funziona a 1920 PPQN e utilizza un phase-locked loop per ricavare questo clock ad alta risoluzione dal clock di ingresso più lento. Per utilizzare un clock esterno, selezionare "MIDI Clock Source" per un ingresso MIDI nella vista <a href="chain_midi_input.html">MIDI Input</a>.</p>
+    <p>Il controllo Metronome Mode configura il metronomo di zynthian. Sono disponibili i seguenti valori:
+      <ul>
+         <li>OFF: il metronomo è disattivato.</li>
+         <li>AUTO: il metronomo suona quando è in riproduzione una sequenza e si ferma alla fine della battuta successiva all'arresto dell'ultima sequenza.</li>
+         <li>ON: il metronomo suona continuamente.</li>
+         <li>INTRO: il metronomo suona finché non inizia una sequenza. È possibile utilizzarlo come conteggio iniziale quando non si desidera o non è necessario che il metronomo suoni durante l'esecuzione.</li>
+         <li>NO ACCENT: il metronomo suona continuamente, ma senza accento sul primo movimento di ogni battuta. Si comporta più come un metronomo tradizionale, utilizzato esclusivamente per il tempo e non come base dei tempi.</li>
+         <li>SILENT: il metronomo è attivo, ma non emette alcun suono. Può essere utile per avviare il transport quando non è in riproduzione alcuna sequenza. Alcuni plugin potrebbero trarne vantaggio.</li>
+      </ul>
+      È disponibile un controllo per regolare il volume del metronomo.</p>
+    <p>Un display di grandi dimensioni mostra il tempo e può essere toccato per impostarlo. Allo stesso modo, è possibile toccare il pulsante del tempo per impostare il tempo.</p>
+    <div class="note-block">Nota: il metronomo invia il segnale alla chain principale tramite il relativo aux mix, che consente di controllare separatamente il livello, il bilanciamento e così via. Il player audio globale condivide questo aux mix.</div>
+ </body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+  <h1>Interface assistée par synthèse vocale : ZynVoice</h1>
+  <p>Zynthian dispose d’un assistant de synthèse vocale complet, appelé ZynVoice, conçu pour les personnes malvoyantes. ZynVoice permet de contrôler entièrement l’appareil à l’aide des boutons et des encodeurs matériels, avec des indications sonores. La navigation et l’utilisation sont guidées par des annonces vocales et des tonalités. ZynVoice utilise une interface audio ou une carte son supplémentaire pour fournir une sortie audio distincte de la sortie principale. Cela permet de conserver un son propre pour la production, tandis que les annonces de ZynVoice sont transmises au système d’écoute personnel de l’utilisateur.</p>
+  <h1>Premiers pas</h1>
+  <p>Ajoutez un périphérique audio que ZynVoice pourra utiliser, par exemple en branchant une carte son USB. Il n’est pas nécessaire que ce périphérique soit coûteux ni de haute fidélité. Un périphérique à 2 $ s’est avéré suffisant.</p>
+  <p>
+   Vous devez retenir les termes suivants, utilisés dans l’ensemble du système d’aide :
+   <ul>
+   <li>Appui : appuyer brièvement sur un bouton, puis le relâcher.</li>
+   <li>Appui appuyé : maintenir un bouton enfoncé pendant environ 1,5 seconde, puis le relâcher.</li>
+   <li>Appui long : maintenir un bouton enfoncé pendant au moins 2 secondes.</li>
+   </ul>
+  </p>
+  <p>Le bouton F4 est affecté à ZynVoice. Sur un zynthian V5, il se trouve en bas à droite du pavé numérique de 20 boutons. Sur un zynthian V4, il se trouve à droite des 4 boutons centraux. Par défaut, ZynVoice est désactivé, mais il suffit d’appuyer longuement sur le bouton ZynVoice pour l’activer. Cette action alterne entre l’activation et la désactivation de ZynVoice. Lorsque vous activez ZynVoice, vous devez entendre l’annonce « ZynVoice activé ». De même, lorsque vous désactivez ZynVoice, vous devez entendre l’annonce « ZynVoice désactivé ».</p>
+  <p>Lorsque ZynVoice est activé, vous entendez des annonces pendant que vous naviguez dans l’interface utilisateur et que vous effectuez des actions. Par exemple, lorsque vous accédez à une vue, son nom est annoncé pour vous indiquer où vous vous trouvez dans l’arborescence de navigation. Lorsque vous parcourez des listes, chaque élément est annoncé.</p>
+  <p>Un court délai d’environ 0,2 seconde précède chaque annonce. Les annonces peuvent être mises en file d’attente si nécessaire, mais elles sont le plus souvent interrompues par la plus récente. Par exemple, parcourir une liste peut entraîner l’omission d’éléments intermédiaires.</p>
+  <p>Le bouton ZynVoice peut servir à interrompre les annonces en cours. Si ZynVoice est silencieux, ce bouton déclenche une annonce contextuelle. Par défaut, celle-ci indique le nom de la vue en cours, mais peut aussi fournir des informations sur cette vue. Par exemple, elle peut indiquer l’élément sélectionné dans une liste. Un appui long sur le bouton ZynVoice permet d’activer ou de désactiver ZynVoice.</p>
+  <p>En plus des annonces vocales, ZynVoice émet une brève tonalité toutes les secondes lorsque l’interface utilisateur est occupée, par exemple lors du chargement d’un snapshot. La fin de cette période d’activité est signalée par une tonalité plus longue et plus aiguë.</p>
+  <p>ZynVoice peut être configuré depuis une entrée du menu d’administration. Les paramètres disponibles sont les suivants :
+   <ul>
+    <li>Activation de ZynVoice</li>
+    <li>Nom de la voix</li>
+    <li>Vitesse</li>
+    <li>Volume</li>
+    <li>Sortie de la carte son</li>
+   </ul>
+  <p>Effectuez un appui appuyé sur le bouton ALT pour accéder à la vue d’aide. ZynVoice commence alors à lire les informations d’aide correspondant à la vue en cours. L’encodeur 3 permet de contrôler la lecture de l’aide. Appuyez sur l’encodeur 3 pour mettre la lecture en pause ou la reprendre au début de la phrase en cours. Tournez l’encodeur 3 pour sélectionner la phrase précédente ou suivante. Effectuez un appui appuyé sur l’encodeur 3 pour entendre les actions associées aux encodeurs dans cette vue, notamment leur rotation, leur appui et leur appui appuyé. Le bouton Navigator permet d’arrêter la lecture ou de la reprendre depuis le début de la page. Appuyez sur l’encodeur 4 pour activer ou désactiver le mode liens hypertextes. Tournez l’encodeur 4 pour sélectionner un lien, puis appuyez dessus pour le suivre. Appuyez sur Back pour quitter le mode liens. Le premier lien de chaque page mène à un index de toutes les pages d’aide disponibles. Si la page ne contient aucun autre lien, appuyez sur l’encodeur 4 pour accéder directement à l’index.</p>
+  <p>Certaines vues présentent des listes d’options pour lesquelles des informations supplémentaires sont disponibles pour chaque élément. Par défaut, seul le titre de l’élément de la liste est annoncé. Appuyez sur le bouton ZynVoice pour écouter ces informations supplémentaires. Ces vues ne disposent pas forcément de pages d’aide dédiées, car leur fonctionnement est assez explicite.</p>
+  <p>Si une action nécessite une confirmation, le message correspondant est annoncé et vous pouvez utiliser les boutons SELECT ou BACK pour confirmer ou annuler. Une brève tonalité est émise uniquement après confirmation.</p>
+  <div class="clear"></div>
+ </body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+  <div class="knobs_action_container">
+   <div class="knob_action knob_action_1">
+    <div class="action rotate">---</div>
+    <div class="action short_press">---</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_2">
+    <div class="action rotate">---</div>
+    <div class="action short_press">---</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_3">
+    <div class="knob_title">blocs de chain</div>
+    <div class="action rotate">parcourir</div>
+    <div class="action short_press">options</div>
+    <div class="action bold_press">déplacer le processeur</div>
+   </div>
+   <div class="knob_action knob_action_4">
+    <div class="knob_title">liste de droite</div>
+    <div class="action rotate">parcourir</div>
+    <div class="action short_press">sélectionner</div>
+    <div class="action bold_press">options</div>
+   </div>
+  </div>
+
+  <div class="left_container">
+   <h1>Vue de configuration de chain</h1>
+   <div id="zynproc-info"></div>
+   <p>La vue de configuration de chain, également appelée mode de sélection, permet de configurer tous les aspects d'une chain.</p>
+   <p>Le panneau de gauche contient la liste des blocs qui configurent votre chain, y compris les processeurs. Le panneau de droite affiche une version réduite de la vue <a href="chain_control.html">de contrôle de chain</a>. Utilisez le bouton 3 pour parcourir les blocs de chain à gauche et le bouton 4 pour parcourir la liste de droite.</p>
+   <p>Pour quitter, il suffit d'effectuer une <b>pression brève sur BACK</b> afin de revenir à la vue <a href="chain_control.html">de contrôle de chain</a>.</p>
+  </div>
+  <div class="full_container">
+   <p>Les blocs de chain du panneau de gauche fonctionnent comme ceux de la <a href="chain_manager.html">vue de gestion des chains</a> et dépendent du type de chain et des processeurs. Il peut s'agir de :</p>
+   <ul>
+    <li><a href="selector.html">Options de chain</a></li>
+    <li><a href="selector.html">MIDI Input</a></li>
+    <li><a href="selector.html">Audio Input</a></li>
+    <li><a href="chain_control.html">MIDI Processors</a></li>
+    <li><a href="chain_control.html">Synth Processor</a></li>
+    <li><a href="chain_control.html">Audio Processors</a></li>
+    <li><a href="selector.html">MIDI Output</a></li>
+    <li><a href="selector.html">Audio Output</a></li>
+   </ul>
+   <p><b>Blocs de processeur</b></p>
+   <p>Lorsqu'un processeur est sélectionné, la liste de droite se repositionne pour afficher les pages de paramètres de ce processeur.
+   Vous pouvez accéder aux options du processeur en effectuant une <b>pression brève sur le bouton 3</b>, une <b>pression brève sur OPT</b> ou un deuxième <b>appui bref</b> sur le bloc sur un écran tactile.</p>
+   <p><b>Blocs autres que des processeurs</b></p>
+   <p>Lorsqu'un bloc autre qu'un processeur est sélectionné, par exemple <i>Options de chain</i>, <i>MIDI Input</i>, etc., un panneau de configuration s'affiche dans le panneau de droite. Vous pouvez parcourir les options en <b>tournant le bouton 4</b> et sélectionner/activer les options en effectuant une <b>pression brève sur le bouton 4</b>. Vous pouvez également utiliser les boutons UP/DOWN et SELECT. Si une option comporte des sous-options, vous pouvez accéder au menu correspondant en effectuant une <b>pression longue sur le bouton 4</b>, une <b>pression longue sur SELECT</b> ou une <b>pression brève sur OPT</b>.</p>
+  </div>
+
+  <div class="clear"></div>
+ </body>
+</html>

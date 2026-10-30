@@ -1,0 +1,116 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">volume de la chain</div>
+   <div class="action short_press">solo de la chain</div>
+   <div class="action bold_press">commandes du mixer</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">balance de la chain</div>
+   <div class="action short_press">mute de la chain</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">sélectionner une phrase</div>
+   <div class="action short_press">ajouter une chain</div>
+   <div class="action bold_press">déplacer une chain</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">sélectionner une chain</div>
+   <div class="action short_press">lecture/arrêt</div>
+   <div class="action bold_press">modifier le pattern/clip</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>Vue Launcher</h1>
+  <p>Le launcher est la vue principale du séquenceur. Vous pouvez toujours y accéder en appuyant sur le bouton PAD.
+   Vous pouvez également appuyer plusieurs fois sur BACK jusqu'à l'atteindre.</p>
+  <p>Depuis le <a href="mixer.html">mixer</a>, vous pouvez accéder au launcher en appuyant sur BACK. De même, depuis le launcher, vous pouvez accéder au mixer en appuyant sur BACK.
+  Le launcher et le <a href="mixer.html">mixer</a> constituent en fait une seule vue avec 2 modes.</p>
+  <p>Le launcher est une grille dont les colonnes correspondent aux chains (tranches du mixer). Les lignes sont appelées des <b>phrases</b> et sont assez
+  similaires aux scènes d'Ableton Live. Les cellules peuvent contenir des <b>patterns de steps</b> ou des <b>clips audio</b>, à l'exception de la colonne principale qui
+  contient les <b>lanceurs de phrase</b>.</p>
+ </div>
+ <div class="full_container">
+  <p>Au départ, la grille est vide et seule la tranche principale est affichée. Lorsqu'une chain est ajoutée, une nouvelle colonne est ajoutée à la grille.
+  Lorsqu'une chain est supprimée, la colonne correspondante de la grille est également supprimée. Notez que les patterns associés ne sont pas supprimés. Ils
+  sont associés au canal MIDI ; si vous créez une nouvelle chain avec le même canal MIDI, les patterns supprimés seront à nouveau disponibles.</p>
+
+  <h2>Sélection d'une cellule</h2>
+  <p>Le curseur est un cadre jaune qui met en évidence la cellule sélectionnée. Vous pouvez le déplacer en tournant les knobs 3 et 4 :
+
+  <ul>
+   <li><b>Knob 3</b> => Déplacement vertical => Sélectionner une phrase</li>
+   <li><b>Knob 4</b> => Déplacement horizontal => Sélectionner une chain</li>
+  </ul>
+
+  <h2>Actions sur les cellules</h2>
+  <table class="nowrap">
+   <tr><th rowspan="2" class="empty"><br/><br/>ACTIONS<br/>SUR LES CELLULES</th>
+    <th rowspan="2">Appui bref sur Knob 4<br/>Appui bref sur SELECT<br/>Appui bref sur Touch</th>
+    <th rowspan="2">Appui long sur PAD<br/>Appui long sur Knob 4<br/>Appui long sur SELECT<br/>Appui long sur Touch</th>
+    <th colspan="2" class="alt">Mode ALT</th>
+   </tr>
+   <tr>
+    <th>Appui long sur F1<br/>Appui long sur F2</th>
+    <th>Appui bref sur F1<br/>Appui bref sur F2</th>
+   </tr>
+   <tr><td class="empty"></td><th>&gt; LECTURE/ARRÊT</th><th>&gt; MODIFIER</th><th>&gt; COPIER</th><th>&gt; COLLER</th></tr>
+   <tr><th>Step Pattern</th><td>Lecture/arrêt</td><td>Éditeur de pattern</td><td>Copier le pattern</td><td>Coller le pattern</td></tr>
+   <tr><th>Audio Clip</th><td>Lecture/arrêt</td><td>Contrôle du clip</td><td>Copier le clip</td><td>Coller le clip</td></tr>
+   <tr><th>Lanceur de phrase</th><td>Lecture/arrêt</td><td>Options de phrase</td><th class="empty" colspan="2">NON IMPLÉMENTÉ</th></tr>
+  </table>
+
+  <h2>Ajouter des chains</h2>
+  <p>Pour créer une nouvelle chain, faites simplement un <b>appui bref sur Knob 3</b> ou sur <b>ALT F3</b>. Vous pouvez également utiliser le menu principal (appui bref sur OPT).</p>
+
+  <h2>Sélectionner une chain</h2>
+  <p>La chain active est indiquée par la légende en bas de la tranche, qui est mise en évidence en rouge. Vous pouvez changer de chain active à l'aide des <b>touches fléchées GAUCHE/DROITE ou en tournant Knob 4</b>. Une fine bande en bas de la légende indique que la chain est active pour l'entrée MIDI.</p>
+
+  <h2>Déplacer des chains</h2>
+  <p>Vous pouvez réorganiser vos colonnes (chains) en déplaçant horizontalement chaque chain à la position souhaitée. Vous pouvez également ancrer les chains de votre choix à droite, contre la chain principale :</p>
+  <ul>
+   <li><b>Appuyez longuement sur Knob 3</b> ou sur <b>ALT F3</b> pour commencer à déplacer la chain sélectionnée. La légende de la chain affiche alors un symbole à double flèche.</li>
+   <li><b>Utilisez les touches fléchées GAUCHE/DROITE ou tournez Knob 4</b> pour déplacer la chain vers la position souhaitée. Pour ancrer une chain à droite, continuez simplement à la déplacer vers la droite.</li>
+   <li><b>Appuyez brièvement sur SELECT ou BACK</b> pour terminer.</li>
+  </ul>
+  <p>Notez que vous pouvez également déplacer vos chains de cette manière depuis la <a href="mixer.html">vue mixer</a>, mais le bouton F3 n'y est pas disponible.</p>
+
+  <h2>Copier/coller des patterns et des clips audio</h2>
+  <p>Pour copier/coller des patterns ou des clips audio, passez en mode ALT et utilisez les touches de tampon F1/F2, comme suit :</p>
+  <ul>
+   <li><b>Appuyez sur ALT</b> pour passer en mode ALT. Le bouton ALT doit s'allumer en violet.</li>
+   <li><b>Appuyez longuement sur F1 ou F2</b> pour copier le contenu de la cellule sélectionnée dans le tampon. Le bouton F1/F2 clignote en orange.</li>
+   <li><b>Utilisez les touches fléchées ou tournez Knob 3 et 4</b> pour déplacer le curseur à l'emplacement souhaité. Notez que la couleur de clignotement du bouton change lorsque vous déplacez le curseur.
+   Elle est verte lorsque le collage est possible et rouge lorsqu'il ne l'est pas (par exemple, vous ne pouvez pas coller un pattern de séquenceur dans une cellule de clip audio).</li>
+   <li><b>Appuyez brièvement sur F1/F2</b> pour coller. Vous pouvez coller le contenu du tampon autant de fois que vous le souhaitez. Si la cellule de destination n'est pas vide, une confirmation vous sera demandée avant son remplacement.</li>
+  </ul>
+
+  <h2>Options de phrase</h2>
+  <p>Le menu des options de phrase permet de configurer les paramètres et de gérer les phrases.</p>
+  <p>Les paramètres de phrase sont les suivants :</p>
+  <ul>
+  <li><b>Durée :</b> Nombre de mesures. Par défaut, la valeur correspond à la séquence la plus longue de la ligne.</li>
+  <li><b>Tempo :</b> Au lancement de la phrase, le tempo est réglé sur la valeur spécifiée en BPM.</li>
+  <li><b>Temps par mesure :</b> La signature rythmique utilisée dans les patterns.</li>
+  <li><b>Automatiser :</b> Les options « Boucler à partir de », « Nombre de boucles » et « Sauter à » permettent de créer des structures de morceau simples.</li>
+  </ul>
+  <p>Les options de gestion des phrases sont les suivantes :</p>
+  <ul>
+  <li><b>Insérer une phrase :</b> Insérer une nouvelle phrase (ligne) dans le launcher.</li>
+  <li><b>Cloner une phrase :</b> Cloner la phrase (ligne) sélectionnée.</li>
+  <li><b>Déplacer une phrase :</b> Déplacer la phrase (ligne) sélectionnée vers une nouvelle position.</li>
+  <li><b>Supprimer une phrase :</b> Supprimer la phrase (ligne) sélectionnée.</li>
+  </ul>
+  <p>Lors de la gestion des phrases, vous devrez peut-être ajuster les paramètres d'automation des phrases concernées.</p>
+  </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

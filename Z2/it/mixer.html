@@ -1,0 +1,84 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">volume della chain</div>
+   <div class="action short_press">abilitazione alla registrazione</div>
+   <div class="action bold_press">commutatori del mixer</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">bilanciamento della chain</div>
+   <div class="action short_press">mute della chain</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">volume principale</div>
+   <div class="action short_press">aggiungi chain</div>
+   <div class="action bold_press">sposta chain</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">seleziona chain</div>
+   <div class="action short_press">controllo chain</div>
+   <div class="action bold_press">opzioni della chain</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>Vista Mixer</h1>
+  <p>Il mixer è la vista principale di zynthian. È sempre possibile accedere al mixer premendo il pulsante MIX. È inoltre possibile
+   premere BACK fino a raggiungerlo. Dal launcher, è possibile accedere al mixer premendo BACK. Allo stesso modo, dal mixer è possibile
+   accedere al launcher premendo BACK. Mixer e Launcher sono, di fatto, un'unica vista con 2 modalità.</p>
+  <p>È composto da strisce verticali associate alle chain. Inizialmente sarà vuoto e mostrerà solo la striscia principale.
+   Per ogni chain creata, viene aggiunta una nuova striscia al mixer. Le strisce del mixer possono essere più numerose di quelle visualizzabili.
+   Scorreranno a sinistra / destra se si seleziona una striscia fuori dallo schermo.</p>
+  <p>Ogni striscia è un widget interattivo che può essere manipolato in diversi modi e mostra informazioni sullo stato della
+   chain associata. Dall'alto verso il basso:</p>
+ </div>
+
+ <div class="right_float_container">
+  <img src="img/mixer_strip_legend_bg_black.png" class="full">
+ </div>
+
+ <div class="left_container">
+  <ul>
+   <li><b>Rec Arm:</b> Indicatore di abilitazione alla registrazione. Premere per attivare o disattivare. L'uscita audio delle chain abilitate alla registrazione viene inclusa nelle registrazioni multitraccia come traccia separata.
+   Dal menu admin, è possibile configurarlo come qualsiasi altro commutatore del mixer: solo, pfl, mono, phase
+   o M+S. Se configurato come solo, la modalità solo non è esclusiva. Quando una chain è in solo, tutte le chain non in solo vengono silenziate,
+   permettendo di ascoltare una o più chain. Il solo <i>principale</i> disattiva tutti i solo delle chain.</li>
+   <li><b>Mute:</b> Indicatore di mute. Premere per attivare o disattivare. Quando una chain è silenziata (mute attivo), rimane silenziosa.</li>
+   <li><b>Balance/Pan:</b> Bilanciamento destra/sinistra nel mix (o pan di un segnale mono) per la chain associata. Ruotare la manopola 2
+    oppure trascinare il fader a sinistra e a destra per modificarlo.</li>
+   <li><b>Fader:</b> Volume nel mix per la chain associata. Ruotare la manopola 1 oppure trascinare verso l'alto e verso il basso per modificare il livello del fader.
+    Sul touchscreen è possibile trascinare più fader contemporaneamente. Toccare il fader per impostare la chain attiva.</li>
+   <li><b>DPM:</b> Digital Peak Meter per la chain associata, con un intervallo da -50dBFS a 0dBFS. </li>
+   <li><b>Description:</b> Testo disposto verticalmente che descrive la chain. Per impostazione predefinita, per una chain synth mostra
+    il processore synth e il nome del preset. Se si assegna un nome alla chain, questo verrà incluso nella descrizione.</li>
+   <li><b>Legend:</b> Mostra un'icona per il tipo di chain e un numero per il canale MIDI assegnato. Toccarla per accedere
+    alla vista di controllo della chain.</li>
+  </ul>
+ </div>
+
+  <div class="full_container">
+  <h2>Aggiungere chain</h2>
+  <p>Per creare una nuova chain dalla vista Mixer, è sufficiente <b>premere brevemente la manopola 3</b>. Se il proprio zynthian non dispone di manopole, è possibile usare l'opzione "add chain" dal menu principale (pressione breve di OPT).</p>
+
+  <h2>Selezione delle chain</h2>
+  <p>La chain attiva è indicata dalla legenda in fondo alla striscia, evidenziata in rosso. È possibile cambiare la chain attiva usando i <b>pulsanti freccia LEFT/RIGHT o ruotando la manopola 4</b>. Una striscia sottile in fondo alla legenda indica che la chain è attiva per l'ingresso MIDI.</p>
+
+  <h2>Spostare le chain</h2>
+  <p>È possibile riorganizzare le colonne (chain), spostando orizzontalmente qualsiasi chain nella posizione desiderata. È inoltre possibile agganciare le chain sul lato destro, accanto alla chain principale.</p>
+  <ul>
+   <li><b>Premere a lungo la manopola 3</b> per iniziare a spostare la chain selezionata. La legenda della chain mostrerà un simbolo a doppia freccia.</li>
+   <li><b>Usare i pulsanti freccia LEFT/RIGHT o ruotare la manopola 4</b> per spostare la chain nella posizione desiderata. Per agganciare una chain sul lato destro, continuare semplicemente a spostarla verso destra.</li>
+   <li><b>Premere brevemente SELECT o BACK</b> per terminare.</li>
+  </ul>
+  <p>Se il proprio zynthian non dispone di manopole, passare alla <a href="launcher.html">vista launcher</a> (pressione breve di BACK) per spostare le chain.</p>
+ </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

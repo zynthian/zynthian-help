@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+ <h1>Vue Tempo</h1>
+    <p>La vue Tempo permet de contrôler la base de temps de zynthian, utilisée pour le séquençage, les arpégiateurs, etc.</p>
+    <p>Le contrôle BPM définit le tempo interne entre 10 et 420 BPM. Appuyez sur le contrôle et tournez-le pour régler le tempo par incréments de 0,1 BPM. Ce contrôle est disponible si l’horloge interne est utilisée.</p>
+    <p> Si une horloge externe est utilisée, le contrôle BPM devient un diviseur d’horloge. Par défaut, il attend une entrée de 24 PPQN, correspondant à l’horloge MIDI, mais il peut être réglé pour prendre en charge d’autres fréquences d’horloge externe, entre 1 et 48 PPQN. L’horloge interne fonctionne à 1920 PPQN et utilise une boucle à verrouillage de phase pour dériver cette horloge haute résolution à partir de l’horloge d’entrée lente. Pour utiliser une horloge externe, sélectionnez « MIDI Clock Source » pour une entrée MIDI dans la vue <a href="chain_midi_input.html">Entrée MIDI</a>.</p>
+    <p>Le contrôle Metronome Mode configure le métronome de zynthian. Il propose les valeurs suivantes :
+      <ul>
+         <li>OFF : le métronome est désactivé.</li>
+         <li>AUTO : le métronome sonne lorsqu’une séquence est en cours de lecture et s’arrête à la fin de la mesure suivant l’arrêt de la dernière séquence.</li>
+         <li>ON : le métronome joue en continu.</li>
+         <li>INTRO : le métronome joue jusqu’au démarrage d’une séquence. Vous pouvez l’utiliser comme décompte avant le début lorsque vous ne souhaitez pas ou n’avez pas besoin que le métronome joue pendant la performance.</li>
+         <li>NO ACCENT : le métronome joue en continu, sans accent sur le premier temps de chaque mesure. Il fonctionne ainsi davantage comme un métronome traditionnel, utilisé uniquement pour le tempo et non comme base de temps.</li>
+         <li>SILENT : le métronome fonctionne sans produire de son. Cela peut être utile pour faire fonctionner le transport en l’absence de séquences. Certains plugins peuvent en tirer parti.</li>
+      </ul>
+      Un contrôle permet de régler le volume du métronome.</p>
+    <p>Le tempo s’affiche en grand et vous pouvez toucher cet affichage pour régler le tempo. De même, vous pouvez toucher le bouton Tempo pour régler le tempo.</p>
+    <div class="note-block">Remarque : le métronome est envoyé vers la chain principale via son mixage auxiliaire, qui permet de contrôler individuellement le niveau, la balance, etc. Le lecteur audio global partage ce mixage auxiliaire.</div>
+ </body>
+</html>

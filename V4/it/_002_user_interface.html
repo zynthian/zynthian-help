@@ -1,0 +1,298 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>L'interfaccia utente</h1>
+  <p>L'interfaccia utente di zynthian V4 viene gestita principalmente tramite:</p>
+  <ul>
+   <li>4 manopole con pulsante</li>
+   <li>4 pulsanti (S1-S4)</li>
+   <li>display touch resistivo</li>
+  </ul>
+
+  <p>In alternativa, è possibile gestire la UI di zynthian:</p>
+  <ul>
+   <li>tramite l'interfaccia VNC</li>
+   <li>con un controller MIDI supportato</li>
+   <li>con note MIDI sul canale MIDI master</li>
+   <li>con una tastiera per computer (associazioni dei tasti)</li>
+   <li>tramite OSC CUIA</li>
+  </ul>
+
+  <p>Questa guida tratta solo la UI principale tramite manopole, pulsanti e interazioni touch. Per il resto, visitare la <a href="https://wiki.zynthian.org">wiki di zynthian</a>.</p>
+
+  <h2>Azioni delle manopole</h2>
+  <p>
+   Sono disponibili cinque azioni per le manopole:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pressione breve:</b> premendo una manopola per meno di 0,3 secondi si attiva l'<b>azione di pressione breve</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pressione prolungata:</b> premendo una manopola per più di 0,3 e meno di 2 secondi si attiva l'<b>azione di pressione prolungata</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pressione lunga:</b> tenendo premuta una manopola per più di 2 secondi si attiva l'<b>azione di pressione lunga</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rotazione:</b> ruotando una manopola è possibile regolare il valore di un parametro, cambiare l'elemento selezionato in un elenco o spostare il cursore in orizzontale o in verticale. L'accelerazione della manopola consente regolazioni più precise a bassa velocità e più ampie a velocità maggiore.</li>
+    <li><b>Pressione + rotazione:</b> ruotando una manopola mentre è premuta è possibile aumentare la risoluzione per effettuare regolazioni precise.</li>
+   </ul>
+  </p>
+
+  <h2>Azioni dei pulsanti</h2>
+  <p>
+   Sono disponibili tre azioni per i pulsanti:<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pressione breve:</b> premendo un pulsante per meno di 0,3 secondi si attiva l'<b>azione di pressione breve</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pressione prolungata:</b> premendo un pulsante per più di 0,3 e meno di 2 secondi si attiva l'<b>azione di pressione prolungata</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pressione lunga:</b> tenendo premuto un pulsante per più di 2 secondi si attiva l'<b>azione di pressione lunga</b>(*).</li>
+   </ul>
+  </p>
+
+  <p>(*) La durata delle pressioni può essere configurata nello strumento webconf, nella scheda delle opzioni avanzate della UI.</p>
+  <p>Non tutte le manopole e i pulsanti hanno funzioni assegnate per ogni tipo di azione. Le azioni di manopole e pulsanti possono variare in base al contesto. Il loro comportamento è descritto nelle pagine della guida dedicate alle diverse viste. Tenere a mente le icone delle azioni mostrate sopra, che verranno utilizzate in questa guida.</p>
+
+  <img src="img/ui_action_global_v4.png" class="full"/>
+
+  <h2>Uso delle manopole</h2>
+
+  <p>Le manopole di V4 sono il principale strumento per navigare nella UI. Il loro funzionamento dipende dal contesto, in particolare per le azioni di rotazione, pressione breve e pressione prolungata. Le azioni di pressione lunga sono sempre globali. Le manopole sono numerate dall'alto verso il basso e da sinistra a destra; i nomi riportati sulla scocca in alluminio di V4 corrispondono quindi a:</p>
+
+  <ul>
+   <li><b>layer</b> => manopola n. 1
+   <li><b>back</b> => manopola n. 2
+   <li><b>learn/shot</b> => manopola n. 3
+   <li><b>select</b> => manopola n. 4
+  </ul>
+
+  <p>In questa guida, i nomi e i numeri delle manopole vengono utilizzati in modo intercambiabile.</p>
+
+  <h3>Regola generale</h3>
+  <p>Sebbene il comportamento delle manopole dipenda dal contesto, esiste uno schema che può fungere da <i>regola generale</i> ed è applicabile a molte viste:</p>
+
+  <h4>Manopola SELECT</h4>
+  <ul>
+   <li>Nelle <b>viste di selezione</b> (elenchi):
+    <ul>
+     <li><b>Ruotare</b> per scorrere l'elenco.</li>
+     <li><b>Premere brevemente</b> per selezionare gli elementi.</li>
+     <li><b>Premere a lungo</b> per aprire le opzioni contestuali.</li>
+    </ul></li>
+   <li>Nelle <b>viste a griglia</b>, controlla l'asse X. <b>Ruotare</b> per spostare il cursore in orizzontale.
+   <li>Nelle <b>viste suddivise</b> con 2 elenchi scorrevoli, gestisce l'elenco a destra.</li>
+  </ul>
+
+  <h4>Manopola BACK</h4>
+  <ul>
+   <li><b>Premere brevemente</b> per tornare alla vista precedente.</li>
+   <li>Nelle <b>viste a griglia</b>, controlla l'asse Y. <b>Ruotare</b> per spostare il cursore in verticale.</li>
+  </ul>
+
+  <h4>Manopola LEARN/SHOT</h4>
+  <ul>
+   <li>Nelle <b>viste suddivise</b> con 2 elenchi scorrevoli, gestisce l'elenco a sinistra.
+    <ul>
+     <li><b>Ruotare</b> per scorrere l'elenco a sinistra.</li>
+     <li><b>Premere brevemente</b> per selezionare un elemento nell'elenco a sinistra.</li>
+    </ul></li>
+  </ul>
+
+  <b>Questa regola generale verrà ampliata nella sezione successiva.</b>
+
+  <div class="clear"></div>
+  <div class="note-block">
+   Il volume principale è sempre accessibile con un solo clic. Premere a lungo la manopola <b>BACK</b> per aprire la vista del mixer, quindi ruotare la manopola <b>Learn/Shot</b> per modificare il volume principale.
+  </div>
+
+  <h2>Uso dei pulsanti</h2>
+
+  <p>Il workflow classico di zynthian (V1-V4) si basa sui pulsanti integrati nelle 4 manopole. Le azioni di pressione breve dipendono generalmente dal contesto, mentre quelle di pressione prolungata e lunga sono in genere globali.</p>
+  <p>Nelle sezioni seguenti, se non specificato diversamente, si applicano le seguenti azioni predefinite:</p>
+
+  <ul>
+   <li><b>LAYER</b>
+    <ul>
+     <li><b>pressione breve</b> dipende dal contesto.</li>
+     <li><b>pressione prolungata</b> per aprire il <b>chain manager</b>.</li>
+     <li><b>pressione lunga</b> per aprire la <b>guida</b>.</li>
+    </ul></li>
+   <li><b>BACK</b>
+    <ul>
+     <li><b>pressione breve</b> per tornare alla <b>vista precedente</b>. Alterna tra la vista del mixer e quella del launcher.</li>
+     <li><b>pressione prolungata</b>> per aprire il <b>menu principale</b>.</li>
+     <li><b>pressione lunga</b> per aprire il menu di <b>spegnimento</b>.</li>
+    </ul></li>
+   <li><b>LEARN/SHOT</b>
+    <ul>
+     <li><b>pressione breve</b> dipende dal contesto.</li>
+     <li><b>pressione prolungata</b> per aprire l'<b>elenco ZS3</b>.</li>
+     <li><b>pressione lunga</b> per aprire l'<b>elenco degli snapshot</b>.</li>
+    </ul></li>
+   <li><b>SELECT</b>
+    <ul>
+     <li><b>pressione breve</b> per <b>selezionare o attivare/disattivare</b> l'elemento selezionato.</li>
+     <li><b>pressione prolungata</b> per visualizzare le opzioni dell'elemento selezionato. Dipende dal contesto.</li>
+     <li><b>pressione lunga</b> per attivare <b>PANIC!</b>. Interrompe tutte le note e i suoni.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Guida contestuale</h3>
+  <p><b>Premere a lungo il pulsante LAYER</b> per aprire la guida contestuale della vista corrente. Dalla schermata della guida è possibile:</p>
+  <ul>
+   <li><b>Ruotare la manopola 4</b> o <b>premere i pulsanti S3/S4</b> per scorrere i contenuti.</li>
+   <li><b>Premere brevemente la manopola 4</b> per scorrere i link.</li>
+   <li><b>Premere brevemente BACK</b> per tornare alla pagina precedente o uscire dalla schermata della guida.</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>I pulsanti aggiuntivi di V4</h3>
+
+  <p>I pulsanti aggiuntivi in silicone di V4 (S1-S4) possono essere configurati in base alle preferenze dell'utente. La configurazione si effettua dallo strumento webconf, accedendo alle opzioni avanzate nella sezione del layout dei controlli. Sono disponibili alcuni <b>profili di personalizzazione</b> predefiniti:</p>
+
+  <h4>V4 Studio</h4>
+  <p>Ai 4 pulsanti in silicone sono assegnate le seguenti funzioni:</p>
+  <ul>
+   <li><b>S1</b>
+    <ul>
+     <li><b>pressione breve</b> => Registratore/lettore audio</li>
+     <li><b>pressione prolungata</b>> => Registratore/lettore MIDI</li>
+     <li><b>pressione lunga</b>> => Tutti i suoni disattivati (PANIC!)</li>
+    </ul></li>
+   <li><b>S2</b>
+    <ul>
+     <li><b>pressione breve</b> => Launcher</li>
+     <li><b>pressione prolungata</b> => Pattern Editor</li>
+     <li><b>pressione lunga</b> => Tutti i suoni disattivati (PANIC!)</li>
+    </ul></li>
+   <li><b>S3</b>
+    <ul>
+     <li><b>pressione breve/prolungata</b> => Freccia su</li>
+     <li><b>pressione lunga</b> => Tutti i suoni disattivati (PANIC!)</li>
+    </ul></li>
+   <li><b>S4</b>
+    <ul>
+     <li><b>pressione breve/prolungata</b> => Freccia giù</li>
+     <li><b>pressione lunga</b> => Attiva/disattiva l'interfaccia TTS (Text-To-Speech).</li>
+    </ul></li>
+  </ul>
+
+  <h4>V4 Stage</h4>
+  <p>Ai 4 pulsanti in silicone sono assegnati i program-change MIDI 1-4. Questo profilo è pensato in particolare per l'uso con ZS3.</p>
+  <ul>
+   <li><b>S1</b> => Program MIDI 1
+   <li><b>S2</b> => Program MIDI 2
+   <li><b>S3</b> => Program MIDI 3
+   <li><b>S4</b> => Program MIDI 4
+  </ul>
+
+  <h4>V4 CC Switches</h4>
+  <p>Ai 4 pulsanti in silicone sono assegnati i MIDI CC 47-50. Questo profilo è pensato in particolare per il MIDI-learn di parametri toggle (ad es. per l'uso con SooperLooper).</p>
+  <ul>
+   <li><b>S1</b> => Attiva/disattiva CC 47 (valore 0/127)
+   <li><b>S2</b> => Attiva/disattiva CC 48 (valore 0/127)
+   <li><b>S3</b> => Attiva/disattiva CC 49 (valore 0/127)
+   <li><b>S4</b> => Attiva/disattiva CC 50 (valore 0/127)
+  </ul>
+
+  <h2>La barra superiore</h2>
+  <p>Nella parte superiore del display è generalmente presente una barra con informazioni. Potrebbe non essere visibile in alcune viste, ad esempio nei popup di conferma o informativi.
+  La barra superiore è composta da 2 sezioni:</p>
+
+  <h3>La barra del titolo</h3>
+  <p>La barra del titolo funziona come una sorta di breadcrumb. In genere mostra il titolo della vista o informazioni sullo snapshot, sullo zs3 o sul chain corrente (canale MIDI, engine, bank e preset).</p>
+  <img src="img/title_bar_mixer.png" class="full"/>
+
+  <h3>L'area di stato</h3>
+  <p>Nell'angolo superiore destro, accanto alla barra del titolo, è presente un'area in cui vengono visualizzate in tempo reale alcune informazioni utili:</p>
+  <ul>
+   <li><b>Digital Audio Peak Meter (DPM)</b>: barre orizzontali animate che indicano il livello e i picchi dell'audio digitale.</li>
+   <li><b>Icone di stato</b>: indicano i vari stati di zynthian.</li>
+  </ul>
+  <img src="img/ui_status_bar.png" class="full"/>
+
+  <h4>Digital Audio Peak Meter (DPM)</h4>
+  <p>Il DPM copre l'intervallo da -50dBFS a 0dBFS, ovvero dal livello massimo consentito a fondo scala (all'estrema destra) fino a 50dB al di sotto (all'estrema sinistra):</p>
+  <ul>
+   <li>Il segmento verde copre l'intervallo da -50dBFS a -10dBFS.</li>
+   <li>Il segmento giallo copre l'intervallo da -10dBFS a -3dBFS.</li>
+   <li>Il segmento rosso copre l'intervallo da -3dBFS a 0dBFS.</li>
+  </ul>
+  <p>Sono presenti indicatori indipendenti per i canali sinistro e destro, che monitorano l'uscita del sistema, ovvero il mix audio inviato all'uscita di Zynthian. Il livello diminuisce secondo una curva logaritmica e impiega un secondo per scendere a -200dBFS; per raggiungere -50dBFS (l'intervallo visualizzato) impiega quindi circa un quarto di secondo. I picchi vengono visualizzati istantaneamente, ovvero la risposta dell'indicatore è immediata (*). La barra di mantenimento del picco resta visualizzata per due secondi o fino al raggiungimento di un picco superiore.</p>
+
+  <p>Questo indicatore è identico al DPM del mixbus principale, sempre visibile nella vista mixer, e pertanto è nascosto quando è visualizzata la vista del mixer audio.</p>
+
+  <div class="note-block">
+  (*) Il DPM viene aggiornato 5 volte al secondo, quindi la visualizzazione del picco può subire un ritardo di 200 ms.
+  </div>
+
+  <h4>Icone di stato</h4>
+  <br/>
+  <table>
+   <tr>
+    <th colspan="3">Stato e carico</th>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&hearts;</span></td>
+    <td>Carico CPU</td>
+    <td class="small">Cuore che indica il carico della CPU. È verde quando il carico è inferiore al 50%, giallo quando supera il 50% e rosso quando supera il 75%.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#8634;</span></td>
+    <td class="nowrap">Aggiornamento software disponibile</td>
+    <td class="small">Quando è disponibile un aggiornamento software, viene mostrato il simbolo verde di riciclo. È possibile aggiornare dal menu di amministrazione, da webconf o dal terminale.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9888;</span></td>
+    <td>XRun</td>
+    <td class="small">Viene mostrato quando si verificano XRuns. Possono verificarsi clic e scoppiettii all'uscita audio. Significa che la CPU non riesce a elaborare o trasferire l'audio abbastanza rapidamente. È consigliabile disattivare alcune opzioni che richiedono molte risorse della CPU (come VNC, cuffie ecc.) o ridurre la complessità dei chain.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
+    <td>Tensione insufficiente</td>
+    <td class="small">Zynthian sta funzionando in modalità degradata, con la frequenza della CPU limitata a 600-800 MHz, nel tentativo di stabilizzare il sistema ed evitarne il blocco. Questa icona non dovrebbe essere visualizzata; se compare, è consigliabile utilizzare un alimentatore più adeguato.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#127777;</span></td><!---->
+    <td>Sovratemperatura</td>
+    <td class="small">Zynthian sta funzionando in modalità degradata, con la frequenza della CPU limitata a 600-800 MHz, nel tentativo di stabilizzare il sistema ed evitarne il blocco. Questa icona non dovrebbe essere visualizzata; se compare, è consigliabile migliorare la dissipazione del calore (ad esempio utilizzando un dissipatore).</td>
+   </tr>
+   <tr>
+    <th colspan="3">Attività MIDI e riproduzione/registrazione</th>
+   </tr>
+   <tr>
+    <td><span class="color-blue symbol"><b>m</b></span></td>
+    <td>MIDI-IN</td>
+    <td class="small">Sono stati ricevuti messaggi MIDI. Il trattino indica i messaggi di sistema, come il MIDI clock.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9679;</span></td>
+    <td class="nowrap">Registrazione di una traccia audio</td>
+    <td class="small">È in corso la registrazione di una traccia audio.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#9654;</span></td>
+    <td class="nowrap">Riproduzione di una traccia audio</td>
+    <td class="small">È in riproduzione una traccia audio.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9679;</span></td>
+    <td class="nowrap">Registrazione di una traccia MIDI</td>
+    <td class="small">È in corso la registrazione di una traccia MIDI.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9654;</span></td>
+    <td class="nowrap">Riproduzione di una traccia MIDI</td>
+    <td class="small">È in riproduzione una traccia MIDI.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9679;</span></td>
+    <td class="nowrap">Registrazione di un pattern</td>
+    <td class="small">La registrazione è attivata nel pattern editor.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9654;</span></td>
+    <td>Riproduzione di un pattern<br/>Riproduzione di una clip audio</td>
+    <td class="small">È in riproduzione dal launcher un pattern dello step sequencer o una clip audio.</td>
+   </tr>
+  </table>
+
+ </body>
+</html>

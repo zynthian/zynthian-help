@@ -1,0 +1,215 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">---</div>
+   <div class="action short_press">éditeur CC</div>
+   <div class="action bold_press">éditeur CC</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">zoom avant/arrière</div>
+   <div class="action short_press">réinitialiser le zoom</div>
+   <div class="action bold_press">longueur du pattern</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">déplacement vertical</div>
+   <div class="action short_press">sélection de bloc</div>
+   <div class="action bold_press">sélection de bloc</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">déplacement horizontal</div>
+   <div class="action short_press">ajouter/supprimer une note</div>
+   <div class="action bold_press">modifier une note</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>Éditeur de notes du pattern</h1>
+  <p>L’éditeur de notes du pattern permet d’ajouter ou de supprimer des notes dans un pattern, de modifier les paramètres des notes, de copier/coller des blocs, etc. Le menu contextuel (<b>OPT</b>) permet de modifier les paramètres du pattern et les options d’édition.</p>
+  <p>Les <b>boutons PLAY/STOP</b> permettent de lire/arrêter le pattern. Le <b>bouton REC</b> active la capture MIDI, qui peut se faire pas à pas ou en enregistrement en temps réel.</p>
+  <p>Le <b>mode ALT</b> permet d’accéder à des fonctions spéciales telles que l’annulation/le rétablissement, les opérations sur les blocs et la copie/le collage de patterns.</p>
+ </div>
+
+ <div class="full_container">
+  <h2>Fonctionnement de base</h2>
+  <ul>
+   <li><b>Tournez les encodeurs 3 et 4</b> pour déplacer le curseur verticalement ou horizontalement. Lorsque le <b>mode ALT est désactivé</b>, vous pouvez également utiliser les boutons fléchés.</li>
+   <li><b>Appuyez brièvement sur l’encodeur 4</b> pour ajouter/supprimer des notes. <b>Appuyez longuement sur l’encodeur 4</b> pour modifier les paramètres des notes. Vous pouvez également utiliser le <b>bouton SEL</b>.</li>
+   <li><b>Tournez l’encodeur 2</b> pour effectuer un zoom avant ou arrière. <b>Appuyez brièvement sur l’encodeur 2</b> pour rétablir le niveau de zoom par défaut.</li>
+   <li><b>Appuyez brièvement sur l’encodeur 3</b> pour passer en mode de sélection de bloc. Le fonctionnement des opérations sur les blocs est expliqué en détail dans la section ci-dessous.</li>
+   <li><b>Appuyez brièvement sur le bouton OPT</b> pour ouvrir le menu des options du pattern, qui permet de modifier tous les paramètres du pattern. <b>Appuyez longuement sur l’encodeur 2</b> pour modifier rapidement la longueur du pattern.</li>
+   <li><b>Appuyez brièvement sur l’encodeur 1</b> pour basculer entre l’éditeur de notes et l’<a href="pated_cc.html">éditeur CC</a>.</li>
+  </ul>
+
+  <h2>Enregistrement de patterns</h2>
+  <p><b>Appuyez sur le bouton REC</b> pour activer l’enregistrement MIDI. Lorsque l’enregistrement est armé, le bouton REC s’allume en rouge.</p>
+  <h3>Capture pas à pas</h3>
+  <p>Si le pattern n’est pas en cours de lecture, les événements de notes sont capturés à la position du curseur, qui passe à l’étape suivante. Vous pouvez utiliser la pédale de sustain pour passer des étapes.</p>
+  <h3>Capture en temps réel</h3>
+  <p>Si le pattern est en cours de lecture, les événements de notes et de CC sont capturés en temps réel. Ils sont enregistrés au moment précis de leur capture, sans quantification. Si nécessaire, une quantification peut être appliquée à la lecture (voir le menu des options du pattern). Pendant la capture en temps réel, l’historique est enregistré à chaque boucle du pattern, uniquement si de nouvelles notes ont été capturées.</p>
+
+  <h2>Annuler/Rétablir</h2>
+  <p>En mode ALT, vous pouvez utiliser les touches fléchées pour annuler/rétablir :</p>
+  <ul>
+   <li><b>GAUCHE :</b> annuler la dernière opération de modification.</li>
+   <li><b>DROITE :</b> rétablir la dernière opération annulée.</li>
+   <li><b>BAS :</b> tout annuler.</li>
+   <li><b>HAUT :</b> tout rétablir.</li>
+  </ul>
+  <p>Il existe une autre méthode pour annuler/rétablir, pratique ou utile lorsque le mode ALT n’est pas facilement accessible :</p>
+  <ul>
+   <li>lorsque l’enregistrement est armé (le bouton REC est allumé en rouge)...</li>
+   <li><b>appuyez longuement sur le bouton BACK</b> pour passer en mode de navigation dans l’historique.</li>
+   <li><b>tournez l’encodeur 4</b> pour parcourir l’historique.</li>
+   <lI><b>appuyez sur BACK</b> pour quitter.</li>
+  </ul>
+  <p>Notez que, même si le nombre d’étapes de l’historique est illimité, l’historique n’est pas enregistré dans l’état et sera perdu lorsque vous rechargerez le snapshot.
+  Les snapshots enregistrent uniquement le dernier état.</p>
+
+  <h2>Paramètres des notes</h2>
+  <p>Vous pouvez modifier chaque note du pattern en plaçant le curseur dessus, puis en la sélectionnant par un appui long :</p>
+  <ul>
+   <li><b>Appuyez longuement sur l’encodeur 4</b> ou <b>maintenez SELECT enfoncé</b> pour ouvrir l’éditeur de paramètres de la note sélectionnée.</li>
+   <li><b>Tournez l’encodeur 4</b> ou utilisez les <b>boutons GAUCHE/DROITE</b> pour sélectionner le paramètre.</li>
+   <li><b>Tournez l’encodeur 3</b> ou utilisez les <b>boutons HAUT/BAS</b> pour modifier la valeur du paramètre sélectionné.</li>
+   <li>Lorsque cette fonction est disponible, <b>tournez l’encodeur 2</b> pour ajuster finement la valeur du paramètre sélectionné.</li>
+  </ul>
+  <p>Voici la liste des paramètres que vous pouvez modifier :</p>
+  <ul>
+   <li><b>Durée :</b> en étapes. Utilisez l’encodeur 2 pour effectuer un réglage fin.</li>
+   <li><b>Vélocité :</b> vélocité de la note MIDI, de 0 à 127.</li>
+   <li><b>Décalage :</b> décalage relatif par rapport à l’étape de début de la note.</li>
+   <li><b>Vitesse du stutter :</b> nombre de répétitions <b>par temps</b>.</li>
+   <li><b>Vélocité du stutter :</b> évolution de la vélocité de la note pendant le stutter. Valeurs possibles : FLAT, FADE-IN, FADE-OUT.</li>
+   <li><b>Rampe du stutter :</b> évolution de la vitesse des répétitions pendant la durée de la note. Valeurs possibles : NONE, SPEED-DOWN, SPEED-UP.</li>
+   <li><b>Fréquence de lecture :</b> ignorer/lire toutes les N boucles.</li>
+   <li><b>Probabilité de lecture :</b> probabilité de lecture.</li>
+   <li><b>Fréquence du stutter :</b> déclencher le stutter toutes les N boucles.</li>
+   <li><b>Probabilité du stutter :</b> probabilité de déclenchement du stutter.</li>
+  </ul>
+
+  <p>Pour l’effet de rampe de vitesse du stutter, voici une explication détaillée de son fonctionnement :</p>
+  <ul>
+   <li><b>Accélération :</b> augmente la vitesse du stutter à partir de la vitesse définie, au cours de la durée de la note.</li>
+   <li><b>Ralentissement :</b> réduit la vitesse du stutter à partir d’une valeur calculée afin d’atteindre la vitesse définie à la fin de la durée de la note.</li>
+  </ul>
+
+  <div class="note-block">
+  Lorsque vous modifiez les paramètres d’une note, les changements de valeur sont immédiats et s’appliquent en temps réel. Vous pouvez modifier les paramètres des notes pendant la lecture du pattern ; vous entendrez le résultat dès que le curseur de lecture atteindra la note modifiée.
+  </div>
+
+  <h3>Retour visuel</h3>
+  <p>La plupart des paramètres des notes sont représentés visuellement :</p>
+  <ul>
+   <li>La durée de la note est représentée par la longueur du rectangle.</li>
+   <li>La vélocité de la note est représentée par la couleur de fond du rectangle. Plus la vélocité est faible, plus la couleur est sombre. Plus elle est élevée, plus la couleur est claire.</li>
+   <li>Le stutter de la note est représenté par une succession de barres verticales.</li>
+   <li>La <b>vitesse du stutter</b> est proportionnelle à la « densité des barres ».</li>
+   <li>L’<b>effet de vélocité du stutter</b> est représenté par le sens de croissance des barres.</li>
+   <li>La <b>rampe de vitesse du stutter</b> n’a pas de représentation visuelle. Désolé !</li>
+   <li>Les libellés blancs indiquent la fréquence ou la probabilité de lecture.</li>
+   <li>Les libellés violets indiquent la fréquence ou la probabilité du stutter.</li>
+  </ul>
+  <p>Si vous appliquez simultanément plusieurs paramètres de probabilité ou de fréquence, un seul d’entre eux sera affiché sous forme de libellé. Voici l’ordre de priorité :</p>
+  <ol>
+   <li>Fréquence de lecture</li>
+   <li>Probabilité de lecture</li>
+   <li>Fréquence du stutter</li>
+   <li>Probabilité du stutter</li>
+  </ol>
+
+  <h2>Opérations sur les blocs</h2>
+  <p>Les opérations sur les blocs permettent de sélectionner un ensemble de notes et d’effectuer une opération sur toutes ces notes, comme les copier/coller ou modifier un paramètre de note.</p>
+  <p>Les opérations sur les blocs peuvent être effectuées avec les encodeurs ou, en <b>mode ALT</b>, avec les boutons. Choisissez la méthode qui vous convient le mieux :</p>
+  <ol>
+   <li><b>Appuyez brièvement sur l’encodeur 3</b> ou <b>appuyez brièvement sur F3</b> pour passer en mode de sélection de bloc.</li>
+   <li><b>Tournez les encodeurs 3 et 4</b> ou utilisez les <b>boutons fléchés</b> pour ajuster la sélection
+    <ol>
+     <li><b>Appuyez brièvement sur l’encodeur 4</b> ou <b>appuyez brièvement sur SEL</b> pour copier la sélection.</li>
+     <li><b>Appuyez brièvement sur l’encodeur 3</b> ou <b>appuyez brièvement sur F3</b> pour couper la sélection.</li>
+     <li><b>Appuyez longuement sur l’encodeur 4</b> ou <b>maintenez SEL enfoncé</b> pour sélectionner les notes et passer en <b>mode d’édition MULTI</b>.</li>
+    </ol></li>
+   <li><b>Tournez les encodeurs 3 et 4</b> ou utilisez les <b>boutons fléchés</b> pour déplacer le bloc sur la grille du pattern.</li>
+   <li><b>Appuyez brièvement sur l’encodeur 4</b> ou <b>appuyez brièvement sur SEL</b> pour coller le bloc.</li>
+   <li>Répétez les étapes 4 et 5 autant de fois que vous le souhaitez.</li>
+   <li><b>Appuyez sur BACK</b> pour terminer.</li>
+  </ol>
+  <p>Notez que cette méthode est commune aux différentes opérations sur les blocs ; c’est l’étape 2 qui fait la différence.
+  Les opérations de copie/coupe et de collage utilisent le vert pour la sélection, tandis que le bloc d’édition MULTI est bleu.</p>
+
+  <div class="note-block">
+  Si vous utilisez la méthode en mode ALT avec le bouton F3, notez qu’en mode ALT, les touches fléchées servent normalement à parcourir l’historique (annuler/rétablir).
+  Lorsque vous passez en mode de <b>sélection de bloc</b> en appuyant sur F3, le comportement des touches fléchées change : elles permettent d’ajuster la sélection et de la déplacer pour la coller.
+  </div>
+
+  <h3>Mode d’édition MULTI</h3>
+  <p>Vous pouvez suivre la méthode <b>2.c</b> pour modifier un ensemble de notes à la fois. Pour le moment, seuls les paramètres de <i>vélocité</i> et de <i>durée</i> peuvent être modifiés simultanément.
+  En mode d’édition MULTI, vous pouvez :</p>
+  <ul>
+   <li><b>Tourner l’encodeur 4</b> pour choisir le paramètre à modifier simultanément. Seuls les paramètres de <i>vélocité</i> et de <i>durée</i> sont actuellement disponibles.</li>
+   <li><b>Tourner l’encodeur 3</b> pour modifier la valeur du paramètre sélectionné. Les valeurs changent progressivement (de façon relative) par rapport à leur valeur d’origine, sauf si les limites de la plage sont atteintes.</li>
+   <li><b>Appuyez brièvement sur BACK</b> pour quitter le mode d’édition MULTI.</li>
+  </ul>
+
+  <p>Lorsque vous quittez le mode d’édition MULTI, le bloc reste « sélectionné ». La couleur bleutée des notes sélectionnées permet de le voir.
+  Même si le bloc est toujours sélectionné, vous pouvez ajouter des notes, modifier des notes individuellement, etc. normalement. La sélection du bloc n’a donc aucun effet sur le fonctionnement normal.
+  Vous pouvez toutefois repasser en mode d’édition MULTI en appuyant longuement sur l’encodeur 4. Appuyez sur BACK pour désélectionner le bloc.</p>
+
+  <div class="note-block">
+  <b>Appuyez longuement sur l’encodeur 3</b> pour modifier simultanément toutes les notes du pattern.
+  </div>
+
+  <h2>Options du pattern</h2>
+  <p>Appuyez brièvement sur ALT pour ouvrir le menu des <b>options du pattern</b>, qui permet de modifier les propriétés du pattern ainsi que plusieurs options d’édition. Voici les paramètres du pattern :</p>
+  <ul>
+   <li><b>Renommer :</b> modifier le nom de la séquence affiché sur les pads du lanceur.</li>
+   <li><b>Mode de lecture :</b> DISABLED, LOOP, ONE-SHOT, PLAY 2 TIMES, ... PLAY 24 TIMES.</li>
+   <li><b>Program Change :</b> numéro de program-change déclenché avec le pattern. Il peut servir à modifier les ZS3, etc.</li>
+   <li><b>Longueur :</b> longueur du pattern en mesures et en temps.</li>
+   <li><b>Étapes/temps :</b> nombre d’étapes par temps. L’étape est la plus petite unité de temps de la grille du pattern, mais la position et la durée des événements peuvent être ajustées par fraction d’étape.</li>
+   <li><b>Quantification :</b> la quantification peut être désactivée ou réglée sur 1, 1/2, 1/3, 1/4 ou 1/6 d’étape.</li>
+   <li><b>Intensité du swing :</b> intensité du swing en %.</li>
+   <li><b>Diviseur du swing :</b> nombre de divisions utilisées pour le swing. Utilisez 1 avec 30 % pour obtenir un swing ternaire parfait.</li>
+   <li><b>Humanisation temporelle :</b> randomiser le timing des notes selon une distribution gaussienne afin de simuler les imprécisions humaines.</li>
+   <li><b>Humanisation de la vélocité :</b> randomiser la vélocité des notes selon une distribution gaussienne afin de simuler les imprécisions humaines.</li>
+   <li><b>Probabilité de lecture des notes :</b> probabilité, en %, de lire les notes du pattern. Cela permet d’omettre des notes de façon aléatoire.</li>
+   <li><b>Gamme :</b> gamme utilisée par l’éditeur de pattern.</li>
+   <li><b>Tonique :</b> </li>
+  </ul>
+  <h3>Options d’édition</h3>
+  <ul>
+   <li><b>Note de silence :</b> </li>
+   <li><b>Mode accord</b> Permet d’ajouter des accords complets au lieu de notes individuelles.</li>
+   <li><b>Transposer le pattern :</b> transposer le pattern d’un certain nombre de demi-tons.</li>
+   <li><b>Copier dans le presse-papiers :</b> copier le pattern dans le presse-papiers.</li>
+   <li><b>Coller depuis le presse-papiers :</b> coller le contenu du presse-papiers dans le pattern actuel.</li>
+   <li><b>Charger un pattern :</b> charger un pattern depuis un fichier.</li>
+   <li><b>Enregistrer un pattern :</b> enregistrer le pattern dans un fichier.</li>
+   <li><b>Importer depuis un SMF :</b> charger un pattern depuis un fichier MIDI standard (.mid).</li>
+   <li><b>Exporter vers un SMF :</b> enregistrer le pattern dans un fichier MIDI standard (.mid).</li>
+   <li><b>Effacer tout le pattern :</b> supprimer tous les événements de notes et de CC du pattern.</li>
+   <li><b>Effacer les notes du pattern :</b> supprimer toutes les notes du pattern.</li>
+  </ul>
+
+  <h2>Copier/coller des patterns</h2>
+  <p>Vous pouvez copier/coller des patterns entiers en passant en <b>mode ALT</b>. Deux tampons de copie/collage sont disponibles (F1 et F2).
+  Les tampons libres s’allument en orange. Les tampons occupés clignotent de la manière suivante :</p>
+  <ul>
+   <li><b>Clignotement vert :</b> le contenu peut être collé par un <b>appui bref</b>.</li>
+   <li><b>Clignotement rouge :</b> le contenu ne peut pas être collé. Il s’agit d’un clip audio.</li>
+   <li><b>Clignotement orange :</b> impossible de coller sur le contenu lui-même. Le pattern sélectionné est celui qui a été copié.</li>
+  </ul>
+  <p><b>Appuyez longuement sur F1 ou F2</b> pour copier le pattern dans le presse-papiers. Si le tampon est occupé, son contenu sera remplacé.</p>
+  <p><b>Appuyez brièvement sur F1 ou F2</b> lorsque le bouton clignote en vert pour coller le contenu dans le pattern actuel. Si le pattern actuel n’est pas vide, une confirmation vous sera demandée.</p>
+  <p>Cette méthode complète celle de copie/collage du lanceur. Vous pouvez coller des patterns copiés depuis le lanceur et copier
+  le pattern actuel afin de le coller ultérieurement depuis le lanceur.</p>
+
+ </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+
+  <body class="help_ui">
+
+    <div>
+      <h1>SooperLooper</h1>
+
+      <h2>Mode pédale unique</h2>
+      <p>
+
+        Vous pouvez piloter SooperLooper à l’aide d’une seule pédale MIDI. Pour cela, associez la pédale qui envoie un message MIDI CC au contrôleur « single pedal », disponible sur la page de commandes « Global loop » (6e page). Zynthian attend une valeur CC non nulle lorsque la pédale est enfoncée et une valeur nulle lorsqu’elle est relâchée. Les actions suivantes sont disponibles :
+      </p>
+      <ul>
+        <li>Appuyez lorsque la boucle est inactive, par exemple lors du premier appui, pour démarrer l’enregistrement de la boucle.</li>
+        <li>Appuyez pendant l’enregistrement pour l’arrêter et démarrer la lecture de la boucle.</li>
+        <li>Appuyez pendant la lecture pour démarrer le overdubbing de la boucle.</li>
+        <li>Appuyez deux fois pendant la lecture pour mettre la boucle en pause.</li>
+        <li>Appuyez trois fois pour effacer la boucle.</li>
+        <li>Appuyez deux fois et maintenez la pédale enfoncée pour effacer la boucle.</li>
+        <li>Appuyez une fois et maintenez la pédale enfoncée pour enregistrer ou effectuer un overdubbing jusqu’à ce que la pédale soit relâchée.</li>
+      </ul>
+
+      <h2 id="midi-cc">MIDI CC vers la boucle sélectionnée</h2>
+      <p>Chaque encodeur agit sur la boucle actuellement sélectionnée. Toute association MIDI que vous créez agit également sur la boucle actuellement sélectionnée. Cela se reflète dans le réglage « MIDI CC to selected loop », situé sur la dernière page des contrôleurs, qui est activé par défaut.</p>
+
+      <p>Toutefois, si vous réglez cette commande sur « off », l’association MIDI créée associera le CC à la boucle sélectionnée à ce moment-là. Les commandes concernées affichent le numéro de la boucle actuelle entre parenthèses.</p>
+
+      <p>Cette association restera liée à cette boucle, même si vous en sélectionnez une autre. Vous pouvez ainsi affecter plusieurs pédales à des boucles spécifiques.</p>
+
+      <p>REMARQUE : la commande doit être réglée sur « off » pour que les associations MIDI liées à une boucle fonctionnent, et sur « on » pour que les associations en mode « selected loop » fonctionnent.</p>
+
+      <h2>Mode ALT</h2>
+      <p>
+        SooperLooper dispose de son propre mode Alt local. Celui-ci redéfinit le <span id="alt-fns">fonctionnement des appuis brefs sur les boutons de transport, les flèches et les boutons F1-F4 :</span></p>
+      <p>REMARQUE : le réglage MIDI-CC to selected loop décrit ci-dessus doit être sur « on » pour que ces fonctions soient opérationnelles.</p>
+      <ul aria-describedby="alt-fns">
+        <li><b>REC</b>
+          <ul><li>
+              <b>
+                sur une boucle vide :</b>active ou désactive l’enregistrement dans la boucle sélectionnée</li>
+            <li><b>sur une boucle en cours d’utilisation :</b> active ou désactive l’overdubbing dans la boucle sélectionnée</li>
+          </ul>
+        <li><b>PLAY</b> active ou désactive la mise en sourdine de la boucle sélectionnée</li>
+        <li><b>STOP</b> active ou désactive la multiplication de la boucle sélectionnée</li>
+        <li><b>F1</b> active ou désactive le remplacement dans la boucle sélectionnée</li>
+        <li><b>F2</b> active ou désactive la substitution dans la boucle sélectionnée</li>
+        <li><b>F3</b> active ou désactive l’insertion dans la boucle sélectionnée</li>
+        <li><b>F4</b> ajoute une nouvelle boucle vide</li>
+        <li><b>LEFT</b> annule la dernière opération effectuée sur la boucle sélectionnée</li>
+        <li><b>RIGHT</b> rétablit la dernière opération annulée sur la boucle sélectionnée</li>
+        <li><b>UP/DOWN</b> change la boucle sélectionnée</li>
+        </li>
+      </ul>
+
+      <h2>Autres commandes</h2>
+      <p>Les autres commandes correspondent aux actions de SooperLooper, comme indiqué
+       <a href="https://sonosaurus.com/sooperlooper/doc_commands.html"> ici</a>.</p>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+
+ <body class="help_ui">
+ <h1>Gestionnaire de chains</h1>
+    <p>Cette vue représente les chains et leurs éléments sous forme de grille défilante. (Avec un écran tactile, faites glisser l’arrière-plan pour déplacer la vue.) Les chains sont affichées de gauche à droite sous forme de colonnes de blocs interconnectés représentant les entrées, les processeurs, les sorties, etc. Le flux du signal va de haut en bas. La chain principale se trouve toujours tout à droite.</p>
+  <h2>Chains</h2>
+    <p>Chaque chain se compose d’un ou plusieurs processeurs, représentés par des blocs disposés en colonne verticale. Le signal audio et/ou MIDI circule de haut en bas. Les processeurs peuvent être placés en parallèle ; dans ce cas, des colonnes supplémentaires s’affichent, avec les processeurs parallèles sur la même ligne.</p>
+    <p>La chain peut comporter les éléments suivants. Appuyez dessus ou sélectionnez-les pour afficher leur menu contextuel :</p>
+   <ul>
+    <li><a href="select.html">Options de la chain</a> : toujours situé en haut de chaque chain, cet élément affiche le nom de la chain.</li>
+    <li><a href="select.html">Entrée MIDI</a></li>
+    <li><a href="select.html">Entrée audio</a></li>
+    <li><a href="chain_control-select_mode.html">Processeurs MIDI</a></li>
+    <li><a href="chain_control-select_mode.html">Processeur de synthétiseur</a></li>
+    <li><a href="chain_control-select_mode.html">Processeurs audio</a></li>
+    <li><a href="select.html">Sortie MIDI</a></li>
+    <li><a href="select.html">Sortie audio</a></li>
+   </ul>
+   <div class="note-block">Remarque : les chains audio comportent un processeur de mixage audio, qui fonctionne comme les autres processeurs audio, mais ne peut pas être placé en parallèle. De même, les processeurs de synthétiseur ne peuvent pas être placés en parallèle.</div>
+   <p>Parcourez la grille à l’aide des boutons 3 et 4 ou des touches fléchées. Pour accéder au menu contextuel d’un élément, appuyez brièvement sur le bouton 4 ou sur SELECT.</p>
+   <p>Pour déplacer un processeur, appuyez longuement sur le bouton 4 afin d’activer le mode de déplacement des processeurs. Un contour jaune indique le processeur qui va être déplacé. Utilisez le bouton 3 pour déplacer le processeur vers le haut ou le bas de la chain. Lorsqu’il passe à côté d’autres processeurs, il s’affiche d’abord en parallèle, puis en série. Utilisez le bouton 4 pour déplacer le processeur vers une autre chain. Appuyez sur BACK pour quitter le mode de déplacement des processeurs. Sur un écran tactile, appuyez longuement sur le processeur pour activer le mode de déplacement, puis faites-le glisser. Appuyez brièvement pour quitter ce mode.</p>
+   <p>Pour ajouter une chain, appuyez brièvement sur le bouton 3. Cette action est également disponible dans les vues Mixer et Launcher. Vous pouvez aussi ouvrir le menu principal en appuyant brièvement sur OPT (V5) ou en appuyant longuement sur BACK (V4).</p>
+   <h2>Ordre d’affichage</h2>
+   <p>L’ordre d’affichage des chains dans la vue Mixer est identique à celui de la vue Chain Manager. Pour déplacer une chain, sélectionnez en appuyant longuement le bloc <b>Options de la chain</b> (en haut de la chain). Le mode de déplacement s’active et est signalé par une bordure jaune. Utilisez alors le bouton 4 pour déplacer la chain vers la gauche ou la droite, puis appuyez sur BACK pour quitter le mode de déplacement des chains.</p>
+   <h2>Chains épinglées</h2>
+   <b>Vous pouvez épingler des chains sur le côté droit de la vue Mixer, juste avant la chain principale. Cela ne modifie que l’affichage. La zone située sous la chain principale présente un arrière-plan plus sombre. Pour épingler une chain, déplacez-la dans cette zone. Vous pouvez notamment y épingler les chains mixbus que vous utilisez comme retours d’effets.</b>
+ </body>
+</html>

@@ -1,0 +1,216 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">---</div>
+   <div class="action short_press">CC editor</div>
+   <div class="action bold_press">CC editor</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">zoom avanti/indietro</div>
+   <div class="action short_press">azzera zoom</div>
+   <div class="action bold_press">lunghezza pattern</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">spostamento verticale</div>
+   <div class="action short_press">selezione blocco</div>
+   <div class="action bold_press">selezione blocco</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">spostamento orizzontale</div>
+   <div class="action short_press">aggiungi/rimuovi nota</div>
+   <div class="action bold_press">modifica nota</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>Editor delle note del pattern</h1>
+  <p>L'editor delle note del pattern consente di aggiungere/rimuovere note in un pattern, modificare i parametri delle note, copiare/incollare blocchi e altro. Il menu contestuale (<b>OPT</b>) consente di modificare i parametri del pattern e le opzioni di modifica.</p>
+  <p>I <b>pulsanti PLAY/STOP</b> consentono di avviare/arrestare il pattern. Il <b>pulsante REC</b> attiva la registrazione MIDI, che può essere eseguita passo dopo passo oppure in tempo reale.</p>
+  <p>La <b>modalità ALT</b> consente di accedere a funzioni speciali come annulla/ripristina, operazioni sui blocchi e copia/incolla dei pattern.</p>
+ </div>
+
+ <div class="full_container">
+  <h2>Operazioni di base</h2>
+  <ul>
+   <li><b>Ruotare le manopole 3 e 4</b> per spostare il cursore verticalmente o orizzontalmente. Anche i pulsanti freccia possono essere utilizzati a questo scopo quando la <b>modalità ALT è disattivata</b>.</li>
+   <li><b>Premere brevemente la manopola 4</b> per aggiungere/rimuovere note. <b>Premere a lungo la manopola 4</b> per modificare i parametri delle note. È possibile utilizzare anche il <b>pulsante SEL</b>.</li>
+   <li><b>Ruotare la manopola 2</b> per ingrandire o ridurre lo zoom. <b>Premere brevemente la manopola 2</b> per ripristinare il valore predefinito dello zoom.</li>
+   <li><b>Premere brevemente la manopola 3</b> per avviare la selezione di un blocco. Il flusso di lavoro delle operazioni sui blocchi è spiegato in dettaglio nella sezione seguente.</li>
+   <li><b>Premere brevemente il pulsante OPT</b> per aprire il menu delle opzioni del pattern, che consente di modificare tutti i parametri del pattern. <b>Premere a lungo la manopola 2</b> per modificare rapidamente la lunghezza del pattern.</li>
+   <li><b>Premere brevemente la manopola 1</b> per alternare tra l'editor delle note e l'<a href="pated_cc.html">editor CC</a>.</li>
+  </ul>
+
+  <h2>Registrazione dei pattern</h2>
+  <p><b>Premere il pulsante REC</b> per attivare la registrazione MIDI. Quando la registrazione è armata, il pulsante REC si illumina di rosso.</p>
+  <h3>Acquisizione passo dopo passo</h3>
+  <p>Se il pattern non è in riproduzione, gli eventi delle note verranno acquisiti nella posizione del cursore, che si sposterà quindi al passo successivo. È possibile usare il pedale sustain per saltare i passi.</p>
+  <h3>Acquisizione in tempo reale</h3>
+  <p>Se il pattern è in riproduzione, gli eventi delle note e CC verranno acquisiti in tempo reale. Verranno registrati nell'istante esatto in cui sono acquisiti, senza quantizzazione. Se necessario, è possibile applicare la quantizzazione alla riproduzione (vedere il menu delle opzioni del pattern). Durante l'acquisizione in tempo reale, la cronologia viene salvata a ogni ciclo del pattern, ma solo se sono state acquisite nuove note.</p>
+
+  <h2>Annulla/Ripristina</h2>
+  <p>In modalità ALT, è possibile usare i tasti freccia per annullare/ripristinare:</p>
+  <ul>
+   <li><b>LEFT:</b> annulla l'ultima operazione di modifica.</li>
+   <li><b>RIGHT:</b> ripristina l'ultima operazione annullata.</li>
+   <li><b>DOWN:</b> annulla TUTTO.</li>
+   <li><b>UP:</b> ripristina TUTTO.</li>
+  </ul>
+  <p>È disponibile un flusso di lavoro alternativo per annullare/ripristinare, utile per comodità o quando la modalità ALT non è facilmente accessibile:</p>
+  <ul>
+   <li>mentre la registrazione è armata (il pulsante REC è illuminato di rosso)...</li>
+   <li><b>premere a lungo il pulsante BACK</b> per accedere alla modalità di navigazione nella cronologia.</li>
+   <li><b>ruotare la manopola 4</b> per scorrere la cronologia.</li>
+   <lI><b>premere BACK</b> per uscire.</li>
+  </ul>
+  <p>Il numero di passaggi della cronologia è illimitato, ma la cronologia non viene salvata nello stato e andrà persa quando si caricherà nuovamente lo snapshot.
+  Gli snapshot salvano solo l'ultimo stato.</p>
+
+  <h2>Parametri delle note</h2>
+  <p>È possibile modificare ogni nota del pattern posizionando il cursore su di essa e selezionandola con una pressione prolungata:</p>
+  <ul>
+   <li><b>Premere a lungo la manopola 4</b> oppure <b>premere a lungo SELECT</b> per accedere all'editor dei parametri della nota selezionata.</li>
+   <li><b>Ruotare la manopola 4</b> oppure usare i <b>pulsanti LEFT/RIGHT</b> per selezionare il parametro.</li>
+   <li><b>Ruotare la manopola 3</b> oppure usare i <b>pulsanti UP/DOWN</b> per modificare il valore del parametro selezionato.</li>
+   <li>Se disponibile, <b>ruotare la manopola 2</b> per regolare con precisione il valore del parametro selezionato.</li>
+  </ul>
+  <p>Di seguito è riportato l'elenco dei parametri modificabili:</p>
+  <ul>
+   <li><b>Duration:</b> in passi. Usare la manopola 2 per regolare con precisione.</li>
+   <li><b>Velocity:</b> velocity della nota MIDI, da 0 a 127.</li>
+   <li><b>Offset:</b> offset relativo rispetto al passo iniziale della nota.</li>
+   <li><b>Stutter Speed:</b> numero di retrigger <b>per beat</b>.</li>
+   <li><b>Stutter Velo:</b> andamento della velocity della nota durante lo stutter. Può essere: FLAT, FADE-IN, FADE-OUT</li>
+   <li><b>Stutter Ramp:</b> andamento della velocità di retrigger durante la durata della nota. Può essere: NONE, SPEED-DOWN, SPEED-UP</li>
+   <li><b>Play Frequency:</b> salta/riproduci ogni N cicli.</li>
+   <li><b>Play Chance:</b> probabilità di riproduzione.</li>
+   <li><b>Stutter Frequency:</b> stutter ogni N cicli.</li>
+   <li><b>Stutter Chance:</b> probabilità di stutter.</li>
+  </ul>
+
+  <p>È utile descrivere in dettaglio il funzionamento dell'effetto di rampa della velocità dello stutter:</p>
+  <ul>
+   <li><b>Speed ramp-up:</b> aumenta la velocità dello stutter a partire dalla velocità specificata, nel corso della durata della nota.</li>
+   <li><b>Speed ramp-down:</b> riduce la velocità dello stutter da un valore calcolato, fino a raggiungere la velocità specificata al termine della durata della nota.</li>
+  </ul>
+
+  <div class="note-block">
+  Quando si modificano i parametri delle note, il valore cambia immediatamente, in tempo reale. È possibile modificare i parametri delle note mentre
+  il pattern è in riproduzione e si sentirà il risultato non appena il cursore di riproduzione raggiunge la nota che si sta modificando.
+  </div>
+
+  <h3>Riscontro visivo</h3>
+  <p>La maggior parte dei parametri delle note dispone di un riscontro visivo:</p>
+  <ul>
+   <li>La durata della nota è rappresentata dalla lunghezza del rettangolo.</li>
+   <li>La velocity della nota è rappresentata dal colore di sfondo del rettangolo. Più la velocity è bassa, più il colore è scuro; più è alta, più il colore è chiaro.</li>
+   <li>Lo stutter della nota è visualizzato come una sequenza di barre verticali.</li>
+   <li>La <b>Stutter speed</b> è proporzionale alla «densità delle barre».</li>
+   <li>L'<b>effetto della velocity dello stutter</b> è rappresentato dalla direzione di crescita delle barre.</li>
+   <li><b>Stutter Speed Ramp</b> non dispone di riscontro visivo. Ci dispiace!</li>
+   <li>Le etichette bianche indicano la frequenza o la probabilità di riproduzione.</li>
+   <li>Le etichette viola indicano la frequenza o la probabilità dello stutter.</li>
+  </ul>
+  <p>Se si applicano contemporaneamente più proprietà di probabilità o frequenza, ne verrà visualizzata solo una come etichetta. L'ordine di priorità delle etichette è:</p>
+  <ol>
+   <li>Play Freq</li>
+   <li>Play Chance</li>
+   <li>Stutter Freq</li>
+   <li>Stutter Chance</li>
+  </ol>
+
+  <h2>Operazioni sui blocchi</h2>
+  <p>Le operazioni sui blocchi consentono di selezionare un gruppo di note ed eseguire un'operazione su tutte, ad esempio copiarle/incollarle o modificare un parametro delle note.</p>
+  <p>È possibile eseguire operazioni sui blocchi usando le manopole oppure i pulsanti in <b>modalità ALT</b>. Scegliere il flusso di lavoro più adatto:</p>
+  <ol>
+   <li><b>Premere brevemente la manopola 3</b> oppure <b>premere brevemente F3</b> per accedere alla modalità di selezione dei blocchi</li>
+   <li><b>Ruotare le manopole 3 e 4</b> oppure usare i <b>pulsanti freccia</b> per regolare la selezione
+    <ol>
+     <li><b>Premere brevemente la manopola 4</b> oppure <b>premere brevemente SEL</b> per copiare la selezione.</li>
+     <li><b>Premere brevemente la manopola 3</b> oppure <b>premere brevemente F3</b> per tagliare la selezione.</li>
+     <li><b>Premere a lungo la manopola 4</b> oppure <b>premere a lungo SEL</b> per selezionare le note e accedere alla <b>modalità di modifica MULTI</b>.</li>
+    </ol></li>
+   <li><b>Ruotare le manopole 3 e 4</b> oppure usare i <b>pulsanti freccia</b> per spostare il blocco sulla griglia del pattern.</li>
+   <li><b>Premere brevemente la manopola 4</b> oppure <b>premere brevemente SEL</b> per incollare il blocco.</li>
+   <li>Ripetere i passaggi 4 e 5 tutte le volte desiderate.</li>
+   <li><b>Premere BACK</b> per terminare.</li>
+  </ol>
+  <p>Questo flusso di lavoro è comune alle diverse operazioni sui blocchi; il passaggio 2 è quello che determina la differenza.
+  Le operazioni di copia/taglio e incolla usano il verde per la selezione, mentre il blocco di modifica MULTI è blu.</p>
+
+  <div class="note-block">
+  Se si usa il flusso di lavoro in modalità ALT con il pulsante F3, tenere presente che in modalità ALT i tasti freccia vengono normalmente usati per navigare nella cronologia (annulla/ripristina).
+  Accedendo alla modalità di <b>selezione dei blocchi</b> premendo F3, il comportamento dei tasti freccia cambia, consentendo di regolare la selezione e spostarla per incollarla.
+  </div>
+
+  <h3>Modalità di modifica MULTI</h3>
+  <p>È possibile seguire il flusso di lavoro <b>2.c</b> per modificare contemporaneamente un gruppo di note. Al momento è possibile modificare simultaneamente solo i parametri <i>velocity</i> e <i>duration</i>.
+  In modalità di modifica MULTI, è possibile:</p>
+  <ul>
+   <li><b>Ruotare la manopola 4</b> per scegliere il parametro da modificare simultaneamente. Al momento sono disponibili solo <i>velocity</i> e <i>duration</i>.</li>
+   <li><b>Ruotare la manopola 3</b> per modificare il valore del parametro selezionato. I valori cambiano in modo incrementale (relativo) rispetto ai valori originali, a meno che non si raggiungano i limiti dell'intervallo.</li>
+   <li><b>Premere brevemente BACK</b> per uscire dalla modalità di modifica MULTI.</li>
+  </ul>
+
+  <p>Uscendo dalla modalità di modifica MULTI, il blocco rimane «selezionato». Lo si riconosce dal colore «bluastro» delle note selezionate.
+  Anche se il blocco è ancora selezionato, è possibile aggiungere note, modificare singole note e così via, normalmente. La selezione del blocco non influisce quindi sul funzionamento normale.
+  È tuttavia possibile accedere nuovamente alla modalità di modifica MULTI premendo a lungo la manopola 4. Premere BACK per deselezionare il blocco.</p>
+
+  <div class="note-block">
+  <b>Premere a lungo la manopola 3</b> per modificare simultaneamente tutte le note del pattern.
+  </div>
+
+  <h2>Opzioni del pattern</h2>
+  <p>Premere brevemente ALT per aprire il menu delle <b>opzioni del pattern</b>, che consente di modificare le proprietà del pattern e varie opzioni di modifica. Ecco i parametri del pattern:</p>
+  <ul>
+   <li><b>Rename:</b> modifica il nome della sequenza visualizzato sui pad del launcher.</li>
+   <li><b>Play mode:</b> DISABLED, LOOP, ONE-SHOT, PLAY 2 TIMES, ... PLAY 24 TIMES</li>
+   <li><b>Program Change:</b> numero di program-change attivato con il pattern. Può essere usato per cambiare ZS3 e altro.</li>
+   <li><b>Length:</b> lunghezza del pattern in battute e beat.</li>
+   <li><b>Steps/Beat:</b> numero di passi per beat. Il passo è l'unità di tempo più piccola nella griglia del pattern, ma la posizione e la durata degli eventi possono essere regolate anche in frazioni di passo.</li>
+   <li><b>Quantization:</b> la quantizzazione può essere DISABLED oppure impostata su 1, 1/2, 1/3, 1/4 o 1/6 di passo.</li>
+   <li><b>Swing Amount:</b> quantità di swing in %.</li>
+   <li><b>Swing Divisor:</b> numero di suddivisioni usate per lo swing. Usare 1 con il 30% per ottenere uno swing ternario perfetto.</li>
+   <li><b>Time Humanization:</b> randomizza il timing delle note secondo una distribuzione gaussiana per simulare imprecisioni umane.</li>
+   <li><b>Velocity Humanization:</b> randomizza la velocity delle note secondo una distribuzione gaussiana per simulare imprecisioni umane.</li>
+   <li><b>Note Play Chance:</b> probabilità, in %, che le note del pattern vengano riprodotte. Consente di omettere le note in modo casuale.</li>
+   <li><b>Scale:</b> scala usata dall'editor del pattern.</li>
+   <li><b>Tonic:</b> </li>
+  </ul>
+  <h3>Opzioni di modifica</h3>
+  <ul>
+   <li><b>Rest note:</b> </li>
+   <li><b>Chord mode</b> consente di aggiungere accordi completi anziché singole note.</li>
+   <li><b>Transpose pattern:</b> traspone il pattern di un numero di semitoni.</li>
+   <li><b>Copy this to clipboard:</b> copia il pattern negli appunti.</li>
+   <li><b>Paste from clipboard:</b> incolla il contenuto degli appunti nel pattern corrente.</li>
+   <li><b>Load pattern:</b> carica un pattern da un file.</li>
+   <li><b>Save pattern:</b> salva il pattern in un file.</li>
+   <li><b>Import from SMF:</b> carica un pattern da un Standard MIDI File (.mid)</li>
+   <li><b>Export to SMF:</b> salva il pattern in un Standard MIDI File (.mid)</li>
+   <li><b>Clear pattern ALL:</b> elimina tutte le note e gli eventi CC dal pattern.</li>
+   <li><b>Clear pattern notes:</b> elimina tutte le note dal pattern.</li>
+  </ul>
+
+  <h2>Copia/incolla dei pattern</h2>
+  <p>È possibile copiare/incollare pattern interi accedendo alla <b>modalità ALT</b>. Sono disponibili due buffer di copia/incolla (F1 e F2).
+  I buffer liberi si illuminano di arancione. I buffer occupati lampeggiano come segue:</p>
+  <ul>
+   <li><b>Lampeggio verde:</b> è possibile incollare il contenuto con una <b>pressione breve</b>.</li>
+   <li><b>Lampeggio rosso:</b> non è possibile incollare il contenuto. Si tratta di un clip audio.</li>
+   <li><b>Lampeggio arancione:</b> non è possibile incollare il contenuto su se stesso. Il pattern selezionato è quello copiato.</li>
+  </ul>
+  <p><b>Premere a lungo F1 o F2</b> per copiare il pattern negli appunti. Se il buffer è occupato, il contenuto verrà sovrascritto.</p>
+  <p><b>Premere brevemente F1 o F2</b> quando il pulsante lampeggia in verde per incollare il contenuto nel pattern corrente. Se il pattern corrente non è vuoto, verrà richiesta una conferma.</p>
+  <p>Questo flusso di lavoro integra quello di copia/incolla del launcher. È possibile incollare i pattern copiati dal launcher e copiare
+  il pattern corrente per incollarlo in seguito dal launcher.</p>
+
+ </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

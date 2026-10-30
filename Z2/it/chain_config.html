@@ -1,0 +1,60 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+  <div class="knobs_action_container">
+   <div class="knob_action knob_action_1">
+    <div class="action rotate">---</div>
+    <div class="action short_press">---</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_2">
+    <div class="action rotate">---</div>
+    <div class="action short_press">---</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_3">
+    <div class="knob_title">blocchi della chain</div>
+    <div class="action rotate">sfoglia</div>
+    <div class="action short_press">opzioni</div>
+    <div class="action bold_press">sposta il processor</div>
+   </div>
+   <div class="knob_action knob_action_4">
+    <div class="knob_title">elenco a destra</div>
+    <div class="action rotate">sfoglia</div>
+    <div class="action short_press">seleziona</div>
+    <div class="action bold_press">opzioni</div>
+   </div>
+  </div>
+
+  <div class="left_container">
+   <h1>Vista di configurazione della chain</h1>
+   <div id="zynproc-info"></div>
+   <p>La vista di configurazione della chain, detta anche modalità di selezione, consente di configurare ogni aspetto di una chain.</p>
+   <p>Il pannello a sinistra contiene l'elenco dei blocchi che configurano la chain, inclusi i processor. Il pannello a destra mostra una versione ridotta della vista <a href="chain_control.html">controllo della chain</a>. Usare la manopola 3 per sfogliare i blocchi della chain a sinistra e la manopola 4 per sfogliare l'elenco a destra.</p>
+   <p>Per uscire, è sufficiente <b>premere brevemente BACK</b> per tornare alla vista <a href="chain_control.html">controllo della chain</a>.</p>
+  </div>
+  <div class="full_container">
+   <p>I blocchi della chain nel pannello a sinistra funzionano in modo simile alla <a href="chain_manager.html">vista di gestione delle chain</a> e dipendono dal tipo di chain e dai processor. Possono essere:</p>
+   <ul>
+    <li><a href="selector.html">Opzioni della chain</a></li>
+    <li><a href="selector.html">Ingresso MIDI</a></li>
+    <li><a href="selector.html">Ingresso audio</a></li>
+    <li><a href="chain_control.html">Processor MIDI</a></li>
+    <li><a href="chain_control.html">Processor synth</a></li>
+    <li><a href="chain_control.html">Processor audio</a></li>
+    <li><a href="selector.html">Uscita MIDI</a></li>
+    <li><a href="selector.html">Uscita audio</a></li>
+   </ul>
+   <p><b>Blocchi dei processor</b></p>
+   <p>Quando si seleziona un processor, l'elenco a destra viene riposizionato per mostrare le pagine dei parametri di quel processor.
+   È possibile accedere alle opzioni del processor con una <b>pressione breve della manopola 3</b>, una <b>pressione breve di OPT</b> oppure un secondo <b>tocco breve</b> sul blocco touchscreen.</p>
+   <p><b>Blocchi non processor</b></p>
+   <p>Quando si seleziona un blocco non processor, come <i>Opzioni della chain</i>, <i>Ingresso MIDI</i> e così via, nel pannello a destra viene visualizzato un pannello di configurazione. È possibile scorrere le opzioni <b>ruotando la manopola 4</b> e selezionarle/attivarle con una <b>pressione breve della manopola 4</b>. In alternativa, è possibile usare i pulsanti UP/DOWN e SELECT. Se l'opzione presenta delle sotto-opzioni, è possibile accedere al relativo menu con una <b>pressione lunga della manopola 4</b>, una <b>pressione lunga di SELECT</b> oppure una <b>pressione breve di OPT</b>.</p>
+  </div>
+
+  <div class="clear"></div>
+ </body>
+</html>

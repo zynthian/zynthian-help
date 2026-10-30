@@ -1,0 +1,298 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="../style.css">
+ </head>
+ <body class="help_ui">
+  <h1>L’interface utilisateur</h1>
+  <p>L’interface utilisateur du zynthian V4 se commande principalement à l’aide des éléments suivants :</p>
+  <ul>
+   <li>4 boutons rotatifs avec poussoir</li>
+   <li>4 boutons (S1-S4)</li>
+   <li>écran tactile résistif</li>
+  </ul>
+
+  <p>Il est également possible de commander l’interface utilisateur du zynthian :</p>
+  <ul>
+   <li>à l’aide de l’interface VNC</li>
+   <li>avec un contrôleur MIDI compatible</li>
+   <li>avec des notes MIDI sur le canal MIDI maître</li>
+   <li>avec un clavier d’ordinateur (raccourcis clavier)</li>
+   <li>à l’aide d’OSC CUIA</li>
+  </ul>
+
+  <p>Ce guide couvre uniquement l’interface utilisateur principale, qui se commande avec les boutons rotatifs, les boutons et les interactions tactiles. Pour les autres méthodes, veuillez consulter le <a href="https://wiki.zynthian.org">wiki zynthian</a>.</p>
+
+  <h2>Actions des boutons rotatifs</h2>
+  <p>
+   Il existe cinq actions possibles avec les boutons rotatifs :<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pression courte :</b> une pression de moins de 0,3 seconde déclenche l’<b>action de pression courte</b>(*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pression appuyée :</b> une pression de plus de 0,3 seconde et de moins de 2 secondes déclenche l’<b>action de pression appuyée</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pression longue :</b> une pression maintenue pendant plus de 2 secondes déclenche l’<b>action de pression longue</b>(*).</li>
+    <li><img src="icons/white_icon_action_knob_rotate.png" class="action_icon"><b>Rotation :</b> la rotation d’un bouton peut modifier la valeur d’un paramètre, changer l’élément sélectionné dans une liste ou déplacer le curseur horizontalement ou verticalement. L’accélération du bouton permet un réglage plus précis à faible vitesse de rotation et plus grossier à vitesse élevée.</li>
+    <li><b>Pression + rotation :</b> la rotation d’un bouton tout en le maintenant enfoncé peut augmenter la résolution et permettre un réglage précis.</li>
+   </ul>
+  </p>
+
+  <h2>Actions des boutons</h2>
+  <p>
+   Il existe trois actions possibles avec les boutons :<br>
+   <ul>
+    <li><img src="icons/white_icon_action_short_push.png" class="action_icon"><b>Pression courte :</b> une pression de moins de 0,3 seconde déclenche l’<b>action de pression courte</b> (*).</li>
+    <li><img src="icons/white_icon_action_bold_push.png" class="action_icon"><b>Pression appuyée :</b> une pression de plus de 0,3 seconde et de moins de 2 secondes déclenche l’<b>action de pression appuyée</b>(*).</li>
+    <li><img src="icons/white_icon_action_long_push.png" class="action_icon"><b>Pression longue :</b> une pression maintenue pendant plus de 2 secondes déclenche l’<b>action de pression longue</b>(*).</li>
+   </ul>
+  </p>
+
+  <p>(*) La durée des actions de pression peut être configurée dans l’outil webconf, sous l’onglet des options avancées de l’interface utilisateur.</p>
+  <p>Notez que tous les boutons rotatifs et boutons ne sont pas associés à une fonction pour chaque type d’action. Leur fonction peut varier selon le contexte. Les pages d’aide consacrées aux différentes vues décrivent ces fonctions en détail. Repérez les icônes d’action présentées ci-dessus, car elles seront utilisées dans ce guide.</p>
+
+  <img src="img/ui_action_global_v4.png" class="full"/>
+
+  <h2>Utilisation des boutons rotatifs</h2>
+
+  <p>Les boutons rotatifs du V4 constituent le principal moyen de naviguer dans l’interface utilisateur. Leur fonction dépend du contexte, en particulier pour les actions de rotation, de pression courte et de pression appuyée. Les actions de pression longue sont toujours globales. Les boutons sont numérotés de haut en bas et de gauche à droite. Les noms imprimés sur le boîtier en aluminium du V4 correspondent donc aux boutons suivants :</p>
+
+  <ul>
+   <li><b>layer</b> => bouton n° 1
+   <li><b>back</b> => bouton n° 2
+   <li><b>learn/shot</b> => bouton n° 3
+   <li><b>select</b> => bouton n° 4
+  </ul>
+
+  <p>Dans ce guide, les noms et les numéros des boutons sont utilisés indifféremment.</p>
+
+  <h3>Règle générale</h3>
+  <p>Bien que le comportement des boutons dépende du contexte, un modèle peut servir de <i>règle générale</i> et s’applique à de nombreuses vues :</p>
+
+  <h4>Bouton SELECT</h4>
+  <ul>
+   <li>Dans les <b>vues de sélection</b> (listes) :
+    <ul>
+     <li><b>Tournez</b> le bouton pour parcourir la liste.</li>
+     <li>Effectuez une <b>pression courte</b> pour sélectionner des éléments.</li>
+     <li>Effectuez une <b>pression appuyée</b> pour ouvrir les options contextuelles.</li>
+    </ul></li>
+   <li>Dans les <b>vues en grille</b>, il s’agit du bouton de l’axe X. <b>Tournez</b> le bouton pour déplacer le curseur horizontalement.
+   <li>Dans les <b>vues fractionnées</b> comportant 2 listes déroulantes, il contrôle la liste de droite.</li>
+  </ul>
+
+  <h4>Bouton BACK</h4>
+  <ul>
+   <li>Effectuez une <b>pression courte</b> pour revenir à la vue précédente.</li>
+   <li>Dans les <b>vues en grille</b>, il s’agit du bouton de l’axe Y. <b>Tournez</b> le bouton pour déplacer le curseur verticalement.</li>
+  </ul>
+
+  <h4>Bouton LEARN/SHOT</h4>
+  <ul>
+   <li>Dans les <b>vues fractionnées</b> comportant 2 listes déroulantes, il contrôle la liste de gauche.
+    <ul>
+     <li><b>Tournez</b> le bouton pour parcourir la liste de gauche.</li>
+     <li>Effectuez une <b>pression courte</b> pour sélectionner un élément dans la liste de gauche.</li>
+    </ul></li>
+  </ul>
+
+  <b>Cette règle générale sera complétée dans la section suivante.</b>
+
+  <div class="clear"></div>
+  <div class="note-block">
+   Le volume principal est toujours accessible en un clic. Effectuez une pression appuyée sur le <b>bouton BACK</b> pour ouvrir la vue de la table de mixage, puis tournez le <b>bouton Learn/Shot</b> pour modifier le volume principal.
+  </div>
+
+  <h2>Utilisation des boutons-poussoirs</h2>
+
+  <p>Le fonctionnement classique du zynthian (V1-V4) repose sur les poussoirs des 4 boutons rotatifs. Les actions de pression courte dépendent généralement du contexte, tandis que les actions de pression appuyée et longue sont généralement globales.</p>
+  <p>Dans les sections ci-dessous, sauf indication contraire, les actions par défaut des poussoirs sont les suivantes :</p>
+
+  <ul>
+   <li><b>LAYER</b>
+    <ul>
+     <li><b>pression courte</b> : dépend du contexte.</li>
+     <li><b>pression appuyée</b> : ouvre le <b>gestionnaire de chain</b>.</li>
+     <li><b>pression longue</b> : ouvre l’<b>aide</b>.</li>
+    </ul></li>
+   <li><b>BACK</b>
+    <ul>
+     <li><b>pression courte</b> : revient à la <b>vue précédente</b>. Bascule entre les vues de la table de mixage et du launcher.</li>
+     <li><b>pression appuyée</b>> : ouvre le <b>menu principal</b>.</li>
+     <li><b>pression longue</b> : ouvre le menu d’<b>extinction</b>.</li>
+    </ul></li>
+   <li><b>LEARN/SHOT</b>
+    <ul>
+     <li><b>pression courte</b> : dépend du contexte.</li>
+     <li><b>pression appuyée</b> : ouvre la <b>liste ZS3</b>.</li>
+     <li><b>pression longue</b> : ouvre la <b>liste des snapshots</b>.</li>
+    </ul></li>
+   <li><b>SELECT</b>
+    <ul>
+     <li><b>pression courte</b> : <b>sélectionne ou coche/décoche</b> l’élément sélectionné.</li>
+     <li><b>pression appuyée</b> : affiche les options de l’élément sélectionné. Dépend du contexte.</li>
+     <li><b>pression longue</b> : déclenche le <b>PANIC !</b> Arrête toutes les notes et tous les sons.</li>
+    </ul></li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Aide contextuelle</h3>
+  <p>Effectuez une <b>pression longue sur le bouton LAYER</b> pour ouvrir l’aide contextuelle de la vue actuelle. Depuis l’écran d’aide, vous pouvez :</p>
+  <ul>
+   <li><b>Tourner le bouton 4</b> ou <b>appuyer sur les boutons S3/S4</b> pour faire défiler le contenu.</li>
+   <li>Effectuer une <b>pression courte sur le bouton 4</b> pour parcourir les liens.</li>
+   <li>Effectuer une <b>pression courte sur BACK</b> pour revenir à la page précédente ou quitter l’écran d’aide.</li>
+  </ul>
+
+  <div class="clear"></div>
+
+  <h3>Les boutons supplémentaires du V4</h3>
+
+  <p>Les boutons-poussoirs supplémentaires en silicone du V4 (S1-S4) peuvent être configurés selon les préférences de l’utilisateur. Pour cela, utilisez l’outil webconf et accédez aux options avancées de la section de configuration du câblage. Vous y trouverez plusieurs <b>profils de personnalisation</b> prédéfinis :</b>
+
+  <h4>V4 Studio</h4>
+  <p>Les 4 boutons-poussoirs en silicone sont associés comme suit :</p>
+  <ul>
+   <li><b>S1</b>
+    <ul>
+     <li><b>pression courte</b> => enregistreur/lecteur audio</li>
+     <li><b>pression appuyée</b>> => enregistreur/lecteur MIDI</li>
+     <li><b>pression longue</b>> => couper tous les sons (PANIC !)</li>
+    </ul></li>
+   <li><b>S2</b>
+    <ul>
+     <li><b>pression courte</b> => Launcher</li>
+     <li><b>pression appuyée</b> => éditeur de patterns</li>
+     <li><b>pression longue</b> => couper tous les sons (PANIC !)</li>
+    </ul></li>
+   <li><b>S3</b>
+    <ul>
+     <li><b>pression courte/appuyée</b> => flèche vers le haut</li>
+     <li><b>pression longue</b> => couper tous les sons (PANIC !)</li>
+    </ul></li>
+   <li><b>S4</b>
+    <ul>
+     <li><b>pression courte/appuyée</b> => flèche vers le bas</li>
+     <li><b>pression longue</b> => bascule l’interface TTS (Text-To-Speech).</li>
+    </ul></li>
+  </ul>
+
+  <h4>V4 Stage</h4>
+  <p>Les 4 boutons-poussoirs en silicone sont associés aux program-change MIDI 1-4. Ce profil est spécialement conçu pour une utilisation avec ZS3.</p>
+  <ul>
+   <li><b>S1</b> => programme MIDI 1
+   <li><b>S2</b> => programme MIDI 2
+   <li><b>S3</b> => programme MIDI 3
+   <li><b>S4</b> => programme MIDI 4
+  </ul>
+
+  <h4>V4 CC Switches</h4>
+  <p>Les 4 boutons-poussoirs en silicone sont associés aux MIDI CC 47-50. Ce profil est spécialement conçu pour le MIDI-learn des paramètres à bascule (par exemple, avec SooperLooper).</p>
+  <ul>
+   <li><b>S1</b> => bascule CC 47 (valeur 0/127)
+   <li><b>S2</b> => bascule CC 48 (valeur 0/127)
+   <li><b>S3</b> => bascule CC 49 (valeur 0/127)
+   <li><b>S4</b> => bascule CC 50 (valeur 0/127)
+  </ul>
+
+  <h2>La barre supérieure</h2>
+  <p>En haut de l’écran se trouve généralement une barre contenant des informations. Elle peut ne pas s’afficher dans certaines vues, par exemple dans les fenêtres de confirmation ou d’information.
+  La barre supérieure se compose de 2 zones :</p>
+
+  <h3>La barre de titre</h3>
+  <p>La barre de titre sert de fil d’Ariane. Elle affiche généralement le titre de la vue ou des informations sur le snapshot, le zs3 ou la chain actuel(le) (canal MIDI, moteur, banque et preset).</p>
+  <img src="img/title_bar_mixer.png" class="full"/>
+
+  <h3>La zone d’état</h3>
+  <p>Dans le coin supérieur droit, à côté de la barre de titre, une zone affiche en temps réel des informations utiles :</p>
+  <ul>
+   <li><b>Crête-mètre audio numérique (DPM)</b> : barres horizontales animées indiquant le niveau audio numérique et les crêtes.</li>
+   <li><b>Icônes d’état</b> : indication de différents états du zynthian.</li>
+  </ul>
+  <img src="img/ui_status_bar.png" class="full"/>
+
+  <h4>Le crête-mètre audio numérique (DPM)</h4>
+  <p>Le DPM couvre la plage de -50dBFS à 0dBFS, c’est-à-dire du niveau maximal admissible à pleine échelle (tout à droite) jusqu’à 50dB en dessous (tout à gauche) :</p>
+  <ul>
+   <li>Le segment vert couvre la plage de -50dBFS à -10dBFS.</li>
+   <li>Le segment jaune couvre la plage de -10dBFS à -3dBFS.</li>
+   <li>Le segment rouge couvre la plage de -3dBFS à 0dBFS.</li>
+  </ul>
+  <p>Les canaux gauche et droit disposent de crête-mètres indépendants, qui mesurent la sortie du système, c’est-à-dire le mixage audio envoyé à la sortie du Zynthian. Le niveau décroît selon une loi logarithmique : il faut une seconde pour atteindre -200dBFS, et environ un quart de seconde pour atteindre -50dBFS (limite inférieure de la plage affichée). Les crêtes s’affichent instantanément, c’est-à-dire que le temps d’attaque du crête-mètre est immédiat (*). La barre de maintien des crêtes reste affichée pendant deux secondes ou jusqu’à ce qu’une crête supérieure soit atteinte.</p>
+
+  <p>Ce crête-mètre est identique au DPM du mixbus principal, toujours visible dans la vue de la table de mixage. Il est donc masqué lorsque la vue de la table de mixage audio est affichée.</p>
+
+  <div class="note-block">
+  (*) Le DPM est actualisé 5 fois par seconde. L’affichage d’une crête peut donc être retardé de 200 ms.
+  </div>
+
+  <h4>Les icônes d’état</h4>
+  <br/>
+  <table>
+   <tr>
+    <th colspan="3">État et charge</th>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&hearts;</span></td>
+    <td>Charge CPU</td>
+    <td class="small">Cœur indiquant la charge CPU. Il s’affiche en vert lorsque la charge est inférieure à 50 %, en jaune lorsqu’elle dépasse 50 % et en rouge au-delà de 75 %.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#8634;</span></td>
+    <td class="nowrap">Mise à jour logicielle disponible</td>
+    <td class="small">Lorsqu’une mise à jour logicielle est disponible, le symbole vert de recyclage s’affiche. Vous pouvez effectuer la mise à jour depuis le menu d’administration, webconf ou le terminal.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9888;</span></td>
+    <td>XRun</td>
+    <td class="small">Cette icône s’affiche en cas de XRuns. Ceux-ci peuvent s’accompagner de clics et de craquements dans la sortie audio. Cela signifie que le CPU ne parvient pas à traiter ou transférer l’audio assez rapidement. Vous devriez envisager de désactiver certaines options gourmandes en ressources CPU (comme VNC, le casque, etc.) ou de réduire la complexité de vos chains.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9889;&#xFE0E;</span></td>
+    <td>Sous-tension</td>
+    <td class="small">Le Zynthian fonctionne en mode dégradé, la fréquence du CPU étant limitée à 600-800 MHz afin de stabiliser le système et d’éviter un plantage. Cette icône ne devrait pas s’afficher. Si c’est le cas, envisagez d’utiliser une meilleure source d’alimentation.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#127777;</span></td><!---->
+    <td>Surchauffe</td>
+    <td class="small">Le Zynthian fonctionne en mode dégradé, la fréquence du CPU étant limitée à 600-800 MHz afin de stabiliser le système et d’éviter un plantage. Cette icône ne devrait pas s’afficher. Si c’est le cas, améliorez la dissipation thermique (en utilisant un dissipateur thermique, etc.).</td>
+   </tr>
+   <tr>
+    <th colspan="3">Activité MIDI et lecture/enregistrement</th>
+   </tr>
+   <tr>
+    <td><span class="color-blue symbol"><b>m</b></span></td>
+    <td>MIDI-IN</td>
+    <td class="small">Messages MIDI reçus. Le soulignement indique les messages système, comme l’horloge MIDI.</td>
+   </tr>
+   <tr>
+    <td><span class="color-red symbol">&#9679;</span></td>
+    <td class="nowrap">Enregistrement d’une piste audio</td>
+    <td class="small">Une piste audio est en cours d’enregistrement.</td>
+   </tr>
+   <tr>
+    <td><span class="color-green symbol">&#9654;</span></td>
+    <td class="nowrap">Lecture d’une piste audio</td>
+    <td class="small">Une piste audio est en cours de lecture.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9679;</span></td>
+    <td class="nowrap">Enregistrement d’une piste MIDI</td>
+    <td class="small">Une piste MIDI est en cours d’enregistrement.</td>
+   </tr>
+   <tr>
+    <td><span class="color-purple symbol">&#9654;</span></td>
+    <td class="nowrap">Lecture d’une piste MIDI</td>
+    <td class="small">Une piste MIDI est en cours de lecture.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9679;</span></td>
+    <td class="nowrap">Enregistrement d’un pattern</td>
+    <td class="small">L’enregistrement est armé dans l’éditeur de patterns.</td>
+   </tr>
+   <tr>
+    <td><span class="color-orange symbol">&#9654;</span></td>
+    <td>Lecture d’un pattern<br/>Lecture d’un clip audio</td>
+    <td class="small">Un pattern de séquenceur pas à pas ou un clip audio est lu depuis le launcher.</td>
+   </tr>
+  </table>
+
+ </body>
+</html>

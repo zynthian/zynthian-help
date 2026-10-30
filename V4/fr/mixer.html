@@ -1,0 +1,79 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+ <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">volume de la chain</div>
+   <div class="action short_press">solo de la chain</div>
+   <div class="action bold_press">gestionnaire de chains</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">balance de la chain</div>
+   <div class="action short_press">launcher</div>
+   <div class="action bold_press">menu principal</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">volume principal</div>
+   <div class="action short_press">mute de la chain</div>
+   <div class="action bold_press">ajouter une chain</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">sélectionner une chain</div>
+   <div class="action short_press">contrôle de la chain</div>
+   <div class="action bold_press">options de la chain</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Vue Mixer</h1>
+  <p>Le mixer est la vue racine de zynthian. Vous pouvez toujours accéder au mixer en appuyant sur le bouton MIX. Vous pouvez également
+   appuyer sur BACK jusqu'à l'atteindre. Depuis le launcher, vous pouvez accéder au mixer en appuyant sur BACK. De même, depuis le mixer, vous pouvez
+   accéder au launcher en appuyant sur BACK. Le mixer et le launcher constituent en réalité une seule vue proposant deux modes.</p>
+  <p>Il se compose de bandes verticales associées aux chains. Au départ, il est vide et affiche uniquement la bande principale.
+   Chaque chain créée ajoute une nouvelle bande au mixer. Le nombre de bandes peut dépasser celui affichable à l'écran.
+   Elles défilent vers la gauche ou la droite si vous sélectionnez une bande hors écran.</p>
+  <p>Chaque bande est un widget interactif qui peut être manipulé de plusieurs façons et affiche des informations d'état sur la
+   chain associée. De haut en bas :</p>
+ </div>
+
+ <div class="right_float_container">
+  <img src="img/mixer_strip_legend_bg_black.png" class="full">
+ </div>
+
+ <div class="left_container">
+   <ul>
+   <li><b>Rec Arm :</b> Indicateur d'armement pour l'enregistrement. Appuyez pour l'activer ou le désactiver. La sortie audio des chains armées pour l'enregistrement est incluse dans les enregistrements multipistes sous forme de pistes séparées. Depuis le menu d'administration, vous pouvez le configurer comme n'importe quel autre commutateur du mixer : solo, pfl, mono, phase ou M+S. En mode solo, il s'agit d'un mode solo non exclusif. Lorsqu'une chain est en solo, toutes les chains qui ne le sont pas sont mises en mute, ce qui permet d'écouter une ou plusieurs chains. Le solo <i>principal</i> désactive tous les solos des chains.</li>
+   <li><b>Mute :</b> Indicateur de mute. Appuyez pour l'activer ou le désactiver. Lorsqu'une chain est en mute, elle reste silencieuse.</li>
+   <li><b>Balance/Pan :</b> Balance droite/gauche du mixage (ou panoramique d'un signal mono) pour la chain associée. Tournez le bouton 2
+    ou faites glisser le fader vers la gauche ou la droite pour la modifier.</li>
+   <li><b>Fader :</b> Volume de mixage de la chain associée. Tournez le bouton 1 ou faites glisser le fader vers le haut ou le bas pour modifier son niveau.
+    Sur l'écran tactile, vous pouvez déplacer plusieurs faders à la fois. Touchez-le pour définir la chain active.</li>
+   <li><b>DPM :</b> Digital Peak Meter de la chain associée, couvrant la plage de -50 dBFS à 0 dBFS.</li>
+   <li><b>Description :</b> Texte orienté verticalement décrivant la chain. Par défaut, pour une chain de synthé, il affiche le processeur de synthé et le nom du preset. Si vous attribuez un nom à la chain, celui-ci est également inclus dans la description.</li>
+   <li><b>Légende :</b> Affiche une icône correspondant au type de chain et un numéro indiquant le canal MIDI assigné. Touchez-la pour accéder
+    à la vue de contrôle de la chain.</li>
+  </ul>
+ </div>
+
+ <div class="full_container">
+  <h2>Ajouter des chains</h2>
+  <p>Pour créer une nouvelle chain depuis la vue Mixer, passez à la vue Launcher (appui court sur BACK), puis appuyez brièvement sur F3. Vous pouvez également ouvrir
+  le menu principal (appui court sur OPT) et choisir l'option <b>Add Chain</b>.</p>
+
+  <h2>Sélection des chains</h2>
+  <p>La chain active est indiquée par la légende de la bande, en bas, qui est mise en surbrillance rouge. Vous pouvez changer de chain active en <b>tournant le bouton 4</b>. Une fine bande en bas de la légende indique que la chain est active pour l'entrée MIDI.</p>
+
+  <h2>Déplacer des chains</h2>
+  <p>Vous pouvez réorganiser vos colonnes (chains) en déplaçant horizontalement chaque chain jusqu'à la position souhaitée. Vous pouvez également ancrer les chains
+  de votre choix sur le côté droit, accolées à la chain principale.</p>
+  <p>Depuis la vue Mixer, F3 n'est pas disponible pour déplacer les chains. Veuillez <b>passer à la vue Launcher (appui court sur BACK) pour déplacer les chains.</b></p>
+ </div>
+
+ <div class="clear"></div>
+ </body>
+</html>

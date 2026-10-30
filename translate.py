@@ -141,8 +141,7 @@ if __name__ == "__main__":
     ]
     
     # 🌍 Set the list of target locale codes you wish to compile
-    LOCALES_TO_GENERATE = ["es", "de", "pt"]
-    #LOCALES_TO_GENERATE = ["es"]
+    LOCALES_TO_GENERATE = ["es", "de", "pt", "fr", "it"]
 
     OPENAI_CONFIG = {
         "model": "gpt-6-luna",

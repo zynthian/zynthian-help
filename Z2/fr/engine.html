@@ -1,0 +1,76 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+  <div class="knobs_action_container">
+   <div class="knob_action knob_action_1">
+    <div class="action rotate">---</div>
+    <div class="action short_press">---</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_2">
+    <div class="action rotate">---</div>
+    <div class="action short_press">---</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_3">
+    <div class="action rotate">parcourir les catégories</div>
+    <div class="action short_press">informations détaillées</div>
+    <div class="action bold_press">---</div>
+   </div>
+   <div class="knob_action knob_action_4">
+    <div class="action rotate">parcourir les engines</div>
+    <div class="action short_press">sélectionner un engine</div>
+    <div class="action bold_press">mode avancé</div>
+   </div>
+  </div>
+
+  <div class="left_container">
+   <h1>Vue de sélection des engines</h1>
+   <p>Le sélecteur d’engine permet de parcourir et de sélectionner des engines pour le type choisi, qui peut être l’un des suivants :</p>
+   <ul>
+    <li>Synthé MIDI</li>
+    <li>Effet audio</li>
+    <li>Outil MIDI</li>
+    <li>Générateur audio</li>
+    <li>Spécial</li>
+   </ul>
+   <p>Cette vue s’affiche lorsque vous ajoutez une nouvelle chain ou que vous ajoutez/remplacez des processors dans une chain existante.</p>
+  </div>
+
+  <div class="full_container">
+   <p>La vue est divisée en 3 colonnes :</p>
+   <ul>
+    <li><b>[Gauche] Liste des catégories </b> correspondant au type choisi.</li>
+    <li><b>[Centre] Liste des engines </b> de la catégorie sélectionnée. Par défaut, seuls les engines activés sont affichés. Voir le <i>mode avancé</i> ci-dessous.</li>
+    <li><b>[Droite] Informations</b> sur l’engine sélectionné, comprenant :
+     <ul>
+      <li><b>Qualité :</b> notée de 0 à 5 étoiles.</li>
+      <li><b>Complexité :</b> notée de 0 à 5 roues.</li>
+      <li><b>Description :</b> un court texte décrivant les fonctionnalités de l’engine.</li>
+     </ul>
+    </li>
+   </ul>
+   <p>Vous pouvez effectuer les actions suivantes :</p>
+   <ul>
+    <li><b>Tournez le bouton 3</b> ou appuyez sur les <b>boutons GAUCHE/DROITE</b> pour parcourir la liste des catégories.</li>
+    <li><b>Tournez le bouton 4</b> ou appuyez sur les <b>boutons HAUT/BAS</b> pour parcourir la liste des engines.</li>
+    <li><b>Appuyez sur le bouton 4</b> pour sélectionner l’engine mis en surbrillance et fermer le sélecteur d’engine.</li>
+    <li><b>Appuyez longuement sur le bouton 4</b> pour passer en <b>mode avancé</b>, qui affiche TOUS les engines et permet de les activer ou de les désactiver.</li>
+    <li><b>Appuyez sur le bouton 3</b> pour ouvrir l’écran d’informations détaillées et lire les descriptions complètes.</li>
+    <li><b>Appuyez sur RETOUR</b> pour revenir à la vue précédente.</li>
+   </ul>
+   <p>Vous pouvez également utiliser l’écran tactile dans les listes des catégories et des engines. Touchez la colonne des informations pour ouvrir l’écran d’informations détaillées.</p>
+
+   <h2>Mode avancé</h2>
+   <p>Pour passer en mode avancé, <b>appuyez longuement sur le bouton 4 ou sur le bouton SEL</b>. En mode avancé, la liste complète des engines s’affiche,
+   y compris les engines désactivés qui sont normalement masqués. Vous pouvez cocher ou décocher les engines pour les activer ou les désactiver. Appuyez sur RETOUR pour
+   revenir au mode normal.</p>
+
+  </div>
+
+  <div class="clear"></div>
+ </body>
+</html>

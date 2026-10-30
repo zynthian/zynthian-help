@@ -1,0 +1,108 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body class="help_ui">
+  <div class="knobs_action_container">
+   <div class="knob_action knob_action_1">
+    <div class="knob_title">paramètre 1</div>
+    <div class="action rotate">valeur</div>
+    <div class="action short_press">MIDI-learn</div>
+    <div class="action bold_press">options</div>
+   </div>
+   <div class="knob_action knob_action_2">
+    <div class="knob_title">paramètre 2</div>
+    <div class="action rotate">valeur</div>
+    <div class="action short_press">MIDI-learn</div>
+    <div class="action bold_press">options</div>
+   </div>
+   <div class="knob_action knob_action_3">
+    <div class="knob_title">paramètre 3</div>
+    <div class="action rotate">valeur</div>
+    <div class="action short_press">MIDI-learn</div>
+    <div class="action bold_press">options</div>
+   </div>
+   <div class="knob_action knob_action_4">
+    <div class="knob_title">paramètre 4</div>
+    <div class="action rotate">valeur</div>
+    <div class="action short_press">MIDI-learn</div>
+    <div class="action bold_press">options</div>
+   </div>
+  </div>
+
+  <div class="left_container">
+   <h1>Vue de contrôle de chain</h1>
+   <div id="zynproc-info"></div>
+   <p>La vue de contrôle de chain permet d’accéder aux paramètres des processeurs de la chain active. Vous pouvez :</p>
+   <ul>
+    <li>Modifier la valeur des paramètres des processeurs en <b>tournant les potentiomètres</b>.</li>
+    <li>Effectuer le MIDI-learn des paramètres en <b>appuyant brièvement sur les potentiomètres</b></li>
+    <li>Configurer les options de contrôle des paramètres en <b>appuyant longuement sur les potentiomètres</b>.</li>
+   </ul>
+   <p>Les paramètres des processeurs sont regroupés sur des pages contenant jusqu’à 4 paramètres chacune. Sélectionnez les pages
+   à l’aide des boutons UP / DOWN. La liste contient les pages de contrôle de tous les processeurs de la chain.</p>
+   <p>Pour parcourir les pages plus rapidement, passez en <a href="chain_config.html">mode de sélection</a> en :</p>
+   <ul>
+    <li><b>appuyant brièvement sur SELECT</b></li> ou
+    <li><b>appuyant brièvement sur OPT</b></li>
+   </ul>
+   <p>Notez que le <b>mode de sélection</b> est également appelé vue <b>chain config</b>.</p>
+  </div>
+
+  <div class="full_container">
+   <h2>MIDI-learn</h2>
+   <p>Vous pouvez associer n’importe quel paramètre aux potentiomètres, curseurs et pads CC de vos contrôleurs MIDI externes.
+   Il existe 2 modes de MIDI-learn :</p>
+   <ul>
+    <li><b>Chain Learn :</b> L’association est limitée à la chain sélectionnée. Vous pouvez
+    associer le même potentiomètre à un ou plusieurs paramètres dans la même chain ou dans différentes chains. Seule la
+    chain sélectionnée réagit au message MIDI CC.</li>
+    <li><b>Global Learn :</b> L’association est globale. Vous pouvez associer le même potentiomètre
+    à un ou plusieurs paramètres dans la même chain ou dans différentes chains. Tous réagiront, quelle que soit la chain sélectionnée.</li>
+   </ul>
+   La procédure de MIDI-learn est la suivante :
+   <ul>
+    <li><b>Appuyez brièvement</b> sur le potentiomètre associé au paramètre que vous souhaitez configurer. Un indicateur vert
+    <span style="color: green">??#??</span> s’affiche pour indiquer que le paramètre est en <b>mode d’apprentissage chain</b>.</li>
+    <li>Si nécessaire, appuyez de nouveau brièvement pour passer en <b>mode d’apprentissage global</b>. L’indicateur devient jaune, comme ceci :
+    <span style="color: yellow">??#??</span></li>
+    <li><b>Déplacez un potentiomètre ou un curseur</b> ou <b>touchez un pad CC</b> sur votre contrôleur MIDI externe. L’association est terminée et
+    l’indicateur affiche alors le canal MIDI et le numéro CC en blanc.</li>
+   </ul>
+
+   <h2>Options de contrôle des paramètres</h2>
+   <p><b>Appuyez longuement sur n’importe quel potentiomètre</b> pour accéder aux options du contrôleur associé au paramètre. Voici les options courantes :</p>
+   <ul>
+    <li><b>Chain Controller :</b> Lorsque cette option est cochée, le paramètre est ajouté aux pages du chain controller,
+     au début de la liste des pages. Cette fonction agit comme une sorte de « paramètres favoris » pour la chain.</li>
+    <li><b>Pavé tactile X-Y :</b> Lorsque des paramètres numériques ont été sélectionnés pour les axes X et Y, passez en mode Pavé tactile X-Y.
+    <li><b>Chain Learn :</b> Démarrer le MIDI-learn Chain pour le paramètre.</li>
+    <li><b>Global Learn :</b> Démarrer le MIDI-learn Global pour le paramètre.</li>
+    <li><b>Zynstep CC :</b> Choisir le numéro CC utilisé par le séquenceur pour automatiser le paramètre.</li>
+    <li><b>Unlearn :</b> Supprimer l’apprentissage du paramètre.</li>
+    <li><b>Unlearn all controls :</b> Supprimer l’apprentissage de tous les paramètres du processeur.</li>
+   </ul>
+
+   <p>Voici les options spécifiques aux contrôleurs numériques :</p>
+   <ul>
+    <li><b>Mode absolu/relatif :</b> Permet de configurer les potentiomètres incrémentaux (encodeurs).</li>
+    <li><b>Plage de valeurs CC :</b> Configurer la correspondance entre les valeurs MIDI CC et le paramètre associé.</li>
+    <li><b>Axe X :</b> Cochez cette option pour utiliser le paramètre sur l’axe X en mode <b>Pavé tactile X-Y</b>.</li>
+    <li><b>Axe Y :</b> Cochez cette option pour utiliser le paramètre sur l’axe Y en mode <b>Pavé tactile X-Y</b>.</li>
+   </ul>
+
+   <p>Voici les options spécifiques aux contrôleurs à bascule :</p>
+   <ul>
+    <li><b>Momentary => Latch :</b> Interpréter les impulsions MIDI CC comme des bascules (mode latch).</li>
+    <li><b>Anti-rebond :</b> Activer l’anti-rebond pour éviter les commutations intempestives.</li>
+   </ul>
+
+   <h4>Pavé tactile X-Y</h4>
+   <p>En mode Pavé tactile X-Y, vous pouvez contrôler simultanément les 2 paramètres attribués en faisant glisser votre doigt sur l’écran tactile, « à la manière d’un chaos-pad ».</p>
+
+  </div>
+
+  <div class="clear"></div>
+ </body>
+</html>
