@@ -4,21 +4,33 @@
  </head>
 
  <body class="help_ui">
- <h1>Vista de Tempo</h1>
-    <p>A vista de tempo permite controlar a base de tempo do zynthian utilizada para sequenciação, arpeggiators, etc.</p>
-    <p>O controlo BPM define o tempo interno entre 10 e 420 BPM. Prima e rode para ajustar em passos de 0,1 BPM. Este controlo está disponível quando é utilizado o relógio interno.</p>
-    <p> Se for utilizado um relógio externo, o controlo BPM passa a funcionar como divisor de relógio. Por predefinição, espera uma entrada de 24 PPQN, utilizada pelo MIDI clock, mas pode ser ajustado para suportar outras frequências de relógio externo entre 1 e 48 PPQN. O relógio interno funciona a 1920 PPQN e utiliza um phase-locked loop para derivar este relógio de alta resolução a partir do relógio de entrada mais lento. Para utilizar um relógio externo, selecione «MIDI Clock Source» para uma entrada MIDI na vista <a href="chain_midi_input.html">Entrada MIDI</a>.</p>
-    <p>O controlo Metronome Mode configura o metrónomo do zynthian. Tem os seguintes valores:
-      <ul>
-         <li>OFF: O metrónomo está desativado.</li>
-         <li>AUTO: O metrónomo toca enquanto houver uma sequência em reprodução e para no fim do compasso após a última sequência parar.</li>
-         <li>ON: O metrónomo toca continuamente.</li>
-         <li>INTRO: O metrónomo toca até uma sequência começar. Pode utilizar este modo como contagem de entrada quando não pretende ou não precisa que o metrónomo toque durante a atuação.</li>
-         <li>NO ACCENT: O metrónomo toca continuamente, mas sem acentuar o primeiro tempo de cada compasso. Funciona mais como um metrónomo tradicional, utilizado apenas para marcar o tempo e não a base de tempo.</li>
-         <li>SILENT: O metrónomo funciona, mas não produz som. Pode ser útil para fazer com que o transporte funcione quando não há sequências em reprodução. Alguns plugins podem beneficiar desta opção.</li>
-      </ul>
-      Existe um controlo para ajustar o volume do metrónomo.</p>
-    <p>É apresentado o tempo em tamanho grande e pode tocar nele para definir o tempo. Da mesma forma, pode tocar no botão de tempo para definir o tempo.</p>
-    <div class="note-block">Nota: O metrónomo é encaminhado para a chain principal através do respetivo envio de mistura auxiliar, que permite controlar individualmente o nível, o balanço, etc. O leitor de áudio global partilha esta mistura auxiliar.</div>
+  <h1>Vista de tempo</h1>
+  <p>A vista de tempo permite controlar a base de tempo do zynthian, utilizada para sequenciação, arpeggiators, etc.</p>
+  <p><b>Rode o botão 1</b> para ajustar o valor de BPM entre 10 e 420 BPM. Prima e rode para ajustar em incrementos de 0,1 BPM. Tenha em atenção que o tempo em BPM pode ser automatizado através de frases do launcher. Este controlo só está disponível quando é utilizado o relógio interno.</p>
+
+  <p><b>Rode o botão 2</b> para ajustar o controlo Metronome Mode, que configura o metrónomo do zynthian. Tem os seguintes valores:</p>
+  <ul>
+   <li><b>OFF</b>: O metrónomo está desativado.</li>
+   <li><b>AUTO</b>: O metrónomo soa quando há uma sequência em reprodução e para no final do compasso após parar a última sequência.</li>
+   <li><b>ON</b>: O metrónomo está sempre em reprodução.</li>
+   <li><b>INTRO</b>: O metrónomo soa até começar uma sequência. Pode utilizar esta opção como contagem de entrada quando não quiser ou não precisar que o metrónomo soe durante a atuação.</li>
+   <li><b>NO ACCENT</b>: O metrónomo está sempre em reprodução, mas sem acentuar o primeiro tempo de cada compasso. Funciona mais como um metrónomo tradicional, utilizado apenas para marcar o tempo e não como base de tempo.</li>
+   <li><b>SILENT</b>: O metrónomo funciona, mas não produz som. Esta opção pode ser útil para iniciar o transporte quando não há sequências em reprodução. Alguns plugins poderão beneficiar desta opção.</li>
+  </ul>
+  <p><b>Rode o botão 3</b> para ajustar o volume do metrónomo.</p>
+
+  <div class="note-block">Nota: O som de clique do metrónomo é encaminhado para a chain principal através do respetivo envio de mistura auxiliar, que permite controlar individualmente o nível, o balanço, etc. O leitor de áudio global partilha esta mistura auxiliar.</div>
+
+  <p><b>Rode o botão 4</b> para alterar a fórmula de compasso (tempos por compasso). As alterações à fórmula de compasso são aplicadas no início do compasso seguinte.</p>
+
+  <div class="note-block">Nota: O tempo (BPM) e a fórmula de compasso (tempos/compasso) podem ser automatizados através de frases do launcher.</div>
+
+  <h2>Relógio externo</h2>
+  <p>Se for utilizado um relógio externo, o controlo BPM é substituído pelo Clock Divider. O valor predefinido do divisor de relógio é 24 PPQN, que é o utilizado pelo MIDI clock, mas pode ser ajustado para suportar outras frequências de relógio externo no intervalo de 1 a 48 PPQN.</p>
+  <p>O relógio interno funciona a 1920 PPQN e utiliza um phase locked loop (PLL) para obter este relógio de alta resolução a partir do relógio de entrada lento. Para utilizar um relógio externo, selecione "MIDI Clock Source" para uma entrada MIDI na vista <a href="chain_midi_input.html">Entrada MIDI</a>.</p>
+
+  <h2>Tap-Tempo</h2>
+  <p>Existe um visor grande com o valor BPM, no qual pode tocar para definir o tempo. Também pode tocar no botão de tempo para o definir.</p>
+
  </body>
 </html>
