@@ -1,14 +1,39 @@
 <html>
  <head>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
  </head>
 
  <body class="help_ui">
- <h1>Intervallo di tasti MIDI e trasposizione</h1>
-   <p>Questa vista consente di configurare l'intervallo di tasti e la trasposizione delle note MIDI per una chain. L'impostazione si applica a tutti i messaggi di nota MIDI che raggiungono la chain.</p>
-   <h2>Intervallo di tasti</h2>
-   <p>Viene visualizzata una tastiera di pianoforte che mostra l'intervallo di note che verrà trasmesso alla chain. Le note in grigio sono bloccate. Le manopole 3 e 4 regolano rispettivamente il limite inferiore e quello superiore dell'intervallo. Premere la manopola 3 per attivare MIDI learn, che consente di impostare prima il limite inferiore e poi quello superiore inviando le note MIDI corrispondenti. È anche possibile usare il touchscreen per trascinare l'intervallo sulla tastiera visualizzata sullo schermo.</p>
-   <h2>Trasposizione</h2>
-   <p>Le note MIDI possono essere trasposte fino a 5 ottave verso il basso e 6 ottave verso l'alto. Usare la manopola 1 per regolare la trasposizione in ottave e la manopola 2 per regolare quella in semitoni.</p>
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">trasposizione di ottava</div>
+   <div class="action short_press">---</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">trasposizione di semitono</div>
+   <div class="action short_press">---</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">nota più bassa</div>
+   <div class="action short_press">attiva/disattiva MIDI learn</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">nota più alta</div>
+   <div class="action short_press">indietro</div>
+   <div class="action bold_press">---</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>Estensione e trasposizione delle note MIDI</h1>
+  <p>Questa schermata consente di configurare l'estensione e la trasposizione delle note MIDI per una chain. Le impostazioni si applicano a tutti i messaggi di note MIDI che raggiungono la chain.</p>
+  <h2>Estensione</h2>
+  <p>Viene visualizzata una tastiera di pianoforte che mostra l'intervallo di note che verranno trasmesse alla chain. Le note in grigio sono bloccate. Le manopole 3 e 4 regolano rispettivamente il limite inferiore e quello superiore dell'intervallo. Premere la manopola 3 per attivare MIDI learn, che consente di impostare prima il limite inferiore e poi quello superiore inviando le note MIDI corrispondenti. È anche possibile usare il touchscreen per trascinare l'intervallo sulla tastiera visualizzata.</p>
+  <h2>Trasposizione</h2>
+  <p>Le note MIDI possono essere trasposte fino a 5 ottave verso il basso e 6 ottave verso l'alto. Usare la manopola 1 per regolare la trasposizione di ottava e la manopola 2 per regolare quella di semitono.</p>
+ </div>
  </body>
 </html>

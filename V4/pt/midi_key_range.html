@@ -1,14 +1,41 @@
 <html>
  <head>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
  </head>
 
  <body class="help_ui">
- <h1>Intervalo de teclas MIDI e transposição</h1>
-   <p>Esta vista permite configurar o intervalo de teclas e a transposição das notas MIDI de uma chain. Esta configuração aplica-se a todas as mensagens de notas MIDI que chegam à chain.</p>
-   <h2>Intervalo de teclas</h2>
-   <p>É apresentado um teclado de piano que mostra o intervalo de notas que serão transmitidas à chain. As notas a cinzento estão bloqueadas. Os controlos 2 e 4 ajustam os limites inferior e superior do intervalo. Prima o controlo 3 para ativar ou desativar o MIDI learn, que permite definir primeiro o limite inferior e, em seguida, o limite superior, enviando as notas MIDI correspondentes. Também pode usar o ecrã tátil para arrastar o intervalo para o teclado apresentado no ecrã.</p>
-   <h2>Transposição</h2>
-   <p>As notas MIDI podem ser transpostas até 5 oitavas abaixo e 6 oitavas acima. Use o controlo 1 para ajustar a transposição em oitavas e o controlo 3 para ajustar a transposição em semitons.</p>
+  <div class="knobs_action_container_left">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">transposição de oitavas</div>
+   <div class="action short_press">---</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">transposição de semitons</div>
+   <div class="action short_press">---</div>
+   <div class="action bold_press">---</div>
+  </div>
+ </div>
+ <div class="knobs_action_container_right">
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">nota mais grave</div>
+   <div class="action short_press">ativar/desativar MIDI learn</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">nota mais aguda</div>
+   <div class="action short_press">voltar</div>
+   <div class="action bold_press">---</div>
+  </div>
+ </div>
+
+ <div class="full_container">
+  <h1>Intervalo de notas MIDI e transposição</h1>
+  <p>Esta vista permite configurar o intervalo de notas e a transposição das notas MIDI de uma chain. Esta configuração aplica-se a todas as mensagens de notas MIDI que chegam à chain.</p>
+  <h2>Intervalo de notas</h2>
+  <p>É apresentado um teclado de piano que mostra o intervalo de notas que será enviado para a chain. As notas a cinzento estão bloqueadas. Os botões 2 e 4 ajustam os limites inferior e superior do intervalo. Prima o botão 3 para ativar ou desativar o MIDI learn, permitindo definir primeiro o limite inferior e depois o superior através do envio das notas MIDI correspondentes. Também pode usar o ecrã tátil para arrastar o intervalo no teclado apresentado no ecrã.</p>
+  <h2>Transposição</h2>
+  <p>As notas MIDI podem ser transpostas até 5 oitavas abaixo e 6 oitavas acima. Use o botão 1 para ajustar a transposição de oitavas e o botão 3 para ajustar a transposição de semitons.</p>
+ </div>
  </body>
 </html>

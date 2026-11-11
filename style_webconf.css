@@ -50,6 +50,11 @@ div.help_ui {
 	color: #202020;
 }
 
+div.knob_action div.action {
+	padding-top: 6px;
+	height: 44px;
+}
+
 @media screen and (max-width: 768px) {
 	div.help_container div.knobs_action_container,
 	div.help_container div.knobs_action_container_left,

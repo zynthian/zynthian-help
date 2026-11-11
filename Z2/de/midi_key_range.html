@@ -1,14 +1,39 @@
 <html>
  <head>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
  </head>
 
  <body class="help_ui">
- <h1>MIDI-Tastenbereich und Transponierung</h1>
-   <p>In dieser Ansicht können Sie den Tastenbereich und die Transponierung von MIDI-Noten für eine chain konfigurieren. Dies gilt für alle MIDI-Notennachrichten, die die chain erreichen.</p>
-   <h2>Tastenbereich</h2>
-   <p>Eine Klaviertastatur zeigt den Notenbereich an, der an die chain weitergeleitet wird. Ausgegraute Noten sind gesperrt. Mit den Reglern 3 und 4 stellen Sie die untere und obere Grenze des Bereichs ein. Drücken Sie Regler 3, um MIDI-learn zu aktivieren. Anschließend können Sie die untere und danach die obere Grenze festlegen, indem Sie die entsprechenden MIDI-Noten senden. Sie können den Bereich auch per Touchscreen auf der Bildschirmtastatur verschieben.</p>
-   <h2>Transponierung</h2>
-   <p>MIDI-Noten können um bis zu 5 Oktaven nach unten und 6 Oktaven nach oben transponiert werden. Mit Regler 1 stellen Sie die Oktavtransponierung ein, mit Regler 2 die Halbtontransponierung.</p>
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">Oktavtransposition</div>
+   <div class="action short_press">---</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">Halbtontransposition</div>
+   <div class="action short_press">---</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">unterste Note</div>
+   <div class="action short_press">MIDI-learn umschalten</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">oberste Note</div>
+   <div class="action short_press">zurück</div>
+   <div class="action bold_press">---</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>MIDI-Tastenbereich und Transposition</h1>
+  <p>In dieser Ansicht können Sie den Tastenbereich und die Transposition von MIDI-Noten für eine chain konfigurieren. Dies gilt für alle MIDI-Notennachrichten, die die chain erreichen.</p>
+  <h2>Tastenbereich</h2>
+  <p>Es wird eine Klaviertastatur angezeigt, auf der der Notenbereich zu sehen ist, der an die chain weitergegeben wird. Ausgegraute Noten sind gesperrt. Mit Knopf 3 und 4 stellen Sie die untere und obere Grenze des Bereichs ein. Drücken Sie Knopf 3, um MIDI-learn umzuschalten. Damit können Sie zuerst die untere und anschließend die obere Grenze durch Senden der entsprechenden MIDI-Noten festlegen. Sie können den Bereich auch über den Touchscreen auf die Bildschirmtastatur ziehen.</p>
+  <h2>Transposition</h2>
+  <p>MIDI-Noten können bis zu 5 Oktaven nach unten und 6 Oktaven nach oben transponiert werden. Verwenden Sie Knopf 1, um die Oktavtransposition einzustellen, und Knopf 2, um die Halbtontransposition einzustellen.</p>
+ </div>
  </body>
 </html>

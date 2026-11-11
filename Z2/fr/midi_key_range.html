@@ -1,14 +1,39 @@
 <html>
  <head>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
  </head>
 
  <body class="help_ui">
- <h1>Plage de notes MIDI et transposition</h1>
-   <p>Cette vue permet de configurer la plage de notes et la transposition des notes MIDI d’une chain. Ces réglages s’appliquent à tous les messages de note MIDI reçus par la chain.</p>
-   <h2>Plage de notes</h2>
-   <p>Un clavier de piano affiche la plage de notes qui sera transmise à la chain. Les notes grisées sont bloquées. Les boutons 3 et 4 règlent les limites inférieure et supérieure de la plage. Appuyez sur le bouton 3 pour activer le MIDI-learn et définir les limites inférieure puis supérieure en envoyant les notes MIDI correspondantes. Vous pouvez également utiliser l’écran tactile pour déplacer la plage sur le clavier affiché à l’écran.</p>
-   <h2>Transposition</h2>
-   <p>Les notes MIDI peuvent être transposées jusqu’à 5 octaves vers le bas et 6 octaves vers le haut. Utilisez le bouton 1 pour régler la transposition par octave et le bouton 2 pour régler la transposition par demi-ton.</p>
+ <div class="knobs_action_container">
+  <div class="knob_action knob_action_1">
+   <div class="action rotate">transposition par octave</div>
+   <div class="action short_press">---</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_2">
+   <div class="action rotate">transposition par demi-ton</div>
+   <div class="action short_press">---</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_3">
+   <div class="action rotate">note la plus basse</div>
+   <div class="action short_press">activer/désactiver le MIDI learn</div>
+   <div class="action bold_press">---</div>
+  </div>
+  <div class="knob_action knob_action_4">
+   <div class="action rotate">note la plus haute</div>
+   <div class="action short_press">retour</div>
+   <div class="action bold_press">---</div>
+  </div>
+ </div>
+
+ <div class="left_container">
+  <h1>Plage de notes MIDI et transposition</h1>
+  <p>Cette vue permet de configurer la plage de notes et la transposition des notes MIDI d'une chain. Ces réglages s'appliquent à tous les messages de notes MIDI reçus par la chain.</p>
+  <h2>Plage de notes</h2>
+  <p>Un clavier de piano affiche la plage de notes transmises à la chain. Les notes grisées sont bloquées. Les boutons 3 et 4 permettent de régler les limites inférieure et supérieure de la plage. Appuyez sur le bouton 3 pour activer le MIDI learn : vous pouvez alors définir les limites inférieure, puis supérieure, en envoyant les notes MIDI correspondantes. Vous pouvez également faire glisser la plage sur le clavier affiché à l'écran à l'aide de l'écran tactile.</p>
+  <h2>Transposition</h2>
+  <p>Les notes MIDI peuvent être transposées jusqu'à 5 octaves vers le bas et 6 octaves vers le haut. Utilisez le bouton 1 pour régler la transposition par octave et le bouton 2 pour régler la transposition par demi-ton.</p>
+ </div>
  </body>
 </html>
